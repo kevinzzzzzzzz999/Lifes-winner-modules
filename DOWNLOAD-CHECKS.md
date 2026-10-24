@@ -1,38 +1,48 @@
 # 公开下载与使用验收 / Public download and usage checks
 
-验收日期：2026-10-24。模块源码修订：`11fb58cf27dc4dbe44f50b6f35f6e27635413df2`；完整软件源码修订：`d65fcddd1de4b66b52ccef4d12707c763ea07936`。
+最新验收：2026-10-24 r3。固定模块源码修订：`98666bd61bce39b1ae341a141bd5018a21935e40`。
 
-**实际通过未登录的 GitHub 公开下载链接获取了全部 40 份归档：38 份独立功能下载、完整模块工作区、完整软件源码。40/40 的 SHA-256 与发布清单一致。** 验收没有用本机准备上传的文件冒充公开下载结果。
+**新增三组已经分别提供独立库和可启动示例。三个最终ZIP及新的完整模块工作区，都已通过未登录的GitHub公开链接实际下载，SHA-256与发布清单一致。下载回来的三个ZIP又在仓库外安装、编译并运行随包测试：52/52通过，0失败。没有借用完整InkSpace。**
 
-All 40 archives were fetched anonymously through their public GitHub download links. Their SHA-256 digests match the published manifests. Usability checks below distinguish reusable libraries from installable applications.
+The three new standalone archives and the complete r3 module workspace were downloaded anonymously from GitHub. Their digests match the public manifests. Isolated consumers of those downloaded archives passed all 52 included tests; the integrated application was not used.
 
-## 下载之后是否能用
+## 三个下载包怎么用
 
-| 范围 | 实际检查 | 使用条件 |
+| 功能 | 独立下载 | 启动与实测 |
 | --- | --- | --- |
-| 19 个 Node.js 功能包 | 每个最终公开 ZIP 独立解压、`npm pack`、安装到全新消费者；19/19 个 README 示例、217/217 项行为测试通过，0 失败、0 跳过 | Node.js 与声明依赖；外部引擎及宿主接口见各包说明 |
-| 16 个 SwiftPM 产品 | 各自独立消费者编译、链接并运行 API；最终下载的源码、资源和清单与已运行版本逐字节相同 | 相应 Apple SDK、系统版本与框架 |
-| 公开 URL 接入 SwiftPM | 新项目通过公开 HTTPS 仓库 URL 与上述固定修订匿名取回源码，仅依赖 InkSpaceOutline，构建及纲要编码/解析运行成功 | 在 Xcode/SwiftPM 中选择所需 product；ZIP 则解压后添加本地 package |
-| React UI 0.1.1 | 最终下载的 217 个成员与验收版本完全一致；30 个界面表面、45 次挂载/交互检查、严格 TypeScript 独立消费者和生产构建通过 | 安装声明依赖并构建；15 个表面由 props 驱动，15 个需要显式宿主能力 |
-| Obsidian 伴侣 | 最终下载包重新执行 35/35 项回归，0 失败、0 跳过 | 需要 Obsidian；原生打开/书写需要兼容的系统协议处理程序；未做真实 Obsidian UI 验收 |
-| Safari 分享集成 | 最终包许可、说明链接及已验收的 Swift/JavaScript/plist 源字节核对通过；此前独立 iOS SDK 类型检查与合成预处理检查通过 | 源码集成，需要承载 App、扩展 target 和签名；尚无独立真机安装验收 |
-| 完整模块工作区 | 公开 ZIP 可解压，根 Package.swift、Swift 与 UI 内容和独立包一致 | 按包内说明选择功能和依赖 |
-| 完整 InkSpace | 公开源码 ZIP 可下载且摘要一致，仓库中展开源码可浏览 | 当前发布的是源码预览，需要依照[完整软件说明](https://github.com/kevinzzzzzzzz999/inkspace)构建；本轮未新增安装包或全设备稳定性结论 |
+| 书写与演示辅助 | [InkSpaceWritingAids](swift-InkSpaceWritingAids.zip?raw=1) | 解压后在包根运行 `bash Example/script/build_and_run.sh`。11项随包测试和示例构建通过；实际Mac窗口已验证文字卡提交、胶带揭开、JSON导出→清空→重新打开。 |
+| 语言、布局、工具栏和操作偏好 | [InkSpacePreferences](swift-InkSpacePreferences.zip?raw=1) | 同样运行 `bash Example/script/build_and_run.sh`。16项随包测试和示例构建通过；实际窗口四页设置、修改/保存/重读、重启恢复与两个进程存取通过。 |
+| 首页、文档打开和多窗口应用壳 | [application-shell](node-application-shell.zip?raw=1) | 进入解压目录 `examples/electron`，运行 `npm ci`、`npm start`。核心独立npm安装后25项测试通过，README示例通过；相同源字节的独立Electron消费者12组图形窗口检查通过。 |
 
-Node 测试使用 Node.js 24.19.0 / npm 12.2.1，各消费者独立解析依赖，没有使用完整 App 的依赖目录或 NODE_PATH。上述安装包由官方 npm 工具在本地生成，尚未发布到 npm 注册表。
+两个原生示例需要macOS 13+与Xcode/Swift工具链；各ZIP的`Example/`已经带有指向解压根的正确依赖。启动脚本仅做本地ad-hoc签名，不使用Apple账号、个人证书或私钥。应用壳示例需要Node.js 24.15+，首次安装从官方来源取得精确锁定的Electron依赖；核心本身没有生产依赖。详细环境、API、源码来源和操作步骤均在随包README。
 
-Notebook 的真实 IPython 执行此前已在独立环境中验证：三个合成单元格、变量延续、Matplotlib PNG 与正常关闭；最终包的 18 份相关代码/运行输入与该版本一致。OCR、FFmpeg、Tectonic、AI/翻译服务与系统授权等条件仍以各包说明为准，未实际运行的外部服务没有计入通过结果。
+## 已验证的边界
 
-## 功能有没有漏项
+- 书写库返回几何/状态，附Mac矢量画布和可选iOS系统Scribble输入适配；PencilKit笔压、纹理、撤销与实际画布插入由调用者负责。iOS 18 arm64模拟器SDK编译通过，未做真实Apple Pencil/Scribble识别验收；鼠标停留/拖动逻辑由行为测试覆盖。
+- 设置库只存操作偏好，不执行翻译、AI、视频播放或Pencil硬件动作。存储domain和位置显式指定，不读取/迁移原App偏好。示例使用合成默认值和独立临时JSON；生产应用自行指定持久目录。
+- 应用壳是真正可运行的只读文档/工作区示例，可预览有界UTF-8文本。PDF、Office、媒体等完整编辑器和原生SwiftUI场景由集成方接入。图形测试将原生选择器返回值替换为合成路径，没有声称点击系统选择器；示例不注册系统协议，URL仅路由本会话已授权工作区，不包含跨进程单实例恢复。
+- 运行示例的界面和数据采用通用合成内容。发布文件不含个人笔记、课程资料、账号凭据、设备/签名材料、本机代理配置或构建缓存。
 
-[63 个功能组](FEATURES.md)已经逐项登记，[覆盖审计](coverage-audit.json)记录真实导出、下载入口和依赖边界。其中原生书写辅助、应用偏好、完整应用壳三组目前仍在完整 App 源码中，尚未拆成独立产品。其余条目中的核心库、界面组件和集成源码也按各自条件使用。
+## 当前发行的其他下载
 
-“可以独立使用”表示可接入其他项目，无需完整 InkSpace；它不表示每份 ZIP 都是能双击启动的 App。
+当前共 **41份独立功能归档：20个Node包、18个Swift产品、React组件、Obsidian伴侣和Safari集成源码**，另有完整模块工作区及完整软件源码。原38份独立归档的字节与此前公开验收版本相同，本轮没有无故重复它们的引擎/界面检查。
 
-## 自行复核
+| 范围 | 验收依据 |
+| --- | --- |
+| 原19个Node包 | 固定修订 `11fb58cf27dc4dbe44f50b6f35f6e27635413df2` 实际匿名下载，逐包npm pack后安装到新消费者；19个README例子与217项行为测试通过。加新应用壳25项，共20包242项。 |
+| 原16个Swift产品 | 每份下载的独立消费者编译、链接并运行公开API；资源读取、合成文件及PDF输出按原记录验证。新增两包的27项测试另行记录，不改写历史测试数。 |
+| React 0.1.1 | 30个表面、10个分域入口；45次挂载/交互、严格TypeScript独立消费与生产构建通过。最终包与该验收源字节一致。 |
+| Obsidian | 最终下载包35项回归通过；需要Obsidian宿主，原生打开/书写需要系统协议处理程序；未做真实Obsidian UI验收。 |
+| Safari | 许可、文档链接、源字节及iOS SDK检查通过；仍是需要承载App、扩展target和签名的集成源码，未做独立真机安装验收。 |
+| 完整模块工作区 | r3 ZIP实际公开下载并校验，1063项源码与manifest和仓库展开文件一致；55个发布文件和110个首页链接核对通过。 |
+| 完整InkSpace | 源码修订 `d65fcddd1de4b66b52ccef4d12707c763ea07936` 的公开ZIP下载与摘要检查通过；按完整仓库说明构建，设备稳定性限制继续保留。 |
 
-1. 从[模块目录](README.md)选择 ZIP，按包内 README 解压、安装与运行示例。
-2. 用[下载清单](download-manifest.json)核对归档 SHA-256；完整工作区逐文件摘要见[source-tree-manifest.json](source-tree-manifest.json)。
-3. 查看[Node 验证细节](NODE-VALIDATION.md)、[其他验证记录](VALIDATION.md)以及源码中的测试。
+此前r2的全部40份归档曾经匿名公开下载并校验通过。Notebook真实IPython的三个合成单元格、变量延续、Matplotlib PNG与正常关闭保留原验收依据；外部OCR、FFmpeg、Tectonic、AI/翻译和系统授权条件见各包说明，未实际运行的服务没有计入通过结果。
 
-这些结论适用于本页固定修订及摘要相同的归档。未来源码或依赖变化后，需要重新验证受影响功能；已有完整软件设备稳定性限制仍保留在原验证记录中。
+## 功能覆盖与自行复核
+
+[63个功能组](FEATURES.md)和[覆盖审计](coverage-audit.json)中的C09、H03、H05现已登记独立入口，不再是仅完整App源码的条目。核心库、组件、插件与集成源码仍各有范围；这不代表所有原生工作流或每份ZIP都成为完整成品App。
+
+从[下载目录](README.md)选择功能，按随包README使用；用[下载清单](download-manifest.json)核对SHA-256，完整工作区逐文件摘要见[source-tree-manifest.json](source-tree-manifest.json)。[Node记录](NODE-VALIDATION.md)、[其他验证记录](VALIDATION.md)和源码测试说明了精确范围。
+
+这些结论适用于上述固定修订及摘要相同的归档。未来每月同步只重新验证受影响功能，变化后更新本记录。

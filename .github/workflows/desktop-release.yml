@@ -1,0 +1,144 @@
+name: Build standalone Mac applications
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Desktop app version (three numbers, such as 0.1.0)
+        required: true
+        default: 0.1.0
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-app-release
+  cancel-in-progress: false
+
+env:
+  APP_VERSION: ${{ inputs.version }}
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Validate version
+        run: python3 -c 'import os,re; assert re.fullmatch(r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)",os.environ["APP_VERSION"])'
+      - name: Build universal native tools without a personal signing identity
+        run: |
+          python3 samples/packaging/macos/build-native-apps.py --output "$RUNNER_TEMP/native" --work "$RUNNER_TEMP/native-work" --version "$APP_VERSION"
+          python3 samples/packaging/macos/desktop-release-tools.py zip-native --input "$RUNNER_TEMP/native" --output "$RUNNER_TEMP/native-assets"
+      - name: Bundle official Electron runtimes and verify nested code
+        run: python3 samples/packaging/macos/electron/release-macos.py --source packages/application-shell --output "$RUNNER_TEMP/electron" --version "$APP_VERSION"
+      - name: Assemble only the reviewed release assets
+        run: |
+          python3 samples/packaging/macos/desktop-release-tools.py manifest --native "$RUNNER_TEMP/native-assets" --electron "$RUNNER_TEMP/electron" --output "$RUNNER_TEMP/assets" --version "$APP_VERSION"
+          cp samples/packaging/macos/DOWNLOAD-HELP.md "$RUNNER_TEMP/assets/READ-ME-FIRST.md"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: reviewed-desktop-assets
+          path: ${{ runner.temp }}/assets/*
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 3
+
+  verify:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-26
+            arch: arm64
+          - runner: macos-26-intel
+            arch: x64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: reviewed-desktop-assets
+          path: ${{ runner.temp }}/assets
+      - name: Native application startup and persistence without developer tools in PATH
+        run: python3 samples/packaging/macos/desktop-release-tools.py smoke-native --assets "$RUNNER_TEMP/assets" --output "$RUNNER_TEMP/native-qa"
+      - name: Install isolated QA tools outside every application bundle
+        run: npm install --prefix "$RUNNER_TEMP/qa-tools" --ignore-scripts --no-audit --no-fund --registry=https://registry.npmjs.org playwright@1.62.1
+      - name: Start the packaged document workbench on its target architecture
+        env:
+          TARGET_ARCH: ${{ matrix.arch }}
+        run: |
+          ditto -x -k "$RUNNER_TEMP/assets/document-workbench-macos-$TARGET_ARCH.zip" "$RUNNER_TEMP/workbench"
+          node samples/packaging/macos/electron/smoke-packaged.cjs --app "$RUNNER_TEMP/workbench/DocumentWorkbench-macos-$TARGET_ARCH/文档工作台.app" --output "$RUNNER_TEMP/electron-qa" --playwright "$RUNNER_TEMP/qa-tools/node_modules/playwright"
+      - name: Keep a path-free validation summary
+        env:
+          TARGET_ARCH: ${{ matrix.arch }}
+        run: |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP'])
+          native=json.loads((root/'native-qa/native-smoke.json').read_text())
+          electron=json.loads((root/('electron-qa/packaged-'+os.environ['TARGET_ARCH']+'-smoke.json')).read_text())
+          assert native['passed'] and electron['status']=='passed'
+          assert electron['runtime']['arch']==os.environ['TARGET_ARCH']
+          result={'architecture':os.environ['TARGET_ARCH'],'nativeStartupAndPersistence':True,'nativeScope':native['scope'],'packagedWorkbenchWindowAndTextPreview':True,'systemOnlyAppPATH':True,'externalNodeOrXcodeRequired':False,'syntheticDataOnly':True,'sourceCommit':os.environ['GITHUB_SHA']}
+          output=root/'qa-summary';output.mkdir()
+          (output/'validation.json').write_text(json.dumps(result,indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: desktop-qa-${{ matrix.arch }}
+          path: ${{ runner.temp }}/qa-summary/validation.json
+          if-no-files-found: error
+          retention-days: 3
+
+  publish:
+    needs: [build, verify]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: reviewed-desktop-assets
+          path: ${{ runner.temp }}/assets
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: desktop-qa-*
+          path: ${{ runner.temp }}/qa
+      - name: Require both target architecture results
+        run: |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP']);results=[]
+          for arch in ['arm64','x64']:
+              item=json.loads((root/('qa/desktop-qa-'+arch+'/validation.json')).read_text())
+              assert item['architecture']==arch and item['sourceCommit']==os.environ['GITHUB_SHA']
+              assert item['nativeStartupAndPersistence'] and item['packagedWorkbenchWindowAndTextPreview']
+              results.append(item)
+          (root/'assets/desktop-validation.json').write_text(json.dumps({'passed':True,'results':results},indent=2)+'\n')
+          PY
+      - name: Publish only verified files using the short-lived repository token
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 samples/packaging/macos/publish-desktop-release.py --assets "$RUNNER_TEMP/assets" --notes samples/packaging/macos/RELEASE-NOTES.md --version "$APP_VERSION"

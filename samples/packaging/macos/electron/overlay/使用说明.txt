@@ -1,0 +1,27 @@
+文档工作台 / Document Workbench
+版本 0.1.0 · macOS 13 或更新版本
+
+1. 下载适合你的 Mac 的版本：Apple Silicon（M 系列芯片）用 arm64；Intel Mac 用 x64。
+2. 解压 ZIP，将「文档工作台.app」拖到「应用程序」文件夹，然后双击打开。
+3. 点击「打开文档」或「打开工作区」，选择你自己的文件。文本只读，文件不会被修改。
+4. 点击窗口内「使用帮助」查看快捷键和支持范围。
+
+不需要安装 Node.js、Python 或 Xcode。不需要注册账户。不会自动读取原 InkSpace 数据，也没有统计上报或联网服务。
+
+当前版本是本地文档工作台：支持最多 512 KiB 的 UTF-8 文本、Markdown、代码、TeX、CSV 与 Notebook 源文件只读预览。当前只提供文本预览；PDF、Office、图片、视频等类型请用适合的软件打开。不是完整 InkSpace 编辑器合集。
+
+每个窗口独立授权；选择单个文件不会授权相邻文件。正常退出后不保存工作区历史。临时缓存会在正常退出时删除，崩溃后可能留在系统临时文件夹。
+
+签名与首次打开
+本构建使用不含个人身份的 ad hoc 签名，没有 Developer ID 签名或 Apple 公证。macOS 对网上下载的软件可能提示未知开发者或拦截；它不是保证“完全没有确认框”的发行版。只有在确认下载来源与 SHA-256 后，才在 macOS「系统设置 → 隐私与安全性」使用可用的「仍要打开」流程。本软件不移除下载隔离、不关闭 Gatekeeper，也不要求执行绕过系统保护的命令。
+
+运行依赖
+Electron 44.3.0 的浏览器与 Node 运行环境已经包含在 .app 中；用户无需安装开发工具。构建过程使用的 Node/Python/测试工具不会随应用打包。
+
+开源与许可
+应用源代码采用 MIT；Electron 与 Chromium 第三方许可随应用保留。右键 .app →「显示包内容」→ Contents/Resources/Licenses 可查看。
+
+English
+Extract the ZIP for your Mac architecture, move Document Workbench.app to Applications, and open it. No Node.js or Xcode is needed. Choose your own files; previews are read-only. The app uses a fresh temporary profile and does not load the full application's data.
+
+This build has an ad hoc signature without Developer ID or notarization. macOS can warn or block an Internet download. Verify the release source and SHA-256, then use the system's Open Anyway flow only if offered. The app does not disable Gatekeeper or remove quarantine.

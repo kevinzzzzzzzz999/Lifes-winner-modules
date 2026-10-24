@@ -4,6 +4,12 @@ Reusable parts of InkSpace, separated from the integrated notes application.
 
 这里保存从 InkSpace（人生赢家）拆出的独立功能库。完整软件另保留在同一 GitHub 账号的 `inkspace` 仓库中。你可以只取需要的包，也可以组合使用。
 
+## 普通用户：直接使用 Mac 应用
+
+本仓库的 Releases 发行区提供书写画板、偏好方案编辑器和文档工作台的应用下载，使用者无需安装开发工具。选择应用 ZIP，解压后将其中的 `.app` 放入“应用程序”。芯片选择、用途、保存与首次系统确认见[下载与使用指南](samples/packaging/macos/DOWNLOAD-HELP.md)。
+
+对应的[公开构建配方](samples/packaging/macos/README.md)记录了源码到应用的发行适配；个人资料、私人配置、开发缓存和个人签名身份不属于发行内容。下面的库/组件入口面向需要集成源码的开发者。
+
 ## 选择功能
 
 - **JavaScript / Node.js**：白板数据、笔迹、合并、PDF、Office、Notebook、文件存储、搜索、笔记交换、学习、任务日历、浏览器工具、翻译、媒体与数学计算。包目录见 [`packages/`](packages/)，准确的API、依赖和例子见各包 README。

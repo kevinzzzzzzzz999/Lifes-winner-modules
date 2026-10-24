@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Application Shell Demo</title><link rel="stylesheet" href="styles.css"></head>
+<body><header><div><strong>Application Shell</strong><span>Local workspace · 本地工作区</span></div><nav><button id="open-file">Open document / 打开文档</button><button id="open-folder">Open workspace / 打开工作区</button><button id="new-window">New window</button><button id="quick-switch">⌘ / Ctrl K</button><button id="home">Home</button></nav></header>
+<p id="status" role="status">Choose a document or workspace to begin. 选择文档或文件夹开始。</p>
+<section id="welcome"><h1>Your files, in a focused workspace.</h1><p>Open a folder to browse documents, or choose one file. Text previews are read-only; files stay on your device.</p><p>选择文件夹浏览文档，或单独打开一个文件。文本只读预览，文件保留在本机。</p><button id="continue" hidden>Return to workspace / 返回工作区</button></section>
+<main id="workspace" hidden><aside><h2 id="workspace-name">Workspace</h2><button id="up" hidden>↑ Parent folder / 上一级</button><div id="files"></div></aside><article><div id="tabs" role="tablist" aria-label="Open documents"></div><h2 id="document-name">Choose a document / 选择文档</h2><pre id="preview"></pre></article></main>
+<dialog id="switcher"><form method="dialog"><button id="switch-close" aria-label="Close quick switch">×</button></form><h2>Quick switch / 快速切换</h2><input id="switch-query" aria-label="Filter open documents" placeholder="Filter open documents…"><div id="switch-results"></div></dialog>
+<footer>Read-only shell demo · UTF-8 previews up to 512 KiB · Editors can be connected through the exported host API.</footer><script src="renderer.js"></script></body></html>

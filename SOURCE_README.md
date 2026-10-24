@@ -13,6 +13,16 @@ Reusable parts of InkSpace, separated from the integrated notes application.
 
 完整功能清单和边界见 [FEATURES.md](FEATURES.md)，共覆盖 63 个真实功能组。已提取的核心代码与需要平台宿主的界面分别标明；没有把所有功能都宣称为现成独立安装程序。
 
+## 三个独立使用入口 / Three standalone starters
+
+| 功能 | 库与说明 | 独立运行示例 |
+| --- | --- | --- |
+| 书写与演示辅助 | [InkSpaceWritingAids](swift/Documentation/InkSpaceWritingAids/README.md) | [WritingAidsDemo](samples/writing-aids/README.md) |
+| 语言、布局、工具栏与操作偏好 | [InkSpacePreferences](swift/Documentation/InkSpacePreferences/README.md) | [InkSpacePreferencesDemo](samples/preferences/README.md) |
+| 首页、文档路由和多窗口应用壳 | [application-shell](packages/application-shell/README.md) | 包内 Electron 示例，按该包说明启动 |
+
+它们不需要完整 InkSpace。Swift 示例需要 macOS 和 Xcode/Swift 工具链；应用壳示例需要 Node.js 和声明的 Electron 依赖。发布的独立 Swift ZIP 自带 `Example/`，可以直接按随包说明启动；克隆完整仓库时使用上表 `samples/` 入口。示例采用合成内容与独立存储，不读取原 App 的笔记、账号和偏好。Apple Pencil、系统随手写和系统协议登记等能力按包内平台说明接入。
+
 ## JavaScript 使用
 
 需要 Node.js 24.15 或更新版本。下载或克隆本仓库后：

@@ -19,5 +19,7 @@ __pycache__/
 *.ipa
 *.zip
 .private/
+.codex/
+.agents/
 
 .swiftpm/

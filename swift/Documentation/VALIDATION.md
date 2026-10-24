@@ -2,7 +2,7 @@
 
 日期：2026-10-24。使用Xcode 27.1所带Swift工具链；测试内容全部为临时合成资料。
 
-## 通过的检查
+## 首次16产品抽取通过的检查
 
 - 仓库根和`swift/`子目录的SwiftPM manifest均通过`dump-package`。16个library products、17个targets（含测试target）的名称、依赖和resources配置一致，根target路径明确指向`swift/Sources/`。
 - `swift test --package-path swift`：20项测试，0失败。
@@ -39,3 +39,7 @@
 macOS 13、iOS/iPadOS 18是包声明的最低平台；本次没有逐一运行最低系统版本。Apple框架依赖不代表Linux/Windows兼容。
 
 没有进行真实Apple Pencil、大范围白板套索、iCloud跨设备、Safari分享扩展、真实AI账号请求或Keychain运行测试。完整App中仍耦合的功能见[原生功能目录](../FEATURES.md)，不计入这16个独立产品的已验证范围。
+
+## 后续新增产品
+
+InkSpacePreferences与InkSpaceWritingAids的独立示例、行为测试、平台编译和公开下载验收单独记录在模块根目录VALIDATION.md及公开门户DOWNLOAD-CHECKS.md。上面的16产品、20项测试为首次抽取记录，不冒充新增产品验收。

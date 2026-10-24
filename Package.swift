@@ -20,7 +20,9 @@ let package = Package(
         .library(name: "InkSpaceStorage", targets: ["InkSpaceStorage"]),
         .library(name: "InkSpaceOCR", targets: ["InkSpaceOCR"]),
         .library(name: "InkSpaceExcelPictures", targets: ["InkSpaceExcelPictures"]),
-        .library(name: "InkSpaceScanPDF", targets: ["InkSpaceScanPDF"])
+        .library(name: "InkSpaceScanPDF", targets: ["InkSpaceScanPDF"]),
+        .library(name: "InkSpacePreferences", targets: ["InkSpacePreferences"]),
+        .library(name: "InkSpaceWritingAids", targets: ["InkSpaceWritingAids"])
     ],
     targets: [
         .target(name: "InkSpaceTextHistory", path: "swift/Sources/InkSpaceTextHistory"),
@@ -39,6 +41,8 @@ let package = Package(
         .target(name: "InkSpaceOCR", path: "swift/Sources/InkSpaceOCR"),
         .target(name: "InkSpaceExcelPictures", path: "swift/Sources/InkSpaceExcelPictures"),
         .target(name: "InkSpaceScanPDF", dependencies: ["InkSpaceStorage"], path: "swift/Sources/InkSpaceScanPDF"),
+        .target(name: "InkSpacePreferences", path: "swift/Sources/InkSpacePreferences"),
+        .target(name: "InkSpaceWritingAids", path: "swift/Sources/InkSpaceWritingAids"),
         .testTarget(name: "InkSpaceModuleTests", dependencies: ["InkSpaceTextHistory", "InkSpaceOutline", "InkSpaceSubtitles", "InkSpacePaths", "InkSpaceGeometry", "InkSpaceStudy", "InkSpaceChecklist", "InkSpacePDFRecords", "InkSpaceMediaTimeline", "InkSpaceAI", "InkSpaceWebClips", "InkSpaceSpeechText", "InkSpaceStorage", "InkSpaceOCR", "InkSpaceExcelPictures", "InkSpaceScanPDF"], path: "swift/Tests/InkSpaceModuleTests")
     ]
 )

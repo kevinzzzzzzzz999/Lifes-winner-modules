@@ -1,6 +1,6 @@
 # 原生功能与独立模块范围
 
-这个目录提供16个可分别导入的Swift库产品；完整原生软件的功能按下表逐组核对。状态中的「部分抽取」表示只有列出的逻辑已经形成独立库，其余代码仍保留在完整应用，需要进一步定义宿主界面、会话或存储接口。没有把完整App复制进单个target，也没有把未编译的界面目录算作独立软件。
+这个目录提供18个可分别导入的Swift库产品；完整原生软件的功能按下表逐组核对。状态中的「部分抽取」表示只有列出的逻辑已经形成独立库，其余代码仍保留在完整应用，需要进一步定义宿主界面、会话或存储接口。没有把完整App复制进单个target，也没有把未编译的界面目录算作独立软件。
 
 | 原生功能组 | 已可独立复用的产品/范围 | 仍在完整App中的部分及依赖原因 |
 |---|---|---|
@@ -11,7 +11,7 @@
 | 打印框、分块与整页布局 | `InkSpaceGeometry`的PrintPageGeometry | `BoardPrintExporter`绘制完整白板、公式、图片和笔迹，需要宿主提供完整渲染/资源接口 |
 | Apple Pencil书写、笔刷、高亮、橡皮 | 保留完整App源码 | NativeBoardCanvas、调色板和笔迹生命周期深度依赖UIKit/PencilKit/BoardStore，尚无独立画布库产品 |
 | 套索选择、移动、缩放、复制、撤销 | 可复用几何中的视口/代际验证 | 实际笔迹选择、系统Undo及保存跨画布生命周期，仍与NativeBoardCanvas和BoardStore关联；两万笔稳定性问题没有因拆包自动修复 |
-| 书写辅助、手写输入设置、手势和工具栏 | 保留完整App源码 | `BoardWritingAid*`、`NativePaletteSettings`和工具栏视图需要PencilKit/UIKit及App设置路由 |
+| 书写辅助、手写输入设置、手势和工具栏 | `InkSpaceWritingAids`的几何、激光、高亮、胶带/文字模型及独立演示；`InkSpacePreferences`的手势、工具栏、笔预设和持久化 | 原生PKStroke应用、Pencil事件接线与完整Canvas由宿主负责；Scribble适配依赖UIKit和系统手写能力 |
 | 白板合并、子白板与来源定位 | 保留完整App源码 | `BoardMerge*`、ChildBoards及Store事务需要BoardDocument、笔迹/资源复制和冲突保存协议 |
 | 笔迹回放 | 保留完整App源码 | `InkReplay*`需要白板笔迹归档、时间序列及Canvas显示宿主，未伪装为字幕或媒体时间线模块 |
 | PDF图层、批注记录、删除与冲突投影 | `InkSpacePDFRecords` | PDFKit显示、原生书写覆盖层、文件回写仍在PDFWorkspace和Documents路径 |
@@ -29,7 +29,7 @@
 | 音视频工程、剪辑时间线、转场/混音参数 | `InkSpaceMediaTimeline`提供模型校验、时间计算和字幕解析 | AVFoundation合成、导入、预览、导出进度和效果UI仍在MediaEditor各服务中，需要公开资源/渲染会话边界 |
 | SRT/VTT/TXT字幕与时间查询 | `InkSpaceSubtitles` | AVPlayer绑定、字幕关联文件CAS持久化和播放器视图仍与BoardVideoRequest/资料库绑定 |
 | 网页剪藏、URL策略、链接文本 | `InkSpaceWebClips` | 内置WKWebView浏览器、历史/标签、网页权限和文件下载不是这个模块的内容 |
-| Safari分享扩展 | 完整仓库的`ios/OptionalShareExtension/`提供历史源码和手动集成说明 | 需要iOS Share Extension target/宿主嵌入及真实Safari验收，未列入16个编译产品 |
+| Safari分享扩展 | 完整仓库的`ios/OptionalShareExtension/`提供历史源码和手动集成说明 | 需要iOS Share Extension target/宿主嵌入及真实Safari验收，未列入Swift库产品 |
 | 浏览器扩展脚本/样式与本地存储 | 保留完整App源码 | BrowserExtensionHost依赖WKWebView、用户脚本世界、下载/授权流程和App状态，需要独立宿主协议 |
 | 导图AI、截图翻译及多服务请求 | `InkSpaceAI`提供客户端、格式校验、可注入翻译transport及Keychain接口 | AIWorkspaceView、ChatGPTWebPanel/Session及临时白板截图依赖UI、WebView和BoardStore；真实第三方账号行为未验收 |
 | 文件授权、相对路径与目录安全 | `InkSpacePaths` | 系统文件/文件夹选择器和书签授权由宿主UI负责 |
@@ -37,7 +37,7 @@
 | 文件管理、最近浏览、目录切换 | 底层读写/路径模块可复用 | DocumentLibrary/VaultFileManagement、RecentBrowse和资料库侧栏包含App路由、授权与窗口状态，未作为独立文件管理App |
 | 备份、恢复、回收与自动保存 | 底层协调读写在`InkSpaceStorage` | LocalBoardBackupStore、BackupArchive、BoardBackupController及后台生命周期依赖BoardDocument、资源清单、App调度和恢复界面 |
 | iPad多窗口、iPhone布局与窗口恢复 | 保留完整App源码 | WorkspaceSceneRegistry/Persistence、iPad/iPhone各视图需要SwiftUI/UIKit scene环境和App会话所有权，不是无界面的通用库 |
-| 设置、本地化、诊断和辅助功能 | 资源/源码保留在完整App | 依赖宿主Bundle、UserDefaults命名空间和界面树，未声明独立配置/诊断产品 |
+| 设置、本地化、诊断和辅助功能 | `InkSpacePreferences`提供本地化、布局、工具栏/手势/播放设置及显式独立存储，附macOS设置示例 | 原App的完整设置路由和辅助功能界面树由宿主装配；诊断另有Node的file-storage.diagnostics |
 
 ## 实际可独立使用的含义
 

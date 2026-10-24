@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/application-shell",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Independent document and workspace shell: per-window permissions, reliable system-open routing, tabs and a runnable Electron demo. 独立文档与工作区应用壳。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "test",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ]
+}

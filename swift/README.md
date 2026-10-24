@@ -1,6 +1,6 @@
 # InkSpace Swift Modules
 
-16个独立库产品，每个产品是单独Swift target，可以只把所需产品加入自己的软件。它们不依赖完整App的BoardStore、主窗口或私人资料。它们是供开发者集成的库，不是16个可双击启动的成品App；完整应用的界面/硬件流程保留在完整仓库。
+18个独立库产品，每个产品是单独Swift target，可以只把所需产品加入自己的软件。它们不依赖完整App的BoardStore、主窗口或私人资料。它们是供开发者集成的库，不是18个可双击启动的成品App；完整应用的界面/硬件流程保留在完整仓库。
 
 最低声明平台为macOS 13和iOS/iPadOS 18，Swift 5.9及以上。Apple框架模块没有声明Linux/Windows支持。
 
@@ -24,6 +24,8 @@
 | [InkSpaceOCR](Documentation/InkSpaceOCR/README.md) | 本机PDF/图片文字识别 | 无 |
 | [InkSpaceExcelPictures](Documentation/InkSpaceExcelPictures/README.md) | XLSX内嵌图片读取 | 无 |
 | [InkSpaceScanPDF](Documentation/InkSpaceScanPDF/README.md) | 多页PDF汇编和安全导出 | InkSpaceStorage |
+| [InkSpacePreferences](Documentation/InkSpacePreferences/README.md) | 独立语言、布局、工具栏与操作偏好 | 无 |
+| [InkSpaceWritingAids](Documentation/InkSpaceWritingAids/README.md) | 辅助几何、演示轨迹、胶带与文字输入 | 无 |
 
 ## 添加到自己的软件
 
@@ -44,3 +46,7 @@ let nodes = try NoteOutline.parse(data)
 在仓库根目录运行`swift test`；也可运行`swift test --package-path swift`。测试target只使用普通`import`，验证公开API可被其它软件使用。完整验证范围见[验证记录](Documentation/VALIDATION.md)，未拆分的App流程和原因见[原生功能目录](FEATURES.md)。
 
 源代码和资源不包含开发者账号、API密钥、设备文件或课程资料。第三方云服务调用由集成方提供自己的账号与密钥；本次测试没有进行真实服务调用或Keychain读写。
+
+## 两个可启动的示例
+
+克隆完整模块仓库后，分别按 [设置示例](../samples/preferences/README.md) 与 [书写示例](../samples/writing-aids/README.md) 启动。独立Swift下载ZIP自带Example目录，可按各包根README运行，不需要完整InkSpace。示例使用合成内容；系统Pencil和Scribble能力需要受支持的iPad/系统环境。

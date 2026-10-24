@@ -20,7 +20,9 @@ let package = Package(
         .library(name: "InkSpaceStorage", targets: ["InkSpaceStorage"]),
         .library(name: "InkSpaceOCR", targets: ["InkSpaceOCR"]),
         .library(name: "InkSpaceExcelPictures", targets: ["InkSpaceExcelPictures"]),
-        .library(name: "InkSpaceScanPDF", targets: ["InkSpaceScanPDF"])
+        .library(name: "InkSpaceScanPDF", targets: ["InkSpaceScanPDF"]),
+        .library(name: "InkSpacePreferences", targets: ["InkSpacePreferences"]),
+        .library(name: "InkSpaceWritingAids", targets: ["InkSpaceWritingAids"])
     ],
     targets: [
         .target(name: "InkSpaceTextHistory"),
@@ -39,6 +41,8 @@ let package = Package(
         .target(name: "InkSpaceOCR"),
         .target(name: "InkSpaceExcelPictures"),
         .target(name: "InkSpaceScanPDF", dependencies: ["InkSpaceStorage"]),
+        .target(name: "InkSpacePreferences"),
+        .target(name: "InkSpaceWritingAids"),
         .testTarget(name: "InkSpaceModuleTests", dependencies: ["InkSpaceTextHistory", "InkSpaceOutline", "InkSpaceSubtitles", "InkSpacePaths", "InkSpaceGeometry", "InkSpaceStudy", "InkSpaceChecklist", "InkSpacePDFRecords", "InkSpaceMediaTimeline", "InkSpaceAI", "InkSpaceWebClips", "InkSpaceSpeechText", "InkSpaceStorage", "InkSpaceOCR", "InkSpaceExcelPictures", "InkSpaceScanPDF"])
     ]
 )

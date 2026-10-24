@@ -117,8 +117,10 @@
         },
         {
           "path": "main/onenote-pdf.cjs",
-          "sha256": "bf120cbabaed8713f7e8511f17de27b61eade81eaffaf29635dbb6e8d0e37b79",
-          "adaptation": "relative-imports-only"
+          "sha256": "fe6448eaca6a3e8c79da26d7b34c8f0f2f3d310230095da19cbbfb66f2390b1e",
+          "adaptation": "relative-imports-only",
+          "extractionSnapshotSha256": "bf120cbabaed8713f7e8511f17de27b61eade81eaffaf29635dbb6e8d0e37b79",
+          "publicSourceNote": "Display-name metadata only: Life's winner. Extracted behavior is unchanged; extractionSnapshotSha256 retains the original extraction reference."
         },
         {
           "path": "main/onenote-geometry-guard.cjs",
@@ -481,8 +483,10 @@
         },
         {
           "path": "main/onenote-pdf.cjs",
-          "sha256": "bf120cbabaed8713f7e8511f17de27b61eade81eaffaf29635dbb6e8d0e37b79",
-          "adaptation": "relative-imports-only"
+          "sha256": "fe6448eaca6a3e8c79da26d7b34c8f0f2f3d310230095da19cbbfb66f2390b1e",
+          "adaptation": "relative-imports-only",
+          "extractionSnapshotSha256": "bf120cbabaed8713f7e8511f17de27b61eade81eaffaf29635dbb6e8d0e37b79",
+          "publicSourceNote": "Display-name metadata only: Life's winner. Extracted behavior is unchanged; extractionSnapshotSha256 retains the original extraction reference."
         },
         {
           "path": "main/onenote-geometry-guard.cjs",
@@ -511,8 +515,10 @@
         },
         {
           "path": "main/pdf-translation-export.cjs",
-          "sha256": "d94bb004b06f22806c3fe193dfefa6d2bd2d38db07d482fe5083fc00ffee7801",
-          "adaptation": "relative-imports-only"
+          "sha256": "eda65beb6a714a96c76ec04e704469704d1891d6c6573289caf40e32a96db6f0",
+          "adaptation": "relative-imports-only",
+          "extractionSnapshotSha256": "d94bb004b06f22806c3fe193dfefa6d2bd2d38db07d482fe5083fc00ffee7801",
+          "publicSourceNote": "Display-name metadata only: Life's winner. Extracted behavior is unchanged; extractionSnapshotSha256 retains the original extraction reference."
         },
         {
           "path": "main/pdf-layer-service.cjs",
@@ -1311,8 +1317,10 @@
       "sourceFiles": [
         {
           "path": "main/note-exchange.cjs",
-          "sha256": "6981eb02ee680c3d0acaca53b776146642bf2d3e3a3a30403ccac9df9bc8c883",
-          "adaptation": "relative-imports-only"
+          "sha256": "005921ae7b5978f962f2429f65691d2c9c52c2aaaa344d2f28b629911073e951",
+          "adaptation": "relative-imports-only",
+          "extractionSnapshotSha256": "6981eb02ee680c3d0acaca53b776146642bf2d3e3a3a30403ccac9df9bc8c883",
+          "publicSourceNote": "Display-name metadata only: Life's winner. Extracted behavior is unchanged; extractionSnapshotSha256 retains the original extraction reference."
         },
         {
           "path": "main/errors.cjs",
@@ -2283,7 +2291,7 @@
         },
         {
           "path": "desktop/src/main/main.cjs",
-          "sha256": "e7906368ba9551d966f38d62997b1a50c6e6dc879f62ce82eadc6a9ca3870cbf",
+          "sha256": "a3a28b245eb87573c09ec9a5539947473f73906d594c00e8759c79748eed05a1",
           "symbols": [
             "createWindow",
             "handler",
@@ -2293,7 +2301,7 @@
           ],
           "adaptation": "Standalone example adapts the real lifecycle and sender-validated IPC pattern, internal asset protocol and restrictive BrowserWindow settings. Domain services are explicit host integration points.",
           "extractionSnapshotSha256": "8ccfea7f7ccac7cd0f5f3c56051bf0b85bcd3a1bc3b1cdcb85b5f6c85c2e27c4",
-          "publicSourceNote": "Display-brand update to life'winner; extracted behavior is unchanged."
+          "publicSourceNote": "Display-brand update to Life's winner; extracted behavior is unchanged."
         },
         {
           "path": "desktop/src/preload/preload.cjs",
@@ -2308,7 +2316,7 @@
         },
         {
           "path": "desktop/src/renderer/App.tsx",
-          "sha256": "df28e4a9db139e254b993c249e3115d39c5305fff58d22a96b6000732e7424a2",
+          "sha256": "da7c93025343dfb09d4564aa0406487046f35428e42c3b2277852e233d2f7c89",
           "symbols": [
             "open",
             "external request pump",
@@ -2316,7 +2324,7 @@
           ],
           "adaptation": "DocumentTabs adapts duplicate-focus and request-epoch semantics. Demo uses a plain read-only preview, not the original advanced editor.",
           "extractionSnapshotSha256": "d0f1f008c314bfd749e4d380bebb4015c8c70015b2249b85c6f42abd7b0f9529",
-          "publicSourceNote": "Display-brand update to life'winner; extracted behavior is unchanged."
+          "publicSourceNote": "Display-brand update to Life's winner; extracted behavior is unchanged."
         },
         {
           "path": "ios/InkSpace/InkSpaceApp.swift",

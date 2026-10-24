@@ -3,8 +3,8 @@
   "auditDate": "2026-10-24",
   "auditBaseCommit": "1fa5bf5692570c0e86e757ab623d46433b5ec79b",
   "scope": "公开的桌面105/原生106.3基础源码与下载模块；不代表后来私有开发版本自动覆盖。",
-  "completeSourceRepository": "inkspace",
-  "completeSourceArchive": "life-winner-source-2026-10-24-r2.zip",
+  "completeSourceRepository": "Lifes-winner",
+  "completeSourceArchive": "Lifes-winner-source-2026-10-24-r3.zip",
   "featureGroupCount": 63,
   "allOriginalFeaturesExtracted": false,
   "allDownloadsAreReadyToRunApps": false,
@@ -2081,5 +2081,5 @@
     "H03",
     "H05"
   ],
-  "displayBrandRevision": "2026-10-24-life-winner"
+  "displayBrandRevision": "2026-10-24-Lifes-winner"
 }

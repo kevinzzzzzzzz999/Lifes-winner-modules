@@ -1,259 +1,259 @@
 {
   "releaseDate": "2026-10-24",
-  "revision": "2026-10-24-r5",
+  "revision": "2026-10-24-r6",
   "archives": [
     {
       "file": "node-application-shell.zip",
-      "bytes": 43546,
-      "sha256": "0b527bbda9d766d1a34ba0ec0911b5c26c5d4fb0c26b3792c193c6ea6b1594ae",
+      "bytes": 43560,
+      "sha256": "b64d56ef2210215a2153399adf19b49ff5224814a079b32ad0b5467726e30f3e",
       "members": 25
     },
     {
       "file": "node-board-ink.zip",
-      "bytes": 54279,
-      "sha256": "9de147a1f67f1f1228f14688240fa5abfe46c711797b44b37d76ebc43c34b843",
+      "bytes": 54284,
+      "sha256": "5bccd2d965f6fa325eeddf068c2d494912ac598213889e6ccfebafade04c5905",
       "members": 41
     },
     {
       "file": "node-board-merge.zip",
-      "bytes": 119702,
-      "sha256": "3643764dede96e2cbcc10478dcae4bf2b2bba9f689631ab50edcaeb42d0bd776",
+      "bytes": 119709,
+      "sha256": "8b0cbadcf3b94e8b8fe61e108c65f8792312d1a8f65ec2e174089a7859e4faff",
       "members": 52
     },
     {
       "file": "node-board-model.zip",
-      "bytes": 144282,
-      "sha256": "db26173f1296a8259f5a1022e5742c6457ae8780d6b4026633b81ba89180ded7",
+      "bytes": 144286,
+      "sha256": "235c54aed8b038134047518c2d888d9affd6fb86f8a800469fd64615575b0509",
       "members": 57
     },
     {
       "file": "node-browser-utilities.zip",
-      "bytes": 70186,
-      "sha256": "69aa4bc6aaae810be126030b11da53e9563fddad50836b60dc0fc12363a27285",
+      "bytes": 70190,
+      "sha256": "e3d699c767af9f9611d51523a3bff68ace870315d2ccffc8ea02a6934b005a78",
       "members": 38
     },
     {
       "file": "node-document-workspace.zip",
-      "bytes": 79493,
-      "sha256": "60cd00ee5ed4a01a13695450bac216272270b9208f742589b0253692b18bf2bf",
+      "bytes": 79498,
+      "sha256": "118530be225e3a6240b1b3eb2d84c614c0864dfcd565b74966aca0ed5b319e85",
       "members": 59
     },
     {
       "file": "node-file-storage.zip",
-      "bytes": 131572,
-      "sha256": "69b4b3718e3a31ea5e4113e5e748895c10dcc557a9ff25b51da1ca897936a41d",
+      "bytes": 131576,
+      "sha256": "ef4f8dacc43e489ed14538fef9d3e050edc92fac56ecc9fffdf7e33973ae256d",
       "members": 55
     },
     {
       "file": "node-knowledge-search.zip",
-      "bytes": 69752,
-      "sha256": "971ca3dbe2d60753d8e475ba94ea40f2c31b759aa0338a289bea2d3869dd609c",
+      "bytes": 69758,
+      "sha256": "5ff5f24c3359077f3aed36f6796df9408e654ec49924b7cd39fdacc74dcd66cc",
       "members": 35
     },
     {
       "file": "node-math-lab.zip",
-      "bytes": 103248,
-      "sha256": "d9ea0f7c597df7fc782ec49a890c684f89422ee1d8fa5b2cfed1c139d01f87bc",
+      "bytes": 103253,
+      "sha256": "e91927069d959126774466beac8a44ea9407358f397a6a4e00718f5c0710adaa",
       "members": 20
     },
     {
       "file": "node-media-tools.zip",
-      "bytes": 54023,
-      "sha256": "fa8c77e50cc0366923d7f1252d091025c35ccfaad8d9eb2c7db2f76af573498f",
+      "bytes": 54028,
+      "sha256": "8c5976f55a11a3d425e31a90711d6bed0681a1b76241e42419696d20eb594415",
       "members": 31
     },
     {
       "file": "node-note-exchange.zip",
-      "bytes": 101173,
-      "sha256": "b69889834f453610d794901e35cbb2eac554f72ad3c8864a758290b2c5641bc9",
+      "bytes": 101188,
+      "sha256": "c8a3b0183746a938352c383464f439263b806f7a3caa5dcd9f54e6c97c9c5afd",
       "members": 41
     },
     {
       "file": "node-notebook-data.zip",
-      "bytes": 760883,
-      "sha256": "aab9713cd3e37aa8811f7ecde69f57d6e9676f0dec5d5a7f57bc0c9539671438",
+      "bytes": 760889,
+      "sha256": "16dc40c1e4ea4203eaa2e9ae95631298e88f0266d951396e2f3d5c4b6cf625c8",
       "members": 53
     },
     {
       "file": "node-notebook-runtime.zip",
-      "bytes": 70836,
-      "sha256": "46828bd7b43e4dfba61faf1a9ca21a1d5c6030bf4c64c3f1a416d426b6cfdb41",
+      "bytes": 70842,
+      "sha256": "e6a3971258a1d71c47d265cb83c70f04f0cd59b741fed812817e8ab106992fb4",
       "members": 37
     },
     {
       "file": "node-ocr-tools.zip",
-      "bytes": 27183,
-      "sha256": "9dcc9128b8ca83d9a2b6fa34f32091e4f21b208beac7beea95375e28daacc45f",
+      "bytes": 27189,
+      "sha256": "5a04ac5c80cc9be67ed0306e3b42844c36b558b32d8ef3912157ecc9de5448f6",
       "members": 15
     },
     {
       "file": "node-office-documents.zip",
-      "bytes": 62689,
-      "sha256": "1a5cc47962f616824721b6673ca1885c068a642d679b5b1bb8ee443c3517bc18",
+      "bytes": 62693,
+      "sha256": "3933e83041d028a3e5ac9f70b09cc32de057843a2706807c7a2fd388517e320f",
       "members": 28
     },
     {
       "file": "node-pdf-annotations.zip",
-      "bytes": 35694,
-      "sha256": "73c3b5d8ef13edb3605c92ed7faf25f53d44f07a76633cb4e4b41a0949a3cd58",
+      "bytes": 35700,
+      "sha256": "6f5c9564916f123ce43369885458912d7028002defa868a1a416879a46cfd47f",
       "members": 19
     },
     {
       "file": "node-pdf-tools.zip",
-      "bytes": 96359,
-      "sha256": "ebf57bfae84a1010d00b900ebf00ac9e40ea6598c325c27d09a3184bf2a6abf4",
+      "bytes": 96402,
+      "sha256": "f11799ddc9e69461cd81b66b3a3359e460640948b34c4c090c509519218d1370",
       "members": 36
     },
     {
       "file": "node-study-tools.zip",
-      "bytes": 82810,
-      "sha256": "14283815a23f350307a93827a0a9ed9f7f66fe881d750e7df2ede983f24ff70a",
+      "bytes": 82817,
+      "sha256": "bd613eba4ceaf54656dfc7d8d7a57e036d8b8407fbadac9cf460e380599bfd28",
       "members": 39
     },
     {
       "file": "node-task-calendar.zip",
-      "bytes": 97435,
-      "sha256": "f765d471d40b6d0c59523db118cae20173e27a31f0bc13cd1a76b7d1ed175bb2",
+      "bytes": 97441,
+      "sha256": "d2580ec6b645b13faa5bff9ca8a53a67ee2534b7dd48ddb05eee3b9745ca59a4",
       "members": 44
     },
     {
       "file": "node-translation-tools.zip",
-      "bytes": 22673,
-      "sha256": "2eb7f4b02fdbba27ba085219da43d892d2d26f839428fe678b30b289c42a6220",
+      "bytes": 22680,
+      "sha256": "cc391e8ed4cc82944d742250a06ff0f81e246024a8cb0b8d7b85ffd30b2161d3",
       "members": 9
     },
     {
       "file": "obsidian-companion.zip",
-      "bytes": 47001,
-      "sha256": "dd5c3f19b6b36a774d147f0c1233e2e8b3b28896ba8661321eb3a4a8cf6e09f2",
+      "bytes": 47097,
+      "sha256": "bb428efc4b78dc6df1bd4bd87dc50bcc0ec8ed80c1667c20a499520ca803808d",
       "members": 7
     },
     {
       "file": "react-ui-components.zip",
-      "bytes": 630035,
-      "sha256": "e40debdfd69638e85f1eeec37941d326643442a934be02f3db2aa19e3b3f7a2c",
+      "bytes": 630119,
+      "sha256": "c957e735e8647230a7cc2ab9b360f37b3b80d0903efbd227529311664175d547",
       "members": 217
     },
     {
       "file": "safari-share-clipper.zip",
-      "bytes": 6550,
-      "sha256": "8b31e15ee32b40d24af7d380922509606dbc227d8e1682310cdc10e8d1dfcae6",
+      "bytes": 6567,
+      "sha256": "d11da87b2592f641025364ce327e21724812b3e3d068d1ffb404483dfc4430ce",
       "members": 5
     },
     {
       "file": "swift-InkSpaceAI.zip",
-      "bytes": 11058,
-      "sha256": "edb633f813d25bb8375650cd2f21947799514f0aa498ae385298d59c679aca43",
+      "bytes": 11076,
+      "sha256": "71f9e0996341d5486681b9e9517b1ad31f1ececfffc1d81e8acedf40349999da",
       "members": 6
     },
     {
       "file": "swift-InkSpaceChecklist.zip",
-      "bytes": 8259,
-      "sha256": "abd59dd4031a49fc3f985680d8f9c8fb2325786174e8f1b18ec2fe9d459225eb",
+      "bytes": 8272,
+      "sha256": "162cb2e0d012d46eb7736b3b3234a2fd82f5dc17c981d38a97d24ff93d299e24",
       "members": 5
     },
     {
       "file": "swift-InkSpaceExcelPictures.zip",
-      "bytes": 9754,
-      "sha256": "3d29a9798a1dedbb3007221051fc04c47b7d6c05ce27f422c507a8104d9100b4",
+      "bytes": 9767,
+      "sha256": "93120a32580700607e06edfb236677953c61b5b8e3c4659004fe928a6f1a2f72",
       "members": 4
     },
     {
       "file": "swift-InkSpaceGeometry.zip",
-      "bytes": 10304,
-      "sha256": "66c0ef64ba91b5d95b0d506914d44f6f3aa6517461fe59a6d61a21b1620c53ad",
+      "bytes": 10317,
+      "sha256": "bb81b1c13fe4c220b47f8d0d1819a04a8ac298f20eb71b51a543ebf3ffcad376",
       "members": 6
     },
     {
       "file": "swift-InkSpaceMediaTimeline.zip",
-      "bytes": 9014,
-      "sha256": "9b57cb6e954568cfa1718b57d76cb92da08888a301d4b9a0fb452d75031b79f7",
+      "bytes": 9026,
+      "sha256": "a9ee12e25a944b7b480c87f2dbe399cc3a064eaed3056ae2aea731208709749b",
       "members": 5
     },
     {
       "file": "swift-InkSpaceOCR.zip",
-      "bytes": 9825,
-      "sha256": "a21cae79e7035965d57a2cc1711c26918a85372bdfb7f56d64e230b2ccdd7983",
+      "bytes": 9842,
+      "sha256": "3072bea2d89bfe693cb9eba5686950b51a03d8242015dc3ef210a9a5e19662c3",
       "members": 4
     },
     {
       "file": "swift-InkSpaceOutline.zip",
-      "bytes": 5303,
-      "sha256": "32df9386411f0dc29d8c1a7f973b678f4b5b5efcaedd164ecb866c766419e0f3",
+      "bytes": 5316,
+      "sha256": "f01b0c4d08d6c6907e23f553d6001d485dae79c115f1387328f3c18a54d1dffd",
       "members": 4
     },
     {
       "file": "swift-InkSpacePDFRecords.zip",
-      "bytes": 13799,
-      "sha256": "8dde814045f0f102ff83622163b257f3bb491a8df34cc109c15dc31929feb656",
+      "bytes": 13806,
+      "sha256": "9156062bd0f63a8d1ecc21239faf4baf71166d0b8ab7bd9bc3478453dd4ca6a4",
       "members": 7
     },
     {
       "file": "swift-InkSpacePaths.zip",
-      "bytes": 4007,
-      "sha256": "4f353fcbb01d1c8541064f6cda41915cc7a68756dec5fa7115afbebfad5ae197",
+      "bytes": 4020,
+      "sha256": "249c64affa1e42c3016a672feb123bb659dbb809b82f7096b2952a6cf36f367f",
       "members": 5
     },
     {
       "file": "swift-InkSpacePreferences.zip",
-      "bytes": 31490,
-      "sha256": "07bbb220c5668dc71721aacb2af61dd2e88856ec19533a7a091cc9a8abdfd0c0",
+      "bytes": 31506,
+      "sha256": "47b18dccdb9619d1bb70c92d7f9fd6c79122b744212737556958327289fcf3b6",
       "members": 19
     },
     {
       "file": "swift-InkSpaceScanPDF.zip",
-      "bytes": 9798,
-      "sha256": "b352be4749d8f33929afcf6104ec93d559b17bf8eb478dc461afe3d65bbfda25",
+      "bytes": 9810,
+      "sha256": "5c187ec1f4931f20ef1fa2c62dbefcca2b0d9284ef48650822dd79eee1dc4503",
       "members": 8
     },
     {
       "file": "swift-InkSpaceSpeechText.zip",
-      "bytes": 4429,
-      "sha256": "e8578ec71f0d9bdf45336c6bd585aadfdff846cf0759ea81e56d2e224aeefe70",
+      "bytes": 4447,
+      "sha256": "ec151774253e2d32bd51310d2a029ec84a909a8eb352b9b07788e257e098be04",
       "members": 4
     },
     {
       "file": "swift-InkSpaceStorage.zip",
-      "bytes": 8352,
-      "sha256": "c55ae9ac9516cdc5762c3846b3747615f7b247d113a10e9ee28e697ffca47428",
+      "bytes": 8363,
+      "sha256": "3343182b385dddc33e4a01ff3e37787106aa93fcbf965cccb872eb0918a14714",
       "members": 7
     },
     {
       "file": "swift-InkSpaceStudy.zip",
-      "bytes": 13090,
-      "sha256": "9d6c74143b0811744dd5f175d7d2a149f9b39267507ac1f2e47a64664984e5e3",
+      "bytes": 13097,
+      "sha256": "1c4e55e263d2e4467fde4fc2e81f7e273526f01850ccd5cebbb9d2ab02cef78a",
       "members": 8
     },
     {
       "file": "swift-InkSpaceSubtitles.zip",
-      "bytes": 5731,
-      "sha256": "66b5229ac67048b6516c56cb36b5be61fd93e2498bcec0384b6109d4ff212df2",
+      "bytes": 5744,
+      "sha256": "9396983a34f7428b30ef81c9dc5e4e046b54feff5d03223130dae84eede14167",
       "members": 4
     },
     {
       "file": "swift-InkSpaceTextHistory.zip",
-      "bytes": 3677,
-      "sha256": "0478ce92eb9aa27f5cce14a1dde79e590184564a086455e4c53b61b9e7b02784",
+      "bytes": 3691,
+      "sha256": "d92ecdc4fb6827fc37b47d2ee642c21a5118877a9451336ad3901b3c4f5c7972",
       "members": 4
     },
     {
       "file": "swift-InkSpaceWebClips.zip",
-      "bytes": 5816,
-      "sha256": "96ff8ba9457d4f47e1dced6a551257daf4324dd03efd86658fd4b90963a70840",
+      "bytes": 5828,
+      "sha256": "6d07c1fdb4f842a0b9dcefc97adfd19e7864cc512f6b7b55ba7ba231ee3db807",
       "members": 4
     },
     {
       "file": "swift-InkSpaceWritingAids.zip",
-      "bytes": 35574,
-      "sha256": "4b65120a98e454066e3c99ae14d05741bd7dbd4aa8c52d55e65313265519e546",
+      "bytes": 35609,
+      "sha256": "6ae038f2eb5d69618dc72133174860eba33aaabb052ffb88269bc6ffaabf25eb",
       "members": 21
     }
   ],
   "desktopApplications": {
     "ready": true,
-    "version": "0.1.0",
-    "releaseURL": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/tag/desktop-v0.1.0",
-    "sourceCommit": "bff27e09d743ee7a14ffaf3cf904d53db6c32829",
+    "version": "0.1.1",
+    "releaseURL": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/tag/desktop-v0.1.1",
+    "sourceCommit": "cd7d24a10365e0ae67d78bc7714e82702e10fd26",
     "notarized": false,
     "personalSigningIdentityUsed": false,
     "anonymousDownloadsVerified": true,
@@ -261,55 +261,92 @@
     "artifacts": [
       {
         "file": "InkSpace-Writing-macos-universal.zip",
-        "bytes": 1536205,
-        "sha256": "ab5a0485205e87e24a57985bcd8492b7d43b6fa0562e46cb6caadccd442f73d1",
+        "bytes": 1536375,
+        "sha256": "4e13c46c2a183000628593e9b00f84d51a59d0ed6fb43b7bc6a9928994ad791e",
+        "app": "InkSpace Writing.app",
         "architectures": [
           "arm64",
           "x86_64"
         ],
         "minimumMacOS": "13.0",
+        "signature": "ad hoc; no personal identity",
+        "notarized": false,
+        "onlySystemRuntimeDependencies": true,
+        "executableSHA256": "30cb56ee9067f14759930c3b8c12df5c6b5ecfe76ae79ad895e6a47d17112613",
         "externalXcodeRequired": false,
         "externalNodeRequired": false,
-        "url": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Writing-macos-universal.zip"
+        "archiveSignatureRoundTrip": "passed",
+        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/InkSpace-Writing-macos-universal.zip"
       },
       {
         "file": "InkSpace-Preferences-macos-universal.zip",
-        "bytes": 1557582,
-        "sha256": "bf4ce2bf3c493b06ab68455b8809bb14950d2bbe5fda89b3f85311572f901446",
+        "bytes": 1557754,
+        "sha256": "8952293bce91d1aaa909f2bfc9a4dd0cc65cfb7bfa4bea9b98dd99f6c266ddbd",
+        "app": "InkSpace Preferences.app",
         "architectures": [
           "arm64",
           "x86_64"
         ],
         "minimumMacOS": "13.0",
+        "signature": "ad hoc; no personal identity",
+        "notarized": false,
+        "onlySystemRuntimeDependencies": true,
+        "executableSHA256": "c74d595de992846f31cda4855081916a29e4f564795ab2de71e61090aa55f750",
         "externalXcodeRequired": false,
         "externalNodeRequired": false,
-        "url": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Preferences-macos-universal.zip"
+        "archiveSignatureRoundTrip": "passed",
+        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/InkSpace-Preferences-macos-universal.zip"
       },
       {
         "file": "document-workbench-macos-arm64.zip",
         "architecture": "arm64",
-        "sha256": "84a2547daeb04fb4f1a17c626d98c1857d0cf22f113c1333b2d4ab953616f0d7",
-        "bytes": 128478420,
+        "version": "0.1.1",
+        "sha256": "fa479f082404307a87038b1ad30c67690f8130eec69476d421851b578796ffdb",
+        "bytes": 128478609,
+        "electron": "44.3.0",
+        "officialRuntimeSHA256": "49b91ef265c603c8888500f807484b63816069c30f87ba2b403e7c87f0f45035",
+        "runtimeSource": "https://github.com/electron/electron/releases/download/v44.3.0/electron-v44.3.0-darwin-arm64.zip",
+        "app": "文档工作台.app",
         "minimumMacOS": "13.0",
+        "signature": "ad hoc, no personal identity",
+        "notarized": false,
+        "gatekeeper": "not expected to be trusted without user approval; no quarantine/system protection changes",
+        "archiveSignatureRoundTrip": "passed",
+        "archiveMetadata": "fixed 1980 timestamp; explicit 755/644/777 Unix modes; no extra/comment/UID/xattr",
         "externalNodeRequired": false,
         "externalXcodeRequired": false,
-        "url": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-arm64.zip"
+        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/document-workbench-macos-arm64.zip"
       },
       {
         "file": "document-workbench-macos-x64.zip",
         "architecture": "x64",
-        "sha256": "100b41afcfc9077567d245edc66702342cd6e0ff80abe5dcf559d0e73ba7e15a",
-        "bytes": 135877897,
+        "version": "0.1.1",
+        "sha256": "325b77d0edb298e383568635452e4cc0d39328b40bbe304ebcdac2e8a4c23408",
+        "bytes": 135878103,
+        "electron": "44.3.0",
+        "officialRuntimeSHA256": "6e3278d96377085af532380e2b23a38cdcf4c58b4efb3f6ada2f251db95c9560",
+        "runtimeSource": "https://github.com/electron/electron/releases/download/v44.3.0/electron-v44.3.0-darwin-x64.zip",
+        "app": "文档工作台.app",
         "minimumMacOS": "13.0",
+        "signature": "ad hoc, no personal identity",
+        "notarized": false,
+        "gatekeeper": "not expected to be trusted without user approval; no quarantine/system protection changes",
+        "archiveSignatureRoundTrip": "passed",
+        "archiveMetadata": "fixed 1980 timestamp; explicit 755/644/777 Unix modes; no extra/comment/UID/xattr",
         "externalNodeRequired": false,
         "externalXcodeRequired": false,
-        "url": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-x64.zip"
+        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/document-workbench-macos-x64.zip"
       }
-    ]
+    ],
+    "brand": "life'winner",
+    "workflowRun": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/actions/runs/40130613502",
+    "anonymousDownloadCheckPassed": true,
+    "nativeAcceptance": "passed",
+    "electronAcceptance": "passed"
   },
   "workspaceSource": {
-    "file": "life-winner-modules-source-2026-10-24-r5.zip",
-    "sha256": "812f324f4a83af715cabcbbe2e3f0dac14d32b9891ea664380ede5dba06dc5f7",
+    "file": "Lifes-winner-modules-source-2026-10-24-r6.zip",
+    "sha256": "28638a7e548a7094c42a5d3a013633ebd916bff8cb0d22b59c6aeb0d7445722a",
     "members": 1111
   }
 }

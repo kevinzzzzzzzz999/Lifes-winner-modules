@@ -4,7 +4,7 @@
   "auditBaseCommit": "1fa5bf5692570c0e86e757ab623d46433b5ec79b",
   "scope": "公开的桌面105/原生106.3基础源码与下载模块；不代表后来私有开发版本自动覆盖。",
   "completeSourceRepository": "inkspace",
-  "completeSourceArchive": "InkSpace-source-2026-10-24.zip",
+  "completeSourceArchive": "life-winner-source-2026-10-24-r2.zip",
   "featureGroupCount": 63,
   "allOriginalFeaturesExtracted": false,
   "allDownloadsAreReadyToRunApps": false,
@@ -908,7 +908,17 @@
       "pendingExports": [],
       "standaloneExamples": [
         "samples/writing-aids"
-      ]
+      ],
+      "standaloneMobileWeb": {
+        "source": "samples/mobile-web/writing",
+        "platforms": [
+          "iPhone Safari",
+          "iPad Safari"
+        ],
+        "install": "Separate Add to Home Screen app; no Xcode or Node runtime",
+        "storage": "Local-only; explicit import/export; export important files for backup",
+        "scope": "Lightweight standalone adaptation; full native workflows and hardware remain bounded by the app help"
+      }
     },
     {
       "id": "C10",
@@ -1975,7 +1985,17 @@
       "pendingExports": [],
       "standaloneExamples": [
         "samples/preferences"
-      ]
+      ],
+      "standaloneMobileWeb": {
+        "source": "samples/mobile-web/preferences",
+        "platforms": [
+          "iPhone Safari",
+          "iPad Safari"
+        ],
+        "install": "Separate Add to Home Screen app; no Xcode or Node runtime",
+        "storage": "Local-only; explicit import/export; export important files for backup",
+        "scope": "Lightweight standalone adaptation; full native workflows and hardware remain bounded by the app help"
+      }
     },
     {
       "id": "H04",
@@ -2037,7 +2057,17 @@
       "pendingExports": [],
       "standaloneExamples": [
         "packages/application-shell/examples/electron"
-      ]
+      ],
+      "standaloneMobileWeb": {
+        "source": "samples/mobile-web/documents",
+        "platforms": [
+          "iPhone Safari",
+          "iPad Safari"
+        ],
+        "install": "Separate Add to Home Screen app; no Xcode or Node runtime",
+        "storage": "Local-only; explicit import/export; export important files for backup",
+        "scope": "Lightweight standalone adaptation; full native workflows and hardware remain bounded by the app help"
+      }
     }
   ],
   "publishedCompleteSourceReferenceCheck": {
@@ -2050,5 +2080,6 @@
     "C09",
     "H03",
     "H05"
-  ]
+  ],
+  "displayBrandRevision": "2026-10-24-life-winner"
 }

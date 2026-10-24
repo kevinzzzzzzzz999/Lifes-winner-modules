@@ -1,7 +1,7 @@
 {
-  "release": "2026-10-24-r4",
-  "archive": "InkSpace-modules-source-2026-10-24-r4.zip",
-  "archiveSha256": "7ddaa1c6ebb948f5a09b67b6c849a045c2b3a4824d4db98df200074d8d621d97",
+  "release": "2026-10-24-r5",
+  "archive": "life-winner-modules-source-2026-10-24-r5.zip",
+  "archiveSha256": "812f324f4a83af715cabcbbe2e3f0dac14d32b9891ea664380ede5dba06dc5f7",
   "files": [
     {
       "path": ".gitignore",
@@ -10,8 +10,8 @@
     },
     {
       "path": "FEATURES.md",
-      "bytes": 35546,
-      "sha256": "dd70536fae5d36a7485af80af473b70a25544c07a5052eb8639f9a05a051757e"
+      "bytes": 36075,
+      "sha256": "29adf70e5092ebfbff1ae7da476f8b7ab73c3d4caab6548230f37af21c1a5efe"
     },
     {
       "path": "LICENSE",
@@ -30,8 +30,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4429,
-      "sha256": "1fed7a2cf512b69b7e4ac172dcb98d147801facf3b19b7ea9e1f9b9a3e26a960"
+      "bytes": 4521,
+      "sha256": "c9b1f920303437c49cb366ca9fd7496c226e7749dfa3ecacebe9ad3a38d2375b"
     },
     {
       "path": "VALIDATION.md",
@@ -40,8 +40,8 @@
     },
     {
       "path": "coverage-audit.json",
-      "bytes": 67093,
-      "sha256": "0e38c6d2e27b312645eecae9599ca43b899744dc5cd67755a74e635770181467"
+      "bytes": 68552,
+      "sha256": "f01202de7f4ff7ae7306cdf449c4e5d00f1011335d29fd12544b3eb7a9b7133c"
     },
     {
       "path": "integrations/obsidian/LICENSE",
@@ -105,8 +105,8 @@
     },
     {
       "path": "modules.json",
-      "bytes": 96287,
-      "sha256": "58c2bfb8d883f6ce60e6e8fae9bda16d98b503edc4d464f0e15815300ad90f32"
+      "bytes": 96705,
+      "sha256": "01f338c67ea843958e90e2e86e9d8afcc1a2a62d75c3bf7d1fdc2e74a9897cfd"
     },
     {
       "path": "package.json",
@@ -3784,9 +3784,144 @@
       "sha256": "d075a77fced0f6182013c029b9050445521a9613006e24a44c2bf465688e73c4"
     },
     {
+      "path": "samples/mobile-web/README.md",
+      "bytes": 3182,
+      "sha256": "1b0deba0b9a24ba191b23b1fc0b1415d0f3a84147b399fb4a37a7ccc7fcaf617"
+    },
+    {
+      "path": "samples/mobile-web/documents/README.md",
+      "bytes": 3154,
+      "sha256": "9ce881b54a17d01b4a64df3cc6979fa658fc6547fefdc3bb7c4ee063ab53ce52"
+    },
+    {
+      "path": "samples/mobile-web/documents/app.js",
+      "bytes": 11323,
+      "sha256": "3647ab41ba1f914c34d8eaff311819200f5785a2d598e119cd8ec0fdb3563902"
+    },
+    {
+      "path": "samples/mobile-web/documents/index.html",
+      "bytes": 5741,
+      "sha256": "081238c086f5eef5bb5742fa8c62537c009ce2823f7c58793954d2134d8af57c"
+    },
+    {
+      "path": "samples/mobile-web/documents/logic.js",
+      "bytes": 7540,
+      "sha256": "80b83c4aeec37b8c3f35deec4ec65e86a74b81218dcda7a98e6da8f7993c3691"
+    },
+    {
+      "path": "samples/mobile-web/documents/styles.css",
+      "bytes": 7102,
+      "sha256": "40633a756921dbba66db44000994fc0dc33184a3e24739b5b461b044f0277529"
+    },
+    {
+      "path": "samples/mobile-web/documents/tests.mjs",
+      "bytes": 8014,
+      "sha256": "0873a97c1df95199df5b9b8f44954d83575692f769d35ca44b4361847d6871cb"
+    },
+    {
+      "path": "samples/mobile-web/index.html",
+      "bytes": 2078,
+      "sha256": "12865a4c20b2dd20c0bc603c8cedde47159836f2a384274ae344af9a8ab1ba37"
+    },
+    {
+      "path": "samples/mobile-web/package.json",
+      "bytes": 242,
+      "sha256": "e937c313513b23dd574dee1ce430338a2bbb332232e6b4385d934a687e562883"
+    },
+    {
+      "path": "samples/mobile-web/preferences/README.md",
+      "bytes": 4734,
+      "sha256": "a126a4c479962b924d71ab26a1dfd32a4ee528ead7d9e6984ca7a28861c0bab0"
+    },
+    {
+      "path": "samples/mobile-web/preferences/app.js",
+      "bytes": 28519,
+      "sha256": "ad158b362409d88e759cbcbc73124fb8c6bfa345aa454846760ce8a27442aed8"
+    },
+    {
+      "path": "samples/mobile-web/preferences/index.html",
+      "bytes": 4009,
+      "sha256": "7a7e53128144d61dee5eff8e2b53d36dd8e560019b9140542b1aa4daef938a61"
+    },
+    {
+      "path": "samples/mobile-web/preferences/logic.js",
+      "bytes": 13381,
+      "sha256": "307816f4f6eddbaafa38614140d55ff5d22d4f3b47093f41eb84a6037cfe94d1"
+    },
+    {
+      "path": "samples/mobile-web/preferences/package.json",
+      "bytes": 121,
+      "sha256": "e4341b6b9e1e5868068e545ccbd42fdefac47a32238c75b3c816b3f9bd07ede3"
+    },
+    {
+      "path": "samples/mobile-web/preferences/styles.css",
+      "bytes": 5934,
+      "sha256": "c1983f3f7190968ea10fa841a5fffb5ecbb2f3ebcfc235d788040eb200379acf"
+    },
+    {
+      "path": "samples/mobile-web/preferences/tests.mjs",
+      "bytes": 11338,
+      "sha256": "9c502e7db2e31b62e4214167469bf52d93e151acc2d1ccf7c4a21809f165d862"
+    },
+    {
+      "path": "samples/mobile-web/privacy.html",
+      "bytes": 2460,
+      "sha256": "d990bc14271ee71b8308fd43cfc033f6c84c1361e36399723d0e674af38db11d"
+    },
+    {
+      "path": "samples/mobile-web/scripts/build-site.py",
+      "bytes": 6233,
+      "sha256": "7824bd19028a2878c97cd00b7d74ab62a8abdc02134015d60f94bf8025b9055f"
+    },
+    {
+      "path": "samples/mobile-web/scripts/service-worker.js",
+      "bytes": 2054,
+      "sha256": "fdfb3b3a96ba958a35ee4ae5e385e1aadd496781599d1b5b6f380f785f444899"
+    },
+    {
+      "path": "samples/mobile-web/shared.css",
+      "bytes": 4639,
+      "sha256": "32d8ac04dccb59176e4cf0c29fe9efa03b9c722cb6ab9dbc3d5aa87d6b2ece24"
+    },
+    {
+      "path": "samples/mobile-web/shared.js",
+      "bytes": 6717,
+      "sha256": "c2b9c4ff419baf5f2827cdb19cb657e8833ac13fac4c20b119125b148f951358"
+    },
+    {
+      "path": "samples/mobile-web/writing/README.md",
+      "bytes": 3342,
+      "sha256": "00d6f59907edf033d876ba622c2b72649f6c2219f2528dfcda576226f3bac8a2"
+    },
+    {
+      "path": "samples/mobile-web/writing/app.js",
+      "bytes": 19539,
+      "sha256": "c6e6c7adae8bdfc0a3835722cfa45df735b825adcc5d13688a721811bffcd8ab"
+    },
+    {
+      "path": "samples/mobile-web/writing/index.html",
+      "bytes": 6934,
+      "sha256": "67b2aeb0bf8d599dcec6532a99bb6b2e1ae37b1b6ab9ab217b46510b6470d9f6"
+    },
+    {
+      "path": "samples/mobile-web/writing/logic.js",
+      "bytes": 15506,
+      "sha256": "1d42ee39a08675acb65d8ddf764c3b3514e0accfaa21e89a1d0a3d01bfde0d6b"
+    },
+    {
+      "path": "samples/mobile-web/writing/styles.css",
+      "bytes": 3356,
+      "sha256": "8dbfd4b0c3f3584d3287051ab05c22ca04c6ad02036b5eb036519a42bd248b12"
+    },
+    {
+      "path": "samples/mobile-web/writing/tests.mjs",
+      "bytes": 6446,
+      "sha256": "9afc32c58b05d4cbba7f6c9b07913ae35a4d9e081c64c395c426be20863df0a0"
+    },
+    {
       "path": "samples/packaging/macos/DOWNLOAD-HELP.md",
-      "bytes": 6617,
-      "sha256": "a9116423a251726d275377da6f5497900e0d6627d3ff834a4bde2bc05af0b177"
+      "bytes": 6745,
+      "sha256": "e06726d3c181faf1f2c1cb546cd77cad77cdd97dc92f44374fc3bcd5628379eb"
     },
     {
       "path": "samples/packaging/macos/DrawToolIcon.swift",
@@ -3795,23 +3930,23 @@
     },
     {
       "path": "samples/packaging/macos/HELP.html",
-      "bytes": 4511,
-      "sha256": "2536cc08fb634a7a8e3601ebdd5035ca2d5a6ed736a82c3cd3ede7e723893cd5"
+      "bytes": 4614,
+      "sha256": "d95acf669bdbae90b7c51c3dc57f80273211afa4286c1ecd2f82fe38a417114a"
     },
     {
       "path": "samples/packaging/macos/README.md",
-      "bytes": 1995,
-      "sha256": "a23a39da9cdc7387b4ebd7cd4444e16bd1ed15880d775e6f36e42be20fcf8a61"
+      "bytes": 2083,
+      "sha256": "3c3a209cee5b8696106c2816dcd5e3e1ad907a86819012d74dcd36595dd89a57"
     },
     {
       "path": "samples/packaging/macos/RELEASE-NOTES.md",
-      "bytes": 2554,
-      "sha256": "05696ca0667c7f2ed7ade48f5c338304120f8d087f584b6cff9c2ff12d905cc8"
+      "bytes": 2655,
+      "sha256": "336364167c093c839794ddef770e8621e274134633287abe615dd10f16ed2fcf"
     },
     {
       "path": "samples/packaging/macos/build-native-apps.py",
-      "bytes": 13084,
-      "sha256": "7add2a16fa7262093d77c6e7aafdc3e3088c48dd7b63f732e14f4c24e2e73b4a"
+      "bytes": 13171,
+      "sha256": "80d884bdbefe6f5676aab7d3825e89971bb213ef58423f004875624749e30b9f"
     },
     {
       "path": "samples/packaging/macos/desktop-release-tools.py",
@@ -3820,8 +3955,8 @@
     },
     {
       "path": "samples/packaging/macos/electron/README.md",
-      "bytes": 5062,
-      "sha256": "5bdafc242829439a36237897476830dd9a513d9ff0004dfb8fad2a7c955b7c9f"
+      "bytes": 5080,
+      "sha256": "c6498ca4a8a57d30652352c3aa8bda6a5327abf4b449c245a3dcee5b11a40550"
     },
     {
       "path": "samples/packaging/macos/electron/application-shell-source-sha256.json",
@@ -3835,8 +3970,8 @@
     },
     {
       "path": "samples/packaging/macos/electron/build-macos.py",
-      "bytes": 12162,
-      "sha256": "616557781586be44dbd976f3d8a2b8ec20236c5ffe1ed5c4b69bc27e8e5e724c"
+      "bytes": 12323,
+      "sha256": "8d72b544b66e5eb6f71b6107ccd43eef2343a3dc10b96c7ba426849235e06b7d"
     },
     {
       "path": "samples/packaging/macos/electron/overlay/DocumentWorkbench.icns",
@@ -3850,8 +3985,8 @@
     },
     {
       "path": "samples/packaging/macos/electron/overlay/help-fragment.html",
-      "bytes": 1722,
-      "sha256": "63193a3911319c989e02e9d4b73562a4b2ff88a176a3761ea18be258c7ef5398"
+      "bytes": 1819,
+      "sha256": "1930e050a9872a5a13c392db16d34788aec7fef82a2c80379e1498bee0ae39db"
     },
     {
       "path": "samples/packaging/macos/electron/overlay/help-styles.css",
@@ -3860,23 +3995,23 @@
     },
     {
       "path": "samples/packaging/macos/electron/overlay/\u4f7f\u7528\u8bf4\u660e.txt",
-      "bytes": 2530,
-      "sha256": "75e19c467e9006cd2dbb6f9c220290766f5866df909e0c094c0542af7a51a573"
+      "bytes": 2637,
+      "sha256": "082b707d4444b4893a56220643a63d49f1420249c0a60e556fd8686e0e8663fd"
     },
     {
       "path": "samples/packaging/macos/electron/release-macos.py",
-      "bytes": 9192,
-      "sha256": "bfeb3b3d59f91c29c1113424c3e374bef7db97d527f3d01a791574d3df5ff3da"
+      "bytes": 9216,
+      "sha256": "3f8fdd49ec5d938338512a832434afeea964f505a2ab6b429d2d2939ba256e33"
     },
     {
       "path": "samples/packaging/macos/electron/smoke-packaged.cjs",
-      "bytes": 4124,
-      "sha256": "6a34d4c4680c98d226cb48fabc03909622d921ccb130493879fbe49ea0f8aea5"
+      "bytes": 4159,
+      "sha256": "4418c71beba3c4f4166e01893e856b5db93ec223ee74c501d0d329349fc1f1a8"
     },
     {
       "path": "samples/packaging/macos/overlays/DistributionHelp.swift",
-      "bytes": 1829,
-      "sha256": "72603ee49f0950818582f3fe04ee3490c72407fe2cef20c0794103bf9dd649a6"
+      "bytes": 1844,
+      "sha256": "e5227c99bded467e652dd806d39fc0ace25b9805b6fed3ede61058b668c1e953"
     },
     {
       "path": "samples/packaging/macos/overlays/PlanTransferControls.swift",
@@ -3885,8 +4020,8 @@
     },
     {
       "path": "samples/packaging/macos/publish-desktop-release.py",
-      "bytes": 6565,
-      "sha256": "2651fa24c4df88e92973bab46fade9f70d31c9060c4bcdc941ee683a85593253"
+      "bytes": 6568,
+      "sha256": "e31fef444eb610498b678229e3f6ab202876353d554b0b8c4129e0ffd6308acb"
     },
     {
       "path": "samples/preferences/.gitignore",
@@ -3990,8 +4125,8 @@
     },
     {
       "path": "swift-modules.json",
-      "bytes": 26682,
-      "sha256": "6532428790b9d15e9a226afca5f903dc207fa76fe3f623c7a9f61e5abd05c0a7"
+      "bytes": 26891,
+      "sha256": "a158bba422c320ee1ce78403635da3a8d34fd04a8a83a42d6a22448e01407ff7"
     },
     {
       "path": "swift/Documentation/InkSpaceAI/README.md",
@@ -4045,8 +4180,8 @@
     },
     {
       "path": "swift/Documentation/InkSpacePreferences/metadata.json",
-      "bytes": 7399,
-      "sha256": "7428e97d01a3404ba4c81640725fd66eb8053a4050521808e138612a9ef6a453"
+      "bytes": 7600,
+      "sha256": "1d66e1e69abc60929cf67c975b673d7ac44109fdf0d99b63b28ecab04a6c869f"
     },
     {
       "path": "swift/Documentation/InkSpaceScanPDF/README.md",

@@ -1,6 +1,6 @@
 {
   "releaseDate": "2026-10-24",
-  "revision": "2026-10-24-r4",
+  "revision": "2026-10-24-r5",
   "archives": [
     {
       "file": "node-application-shell.zip",
@@ -308,8 +308,8 @@
     ]
   },
   "workspaceSource": {
-    "file": "InkSpace-modules-source-2026-10-24-r4.zip",
-    "sha256": "7ddaa1c6ebb948f5a09b67b6c849a045c2b3a4824d4db98df200074d8d621d97",
-    "members": 1084
+    "file": "life-winner-modules-source-2026-10-24-r5.zip",
+    "sha256": "812f324f4a83af715cabcbbe2e3f0dac14d32b9891ea664380ede5dba06dc5f7",
+    "members": 1111
   }
 }

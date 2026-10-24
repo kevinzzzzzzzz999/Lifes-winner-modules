@@ -144,3 +144,9 @@ JS按20个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 [机器可核验的逐功能覆盖矩阵](coverage-audit.json)逐组记录实际Node导出、Swift产品、React组件、独立下载文件和仍在原App中的部分。矩阵不把“源码已公开”写成“所有功能均已有独立成品”。PencilKit画布/辅助笔、原生完整备份恢复、多窗格工作台、浏览器/AI网页宿主、原生渲染与系统入口仍有未提取部分；Safari仍是需自行集成的扩展源码。
 
 公开ZIP中的路径是解压后的源码定位，不是本仓库展开目录的网页链接。Node包、Swift产品和React组件的运行环境/依赖需按各下载包README准备。
+
+## 三个可分别安装的主屏幕工具
+
+life'winner（人生赢家）新增书写画板、偏好方案和文档工作台的 iPhone / iPad 网页主屏幕版本；每个工具独立安装、离线缓存和本机草稿，无需 Xcode、Node.js 或完整版。其可编辑源与具体边界见 [主屏幕工具说明](samples/mobile-web/README.md)。它们是分别适配的轻量应用，不意味着下表所有功能已经变成完整独立App。
+
+希望每一个使用我开源功能的人，都是各自的 life'winner。

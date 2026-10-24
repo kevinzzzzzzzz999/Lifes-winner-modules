@@ -1,14 +1,16 @@
-# InkSpace Modules · 散装功能库
+# life'winner Modules · 散装功能库
+
+希望每一个使用我开源功能的人，都是各自的 life'winner。
 
 ## 普通用户：直接下载 Mac 应用
 
-**下载、解压，把 `.app` 拖入“应用程序”即可使用；无需安装 Xcode、Node.js、Python 或完整版 InkSpace。**
+**下载、解压，把 `.app` 拖入“应用程序”即可使用；无需安装 Xcode、Node.js、Python 或完整版 life'winner。**
 
 | 软件 | 下载 |
 | --- | --- |
-| 书写画板 · InkSpace Writing | [Mac 通用版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Writing-macos-universal.zip) |
-| 偏好方案编辑器 · InkSpace Preferences | [Mac 通用版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Preferences-macos-universal.zip) |
-| 文档工作台 · Document Workbench | [Apple 芯片版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-arm64.zip) · [Intel 版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-x64.zip) |
+| 书写画板 · life'winner Writing | [Mac 通用版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Writing-macos-universal.zip) |
+| 偏好方案编辑器 · life'winner Preferences | [Mac 通用版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Preferences-macos-universal.zip) |
+| 文档工作台 · life'winner Document Workbench | [Apple 芯片版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-arm64.zip) · [Intel 版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-x64.zip) |
 
 [下载页](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/tag/desktop-v0.1.0) · [安装与使用说明](DESKTOP-APPS.md) · [公开下载验收](DOWNLOAD-CHECKS.md)
 
@@ -16,7 +18,9 @@
 
 ## 开发者：功能源码与组件
 
-从 InkSpace（人生赢家）提取的独立功能源码。完整软件包含 Mac、iPad、iPhone 三个版本，另保留在同一账号的 **inkspace** 仓库。
+当前 Mac 链接保留既有 0.1.0 发行，应用内可能显示历史名称；life'winner 品牌将在后续新版本统一。已有文件名和下载链接保持兼容。
+
+从 life'winner（人生赢家）提取的独立功能源码。完整软件包含 Mac、iPad、iPhone 三个版本，另保留在同一账号的 **inkspace** 仓库。
 
 **Reusable Node.js, SwiftPM and React building blocks for notes, whiteboards, PDF, documents and local-first applications.**
 
@@ -42,7 +46,7 @@ npm install --ignore-scripts
 npm test
 ```
 
-在这个目录运行以下JavaScript，无需完整InkSpace、账号或服务密钥：
+在这个目录运行以下JavaScript，无需完整life'winner、账号或服务密钥：
 
 ```js
 const { engine } = require('./index.cjs');
@@ -68,9 +72,9 @@ console.log(square({ x: 3 })); // 9
 | 中英文、布局、工具栏与手势偏好 | [InkSpacePreferences](swift-InkSpacePreferences.zip?raw=1)，解压后按包内README运行Example |
 | 首页、文档路由与窗口生命周期 | [application-shell](node-application-shell.zip?raw=1)，含独立应用壳示例与接入说明 |
 
-两个原生示例需要macOS与Xcode/Swift工具链；应用壳示例需要Node.js及说明中的依赖。它们不需要安装完整InkSpace，也不携带原软件用户数据。
+两个原生示例需要macOS与Xcode/Swift工具链；应用壳示例需要Node.js及说明中的依赖。它们不需要安装完整life'winner，也不携带原软件用户数据。
 
-[下载全部模块的完整源码工作区](InkSpace-modules-source-2026-10-24-r4.zip?raw=1)，或直接浏览仓库中的 packages / swift / ui / integrations。
+[下载全部模块的完整源码工作区](life-winner-modules-source-2026-10-24-r5.zip?raw=1)，或直接浏览仓库中的 packages / swift / ui / integrations。
 
 这里可以按功能单独下载：**20 个 Node / JavaScript 包、18 个 SwiftPM 产品、30 个 React 界面表面（10 个分域入口）**，以及 Obsidian 和 Safari 分享集成。
 
@@ -131,7 +135,7 @@ console.log(square({ x: 3 })); // 9
 | 组件 | 内容与要求 | 下载 |
 | --- | --- | --- |
 | [React UI](ui/README.md) | 30个表面、10个分域入口；包括编辑器、旁注、图谱、知识空间、白板/PDF、Notebook、日历、学习、媒体等。需要React和明确的宿主适配；包内有构建与接入说明。 | [React组件源码](react-ui-components.zip?raw=1) |
-| [Obsidian伴侣](integrations/obsidian/README.md) | 可安装的白板查看伴侣；查看无需完整InkSpace，原生打开/书写需要系统协议处理程序。 | [Obsidian源码](obsidian-companion.zip?raw=1) |
+| [Obsidian伴侣](integrations/obsidian/README.md) | 可安装的白板查看伴侣；查看无需完整life'winner，原生打开/书写需要系统协议处理程序。 | [Obsidian源码](obsidian-companion.zip?raw=1) |
 | [Safari分享剪藏](integrations/safari-share-clipper/README.md) | 扩展源码，需要自己的承载App、扩展target和Apple签名；未完成独立真机验收。 | [分享扩展源码](safari-share-clipper.zip?raw=1) |
 
 ## 范围与验证

@@ -1,5 +1,21 @@
 # InkSpace Modules · 散装功能库
 
+## 普通用户：直接下载 Mac 应用
+
+**下载、解压，把 `.app` 拖入“应用程序”即可使用；无需安装 Xcode、Node.js、Python 或完整版 InkSpace。**
+
+| 软件 | 下载 |
+| --- | --- |
+| 书写画板 · InkSpace Writing | [Mac 通用版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Writing-macos-universal.zip) |
+| 偏好方案编辑器 · InkSpace Preferences | [Mac 通用版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Preferences-macos-universal.zip) |
+| 文档工作台 · Document Workbench | [Apple 芯片版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-arm64.zip) · [Intel 版](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-x64.zip) |
+
+[下载页](https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/tag/desktop-v0.1.0) · [安装与使用说明](DESKTOP-APPS.md) · [公开下载验收](DOWNLOAD-CHECKS.md)
+
+需要 macOS 13+。本版本未经过 Apple 公证，首次打开可能需要由使用者按系统提示确认；应用不包含个人签名身份，不会自动修改系统安全保护。具体测试平台和使用范围见说明。
+
+## 开发者：功能源码与组件
+
 从 InkSpace（人生赢家）提取的独立功能源码。完整软件包含 Mac、iPad、iPhone 三个版本，另保留在同一账号的 **inkspace** 仓库。
 
 **Reusable Node.js, SwiftPM and React building blocks for notes, whiteboards, PDF, documents and local-first applications.**

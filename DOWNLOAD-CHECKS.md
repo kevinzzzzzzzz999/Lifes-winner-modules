@@ -1,12 +1,28 @@
 # 公开下载与使用验收 / Public download and usage checks
 
-最新验收：2026-10-24 r3。固定模块源码修订：`98666bd61bce39b1ae341a141bd5018a21935e40`。
+最新验收：2026-10-24，Mac成品应用0.1.0；对应公开构建配方包含在r4源码中。
+
+## 直接打开的 Mac 应用 · 0.1.0
+
+[下载独立Mac应用](DESKTOP-APPS.md)。三个工具现在另有无需Xcode、Node.js或Python的成品应用。应用来自公开构建流程的源码修订 `bff27e09d743ee7a14ffaf3cf904d53db6c32829`；构建配方随r4工作区源码公开。
+
+- 4个应用ZIP和6份说明/校验文件均已从未登录的公开Release链接实际下载，GitHub摘要、发布清单和下载字节全部一致。
+- 两个原生Universal包：实际CI新ZIP和可执行文件Hash核对、22个文件的UTF-8/UTF-16隐私扫描、解压后签名/系统依赖/双架构与macOS13最低声明检查通过；系统路径不含开发工具时，两个App启动与方案保存/重读通过，下载后帮助窗也已观察。
+- 文档工作台两架构包：629个ZIP条目、文件权限/相对链接、零extra/注释/UID元数据，解压字节、13个Mach-O签名和运行依赖闭包通过。全量字节的私有词/本机路径扫描无用户信息；第三方官方组件中的既有公共署名逐项与官方输入上下文摘要一致，依法保留。
+- 云端Apple芯片和Intel构建机均完成原生启动/方案持久化检查及文档工作台成品窗口、帮助和合成文本预览；各App使用纯系统PATH，不依赖外部Node/Xcode。本机另对公开arm64文档工作台重新实际启动与预览，零renderer异常。
+- 原生导入/保存/导出、格式错误保留当前值、重新启动恢复和帮助界面按发行适配的专门验证记录，不冒充所有旧系统/硬件均已实测。最低系统声明不等于macOS13实机验收。
+
+所有包使用不含个人身份的ad-hoc签名，未经过Apple公证；系统首次确认仍由使用者按Apple说明决定。本次没有移除下载隔离属性、修改系统防护或使用个人证书。OS在解压后自行生成的本机provenance属性不来自ZIP，也未被移除。
+
+## 源码模块验收记录 · r3
+
+源码模块验收：2026-10-24 r3。固定模块源码修订：`98666bd61bce39b1ae341a141bd5018a21935e40`。
 
 **新增三组已经分别提供独立库和可启动示例。三个最终ZIP及新的完整模块工作区，都已通过未登录的GitHub公开链接实际下载，SHA-256与发布清单一致。下载回来的三个ZIP又在仓库外安装、编译并运行随包测试：52/52通过，0失败。没有借用完整InkSpace。**
 
 The three new standalone archives and the complete r3 module workspace were downloaded anonymously from GitHub. Their digests match the public manifests. Isolated consumers of those downloaded archives passed all 52 included tests; the integrated application was not used.
 
-## 三个下载包怎么用
+## 三个源码下载包怎么用
 
 | 功能 | 独立下载 | 启动与实测 |
 | --- | --- | --- |

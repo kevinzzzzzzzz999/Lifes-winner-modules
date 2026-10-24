@@ -249,6 +249,64 @@
       "members": 21
     }
   ],
+  "desktopApplications": {
+    "ready": true,
+    "version": "0.1.0",
+    "releaseURL": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/tag/desktop-v0.1.0",
+    "sourceCommit": "bff27e09d743ee7a14ffaf3cf904d53db6c32829",
+    "notarized": false,
+    "personalSigningIdentityUsed": false,
+    "anonymousDownloadsVerified": true,
+    "bothArchitecturesVerifiedInCI": true,
+    "artifacts": [
+      {
+        "file": "InkSpace-Writing-macos-universal.zip",
+        "bytes": 1536205,
+        "sha256": "ab5a0485205e87e24a57985bcd8492b7d43b6fa0562e46cb6caadccd442f73d1",
+        "architectures": [
+          "arm64",
+          "x86_64"
+        ],
+        "minimumMacOS": "13.0",
+        "externalXcodeRequired": false,
+        "externalNodeRequired": false,
+        "url": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Writing-macos-universal.zip"
+      },
+      {
+        "file": "InkSpace-Preferences-macos-universal.zip",
+        "bytes": 1557582,
+        "sha256": "bf4ce2bf3c493b06ab68455b8809bb14950d2bbe5fda89b3f85311572f901446",
+        "architectures": [
+          "arm64",
+          "x86_64"
+        ],
+        "minimumMacOS": "13.0",
+        "externalXcodeRequired": false,
+        "externalNodeRequired": false,
+        "url": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/InkSpace-Preferences-macos-universal.zip"
+      },
+      {
+        "file": "document-workbench-macos-arm64.zip",
+        "architecture": "arm64",
+        "sha256": "84a2547daeb04fb4f1a17c626d98c1857d0cf22f113c1333b2d4ab953616f0d7",
+        "bytes": 128478420,
+        "minimumMacOS": "13.0",
+        "externalNodeRequired": false,
+        "externalXcodeRequired": false,
+        "url": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-arm64.zip"
+      },
+      {
+        "file": "document-workbench-macos-x64.zip",
+        "architecture": "x64",
+        "sha256": "100b41afcfc9077567d245edc66702342cd6e0ff80abe5dcf559d0e73ba7e15a",
+        "bytes": 135877897,
+        "minimumMacOS": "13.0",
+        "externalNodeRequired": false,
+        "externalXcodeRequired": false,
+        "url": "https://github.com/kevinzzzzzzzz999/inkspace-modules/releases/download/desktop-v0.1.0/document-workbench-macos-x64.zip"
+      }
+    ]
+  },
   "workspaceSource": {
     "file": "InkSpace-modules-source-2026-10-24-r4.zip",
     "sha256": "7ddaa1c6ebb948f5a09b67b6c849a045c2b3a4824d4db98df200074d8d621d97",

@@ -20,13 +20,13 @@ PROFILES = {
     },
     'inkspace-modules': {
         'manifest': 'source-tree-manifest.json', 'prefix': 'inkspace-modules/',
-        'directories': {'packages', 'swift', 'ui', 'integrations', 'scripts'},
+        'directories': {'packages', 'swift', 'ui', 'integrations', 'scripts', 'samples'},
         'files': {'.gitignore', '.gitattributes', 'LICENSE', 'README.md', 'Package.swift', 'package.json',
                   'package-lock.json', 'modules.json', 'swift-modules.json', 'FEATURES.md',
                   'VALIDATION.md', 'NODE-VALIDATION.md', 'coverage-audit.json'},
     },
 }
-FORBIDDEN = {'.git', '.github', 'node_modules', '__pycache__', '.build', '.swiftpm', 'dist',
+FORBIDDEN = {'.git', '.github', '.codex', '.agents', 'node_modules', '__pycache__', '.build', '.swiftpm', 'dist',
              'DerivedData', 'publisher', '.env', 'vault', 'private', 'xcuserdata'}
 STATE = '.source-tree-state.json'
 MAX_TOTAL = 128 * 1024 * 1024

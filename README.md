@@ -13,7 +13,7 @@
 | 合并/提取PDF页面、读取批注或生成Office文档 | [PDF工具](node-pdf-tools.zip?raw=1)、[PDF批注](node-pdf-annotations.zip?raw=1)、[文档工具](node-office-documents.zip?raw=1) |
 | 在自己的项目里使用白板文件、笔迹数据、合并或历史 | [白板格式](node-board-model.zip?raw=1)、[笔迹数据](node-board-ink.zip?raw=1)、[合并与历史](node-board-merge.zip?raw=1) |
 | 处理Markdown、搜索、卡片、任务和日历 | [知识搜索](node-knowledge-search.zip?raw=1)、[学习](node-study-tools.zip?raw=1)、[任务日历](node-task-calendar.zip?raw=1) |
-| Swift项目里的纲要、字幕、学习模型、文件或PDF工具 | 下方16个产品；可分别下载，或在Xcode添加本仓库并选择需要的product |
+| Swift项目里的纲要、字幕、学习模型、文件或PDF工具 | 下方18个产品；可分别下载，或在Xcode添加本仓库并选择需要的product |
 | 为React产品加入编辑器、旁注、图谱或工作台 | [React组件与宿主契约](ui/README.md) |
 
 ## 30秒试用一个纯逻辑包 / Quick start
@@ -42,11 +42,21 @@ console.log(square({ x: 3 })); // 9
 
 纯函数可直接在声明的平台调用。涉及浏览器、Python、OCR、FFmpeg、Tectonic、Apple框架或文件授权的模块，需要调用者按说明提供相应引擎/宿主；AI服务使用自己的账号。Safari下载是扩展集成源码，需要承载App和签名。
 
-原生书写辅助、应用偏好和完整应用壳三组仍保留在完整App源码中，未宣称已拆成独立产品。每一项的实际导出与边界见审计清单。
+书写演示辅助、偏好设置和应用壳现在分别提供独立库及运行示例。示例使用合成内容和独立存储；Apple Pencil、系统随手写和操作系统协议登记等平台能力仍按各包说明接入。每一项的实际导出与边界见审计清单。
 
-[下载全部模块的完整源码工作区](InkSpace-modules-source-2026-10-24-r2.zip?raw=1)，或直接浏览仓库中的 packages / swift / ui / integrations。
+## 新增三组：下载后运行示例 / Three standalone starters
 
-这里可以按功能单独下载：**19 个 Node / JavaScript 包、16 个 SwiftPM 产品、30 个 React 界面表面（10 个分域入口）**，以及 Obsidian 和 Safari 分享集成。
+| 想使用的功能 | 独立下载与入口 |
+| --- | --- |
+| 书写辅助、形状和演示工具 | [InkSpaceWritingAids](swift-InkSpaceWritingAids.zip?raw=1)，解压后按包内README运行Example |
+| 中英文、布局、工具栏与手势偏好 | [InkSpacePreferences](swift-InkSpacePreferences.zip?raw=1)，解压后按包内README运行Example |
+| 首页、文档路由与窗口生命周期 | [application-shell](node-application-shell.zip?raw=1)，含独立应用壳示例与接入说明 |
+
+两个原生示例需要macOS与Xcode/Swift工具链；应用壳示例需要Node.js及说明中的依赖。它们不需要安装完整InkSpace，也不携带原软件用户数据。
+
+[下载全部模块的完整源码工作区](InkSpace-modules-source-2026-10-24-r3.zip?raw=1)，或直接浏览仓库中的 packages / swift / ui / integrations。
+
+这里可以按功能单独下载：**20 个 Node / JavaScript 包、18 个 SwiftPM 产品、30 个 React 界面表面（10 个分域入口）**，以及 Obsidian 和 Safari 分享集成。
 
 每个 ZIP 包包含可编辑源码、使用说明和许可。先解压，再按包内 README 安装依赖或添加本地 Swift 包；React 组件需要构建，并按说明提供所需宿主接口。
 
@@ -73,6 +83,7 @@ console.log(square({ x: 3 })); // 9
 | [离线数值计算](packages/math-lab/README.md) | 表达式解析、采样、微积分近似、回归/时间序列、现金流/贷款/债券/期权等教育数值函数。 | [math-lab](node-math-lab.zip?raw=1) |
 | [文档链接与工作区状态](packages/document-workspace/README.md) | 内部文档链接、文件树/标签状态、自动保存接受规则、文档缩放、快捷键、富文本和公式片段。 | [document-workspace](node-document-workspace.zip?raw=1) |
 | [本地OCR调用与选区坐标](packages/ocr-tools/README.md) | 有界OCR进程协议、图像输入检查、选区像素与页坐标转换。 | [ocr-tools](node-ocr-tools.zip?raw=1) |
+| [独立应用壳与系统文档入口](packages/application-shell/README.md) | 可运行的本地文档/工作区软件壳：原生文件选择、逐窗口权限、系统打开队列、多窗口、文本预览、标签与快捷切换；附安全 Electron 示例。 Independent document/workspace shell with a runnable Electron demo. | [application-shell](node-application-shell.zip?raw=1) |
 
 ## SwiftPM 原生模块
 
@@ -96,6 +107,8 @@ console.log(square({ x: 3 })); // 9
 | [InkSpaceOCR](swift/Documentation/InkSpaceOCR/README.md) | 本机PDF/图片文字识别 | [源码包](swift-InkSpaceOCR.zip?raw=1) |
 | [InkSpaceExcelPictures](swift/Documentation/InkSpaceExcelPictures/README.md) | XLSX内嵌图片读取 | [源码包](swift-InkSpaceExcelPictures.zip?raw=1) |
 | [InkSpaceScanPDF](swift/Documentation/InkSpaceScanPDF/README.md) | 多页PDF汇编和安全导出 | [源码包](swift-InkSpaceScanPDF.zip?raw=1) |
+| [InkSpaceWritingAids](swift/Documentation/InkSpaceWritingAids/README.md) | 辅助书写与演示：停留直线与六形拟合、波浪/填色、高亮置底、激光、胶带、文字卡及可选iPad系统手写输入；附Mac交互画布。 | [源码包](swift-InkSpaceWritingAids.zip?raw=1) |
+| [InkSpacePreferences](swift/Documentation/InkSpacePreferences/README.md) | 独立语言/布局、工具栏与笔栏、Pencil操作选择、字幕外观及播放偏好，显式隔离持久化 | [源码包](swift-InkSpacePreferences.zip?raw=1) |
 
 ## 组件与独立集成
 
@@ -109,7 +122,7 @@ console.log(square({ x: 3 })); // 9
 
 [公开下载与使用验收](DOWNLOAD-CHECKS.md) · [63个功能组与依赖边界](FEATURES.md) · [逐项覆盖审计](coverage-audit.json) · [实际验证结果](VALIDATION.md) · [Node独立安装验证](NODE-VALIDATION.md) · [下载包摘要](download-manifest.json)
 
-19个Node包当前217项行为回归通过；16个Swift独立消费者编译、链接与API运行通过；React组件45次独立挂载及严格TypeScript消费检查通过。它们是可复用功能、组件或源码集成，平台宿主、外部引擎和界面依赖见包内说明。完整软件已有的设备稳定性问题仍按原记录保留。
+20个Node包记录共242项行为回归；逐项结果与新模块运行验收见上方记录。原有16个Swift独立消费者及新增产品的验证分别记录；React组件45次独立挂载及严格TypeScript消费检查通过。它们是可复用功能、组件或源码集成，平台宿主、外部引擎和界面依赖见包内说明。完整软件已有的设备稳定性问题仍按原记录保留。
 
 ## 隐私、许可与更新
 

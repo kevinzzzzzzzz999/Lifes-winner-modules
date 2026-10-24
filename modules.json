@@ -2230,17 +2230,139 @@
         "skipped": 0
       },
       "packageTest": "test/package.test.cjs"
+    },
+    {
+      "id": "application-shell",
+      "name": "@inkspace-modules/application-shell",
+      "title": "独立应用壳与系统文档入口",
+      "description": "可运行的本地文档/工作区软件壳：原生文件选择、逐窗口权限、系统打开队列、多窗口、文本预览、标签与快捷切换；附安全 Electron 示例。 Independent document/workspace shell with a runnable Electron demo.",
+      "path": "packages/application-shell",
+      "api": {
+        "windows": "main/window-contexts.cjs",
+        "externalOpen": "main/external-document-open.cjs",
+        "capabilities": "main/capabilities.cjs",
+        "protocol": "main/protocol-route.cjs",
+        "tabs": "document-tabs.cjs",
+        "home": "document-tabs.cjs",
+        "menu": "main/document-menu.cjs"
+      },
+      "dependencies": {},
+      "exampleDependencies": {
+        "electron": "44.3.0",
+        "playwright": "1.62.1"
+      },
+      "boundary": "核心无生产依赖；Electron 示例需 Node 24.15+ 与图形桌面。真正浏览授权文件夹并只读预览 512 KiB 内 UTF-8 文本；二进制文档明确要求宿主专用编辑器。iOS 仅移植纯启动路由模型，SwiftUI 场景/完整编辑器、打包签名与更新由接入者提供。正常运行不改系统文件或协议关联；每次 CLI 启动临时独立会话，不宣称跨进程单实例持久化。系统 URL 只路由本会话已授权工作区。",
+      "sourceFiles": [
+        {
+          "path": "desktop/src/main/window-contexts.cjs",
+          "sha256": "6b043d478e35d2427376ada7c8bb054831d986afe2b8954193e8514eafdb8650",
+          "symbols": [
+            "WindowContexts",
+            "ScopedIPCRouter"
+          ],
+          "adaptation": "AsyncLocalStorage origin, exact sender grants, per-window services/disposal; renderer URL is parameterized and App-only service fields removed."
+        },
+        {
+          "path": "desktop/src/main/external-document-open.cjs",
+          "sha256": "2c1654a44ba8d92db5d9bd4a9b25b9d903b6c3497bcd0648a3512ed8dbe7e81b",
+          "symbols": [
+            "ExternalDocumentOpen",
+            "selectDocument",
+            "inspectDocument",
+            "fileWithin"
+          ],
+          "adaptation": "Early OS-open queue, per-window ready/ack mailboxes, matching workspace/new-window routing. Recent-folder persistence removed; a file selection grants only the selected file."
+        },
+        {
+          "path": "desktop/src/main/document-menu.cjs",
+          "sha256": "d482bc4dbf523ce33f1a2cb8e9958db7374989f3c45b48800bbd50822f628883",
+          "symbols": [
+            "installDocumentMenu"
+          ],
+          "adaptation": "Native document/folder accelerators and preserving existing menus; identifiers receive a standalone prefix."
+        },
+        {
+          "path": "desktop/src/main/main.cjs",
+          "sha256": "8ccfea7f7ccac7cd0f5f3c56051bf0b85bcd3a1bc3b1cdcb85b5f6c85c2e27c4",
+          "symbols": [
+            "createWindow",
+            "handler",
+            "open-file",
+            "second-instance",
+            "activate"
+          ],
+          "adaptation": "Standalone example adapts the real lifecycle and sender-validated IPC pattern, internal asset protocol and restrictive BrowserWindow settings. Domain services are explicit host integration points."
+        },
+        {
+          "path": "desktop/src/preload/preload.cjs",
+          "sha256": "be24f225763dc2c5b71e7be07a78284c4b3007a526fa066b3e4dd64ee742b570",
+          "symbols": [
+            "invoke",
+            "externalOpenRequests",
+            "acknowledgeExternalOpen",
+            "moveExternalOpenToNewWindow"
+          ],
+          "adaptation": "Explicit capability bridge; no generic ipcRenderer, arbitrary command or original domain API exported."
+        },
+        {
+          "path": "desktop/src/renderer/App.tsx",
+          "sha256": "d0f1f008c314bfd749e4d380bebb4015c8c70015b2249b85c6f42abd7b0f9529",
+          "symbols": [
+            "open",
+            "external request pump",
+            "quick switch"
+          ],
+          "adaptation": "DocumentTabs adapts duplicate-focus and request-epoch semantics. Demo uses a plain read-only preview, not the original advanced editor."
+        },
+        {
+          "path": "ios/InkSpace/InkSpaceApp.swift",
+          "sha256": "01b30fd3fa59e8f73a89623e0d7bfeba4abe9b42337d1afa46f2852a7a67e193",
+          "symbols": [
+            "KnowledgeHomeLaunchState",
+            "WorkspaceSceneRoot"
+          ],
+          "adaptation": "HomeLaunchState ports the pure route transitions. It does not claim to be a native SwiftUI scene implementation."
+        }
+      ],
+      "tests": [],
+      "verification": {
+        "status": "passed",
+        "isolatedRequire": true,
+        "packageImports": "contained",
+        "tests": 25,
+        "pass": 25,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "verificationMode": "official npm CLI: fresh npm pack, tarball install into an isolated consumer; no App dependencies",
+        "stage": "local extracted candidate; final archive download is verified separately",
+        "readmeExample": "passed",
+        "graphicalDemo": {
+          "status": "passed",
+          "electron": "44.3.0",
+          "playwright": "1.62.1",
+          "checks": 12,
+          "data": "new synthetic documents only",
+          "nativePickerUI": "not automated; trusted native selection result substituted",
+          "osIntegration": "real Electron open-file/open-url event adapters; OS associations unchanged",
+          "finalRepackedConsumer": "passed",
+          "frozenSourceFilesMatched": 25
+        }
+      },
+      "packageTest": "test/package.test.cjs",
+      "standaloneEntry": "examples/electron/main.cjs",
+      "sourceMapping": "resources/ORIGIN.md"
     }
   ],
   "verification": {
     "status": "passed",
-    "packages": 19,
+    "packages": 20,
     "failedOrPendingPackages": 0,
-    "tests": 217,
+    "tests": 242,
     "skipped": 0,
     "isolatedOutsideRepository": true,
     "dependencyMode": "Only declared registry dependencies were installed in isolated consumers; no original application dependency links or NODE_PATH.",
-    "verificationMode": "official npm registry fresh npm pack/install; original public downloads and corrected candidates tracked separately",
+    "verificationMode": "Prior unchanged 19 packages retain their actual public-download npm pack/install acceptance; new application-shell independently packed, installed and tested with 25 passing tests.",
     "originalPublicDownloadCheck": {
       "commit": "28d298d6099658043ba5e992e97c6c28bccfc6ac",
       "packages": 19,
@@ -2261,6 +2383,19 @@
       "status": "passed",
       "readmeZipInstallInstructionsCorrected": 19,
       "realIPythonSyntheticCells": 3
+    },
+    "previousFinalPublicDownloadCheck": {
+      "commit": "11fb58cf27dc4dbe44f50b6f35f6e27635413df2",
+      "packages": 19,
+      "tests": 217,
+      "readmeJavaScriptExamples": 19,
+      "status": "passed"
+    },
+    "newExtractionCandidateCheck": {
+      "package": "application-shell",
+      "tests": 25,
+      "status": "passed",
+      "publicDownloadVerification": "recorded separately after publishing"
     }
   }
 }

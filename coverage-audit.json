@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "auditDate": "2026-10-24",
-  "auditBaseCommit": "28d298d6099658043ba5e992e97c6c28bccfc6ac",
+  "auditBaseCommit": "1fa5bf5692570c0e86e757ab623d46433b5ec79b",
   "scope": "公开的桌面105/原生106.3基础源码与下载模块；不代表后来私有开发版本自动覆盖。",
   "completeSourceRepository": "inkspace",
   "completeSourceArchive": "InkSpace-source-2026-10-24.zip",
@@ -17,9 +17,8 @@
     "app-source-only": "只在完整源包提供，尚无完整独立模块。"
   },
   "statusCounts": {
-    "reusable-core": 23,
+    "reusable-core": 26,
     "core-and-component": 35,
-    "app-source-only": 3,
     "installable-plugin": 1,
     "integration-source": 1
   },
@@ -887,18 +886,29 @@
       "name": "辅助书写与演示",
       "scope": "几何辅助、停留直线、高亮底层、激光轨迹、胶带复习遮挡和系统随手写转文字卡；胶带不是隐私涂黑。",
       "originalSources": [
+        "ios/InkSpace/Core/BoardPencilGestureSettings.swift",
         "ios/InkSpace/Core/BoardHeldLineStroke.swift",
         "ios/InkSpace/Core/BoardWritingAid.swift",
-        "ios/InkSpace/UI/BoardWritingAidSettingsView.swift",
+        "ios/InkSpace/Core/BoardWritingAidStrokes.swift",
+        "ios/InkSpace/Core/BoardHighlighterUnderlay.swift",
+        "ios/InkSpace/Core/BoardWritingAidRepository.swift",
+        "ios/InkSpace/Canvas/BoardWritingAidOverlay.swift",
         "ios/InkSpace/UI/BoardWritingAidScribbleView.swift"
       ],
-      "extractionStatus": "app-source-only",
+      "extractionStatus": "reusable-core",
       "node": [],
-      "swiftProducts": [],
+      "swiftProducts": [
+        "InkSpaceWritingAids"
+      ],
       "reactComponents": [],
-      "downloadArchives": [],
-      "runtimeOrUnextractedBoundary": "辅助笔激光/波浪线/闭合填色/胶带/手写转字、停留直线、形状拟合与持久化尚无独立包。",
-      "pendingExports": []
+      "downloadArchives": [
+        "swift-InkSpaceWritingAids.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "独立几何/状态/胶带存储、Mac交互示例和可选iOS Scribble适配；PKStroke压力/纹理/撤销与Canvas插入由宿主提供。Scribble依赖系统和支持的iPad，未做真实Apple Pencil验收；胶带只支持board-space且不是隐私涂黑。",
+      "pendingExports": [],
+      "standaloneExamples": [
+        "samples/writing-aids"
+      ]
     },
     {
       "id": "C10",
@@ -1942,15 +1952,30 @@
         "desktop/src/renderer/PanelLayout.tsx",
         "ios/InkSpace/UI/AppSettingsView.swift",
         "ios/InkSpace/UI/BoardToolbarCustomizationView.swift",
-        "ios/InkSpace/Core/BoardPencilGestureSettings.swift"
+        "ios/InkSpace/Core/BoardToolbarVisibility.swift",
+        "ios/InkSpace/Core/BoardPencilGestureSettings.swift",
+        "ios/InkSpace/Core/NativePaletteSettings.swift",
+        "ios/InkSpace/Core/BoardPaletteDockSettings.swift",
+        "ios/InkSpace/Core/Models.swift",
+        "ios/InkSpace/Video/BoardSubtitleAppearance.swift",
+        "ios/InkSpace/Core/InkReplayDisplayMode.swift",
+        "ios/InkSpace/AI/AIWebProvider.swift",
+        "ios/InkSpace/AI/PDFTranslationProvider.swift"
       ],
-      "extractionStatus": "app-source-only",
+      "extractionStatus": "reusable-core",
       "node": [],
-      "swiftProducts": [],
+      "swiftProducts": [
+        "InkSpacePreferences"
+      ],
       "reactComponents": [],
-      "downloadArchives": [],
-      "runtimeOrUnextractedBoundary": "全局偏好、工具栏/调色板、Pencil双击/握压设置和原生辅助功能依赖App路由与系统环境；UI组件只接受language等props。",
-      "pendingExports": []
+      "downloadArchives": [
+        "swift-InkSpacePreferences.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "独立本地化、布局/工具栏/笔栏/手势/播放设置与显式存储，附Mac设置示例；不读取原App存量偏好。系统Pencil事件、播放器、账号服务和完整原生界面由宿主接入，示例跟随系统外观。",
+      "pendingExports": [],
+      "standaloneExamples": [
+        "samples/preferences"
+      ]
     },
     {
       "id": "H04",
@@ -1988,18 +2013,42 @@
         "desktop/src/renderer/App.tsx",
         "ios/InkSpace/InkSpaceApp.swift"
       ],
-      "extractionStatus": "app-source-only",
-      "node": [],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "application-shell",
+          "namespacesOrExports": [
+            "WindowContexts",
+            "ExternalDocumentOpen",
+            "DocumentCapabilities",
+            "DocumentTabs",
+            "HomeLaunchState",
+            "parseOpenURL",
+            "routeOpenURL"
+          ]
+        }
+      ],
       "swiftProducts": [],
       "reactComponents": [],
-      "downloadArchives": [],
-      "runtimeOrUnextractedBoundary": "完整应用壳、系统入口、多窗口和快速切换器是整合层，不作为独立模块交付。",
-      "pendingExports": []
+      "downloadArchives": [
+        "node-application-shell.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "独立窗口/权限/打开队列、标签/快速切换、首页状态与协议路由，附可运行Electron只读文档壳。文本可预览，PDF/Office/媒体等完整编辑器由集成方提供；不包含原SwiftUI场景和iCloud恢复。示例不自动登记系统协议。",
+      "pendingExports": [],
+      "standaloneExamples": [
+        "packages/application-shell/examples/electron"
+      ]
     }
   ],
   "publishedCompleteSourceReferenceCheck": {
     "completeArchiveEntries": 761,
-    "functionalSourceReferences": 229,
+    "functionalSourceReferences": 241,
     "allSourceReferencesPresentInPublishedCompleteArchive": true
-  }
+  },
+  "appSourceOnlyGroupCount": 0,
+  "latestExtractionGroups": [
+    "C09",
+    "H03",
+    "H05"
+  ]
 }

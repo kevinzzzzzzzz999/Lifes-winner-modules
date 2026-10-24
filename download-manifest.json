@@ -1,7 +1,13 @@
 {
   "releaseDate": "2026-10-24",
-  "revision": "r2",
+  "revision": "2026-10-24-r3",
   "archives": [
+    {
+      "file": "node-application-shell.zip",
+      "bytes": 43546,
+      "sha256": "0b527bbda9d766d1a34ba0ec0911b5c26c5d4fb0c26b3792c193c6ea6b1594ae",
+      "members": 25
+    },
     {
       "file": "node-board-ink.zip",
       "bytes": 54279,
@@ -189,6 +195,12 @@
       "members": 5
     },
     {
+      "file": "swift-InkSpacePreferences.zip",
+      "bytes": 31490,
+      "sha256": "07bbb220c5668dc71721aacb2af61dd2e88856ec19533a7a091cc9a8abdfd0c0",
+      "members": 19
+    },
+    {
       "file": "swift-InkSpaceScanPDF.zip",
       "bytes": 9798,
       "sha256": "b352be4749d8f33929afcf6104ec93d559b17bf8eb478dc461afe3d65bbfda25",
@@ -229,11 +241,17 @@
       "bytes": 5816,
       "sha256": "96ff8ba9457d4f47e1dced6a551257daf4324dd03efd86658fd4b90963a70840",
       "members": 4
+    },
+    {
+      "file": "swift-InkSpaceWritingAids.zip",
+      "bytes": 35574,
+      "sha256": "4b65120a98e454066e3c99ae14d05741bd7dbd4aa8c52d55e65313265519e546",
+      "members": 21
     }
   ],
   "workspaceSource": {
-    "file": "InkSpace-modules-source-2026-10-24-r2.zip",
-    "sha256": "7c0d5dd434103e342d00964a98b9725dfe9b5ebac5bb76e02905d3303c3b3394",
-    "members": 1001
+    "file": "InkSpace-modules-source-2026-10-24-r3.zip",
+    "sha256": "c4577d01e31868e036e6f82364ba164bd8c28db12799a55104bda717df158dc4",
+    "members": 1063
   }
 }

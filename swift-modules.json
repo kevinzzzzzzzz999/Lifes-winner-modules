@@ -3,7 +3,7 @@
   "package": "InkSpaceModules",
   "manifest": "Package.swift",
   "localManifest": "swift/Package.swift",
-  "productCount": 16,
+  "productCount": 18,
   "verifiedDate": "2026-10-24",
   "products": [
     {
@@ -434,6 +434,188 @@
         "Documents/ScannedPDFExport.swift"
       ],
       "limitations": "接收调用方提供的PDFPage，按顺序汇编并另存，自动避开重名文件；不包含摄像头扫描UI、裁边或旋转编辑器。已用合成PDF测试保存/重名保护。"
+    },
+    {
+      "name": "InkSpaceWritingAids",
+      "purpose": "辅助书写与演示：停留直线与六形拟合、波浪/填色、高亮置底、激光、胶带、文字卡及可选iPad系统手写输入；附Mac交互画布。",
+      "frameworks": [
+        "Foundation",
+        "CoreGraphics",
+        "SwiftUI (iOS adapter only)",
+        "UIKit (iOS adapter only)"
+      ],
+      "publicAPI": [
+        "HeldLineTracker",
+        "HeldShapeTracker",
+        "WritingAidShape",
+        "WritingAidStrokeGeometry",
+        "WritingAidHighlighterUnderlay",
+        "WritingAidMode",
+        "WritingAidSettings",
+        "WritingAidSessionToken",
+        "WritingAidPoint",
+        "WritingAidColor",
+        "WritingAidTape",
+        "WritingAidTapeDocument",
+        "WritingAidTapeGeometry",
+        "WritingAidTapeRepository",
+        "WritingAidLaserTrail",
+        "WritingAidLaserPresentation",
+        "WritingAidTextDraft",
+        "WritingAidTextSubmission",
+        "WritingAidScribbleInput (iOS)",
+        "WritingAidScribbleCardInput (iOS)",
+        "WritingAidError"
+      ],
+      "sourceFiles": [
+        "ios/InkSpace/Core/BoardPencilGestureSettings.swift",
+        "ios/InkSpace/Core/BoardHeldLineStroke.swift",
+        "ios/InkSpace/Core/BoardWritingAid.swift",
+        "ios/InkSpace/Core/BoardWritingAidStrokes.swift",
+        "ios/InkSpace/Core/BoardHighlighterUnderlay.swift",
+        "ios/InkSpace/Core/BoardWritingAidRepository.swift",
+        "ios/InkSpace/Canvas/BoardWritingAidOverlay.swift",
+        "ios/InkSpace/UI/BoardWritingAidScribbleView.swift"
+      ],
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceWritingAids",
+      "documentation": "swift/Documentation/InkSpaceWritingAids/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "dependencies": [],
+      "limitations": "Core returns geometry/value state; host owns native PKStroke pressure, transform, undo and insertion. Scribble uses a system UITextInput surface on supported iPad devices; no bundled OCR. Real Apple Pencil/device recognition has not been tested. macOS SwiftUI demo uses vector highlighter/fill rendering; it does not reproduce PencilKit texture. Tape v1 supports board-space only; card-relative anchors are explicitly rejected. All filesystem work is opt-in, at a host-selected trusted local directory; no networking/default preferences reads. Demo exports its own bounded versioned JSON, not original InkSpace boards; laser/draft/undo state excluded.",
+      "standaloneExample": {
+        "path": "samples/writing-aids",
+        "product": "WritingAidsDemo"
+      }
+    },
+    {
+      "name": "InkSpacePreferences",
+      "purpose": "独立语言/布局、工具栏与笔栏、Pencil操作选择、字幕外观及播放偏好，显式隔离持久化",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpacePreferences",
+      "documentation": "swift/Documentation/InkSpacePreferences/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "CoreGraphics"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "InterfaceLanguage.initial(saved:preferredLanguages:)",
+        "LanguagePreference.resolved(preferredLanguages:)",
+        "PreferencesLocalizer.allKeys / text(_:language:fallback:)",
+        "PanelLayoutPreferences.normalized / fitted(viewport:aiOpen:compactLeftOpen:)",
+        "BoardToolbarFunction / BoardToolbarVisibility.setVisible(_:for:)",
+        "SavedPenKind / SavedPen / SavedPenSettings.defaults / validate() / removingPen(_:)",
+        "NativePaletteEntry / NativePaletteSettings.migrated(penIDs:) / reconciled(penIDs:) / reorderingPens(penIDs:) / moving(fromOffsets:toOffset:) / removing(_:) / restoringUtility(_:)",
+        "BoardPencilGestureSettings / BoardPencilLineSettings.normalized / BoardPencilShapeSettings",
+        "BoardPaletteDockSettings.frame(in:toolCount:)",
+        "SubtitleAppearancePreferences.normalized / PlaybackPreferences.normalized",
+        "ReplayDisplayMode.opacity(index:visibleCount:) / AIWebsitePreference / TranslationServicePreference",
+        "PreferencesSnapshot.normalized()",
+        "PreferencesStore.init(domain:storage:) / load() / save(_:)",
+        "PreferencesDataStorage / MemoryPreferencesStorage / FilePreferencesStorage / UserDefaultsPreferencesStorage"
+      ],
+      "sourceFiles": [
+        "desktop/src/renderer/i18n.ts",
+        "desktop/src/renderer/PanelLayout.tsx",
+        "ios/InkSpace/UI/AppSettingsView.swift",
+        "ios/InkSpace/UI/BoardToolbarCustomizationView.swift",
+        "ios/InkSpace/Core/BoardToolbarVisibility.swift",
+        "ios/InkSpace/Core/BoardPencilGestureSettings.swift",
+        "ios/InkSpace/Core/NativePaletteSettings.swift",
+        "ios/InkSpace/Core/BoardPaletteDockSettings.swift",
+        "ios/InkSpace/Core/Models.swift",
+        "ios/InkSpace/Video/BoardSubtitleAppearance.swift",
+        "ios/InkSpace/Core/InkReplayDisplayMode.swift",
+        "ios/InkSpace/AI/AIWebProvider.swift",
+        "ios/InkSpace/AI/PDFTranslationProvider.swift"
+      ],
+      "sourceMappings": [
+        {
+          "path": "desktop/src/renderer/i18n.ts",
+          "sha256": "82cfaadd0e5dca2149af5af48de26e6feab4fcef517487e0ad617413311774e1",
+          "extractedBehavior": "Explicit language resolution and complete 92-entry bilingual catalog"
+        },
+        {
+          "path": "desktop/src/renderer/PanelLayout.tsx",
+          "sha256": "405e6237e68477a0327bcde3c916166c1d1cb0919fa5f9a5e9c3d6c01ca1b3ff",
+          "extractedBehavior": "Panel defaults, finite width bounds and compact geometry"
+        },
+        {
+          "path": "ios/InkSpace/UI/AppSettingsView.swift",
+          "sha256": "c442eecb48a71f7b29b4aae9a24878bcef8dd6d68e07487becce60ec1e73360f",
+          "extractedBehavior": "Playback seek/rate choices and local service/replay selection"
+        },
+        {
+          "path": "ios/InkSpace/UI/BoardToolbarCustomizationView.swift",
+          "sha256": "09585e7207bbc5e602e909a9c3f4bbfe375270241dd321478585817af00947d0",
+          "extractedBehavior": "Writing/reading/shared visibility and reset contract"
+        },
+        {
+          "path": "ios/InkSpace/Core/BoardToolbarVisibility.swift",
+          "sha256": "13feb0d50c226692a4009d2c0def314d613615ffe000bd5b66a86d870fca0e46",
+          "extractedBehavior": "14-function bitmask model, future-bit stripping and reversible hiding"
+        },
+        {
+          "path": "ios/InkSpace/Core/BoardPencilGestureSettings.swift",
+          "sha256": "2ed526ce976dbe32a4630a6747632c4c8df6d607b3a09cf8f686f3d8fda2b8c9",
+          "extractedBehavior": "Double-tap/squeeze actions, hold duration limits and selected geometry mode only"
+        },
+        {
+          "path": "ios/InkSpace/Core/NativePaletteSettings.swift",
+          "sha256": "c6c7c819ed57c9fc60235397c87d22f8300889c6dab2517fea9aa71cb71d6f29",
+          "extractedBehavior": "Mixed palette migration/reconcile/reorder/remove/restore algorithms"
+        },
+        {
+          "path": "ios/InkSpace/Core/BoardPaletteDockSettings.swift",
+          "sha256": "1c926bf0776f4ae419865147b791a09ebdc78a0037ef3cb778c085919e67450f",
+          "extractedBehavior": "Palette docking preferences and bounded frame computation"
+        },
+        {
+          "path": "ios/InkSpace/Core/Models.swift",
+          "sha256": "376b69ecc06519f2a5128e56a39ee7b4d2f661352eb94a53060755dc9a6d136a",
+          "extractedBehavior": "SavedPen/SavedPenSettings validation, neighbour fallback and seven initial styles"
+        },
+        {
+          "path": "ios/InkSpace/Video/BoardSubtitleAppearance.swift",
+          "sha256": "f529405727beaed6989db1e4a1a5b36c5ef76c89c0ddbecc92f84c948fe4c8e0",
+          "extractedBehavior": "Subtitle appearance fields and normalization limits"
+        },
+        {
+          "path": "ios/InkSpace/Core/InkReplayDisplayMode.swift",
+          "sha256": "f641d6e3700398e3bffb7c050b1980b7f0c84621e45677fa4ee82624cb17b848",
+          "extractedBehavior": "Replay mode and future-ink opacity"
+        },
+        {
+          "path": "ios/InkSpace/AI/AIWebProvider.swift",
+          "sha256": "e9f71c4abf7f7dc62c528896da1fb1e2b193d191f9b1614a4a28d09fe222630b",
+          "extractedBehavior": "AI website selection names only"
+        },
+        {
+          "path": "ios/InkSpace/AI/PDFTranslationProvider.swift",
+          "sha256": "fbdad51df4fd89812f82836cfabe7f4d9e22bd1d3d089954fbc70f2eea7bc0c6",
+          "extractedBehavior": "Translation provider selection names only; credentials not included"
+        }
+      ],
+      "adaptations": [
+        "Public value types and explicit constructors; no original app preference domain/key lookup or automatic migration",
+        "New versioned JSON envelope bound to caller domain; maximum 65536 bytes; corrupt/future data throws and is preserved until explicit save",
+        "Original seven pen styles use deterministic synthetic IDs; palette size/name limits bound new standalone settings",
+        "Only action preferences extracted from Pencil settings file; geometric fitting and actual input handling belong to InkSpaceWritingAids or host",
+        "UIKit subtitle renderer omitted; appearance data and bounds remain reusable; demo follows system light/dark appearance"
+      ],
+      "limitations": "这是偏好库与可启动macOS示例，不是完整InkSpace设置界面或书写引擎。iOS库支持不等于Apple Pencil硬件验收；事件、PencilKit工具、系统语言设置、原生字幕/播放/翻译/AI服务由宿主实现。没有新增全局主题或无障碍系统控制；示例跟随系统外观。原App存量偏好不会自动读取或迁移。多写者需宿主协调；本地配置不是密钥保险库。",
+      "standaloneExample": {
+        "path": "samples/preferences",
+        "product": "InkSpacePreferencesDemo"
+      }
     }
   ],
   "validation": {
@@ -462,6 +644,22 @@
     "liveAIProviders": "not tested",
     "keychainRuntime": "not tested",
     "ocrRecognitionAccuracy": "not tested; page range boundaries checked",
-    "excelPictures": "malformed package rejection checked; no full XLSX corpus run"
+    "excelPictures": "malformed package rejection checked; no full XLSX corpus run",
+    "latestStandaloneAdditions": {
+      "date": "2026-10-24",
+      "products": [
+        "InkSpacePreferences",
+        "InkSpaceWritingAids"
+      ],
+      "exampleBehaviorTests": {
+        "InkSpacePreferences": 16,
+        "InkSpaceWritingAids": 11
+      },
+      "independentConsumers": "built and ran in isolated package roots",
+      "macOSExamples": "actual windows, explicit save/reload or export/open; startup scripts build local ad-hoc signed app bundles without an Apple account",
+      "iOSSimulator": "both new libraries typechecked for arm64 iOS18 using iPhoneSimulator27.1 SDK",
+      "realApplePencil": "not tested",
+      "publicDownloadAcceptance": "recorded in portal DOWNLOAD-CHECKS.md after publication"
+    }
   }
 }

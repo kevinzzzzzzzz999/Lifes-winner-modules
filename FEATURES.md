@@ -5,16 +5,16 @@
 ## 如何阅读
 
 - **来源相对路径**相对于完整 InkSpace 软件仓库根目录；本文件中的 `desktop/`、`ios/`、`obsidian/` 是来源定位，不表示本模块仓库把整个原App重复打包。
-- **JS**是已经抽取的19个独立库域，具体导出和验证以各包README、入口、`modules.json`及测试为准。`JS核心`不表示该功能的所有原界面已变成独立App。
+- **JS**是已经抽取的20个独立库域，具体导出和验证以各包README、入口、`modules.json`及测试为准。`JS核心`不表示该功能的所有原界面已变成独立App。
 - **Swift域**表示原生可复用边界，最终可导入的product/target以Swift包的 `Package.swift` 和模块说明为准；不能把UIKit/PencilKit界面直接当跨平台纯库。
 - **需宿主/待解耦**表示仍依赖Electron、React、SwiftUI、PencilKit、WebKit、系统文件选择器、钥匙串、网络提供方或外部运行时。未完成的独立应用不能标成已可安装。
 - 这里记录的是源码存在的能力与边界；不宣称本次重新完成所有真机、云同步或压力验收。原生大规模套索稳定性、部分UI流程和平台覆盖限制继续适用。
 
 ## 独立核心域
 
-JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tools`、`pdf-annotations`、`office-documents`、`notebook-data`、`notebook-runtime`、`knowledge-search`、`file-storage`、`note-exchange`、`study-tools`、`task-calendar`、`browser-utilities`、`translation-tools`、`media-tools`、`math-lab`、`document-workspace`、`ocr-tools`。这是一组可独立加载的库，不是19个桌面安装程序。
+JS按20个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tools`、`pdf-annotations`、`office-documents`、`notebook-data`、`notebook-runtime`、`knowledge-search`、`file-storage`、`note-exchange`、`study-tools`、`task-calendar`、`browser-utilities`、`translation-tools`、`media-tools`、`math-lab`、`document-workspace`、`ocr-tools`、`application-shell`。这是一组可独立加载的库，不是20个桌面安装程序。
 
-[Swift产品清单](swift-modules.json)目前声明16个product：`InkSpaceTextHistory`、`InkSpaceOutline`、`InkSpaceSubtitles`、`InkSpacePaths`、`InkSpaceGeometry`、`InkSpaceStudy`、`InkSpaceChecklist`、`InkSpacePDFRecords`、`InkSpaceMediaTimeline`、`InkSpaceAI`、`InkSpaceWebClips`、`InkSpaceSpeechText`、`InkSpaceStorage`、`InkSpaceOCR`、`InkSpaceExcelPictures`、`InkSpaceScanPDF`。16个product已完成SwiftPM测试及arm64 iOS Simulator无签名构建，具体平台、API和行为验证范围以Swift包说明为准；未纳入纯库的原生UI仍在表中标明。后续拆分必须保持格式、数据完整性、原功能和宿主接口约束。
+[Swift产品清单](swift-modules.json)目前声明18个product：`InkSpaceTextHistory`、`InkSpaceOutline`、`InkSpaceSubtitles`、`InkSpacePaths`、`InkSpaceGeometry`、`InkSpaceStudy`、`InkSpaceChecklist`、`InkSpacePDFRecords`、`InkSpaceMediaTimeline`、`InkSpaceAI`、`InkSpaceWebClips`、`InkSpaceSpeechText`、`InkSpaceStorage`、`InkSpaceOCR`、`InkSpaceExcelPictures`、`InkSpaceScanPDF`、`InkSpacePreferences`、`InkSpaceWritingAids`。原16个product已完成SwiftPM测试及arm64 iOS Simulator无签名构建；新增两个产品的独立示例、行为测试与SDK检查另见验证记录，具体平台、API和行为验证范围以Swift包说明为准；未纳入纯库的原生UI仍在表中标明。后续拆分必须保持格式、数据完整性、原功能和宿主接口约束。
 
 ## React界面的独立使用边界
 
@@ -62,7 +62,7 @@ JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 | C06 | 子白板与入口嵌入 | 创建/连接子白板、父子跳转、嵌入预览与原文件定位。 | `desktop/src/main/board-child-links.cjs`<br>`desktop/src/renderer/ChildBoardPortal.tsx`<br>`ios/InkSpace/UI/ChildBoardsSheet.swift`<br>`ios/InkSpace/Canvas/BoardChildCanvasOverlay.swift` | JS `board-model`；跨画布入口/窗口路由仍需解耦；UI `board`内子白板入口，需文件/会话接口 |
 | C07 | 白板合并与明确撤回 | 来源预览、自选位置、平移缩放、合并记录和撤回；保持原板与既有笔迹。 | `desktop/src/main/board-merge.cjs`<br>`desktop/src/renderer/BoardMergeDialog.tsx`<br>`ios/InkSpace/Core/BoardMerge.swift`<br>`ios/InkSpace/UI/BoardMergeView.swift` | JS `board-merge`；合并放置界面和原生笔迹变换需宿主 |
 | C08 | 原文重关联与引用修复 | 源文件移动/变化时核对摘要并重关联PDF与批注引用，保留失败/冲突保护。 | `desktop/src/main/board-relink.cjs`<br>`desktop/src/main/board-relink-stream.cjs`<br>`desktop/src/renderer/BoardRelinkDialog.tsx`<br>`ios/InkSpace/Documents/VaultPathResolver.swift` | JS `board-model`/`pdf-tools`域；交互确认与原生协调需宿主；UI `board`内重关联操作，需宿主确认/存储接口 |
-| C09 | 辅助书写与演示 | 几何辅助、停留直线、高亮底层、激光轨迹、胶带复习遮挡和系统随手写转文字卡；胶带不是隐私涂黑。 | `ios/InkSpace/Core/BoardHeldLineStroke.swift`<br>`ios/InkSpace/Core/BoardWritingAid.swift`<br>`ios/InkSpace/UI/BoardWritingAidSettingsView.swift`<br>`ios/InkSpace/UI/BoardWritingAidScribbleView.swift` | 暂无完整独立辅助笔模块；Pencil/Scribble/胶带UI、形状识别与持久化仍需原生解耦 |
+| C09 | 辅助书写与演示 | 几何辅助、停留直线、高亮底层、激光轨迹、胶带复习遮挡和系统随手写转文字卡；胶带不是隐私涂黑。 | `ios/InkSpace/Core/BoardHeldLineStroke.swift`<br>`ios/InkSpace/Core/BoardWritingAid.swift`<br>`ios/InkSpace/UI/BoardWritingAidSettingsView.swift`<br>`ios/InkSpace/UI/BoardWritingAidScribbleView.swift` | Swift `InkSpaceWritingAids`提供停留直线/六形拟合、波浪/填色、高亮置底、激光、胶带/存储、文字卡及可选iOS Scribble适配；附可启动Mac画布。PKStroke接线、真实Pencil与系统识别仍需对应宿主/硬件 |
 | C10 | 历史版本、备份与恢复 | 自动/手动本机历史、容量设置、可编辑ZIP备份、导入恢复独立副本及附件检查。 | `desktop/src/main/board-history-service.cjs`<br>`ios/InkSpace/Core/LocalBoardBackupStore.swift`<br>`ios/InkSpace/Backup/`<br>`ios/InkSpace/UI/BoardBackupSettingsView.swift` | JS `board-merge.history`历史核心；完整备份/恢复界面及原生归档尚未独立提取 |
 | C11 | 分页、打印与图片/PDF导出 | Letter纸框、页序、裁剪、分页PDF/PNG/JPEG与当前视图输出；平台导出能力不同。 | `desktop/src/renderer/board-export.tsx`<br>`desktop/src/renderer/ExportDialog.tsx`<br>`ios/InkSpace/Core/BoardPrintExporter.swift`<br>`ios/InkSpace/UI/BoardPrintPagesView.swift` | JS `pdf-tools`部分；Swift `InkSpaceGeometry`分页几何；实际页面渲染/系统打印需宿主，非同一导出接口 |
 | C12 | 现存笔迹回放 | 播放/暂停/倍速、背景、显示模式和镜头控制；只读回放仍存在的笔迹，缺失时间不补造历史。 | `desktop/src/renderer/ink-replay.ts`<br>`desktop/src/renderer/InkReplayDialog.tsx`<br>`ios/InkSpace/Core/InkReplay.swift`<br>`ios/InkSpace/UI/InkReplayView.swift` | JS `board-ink`回放核心；Web回放组件已抽取；PencilKit与系统独立窗仍需宿主；UI `board`笔迹回放，资源需适配 |
@@ -121,9 +121,9 @@ JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 | --- | --- | --- | --- | --- |
 | H01 | Obsidian白板查看器 | 已有白板/PDF/文字/公式/连线/定位点查看、Markdown嵌入、搜索定位和原文件打开。 | `obsidian/inkspace-companion/`<br>`obsidian/tests/companion.test.cjs` | 独立集成 `integrations/obsidian/`：可安装到Obsidian；查看无需完整InkSpace；原生创建/书写需系统inkspace协议处理程序 |
 | H02 | Safari系统分享剪藏 | 显式分享标题/URL/选中文字，系统文件选择器保存版本化JSON供任意兼容导入器消费。 | `ios/OptionalShareExtension/` | 源码集成 `integrations/safari-share-clipper/`：不依赖完整App源码；仍需签名承载App及扩展target，尚未独立target构建/真机验收 |
-| H03 | 语言、外观与操作偏好 | 英文/简体中文、布局/侧栏、工具栏自定义、笔工具预设、Pencil双击/握压、字号/无障碍语义和播放等本机设置。 | `desktop/src/renderer/i18n.ts`<br>`desktop/src/renderer/PanelLayout.tsx`<br>`ios/InkSpace/UI/AppSettingsView.swift`<br>`ios/InkSpace/UI/BoardToolbarCustomizationView.swift`<br>`ios/InkSpace/Core/BoardPencilGestureSettings.swift` | 跨模块UI支持层，原平台设置/持久化需宿主；不是单独业务软件 |
+| H03 | 语言、外观与操作偏好 | 英文/简体中文、布局/侧栏、工具栏自定义、笔工具预设、Pencil双击/握压、字号/无障碍语义和播放等本机设置。 | `desktop/src/renderer/i18n.ts`<br>`desktop/src/renderer/PanelLayout.tsx`<br>`ios/InkSpace/UI/AppSettingsView.swift`<br>`ios/InkSpace/UI/BoardToolbarCustomizationView.swift`<br>`ios/InkSpace/Core/BoardPencilGestureSettings.swift` | Swift `InkSpacePreferences`提供92条双语本地化、布局、工具栏/笔栏、Pencil操作选择、字幕/播放等数据与隔离持久化；附可启动Mac设置示例。系统事件与服务执行由宿主提供，不自动读取原App偏好 |
 | H04 | 本机问题记录与诊断导出 | 受限问题记录、状态/错误码和手动导出，不把私人日志作为发布内容。 | `desktop/src/main/diagnostics.cjs`<br>`ios/InkSpace/Core/DiagnosticsCenter.swift`<br>`ios/InkSpace/UI/DiagnosticsCenterView.swift` | JS `file-storage.diagnostics`已提供独立诊断记录；系统导出界面和原生诊断中心尚未独立提取 |
-| H05 | 完整应用壳与系统入口 | 统一首页/路由、资料选择、窗口生命周期、系统文件打开和inkspace协议，装配所有模块。 | `desktop/src/main/main.cjs`<br>`desktop/src/preload/preload.cjs`<br>`desktop/src/renderer/App.tsx`<br>`ios/InkSpace/InkSpaceApp.swift` | 完整软件继续保留；独立库不包含原完整应用壳、快速切换器或系统入口，也不替代其设备/平台验收 |
+| H05 | 完整应用壳与系统入口 | 统一首页/路由、资料选择、窗口生命周期、系统文件打开和inkspace协议，装配所有模块。 | `desktop/src/main/main.cjs`<br>`desktop/src/preload/preload.cjs`<br>`desktop/src/renderer/App.tsx`<br>`ios/InkSpace/InkSpaceApp.swift` | JS `application-shell`提供窗口/权限/系统打开队列、协议/文档路由、标签/快速切换及首页状态；附可启动Electron只读文档壳。完整编辑器和原生SwiftUI场景仍由集成方装配，示例不登记系统协议 |
 
 ## 独立集成的实际验证
 

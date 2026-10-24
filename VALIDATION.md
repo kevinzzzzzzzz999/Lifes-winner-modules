@@ -24,6 +24,20 @@
 
 ## 覆盖边界
 
-逐项功能目录共63组，源码引用与实际导出记录在coverage-audit.json。不是63个现成独立App：库函数、宿主组件、插件与仅集成源码分别标明；仍有原生书写辅助、应用偏好及完整应用壳三组只在完整App源码中。外部OCR、FFmpeg、Tectonic、浏览器、Apple框架和账号服务需按各包说明提供。
+r2时逐项功能目录共63组，其中三组当时只在完整App源码中；本轮已补独立库与示例（见下方r3记录）。源码引用与实际导出记录在coverage-audit.json，库函数、宿主组件、插件与集成源码分别标明；这仍不表示63个完整成品App。外部OCR、FFmpeg、Tectonic、浏览器、Apple框架和账号服务需按各包说明提供。
 
 完整软件设备稳定性、iCloud传播和大笔迹压力限制仍按原记录保留。本轮没有修改用户笔记或操作真实设备；编译和组件检查不替代设备验收。
+
+## r3：三组独立库与可运行示例
+
+本轮新增 `InkSpaceWritingAids`、`InkSpacePreferences` 和 `application-shell`，合计20个Node包、18个Swift产品。原有包未改行为实现，沿用其固定公开下载验收，不把旧测试冒充新增代码测试。
+
+| 新入口 | 实际验证与边界 |
+| --- | --- |
+| WritingAidsDemo | 仓库外公开API消费者、11项行为测试；实际Mac窗口中文字提交/清空、胶带揭开、合成JSON导出→清空→重新打开。停留/形状等逻辑由测试覆盖，没有声称自动化验证真实鼠标拖动。iOS系统随手写适配编译通过，未做真机Pencil/Scribble验收。 |
+| InkSpacePreferencesDemo | 仓库外公开API消费者、16项行为测试、两个进程保存/重读；实际Mac窗口四页观察、修改/保存/重读、删笔与重启恢复；iOS SDK编译通过。仅用独立domain和合成默认值，原App偏好不读取/迁移。 |
+| application-shell | 新npm pack安装到独立消费者，25项测试与README示例通过；精确锁定依赖后12组真实Electron窗口操作、零renderer异常。原生选择器返回值用合成路径替代，未声称自动点击系统选择器；未注册系统协议。 |
+
+Node合计242项测试（原19包217项+新包25项）。Swift新增27项单独记录，不改写首次16产品20项测试的历史。新的Swift ZIP自带 `Example/` 和仅依赖解压根的清单；可用 `bash Example/script/build_and_run.sh` 编译启动，脚本只做本地ad-hoc签名，不使用Apple账号/证书，也不代表公证安装包。
+
+最终独立ZIP的依赖闭包和随包测试会再次检查；公开下载与摘要验收见仓库门户的 `DOWNLOAD-CHECKS.md`。全量原App界面、真实Pencil硬件、iCloud和所有二进制文档编辑器均不由这三个示例替代。

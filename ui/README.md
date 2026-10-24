@@ -1,6 +1,8 @@
-# @inkspace/ui
+# Life's winner React UI · @inkspace/ui
 
-InkSpace 原有 React 功能界面的独立组件库：**30 个可挂载表面、10 个分域入口**，ESM 与 TypeScript 声明。React/ReactDOM 是 peer dependency。本目录没有复制完整 `App.tsx`、主进程或预加载入口。
+希望每一个使用我开源功能的人，都是各自的 Life's winner。
+
+Life's winner 原有 React 功能界面的独立组件库：**30 个可挂载表面、10 个分域入口**，ESM 与 TypeScript 声明。React/ReactDOM 是 peer dependency。本目录没有复制完整 `App.tsx`、主进程或预加载入口。
 
 Reusable React components for note editors, document margin notes, PDFs, knowledge graphs and spaces, notebooks, study tools, planning and media. Use the components in your own React 19 browser application; storage and native services are supplied through explicit callbacks or a host adapter. This source package requires a local build.
 
@@ -14,7 +16,7 @@ Reusable React components for note editors, document margin notes, PDFs, knowled
 
 ## 构建与使用
 
-单独下载本组件包时，解压后在包目录运行 `npm install`、`npm run build`。它自带完整源码、构建配置和MIT许可证，不依赖完整InkSpace源码目录。若在整个模块仓库中使用，可在根目录安装工作区依赖，然后：
+单独下载本组件包时，解压后在包目录运行 `npm install`、`npm run build`。它自带完整源码、构建配置和MIT许可证，不依赖完整Life's winner源码目录。若在整个模块仓库中使用，可在根目录安装工作区依赖，然后：
 
 ```sh
 npm --workspace @inkspace/ui run build
@@ -73,7 +75,7 @@ export function Editor() {
 
 ### 文档旁注
 
-`MarginNotes`保留原有的旁注编辑、Markdown阅读、图片插入入口、保存和右侧/下方位置切换。组件只通过props和回调交换状态，不需要完整InkSpace或全局宿主。`onSave`由调用方写入自己的存储，`onImage`由调用方提供图片选择及文本插入；已有图片的URL可由`resolveMedia`解析。
+`MarginNotes`保留原有的旁注编辑、Markdown阅读、图片插入入口、保存和右侧/下方位置切换。组件只通过props和回调交换状态，不需要完整Life's winner或全局宿主。`onSave`由调用方写入自己的存储，`onImage`由调用方提供图片选择及文本插入；已有图片的URL可由`resolveMedia`解析。
 
 ```tsx
 import {useState} from 'react';

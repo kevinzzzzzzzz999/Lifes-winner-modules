@@ -1,17 +1,34 @@
-import {loadLocal,saveLocal,saveFile,shareFile} from '../shared.js';
-import {PreferencesSession,TOOLBAR,PEN_KINDS,ACTIONS,SHAPES,SEEK_INTERVALS,PLAYBACK_RATES,MAX_BYTES,reconcilePalette,toolbarVisible,penColor,resolvedLanguage} from './logic.js';
+import {loadLocal,saveLocal,saveFile,shareFile,getLanguage,setLanguage} from '../shared.js';
+import {PreferencesSession,PlanError,planErrorMessage,TOOLBAR,PEN_KINDS,ACTIONS,SHAPES,SEEK_INTERVALS,PLAYBACK_RATES,MAX_BYTES,reconcilePalette,toolbarVisible,penColor,resolvedLanguage} from './logic.js';
 
 const session=new PreferencesSession({read:loadLocal,write:saveLocal});
-let activeTab='appearance',storageProblem=false,fieldNumber=0,importTicket=0;
+let activeTab='appearance',storageProblem=false,fieldNumber=0,importTicket=0,adoptingPlanLanguage=false;
 let strokes=[],redoStrokes=[],activeStroke=null,showGrid=false,previewExpanded=false,showSampleStroke=true;
 const canvas=document.getElementById('preview-canvas'),ctx=canvas.getContext('2d');
 const $=id=>document.getElementById(id),p=()=>session.value.preferences;
-const language=()=>resolvedLanguage(p().language,navigator.language||'zh');
+const language=()=>getLanguage();
 const l=(zh,en)=>language()==='en'?en:zh;
+function adoptPlanLanguage() {
+  // Loading/importing a plan changes its current UI preview, never its stored bytes.
+  // The guard prevents the shell's synchronous language event from editing it again.
+  adoptingPlanLanguage=true;
+  try {setLanguage(resolvedLanguage(p().language,navigator.language||'zh'));}
+  finally {adoptingPlanLanguage=false;}
+}
+function adoptStartupLanguage() {
+  let remembered;
+  try {remembered=loadLocal('preferences-language');} catch { /* A damaged UI preference must not prevent opening a valid plan. */ }
+  if(remembered!=='zh'&&remembered!=='en'){adoptPlanLanguage();return;}
+  // Keep the remembered interface choice in the current preview only. The saved
+  // plan, including its previous language and every other field, stays untouched.
+  if(resolvedLanguage(p().language,navigator.language||'zh')!==remembered)session.edit(value=>{value.language=remembered;});
+  adoptingPlanLanguage=true;
+  try {setLanguage(remembered);} finally {adoptingPlanLanguage=false;}
+}
 function node(tag,className='',text) {const value=document.createElement(tag);if(className)value.className=className;if(text!==undefined)value.textContent=text;return value;}
 function status(text,error=false) {$('plan-status').textContent=text;$('plan-status').classList.toggle('is-error',error);}
 function dirtyStatus() {status(session.dirty?l('尚未保存 · 只在当前预览中修改','Unsaved changes · current preview only'):session.hasSaved?l('已读取本机方案','Loaded from this device'):l('默认方案 · 点保存可留在本机','Default plan · Save to keep on this device'));}
-function report(error) {const message=error?.message||l('操作未完成，当前方案仍保留','Could not finish; your current plan is preserved');status(message,true);}
+function report(error) {status(planErrorMessage(error,language()),true);}
 function selectedPen() {return p().savedPens.pens.find(pen=>pen.id===p().savedPens.selectedID)||p().savedPens.pens[0]||null;}
 function edit(change,rerender=false) {
   try {session.edit(change);dirtyStatus();if(rerender)renderAll();else updatePreview();return true;}
@@ -49,8 +66,9 @@ function setPenHex(value) {return penEdit(pen=>{pen.red=parseInt(value.slice(1,3
 
 function renderAppearance() {
   const parent=$('group-appearance');parent.replaceChildren();
-  const general=section(parent,l('界面语言','Interface language'));
-  select(general,l('使用语言','Language'),p().language,[['system',l('跟随系统','Follow system')],['zh','简体中文'],['en','English']],value=>edit(p=>{p.language=value;},true));
+  const general=section(parent,l('界面与方案语言','Interface and plan language'));
+  select(general,l('使用语言','Language'),p().language,[['system',l('跟随系统','Follow system')],['zh','简体中文'],['en','English']],value=>{if(!edit(p=>{p.language=value;}))return false;adoptPlanLanguage();renderAll();dirtyStatus();return true;});
+  help(general,l('右上角可随时切换中英文；切换同时修改当前方案语言，点保存后才保留方案，不会清空未保存修改或试写。','Switch English or Chinese in the header at any time. It also changes the current plan language; Save keeps the plan. Your unsaved edits and preview ink remain.'));
   const dock=section(parent,l('预览工具栏位置','Preview toolbar position')),row=node('div','choice-row');
   for(const [value,zh,en] of [['top','顶部','Top'],['bottom','底部','Bottom'],['left','左侧','Left'],['right','右侧','Right']]) {
     const choice=button(row,l(zh,en),()=>{previewExpanded=false;edit(p=>{p.dock.edge=value;},true);});choice.setAttribute('aria-pressed',String(p().dock.edge===value));
@@ -76,13 +94,13 @@ function renderTools() {
   const pens=section(parent,l('笔预设','Saved pens'));
   if(p().savedPens.pens.length){select(pens,l('编辑这支笔','Edit pen'),selectedPen().id,p().savedPens.pens.map(pen=>[pen.id,pen.name]),id=>edit(p=>{p.savedPens.selectedID=id;},true));const current=selectedPen();
     const name=node('input');name.type='text';name.value=current.name;name.maxLength=256;name.addEventListener('change',()=>{if(!penEdit(pen=>{pen.name=name.value;},true))name.value=current.name;});pens.append(label(l('名称','Name'),name));
-    const names=['圆珠笔','钢笔','单线笔','铅笔','荧光笔','水彩笔','蜡笔','书法笔'];
-    select(pens,l('笔类型','Pen kind'),current.kind,PEN_KINDS.map((kind,i)=>[kind,l(names[i],kind)]),value=>penEdit(pen=>{pen.kind=value;}),l('网页试写使用矢量线条，不模拟PencilKit纹理。','The web preview draws vector lines rather than PencilKit textures.'));
+    const names=['圆珠笔','钢笔','单线笔','铅笔','荧光笔','水彩笔','蜡笔','书法笔'],english=['Ballpoint','Fountain pen','Monoline','Pencil','Marker','Watercolor','Crayon','Calligraphy pen'];
+    select(pens,l('笔类型','Pen kind'),current.kind,PEN_KINDS.map((kind,i)=>[kind,l(names[i],english[i])]),value=>penEdit(pen=>{pen.kind=value;}),l('网页试写使用矢量线条，不模拟PencilKit纹理。','The web preview draws vector lines rather than PencilKit textures.'));
     const width=node('input');width.type='number';width.min='0.1';width.step='0.5';width.inputMode='decimal';width.value=String(current.width);width.addEventListener('change',()=>{if(!penEdit(pen=>{pen.width=Number(width.value);}))width.value=String(current.width);});pens.append(label(l('粗细','Width'),width,l('试写区最多显示32px粗线，方案保留输入值。','The preview caps display at 32px; the plan retains your value.')));
     color(pens,l('笔颜色','Pen color'),penColor(current),setPenHex);range(pens,l('不透明度','Opacity'),current.alpha,0,1,0.01,value=>penEdit(pen=>{pen.alpha=value;}));
   }else help(pens,l('当前笔列表为空。可添加示例笔。','Your pen list is empty. Add a sample pen.'));
   const actions=node('div','pen-actions');button(actions,l('添加一支笔','Add a pen'),()=>{
-    if(p().savedPens.pens.length>=256){report(new Error(l('最多保留256支笔。','A plan can hold up to 256 pens.')));return;}
+    if(p().savedPens.pens.length>=256){report(new PlanError('最多保留256支笔。','A plan can hold up to 256 pens.'));return;}
     edit(p=>{const id=crypto.randomUUID().toUpperCase();p.savedPens.pens.push({id,name:l('新笔','New pen'),kind:'pen',red:0.145,green:0.388,blue:0.922,alpha:1,width:2});p.savedPens.selectedID=id;reconcilePalette(p);},true);
   });const remove=button(actions,l('删除当前笔','Remove current pen'),()=>{
     const id=selectedPen()?.id;if(!id)return;edit(p=>{const index=p.savedPens.pens.findIndex(pen=>pen.id===id);p.savedPens.pens.splice(index,1);if(p.savedPens.selectedID===id){if(p.savedPens.pens.length)p.savedPens.selectedID=p.savedPens.pens[Math.min(index,p.savedPens.pens.length-1)].id;else delete p.savedPens.selectedID;}reconcilePalette(p);},true);
@@ -99,14 +117,14 @@ function renderTools() {
 }
 function renderGestures() {
   const parent=$('group-gestures');parent.replaceChildren();const actions=section(parent,l('Pencil操作选项','Pencil action preferences'));
-  const titles=['跟随系统','切换橡皮擦','上一个工具','显示笔栏','颜色与粗细','不执行操作'];
-  for(const [key,zh,en] of [['doubleTap','双击','Double-tap'],['squeeze','握压','Squeeze']])select(actions,l(zh,en),p().gestures[key],ACTIONS.map((a,i)=>[a,l(titles[i],a)]),value=>edit(p=>{p.gestures[key]=value;}));
+  const titles=['跟随系统','切换橡皮擦','上一个工具','显示笔栏','颜色与粗细','不执行操作'],english=['Follow system','Switch eraser','Previous tool','Show palette','Color and width','No action'];
+  for(const [key,zh,en] of [['doubleTap','双击','Double-tap'],['squeeze','握压','Squeeze']])select(actions,l(zh,en),p().gestures[key],ACTIONS.map((a,i)=>[a,l(titles[i],english[i])]),value=>edit(p=>{p.gestures[key]=value;}));
   toggle(actions,l('使用系统笔栏（方案选项）','Request system palette (plan only)'),p().dock.usesSystemPalette,value=>edit(p=>{p.dock.usesSystemPalette=value;}));
   help(actions,l('这些值仅保存在方案中。网页不会修改系统手势，也不会接管Apple Pencil双击或握压。','These choices are saved in the plan. This page does not change system gestures or handle Apple Pencil double-tap/squeeze.'));
   const hold=section(parent,l('停留与形状辅助','Hold and shape assistance'));
   toggle(hold,l('停留辅助直线','Hold for a straight line'),p().holdLine.isEnabled,value=>edit(p=>{p.holdLine.isEnabled=value;}));
   range(hold,l('停留秒数','Hold duration (seconds)'),p().holdLine.holdDuration,0.35,1.5,0.05,value=>edit(p=>{p.holdLine.holdDuration=value;}));
-  const names=['关闭','圆形','椭圆','矩形','三角形','箭头','坐标轴'];select(hold,l('几何模式','Geometry mode'),p().geometry.shape,SHAPES.map((shape,i)=>[shape,l(names[i],shape)]),value=>edit(p=>{p.geometry.shape=value;}));
+  const names=['关闭','圆形','椭圆','矩形','三角形','箭头','坐标轴'],shapeNames=['Off','Circle','Ellipse','Rectangle','Triangle','Arrow','Axes'];select(hold,l('几何模式','Geometry mode'),p().geometry.shape,SHAPES.map((shape,i)=>[shape,l(names[i],shapeNames[i])]),value=>edit(p=>{p.geometry.shape=value;}));
   help(hold,l('停留与形状参数供书写组件接入；下方小试写区仅演示笔色、粗细和工具栏。','Hold and shape parameters are for a writing host. The small preview demonstrates pen style and toolbar layout.'));
 }
 function renderPlayback() {
@@ -122,7 +140,7 @@ function renderPlayback() {
   color(subs,l('背景颜色','Background color'),p().playback.subtitles.backgroundColor,value=>edit(p=>{p.playback.subtitles.backgroundColor=value;}));
   range(subs,l('背景不透明度','Background opacity'),p().playback.subtitles.backgroundOpacity,0,1,0.01,value=>edit(p=>{p.playback.subtitles.backgroundOpacity=value;}));
   const service=section(parent,l('服务选择','Service choices'));
-  select(service,l('AI网页服务','AI website'),p().aiWebsite,['chatgpt','deepseek','claude','gemini'].map(v=>[v,v]),value=>edit(p=>{p.aiWebsite=value;}));
+  select(service,l('AI网页服务','AI website'),p().aiWebsite,[['chatgpt','ChatGPT'],['deepseek','DeepSeek'],['claude','Claude'],['gemini','Gemini']],value=>edit(p=>{p.aiWebsite=value;}));
   select(service,l('翻译服务','Translation service'),p().translationService,[['openAI','OpenAI'],['deepSeek','DeepSeek'],['gemini','Gemini']],value=>edit(p=>{p.translationService=value;}));
   help(service,l('这里只保存选项，不播放视频、不联网翻译或调用AI，也不收集账号和密钥。','These are settings only: no playback, AI or translation calls, accounts or keys.'));
 }
@@ -133,6 +151,14 @@ function setTab(tab,refresh=true) {
 }
 function renderLabels() {
   $('app-title').textContent=l('偏好方案','Preferences');document.documentElement.lang=language()==='zh'?'zh-CN':'en';
+  document.title=l("偏好方案 · Life's winner","Preferences · Life's winner");
+  $('back-link').textContent=l("Life's winner 工具","Life's winner tools");
+  $('settings-tabs').setAttribute('aria-label',l('设置类别','Settings categories'));
+  $('preview-toolbar').setAttribute('aria-label',l('本应用预览工具栏','This app’s preview toolbar'));
+  canvas.setAttribute('aria-label',l('偏好方案试写区，可用手指或笔试写','Preferences preview canvas; draw with a finger or pen'));
+  $('plan-file').setAttribute('aria-label',l('导入JSON方案','Import a JSON plan'));
+  document.querySelector('[data-install]').textContent=l('安装','Install');
+  document.querySelector('[data-check-updates]').textContent=l('检查更新','Check updates');
   for(const [id,zh,en] of [['tab-appearance','外观','Appearance'],['tab-tools','工具栏','Tools'],['tab-gestures','手势','Gestures'],['tab-playback','播放','Playback'],['save-plan','保存本机','Save'],['import-plan','导入','Import'],['export-plan','导出','Export'],['share-plan','分享','Share'],['reload-plan','重新读取','Reload'],['reset-plan','恢复默认','Reset defaults'],['preview-title','实时预览','Live preview'],['clear-preview','清空试写','Clear preview'],['help-summary','怎样保存和使用','Saving and using plans']])$(id).textContent=l(zh,en);
   $('scope-note').textContent=l('只调整当前工具与导出方案，不改变系统或原完整版软件设置。','Only this tool and its exported plan are affected, not system settings or the original full application.');
   $('preview-help').textContent=l('可在小画板试写，试用撤销、笔色与辅助线。试写内容不保存到方案。','Try drawing, undo, pen color and guide lines here. Preview strokes are not saved in the plan.');
@@ -142,7 +168,9 @@ function renderLabels() {
     ['点“保存本机”保留方案，重新打开当前工具会读取。浏览器数据被清理、卸载或系统回收时可能丢失，请定期导出JSON备份。','Save keeps the plan in this browser. Website data cleanup, uninstalling or storage eviction may remove it; export regular JSON backups.'],
     ['导入先检查完整字段、版本、笔ID与引用、64 KiB大小限制，失败不替换当前方案。成功导入后仍需保存。','Imports check the full schema, version, pen references and 64 KiB limit. A rejected file never replaces the current plan. Save after a successful import.'],
     ['分享将由你选择接收位置；不支持系统文件分享时改为下载。导出方案不包含试写笔迹。','You choose the destination for sharing. A download is offered when file sharing is unavailable. Plans do not contain preview ink.'],
-    ['使用与Mac独立偏好方案相同的版本1格式。网页会拒绝缺字段、未知字段或超出允许范围的文件，不自动修正损坏数据。不会读取原App的偏好。','Version 1 matches the standalone Mac plan. The web app rejects missing/unknown fields and out-of-range values instead of repairing damaged data. It never reads the original App preferences.']])$('help-content').append(node('p','',l(zh,en)));
+    ['使用与Mac独立偏好方案相同的版本1格式。网页会拒绝缺字段、未知字段或超出允许范围的文件，不自动修正损坏数据。不会读取原App的偏好。','Version 1 matches the standalone Mac plan. The web app rejects missing/unknown fields and out-of-range values instead of repairing damaged data. It never reads the original App preferences.'],
+    ['中英文切换保留所有未保存方案值、当前设置页和试写线条。切换本身不保存方案；导入、重新读取和恢复默认会采用该方案的语言。','Switching languages preserves unsaved plan values, the current tab and preview strokes. Switching does not save the plan; Import, Reload and Reset apply the language of that plan.'],
+    ['希望每一个使用我开源功能的人，都是各自的 Life\'s winner。','I hope everyone who uses these open-source tools becomes Life\'s winner in their own way.']])$('help-content').append(node('p','',l(zh,en)));
 }
 function renderAll() {fieldNumber=0;renderLabels();renderAppearance();renderTools();renderGestures();renderPlayback();setTab(activeTab,false);updatePreview();}
 
@@ -185,21 +213,27 @@ canvas.addEventListener('pointerup',event=>{if(activeStroke?.pointer!==event.poi
 for(const eventName of ['pointercancel','lostpointercapture'])canvas.addEventListener(eventName,event=>{if(activeStroke?.pointer===event.pointerId){activeStroke=null;drawPreview();}});
 new ResizeObserver(drawPreview).observe(canvas);
 $('clear-preview').addEventListener('click',()=>{strokes=[];redoStrokes=[];activeStroke=null;showSampleStroke=false;updatePreview();});
+window.addEventListener('life-winner-languagechange',()=>{
+  if(adoptingPlanLanguage)return;
+  // Change one preview field transactionally; keep all other edits and ink in place.
+  if(!edit(value=>{value.language=getLanguage();}))return;
+  renderAll();dirtyStatus();
+});
 document.querySelectorAll('[data-tab]').forEach((button,index,all)=>{button.addEventListener('click',()=>setTab(button.dataset.tab));button.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=(index+1)%all.length;else if(event.key==='ArrowLeft')next=(index+all.length-1)%all.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=all.length-1;else return;event.preventDefault();setTab(all[next].dataset.tab);all[next].focus();});});
 
 $('save-plan').addEventListener('click',()=>{
   if(storageProblem&&!confirm(l('本机旧方案无法读取。保存当前方案会替换它，是否继续？','The previous stored plan could not be read. Replace it with the current plan?')))return;
-  try{session.save();storageProblem=false;renderAll();status(l('已保存到当前设备和浏览器','Saved on this device and browser'));}catch(error){report(new Error(l('本机保存失败，当前方案仍保留。请导出备份。','Local save failed; the current plan is preserved. Export a backup.')));}
+  try{session.save();storageProblem=false;renderAll();status(l('已保存到当前设备和浏览器','Saved on this device and browser'));}catch(error){report(new PlanError('本机保存失败，当前方案仍保留。请导出备份。','Local save failed; the current plan is preserved. Export a backup.'));}
 });
-$('reload-plan').addEventListener('click',()=>{if(session.dirty&&!confirm(l('重新读取会放弃当前未保存修改，继续？','Reload and discard unsaved changes?')))return;try{session.load();storageProblem=false;renderAll();dirtyStatus();}catch(error){storageProblem=true;report(error);}});
-$('reset-plan').addEventListener('click',()=>{if(!confirm(l('恢复默认会替换当前预览，尚不会覆盖本机已保存方案。继续？','Replace the current preview with defaults? The saved plan will not change until you Save.')))return;session.reset();previewExpanded=false;renderAll();status(l('已恢复默认预览 · 点保存才会保留','Default preview restored · Save to keep'));});
+$('reload-plan').addEventListener('click',()=>{if(session.dirty&&!confirm(l('重新读取会放弃当前未保存修改，继续？','Reload and discard unsaved changes?')))return;try{session.load();storageProblem=false;adoptPlanLanguage();renderAll();dirtyStatus();}catch(error){storageProblem=true;report(error);}});
+$('reset-plan').addEventListener('click',()=>{if(!confirm(l('恢复默认会替换当前预览，尚不会覆盖本机已保存方案。继续？','Replace the current preview with defaults? The saved plan will not change until you Save.')))return;session.reset();previewExpanded=false;adoptPlanLanguage();renderAll();status(l('已恢复默认预览 · 点保存才会保留','Default preview restored · Save to keep'));});
 $('import-plan').addEventListener('click',()=>{if(session.dirty&&!confirm(l('导入会替换当前未保存预览，继续？','Import a plan and replace the current unsaved preview?')))return;$('plan-file').click();});
 $('plan-file').addEventListener('change',async event=>{const file=event.target.files?.[0];if(!file)return;const ticket=++importTicket,revision=session.revision;
-  try{if(file.size>MAX_BYTES)throw new Error(l('文件超过64 KiB，当前方案未改变。','The file exceeds 64 KiB; the current plan is unchanged.'));const bytes=new Uint8Array(await file.arrayBuffer());if(ticket!==importTicket)return;if(revision!==session.revision&&!confirm(l('读取文件时方案又有修改，仍要导入？','The plan changed while reading. Import anyway?')))return;session.importBytes(bytes);previewExpanded=false;renderAll();status(l('导入成功 · 点保存可留在本机','Imported · Save to keep on this device'));}
+  try{if(file.size>MAX_BYTES)throw new PlanError('文件超过64 KiB，当前方案未改变。','The file exceeds 64 KiB; the current plan is unchanged.');const bytes=new Uint8Array(await file.arrayBuffer());if(ticket!==importTicket)return;if(revision!==session.revision&&!confirm(l('读取文件时方案又有修改，仍要导入？','The plan changed while reading. Import anyway?')))return;session.importBytes(bytes);previewExpanded=false;adoptPlanLanguage();renderAll();status(l('导入成功 · 点保存可留在本机','Imported · Save to keep on this device'));}
   catch(error){report(error);}finally{event.target.value='';}
 });
 function planBlob(){return new Blob([session.exportText()],{type:'application/json;charset=utf-8'});}
 $('export-plan').addEventListener('click',()=>{try{saveFile(planBlob(),'life-winner-preferences-plan.json');status(l('已准备导出，请在下载或文件中保留JSON','Export prepared; keep the JSON in Downloads or Files'));}catch(error){report(error);}});
 $('share-plan').addEventListener('click',async()=>{try{const result=await shareFile(planBlob(),'life-winner-preferences-plan.json',l('偏好方案','Preferences plan'));if(result==='shared')status(l('已交给系统分享，目的地由你选择','Handed to system sharing; you choose the destination'));else if(result==='downloaded')status(l('当前不支持文件分享，已准备下载','File sharing unavailable; a download is ready'));else status(l('已取消分享，当前方案未改变','Sharing cancelled; the plan is unchanged'));}catch(error){report(error);}});
-try{session.load();dirtyStatus();}catch(error){storageProblem=true;status(l('本机旧方案无法读取，暂用默认预览；原数据未被覆盖。','Stored plan could not be read. Showing defaults without overwriting it.'),true);}
+try{session.load();adoptStartupLanguage();dirtyStatus();}catch(error){storageProblem=true;status(l('本机旧方案无法读取，暂用默认预览；原数据未被覆盖。','Stored plan could not be read. Showing defaults without overwriting it.'),true);}
 renderAll();

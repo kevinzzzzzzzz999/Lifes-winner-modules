@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {defaultPlan,validatePlan,parsePlan,parsePlanBytes,serializePlan,PreferencesSession,DOMAIN,MAX_BYTES,reconcilePalette,toolbarVisible,penColor,resolvedLanguage} from './logic.js';
+import {defaultPlan,validatePlan,parsePlan,parsePlanBytes,serializePlan,PreferencesSession,PlanError,planErrorMessage,DOMAIN,MAX_BYTES,reconcilePalette,toolbarVisible,penColor,resolvedLanguage} from './logic.js';
 
 let passed=0;
 function test(name,run){run();passed++;process.stdout.write('PASS '+name+'\n');}
@@ -101,5 +101,29 @@ test('reset is preview-only and does not erase persistent plan',()=>{
 test('failed edits are transactional and helpers match the plan',()=>{
  const session=new PreferencesSession();const current=copy(session.value);assert.throws(()=>session.edit(p=>{p.panels.leftWidth=1;}));assert.deepEqual(session.value,current);
  session.edit(p=>{p.toolbar.hiddenMask=1<<11;});assert.equal(toolbarVisible(session.value.preferences,11),false);assert.equal(penColor({red:1,green:0,blue:0}),'#FF0000');assert.equal(resolvedLanguage('system','en-US'),'en');
+});
+test('English validation errors explain rejection without mutating the plan',()=>{
+ const session=new PreferencesSession();session.edit(p=>{p.language='en';p.dock.edge='left';});const before=copy(session.value);
+ for(const text of ['bad',JSON.stringify({...defaultPlan(),formatVersion:9}),JSON.stringify({...defaultPlan(),domain:'other'}),JSON.stringify({...defaultPlan(),preferences:{}})]){
+  let caught;try{session.importText(text);}catch(error){caught=error;}
+  assert(caught instanceof PlanError);assert.match(planErrorMessage(caught,'en'),/current plan is unchanged/);
+  assert.equal(/[\u3400-\u9fff]/.test(planErrorMessage(caught,'en')),false);assert.deepEqual(session.value,before);
+ }
+ assert.match(planErrorMessage(new Error('private detail'),'en'),/preserved/);assert.equal(planErrorMessage(new Error('private detail'),'en').includes('private detail'),false);
+});
+test('invalid file encodings and unsupported nested versions have English diagnostics',()=>{
+ const invalidInputs=[new Uint8Array([0xff]),new Uint8Array(MAX_BYTES+1)];
+ for(const bytes of invalidInputs){let caught;try{parsePlanBytes(bytes);}catch(error){caught=error;}assert(caught instanceof PlanError);assert.equal(/[\u3400-\u9fff]/.test(planErrorMessage(caught,'en')),false);}
+ const plan=defaultPlan();plan.preferences.version=2;let caught;try{validatePlan(plan);}catch(error){caught=error;}
+ assert.match(planErrorMessage(caught,'en'),/Unsupported preferences version/);assert.match(planErrorMessage(caught,'zh'),/不支持/);
+});
+test('remembered interface language can overlay a reopened preview without writing its saved plan',()=>{
+ const storage=memory(),first=new PreferencesSession(storage);first.edit(p=>{p.language='en';p.panels.leftWidth=412;p.savedPens.pens[0].name='Keep this saved pen';});first.save();
+ const bytes=JSON.stringify(storage.stored),writes=storage.writes,reopened=new PreferencesSession(storage);reopened.load();
+ reopened.edit(p=>{p.language='zh';});
+ assert.equal(reopened.dirty,true);assert.equal(reopened.value.preferences.panels.leftWidth,412);assert.equal(reopened.value.preferences.savedPens.pens[0].name,'Keep this saved pen');
+ assert.equal(JSON.stringify(storage.stored),bytes);assert.equal(storage.writes,writes);
+ assert.throws(()=>reopened.importText(JSON.stringify({...defaultPlan(),formatVersion:9})));assert.equal(reopened.value.preferences.language,'zh');assert.equal(JSON.stringify(storage.stored),bytes);
+ reopened.load();assert.equal(reopened.value.preferences.language,'en');assert.equal(reopened.dirty,false);assert.equal(storage.writes,writes);
 });
 console.log(JSON.stringify({suite:'preferences-pwa',passed,failed:0,network:false,dependencies:0}));

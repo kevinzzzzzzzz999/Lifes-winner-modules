@@ -1,6 +1,6 @@
 {
   "LICENSE": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8",
-  "README.md": "5c1a7cf679b52111d0d82fe634fa97aa076f893d8ae8b19c4b7ec8523792debe",
+  "README.md": "16fa9660dd34f0ff3acfd87c5fc855ff99f341f529ff491373843e5b21b7e44d",
   "examples/electron/e2e.cjs": "87d67b659ec6e73a3c8f698f9d54943bc0ac2dc457e7390ce7d8aeb21a197e5d",
   "examples/electron/main.cjs": "c60c708f15e87d40c5221eb3128b75b10cd18b4dd135fe0b73edcfe652a24f58",
   "examples/electron/package-lock.json": "085d870eb7967df94e51302204566cecaa34f61112718e52fae4f50748b2b089",
@@ -19,7 +19,7 @@
   "lib/main/security.cjs": "b8428d47180fe70c483c8047eedcd7268c40bf4a4be41631c52c12f115a68842",
   "lib/main/window-contexts.cjs": "67427c3992987706c878b5a6c5484d97db831b663d4cc4dfe54cd518faf7bfb2",
   "package.json": "a09513bdbd401f98429a963ac6b2ed4986bc7b30dc7783e77da67182b3963b21",
-  "resources/ORIGIN.md": "a1d2beb01db27dda9f36a2fe5b8a6ed33cdfe1185b29442eb22f527f7681bbd3",
+  "resources/ORIGIN.md": "2183de7438967b47d1d4b70c86776c14b621598fa6ee7c17818192684927f463",
   "sources/main/document-menu.cjs": "d482bc4dbf523ce33f1a2cb8e9958db7374989f3c45b48800bbd50822f628883",
   "sources/main/external-document-open.cjs": "2c1654a44ba8d92db5d9bd4a9b25b9d903b6c3497bcd0648a3512ed8dbe7e81b",
   "sources/main/window-contexts.cjs": "6b043d478e35d2427376ada7c8bb054831d986afe2b8954193e8514eafdb8650",

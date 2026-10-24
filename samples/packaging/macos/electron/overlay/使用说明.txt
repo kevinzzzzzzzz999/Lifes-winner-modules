@@ -1,5 +1,7 @@
-life'winner 文档工作台 / life'winner Document Workbench
-希望每一个使用我开源功能的人，都是各自的 life'winner。
+Life's winner 文档工作台 / Life's winner Document Workbench
+希望每一个使用我开源功能的人，都是各自的 Life's winner。
+
+I hope everyone who uses my open-source tools can be their own Life's winner.
 
 版本 0.1.0 · macOS 13 或更新版本
 
@@ -8,9 +10,9 @@ life'winner 文档工作台 / life'winner Document Workbench
 3. 点击「打开文档」或「打开工作区」，选择你自己的文件。文本只读，文件不会被修改。
 4. 点击窗口内「使用帮助」查看快捷键和支持范围。
 
-不需要安装 Node.js、Python 或 Xcode。不需要注册账户。不会自动读取原 life'winner 数据，也没有统计上报或联网服务。
+不需要安装 Node.js、Python 或 Xcode。不需要注册账户。不会自动读取原 Life's winner 数据，也没有统计上报或联网服务。
 
-当前版本是本地文档工作台：支持最多 512 KiB 的 UTF-8 文本、Markdown、代码、TeX、CSV 与 Notebook 源文件只读预览。当前只提供文本预览；PDF、Office、图片、视频等类型请用适合的软件打开。不是完整 life'winner 编辑器合集。
+当前版本是本地文档工作台：支持最多 512 KiB 的 UTF-8 文本、Markdown、代码、TeX、CSV 与 Notebook 源文件只读预览。当前只提供文本预览；PDF、Office、图片、视频等类型请用适合的软件打开。不是完整 Life's winner 编辑器合集。
 
 每个窗口独立授权；选择单个文件不会授权相邻文件。正常退出后不保存工作区历史。临时缓存会在正常退出时删除，崩溃后可能留在系统临时文件夹。
 

@@ -97,3 +97,27 @@ test('upsert returns a new record collection and never marks visible document sa
 test('unexpected data containers cannot bypass the bounded byte decoder', () => {
   for (const value of [undefined, null, 1024 * 1024 * 1024, { length: 900000000 }]) assert.throws(() => api.decodeSelectedBytes('note.txt', value), { code: 'FILE' });
 });
+
+
+test('every public error code has English display text without changing the original error', () => {
+  const codes = ['NAME', 'TEXT', 'LARGE', 'BINARY', 'ENCODING', 'TYPE', 'FILE', 'READ', 'TABS', 'UNSAVED', 'STORAGE', 'NO_DOCUMENT', 'STORAGE_READ', 'SAVE', 'DELETE', 'EXPORT', 'SHARE'];
+  for (const code of codes) {
+    const error = new api.DocumentError(code, '合成错误');
+    assert.equal(api.errorText(error, 'zh'), '合成错误');
+    assert.ok(api.errorText(error, 'en').length > 15);
+    assert.doesNotMatch(api.errorText(error, 'en'), /[\u3400-\u9fff]/u);
+    assert.equal(error.code, code); assert.equal(error.message, '合成错误');
+  }
+  assert.equal(api.errorText(Error('untrusted provider detail'), 'en'), 'The action could not be completed. Please try again.');
+});
+test('localized new-document names and safe export fallbacks do not rename existing copies', () => {
+  const workspace = new api.Workspace();
+  const english = workspace.add(api.makeDocument({ name: 'Untitled.txt', text: 'English draft', isNew: true }));
+  const chinese = workspace.add(api.makeDocument({ name: '未命名.txt', text: '中文副本', isNew: true }));
+  api.markSaved(english, english.id);
+  assert.equal(api.exportFilename('...', 'Document'), 'Document.txt');
+  assert.equal(api.exportFilename('...'), '文档.txt');
+  assert.throws(() => api.exportFilename('...', '../invalid'), { code: 'NAME' });
+  assert.equal(english.name, 'Untitled.txt'); assert.equal(english.text, 'English draft'); assert.equal(api.isDirty(english), false);
+  assert.equal(chinese.name, '未命名.txt'); assert.equal(chinese.text, '中文副本'); assert.equal(api.isDirty(chinese), true);
+});

@@ -1,7 +1,7 @@
 'use strict';
 // Developer-side QA only. This script and Playwright are never put in the .app.
 const fs=require('node:fs/promises'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
-const productTitle="life'winner 文档工作台";
+const productTitle="Life's winner 文档工作台";
 const args=process.argv.slice(2),option=name=>{const index=args.indexOf(name);if(index<0||!args[index+1])throw Error('Missing '+name);return args[index+1];};
 async function main(){
  const bundle=path.resolve(option('--app')),output=path.resolve(option('--output')),playwright=require(path.resolve(option('--playwright')));

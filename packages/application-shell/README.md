@@ -1,6 +1,6 @@
 # Application Shell / 独立应用壳
 
-A working local document and workspace shell extracted from InkSpace's application entry and window routing. Open a folder, browse real files, preview text, switch tabs, and open several independent windows. / 从 InkSpace 应用入口与窗口路由拆出的可运行软件壳：选择真实文件夹、浏览文档、只读预览文本、切换标签和管理多个窗口。
+A working local document and workspace shell extracted from Life's winner's application entry and window routing. Open a folder, browse real files, preview text, switch tabs, and open several independent windows. / 从 Life's winner 应用入口与窗口路由拆出的可运行软件壳：选择真实文件夹、浏览文档、只读预览文本、切换标签和管理多个窗口。
 
 The core is a standalone Node library with **no production dependencies**. A separate Electron example has its own pinned dependencies and lockfile. / 核心是无生产依赖的独立 Node 库；Electron 示例自带固定版本依赖和锁文件。
 
@@ -18,7 +18,7 @@ node node_modules/electron/install.js
 npm start
 ```
 
-The last install command downloads Electron's official binary. npm packages come from the official npm registry; Electron binaries come from the official Electron GitHub releases. Electron **44.3.0** and Playwright **1.62.1** are locked in the example. No full InkSpace installation, original App directory, or account is required. / 最后一条安装命令下载 Electron 官方运行文件。npm 包来自官方 registry，Electron 来自官方 GitHub Releases。无需安装完整版、无需原 App 目录或账户。
+The last install command downloads Electron's official binary. npm packages come from the official npm registry; Electron binaries come from the official Electron GitHub releases. Electron **44.3.0** and Playwright **1.62.1** are locked in the example. No full Life's winner installation, original App directory, or account is required. / 最后一条安装命令下载 Electron 官方运行文件。npm 包来自官方 registry，Electron 来自官方 GitHub Releases。无需安装完整版、无需原 App 目录或账户。
 
 - **Open workspace / 打开工作区**: choose a folder using the native picker. A new window lists supported files and nested folders.
 - **Open document / 打开文档**: choose one document. Only that file is authorized; adjacent files stay inaccessible.
@@ -100,4 +100,4 @@ Core tests use newly created synthetic files: real directory/document grants, sy
 
 Validated on Apple Silicon macOS with Node 24.19.0. Linux/Windows require Electron's normal supported desktop/runtime dependencies and have not been run here. See [Electron protocol documentation](https://www.electronjs.org/docs/latest/api/protocol) and [application lifecycle documentation](https://www.electronjs.org/docs/latest/api/app). Source mappings and exact original-file hashes are in [ORIGIN.md](resources/ORIGIN.md).
 
-The complete InkSpace editors, account/cloud services, native iOS shell, packaging, signing, notarization and automatic updating are host integration work. This download already runs as a local read-only document shell; connect a real editor by replacing the bounded `vaults.read` loader and retaining the window and grant checks. / 完整编辑器、账户云服务、原生 iOS 壳、签名打包与自动更新需要宿主集成；当前下载本身可以独立运行成本地只读文档壳。
+The complete Life's winner editors, account/cloud services, native iOS shell, packaging, signing, notarization and automatic updating are host integration work. This download already runs as a local read-only document shell; connect a real editor by replacing the bounded `vaults.read` loader and retaining the window and grant checks. / 完整编辑器、账户云服务、原生 iOS 壳、签名打包与自动更新需要宿主集成；当前下载本身可以独立运行成本地只读文档壳。

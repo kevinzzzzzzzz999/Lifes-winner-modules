@@ -1,6 +1,6 @@
 # InkSpaceWritingAids
 
-独立的辅助书写与演示工具库：停留直线、圆/椭圆/矩形/三角形/箭头/坐标轴拟合、波浪线、闭合填色多边形、高亮置底、激光轨迹、遮挡胶带、文字卡草稿与 iPad 系统手写输入适配。无需完整 InkSpace 应用或用户仓库；附可操作的 Mac 画布示例。
+独立的辅助书写与演示工具库：停留直线、圆/椭圆/矩形/三角形/箭头/坐标轴拟合、波浪线、闭合填色多边形、高亮置底、激光轨迹、遮挡胶带、文字卡草稿与 iPad 系统手写输入适配。无需完整 Life's winner 应用或用户仓库；附可操作的 Mac 画布示例。
 
 Standalone writing and presentation primitives, with a macOS drawing playground and an optional native iPad Scribble input. MIT licensed; no account, server, third-party dependency, or network access.
 
@@ -38,7 +38,7 @@ let revealed = try restored.toggling(tape.id)
 print(wave.count, revealed.tapes[0].isRevealed)
 ```
 
-Mac 交互示例的可执行产品名为 `WritingAidsDemo`。进入示例中包含 `Package.swift`、`README.md` 的目录，运行 `bash script/build_and_run.sh`；脚本构建并启动一个有独立名称的 `.app`。源码仓库中该目录为 `samples/writing-aids`，独立下载包中为 `Example`。只需 Xcode 命令行开发工具，不需要完整 InkSpace。示例目录内的 README 说明每个工具和 JSON 导出方法。
+Mac 交互示例的可执行产品名为 `WritingAidsDemo`。进入示例中包含 `Package.swift`、`README.md` 的目录，运行 `bash script/build_and_run.sh`；脚本构建并启动一个有独立名称的 `.app`。源码仓库中该目录为 `samples/writing-aids`，独立下载包中为 `Example`。只需 Xcode 命令行开发工具，不需要完整 Life's winner。示例目录内的 README 说明每个工具和 JSON 导出方法。
 
 ## API
 
@@ -60,7 +60,7 @@ Mac 交互示例的可执行产品名为 `WritingAidsDemo`。进入示例中包�
 
 ## iPad 原生手写接入
 
-以下视图可直接放入 iOS SwiftUI 页面。`cards` 是示例宿主内存，不是 InkSpace 私有模型。
+以下视图可直接放入 iOS SwiftUI 页面。`cards` 是示例宿主内存，不是 Life's winner 私有模型。
 
 ```swift
 #if os(iOS)

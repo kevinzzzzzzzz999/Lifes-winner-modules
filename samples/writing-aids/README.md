@@ -1,6 +1,6 @@
 # Writing Aids Playground / 辅助书写与演示画布
 
-一个可以单独运行的 Mac 小工具，使用 `InkSpaceWritingAids`。无需完整 InkSpace、账号、第三方包或服务器；启动时是空白画布，示例数据为代码生成的虚构内容。
+一个可以单独运行的 Mac 小工具，使用 `InkSpaceWritingAids`。无需完整 Life's winner、账号、第三方包或服务器；启动时是空白画布，示例数据为代码生成的虚构内容。
 
 需要 macOS 13+、Swift 5.9+ 与 Xcode 命令行开发工具。进入包含本 README 和 `Package.swift` 的目录，运行：
 
@@ -33,10 +33,10 @@ swift test
 
 `Toggle tapes` 为键盘和辅助功能使用者提供全部胶带的揭开/遮挡按钮；画布里的点击仍可逐条操作。
 
-`Export JSON…` 只把当前示例图画、胶带和文字导出到你选择的位置；`Open JSON…` 可以重新打开它。文件采用示例自己的版本化 JSON，不是完整 InkSpace 白板格式；激光、草稿、撤销栈不导出。原生字体/窗口行为由 macOS 负责，不复制 PencilKit 纹理。没有网络访问、真实笔记读取、自动上传或后台同步。
+`Export JSON…` 只把当前示例图画、胶带和文字导出到你选择的位置；`Open JSON…` 可以重新打开它。文件采用示例自己的版本化 JSON，不是完整 Life's winner 白板格式；激光、草稿、撤销栈不导出。原生字体/窗口行为由 macOS 负责，不复制 PencilKit 纹理。没有网络访问、真实笔记读取、自动上传或后台同步。
 
 ## Integration
 
 The sample is a small host for the standalone module: it supplies mouse points, monotonic time, a canvas, an undo history, explicit file selection, and host acceptance of text cards. The library supplies fitting, bounded geometry, highlighter ordering, laser state, tape geometry/persistence primitives, and draft acknowledgement. Native iPad Scribble requires the separately provided system input adapter and a supported device; this Mac demo does not recognize handwriting.
 
-See the `InkSpaceWritingAids` library README for API examples, source mapping and host boundaries. This sample uses MIT-licensed InkSpace source and synthetic data only.
+See the `InkSpaceWritingAids` library README for API examples, source mapping and host boundaries. This sample uses MIT-licensed Life's winner source and synthetic data only.

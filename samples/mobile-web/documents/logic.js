@@ -58,9 +58,9 @@ export async function readSelectedFile(file) {
   catch { fail('READ', '文件暂时无法读取。请先在“文件”中下载到本机，再重试。'); }
   return decodeSelectedBytes(file.name, buffer);
 }
-export function exportFilename(name) {
+export function exportFilename(name, fallback = '文档') {
   name = validName(name);
-  const base = name.replace(/\.[^.]+$/u, '').replace(/^\.+/u, '').trim() || '文档';
+  const base = name.replace(/\.[^.]+$/u, '').replace(/^\.+/u, '').trim() || validName(fallback);
   return base + '.txt';
 }
 export function createTextBlob(text) { textBytes(text); return new Blob([encoder.encode(text)], { type: 'text/plain;charset=utf-8' }); }
@@ -118,3 +118,28 @@ export function upsertDraft(records, document, now = new Date().toISOString()) {
   return { records: validateDrafts(next), id };
 }
 export function formatSize(bytes) { return bytes < 1024 ? `${bytes} B` : `${(bytes / 1024).toFixed(1)} KiB`; }
+
+// Display-only localization. Error codes, stored records and filenames stay compatible.
+const ENGLISH_ERRORS = Object.freeze({
+  NAME: 'Use a name of up to 160 characters without path separators or control characters.',
+  TEXT: 'This is not readable text.',
+  LARGE: 'Text must be 512 KiB or smaller. Choose a smaller file or reduce the content; previous data is kept.',
+  BINARY: 'This file contains non-text data. Use a suitable app; this workbench reads UTF-8 text only.',
+  ENCODING: 'This is not valid UTF-8. Save a UTF-8 text copy in the original app, then try again.',
+  TYPE: 'Choose a supported text, Markdown, code or Notebook source file. Open other formats in a suitable app.',
+  FILE: 'No valid file data was received. Please select the file again.',
+  READ: 'The file cannot be read right now. Download it in Files first, then try again.',
+  TABS: 'Up to 12 documents can be open. Close a tab before opening another file.',
+  UNSAVED: 'This copy has unsaved changes.',
+  STORAGE: 'Local drafts are invalid or exceed 24 drafts / 3 MiB. Export important text and remove unused drafts.',
+  NO_DOCUMENT: 'Open or create a text document first.',
+  STORAGE_READ: 'Local drafts cannot be read. You can still open, edit and export text; existing drafts will not be overwritten.',
+  SAVE: 'Saving failed. Browser storage is unavailable or full. Export to Files before checking storage space.',
+  DELETE: 'Deletion failed; the saved draft is still kept. Check browser storage and try again.',
+  EXPORT: 'Export is unavailable. Tap again or use Share / Save to Files.',
+  SHARE: 'Sharing is unavailable. Tap Share again or use Export .txt to keep a copy.'
+});
+export function errorText(error, language = 'zh') {
+  if (language === 'en') return ENGLISH_ERRORS[error?.code] || 'The action could not be completed. Please try again.';
+  return error instanceof Error ? error.message : '暂时无法完成，请重试。';
+}

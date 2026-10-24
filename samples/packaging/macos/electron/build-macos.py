@@ -19,7 +19,7 @@ import subprocess
 ELECTRON_VERSION = '44.3.0'
 APP_VERSION = '0.1.0'
 BUNDLE_NAME = '文档工作台'  # Keep existing bundle/download filenames compatible.
-PRODUCT_NAME = "life'winner 文档工作台"
+PRODUCT_NAME = "Life's winner 文档工作台"
 EXECUTABLE_NAME = 'DocumentWorkbench'
 BUNDLE_ID = 'org.inkspace.modules.documentworkbench'
 ROOT = Path(__file__).resolve().parent

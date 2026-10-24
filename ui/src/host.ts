@@ -10,14 +10,14 @@ let lastFailure: HostFailure | null = null;
 const listeners = new Set<()=>void>();
 const unavailable = new Map<string, (...args:unknown[])=>unknown>();
 function publish(capability:string) {
- const message = `InkSpace host capability unavailable: ${capability}. Configure this capability explicitly; no full-app fallback is used.`;
+ const message = `Life's winner host capability unavailable: ${capability}. Configure this capability explicitly; no full-app fallback is used.`;
  if(lastFailure?.capability!==capability){lastFailure={capability,message};for(const listener of listeners)listener();}
  return {ok:false as const,error:{code:'HOST_CAPABILITY_UNAVAILABLE',message}};
 }
 /** Call once before mounting. One immutable adapter per JS realm supports multiple vault IDs. */
 export function configureInkSpaceHost(value:InkSpaceHostAdapter):void {
  if(!value||typeof value!=='object')throw new TypeError('An explicit host adapter object is required.');
- if(adapterIdentity&&adapterIdentity!==value)throw new Error('The InkSpace host cannot be replaced in this JavaScript realm. Use a new realm for another host.');
+ if(adapterIdentity&&adapterIdentity!==value)throw new Error("The Life's winner host cannot be replaced in this JavaScript realm. Use a new realm for another host.");
  if(adapterIdentity===value)return;
  adapterIdentity=value;
  const bound:Record<string,unknown>={};

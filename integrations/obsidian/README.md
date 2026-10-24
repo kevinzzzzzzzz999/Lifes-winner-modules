@@ -1,10 +1,10 @@
-# InkSpace Obsidian companion — independent integration
+# Life's winner Obsidian companion — independent integration
 
-这是 **0.6.0** 的独立 Obsidian 插件。安装该插件后，可以在 Obsidian **1.8.7 或更新版本**中浏览已有的 `.inkspace.json` 白板和同仓库引用的 PDF、文字、公式、连线及定位点。**查看文件不要求安装或运行完整 InkSpace 软件**；这不是独立桌面程序，宿主是 Obsidian。
+这是 **0.6.0** 的独立 Obsidian 插件。安装该插件后，可以在 Obsidian **1.8.7 或更新版本**中浏览已有的 `.inkspace.json` 白板和同仓库引用的 PDF、文字、公式、连线及定位点。**查看文件不要求安装或运行完整 Life's winner 软件**；这不是独立桌面程序，宿主是 Obsidian。
 
 ## 安装
 
-将 `inkspace-companion/` 中的 `main.js`、`manifest.json`、`styles.css` 三个文件复制到你的 Obsidian 仓库配置目录的 `plugins/inkspace-companion/`，默认位置是 `.obsidian/plugins/inkspace-companion/`。在 Obsidian「设置 → 第三方插件」启用「人生赢家」。更新时同时替换三个文件，再重新启用插件。
+将 `inkspace-companion/` 中的 `main.js`、`manifest.json`、`styles.css` 三个文件复制到你的 Obsidian 仓库配置目录的 `plugins/inkspace-companion/`，默认位置是 `.obsidian/plugins/inkspace-companion/`。在 Obsidian「设置 → 第三方插件」启用「Life's winner」。更新时同时替换三个文件，再重新启用插件。
 
 用「选择白板」命令打开自己仓库里的 `.inkspace.json`，或打开已有 Markdown 入口。在普通笔记中也可使用：
 
@@ -39,4 +39,4 @@ node --test tests/companion.test.cjs
 
 项目代码使用 [MIT License](LICENSE)。Obsidian 主程序单独安装并适用其自己的条款；本目录不分发 Obsidian、PDF.js 或 MathJax 的运行时。
 
-This is a standalone Obsidian integration, not a standalone desktop executable. It can view existing InkSpace files without the full InkSpace app. Native writing/creation requires an installed system handler for `inkspace://`. Install the three plugin files, then enable the plugin in Obsidian. No npm install or build step is required.
+This is a standalone Obsidian integration, not a standalone desktop executable. It can view existing Life's winner files without the full Life's winner app. Native writing/creation requires an installed system handler for `inkspace://`. Install the three plugin files, then enable the plugin in Obsidian. No npm install or build step is required.

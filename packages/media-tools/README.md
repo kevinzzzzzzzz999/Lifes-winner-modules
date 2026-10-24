@@ -30,7 +30,7 @@ npm pack --ignore-scripts
 npm install /path/to/inkspace-modules-media-tools-0.1.0.tgz --ignore-scripts
 ```
 
-这种安装会按本包的 `package.json` 获取声明的 npm 依赖。包名仅用于本地项目引用；无需登录 npm，也不需要完整 InkSpace。安装后可运行以下最小示例：
+这种安装会按本包的 `package.json` 获取声明的 npm 依赖。包名仅用于本地项目引用；无需登录 npm，也不需要完整 Life's winner。安装后可运行以下最小示例：
 
 ```js
 const tools = require('@inkspace-modules/media-tools');

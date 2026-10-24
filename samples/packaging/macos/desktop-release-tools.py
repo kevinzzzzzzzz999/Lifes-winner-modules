@@ -60,8 +60,8 @@ def audit_native(app):
 def zip_native(args):
     args.output.mkdir(parents=True, exist_ok=True)
     artifacts = []
-    for title, filename in [('InkSpace Writing', 'InkSpace-Writing-macos-universal.zip'),
-                            ('InkSpace Preferences', 'InkSpace-Preferences-macos-universal.zip')]:
+    for title, filename in [("Life's winner Writing", 'InkSpace-Writing-macos-universal.zip'),
+                            ("Life's winner Preferences", 'InkSpace-Preferences-macos-universal.zip')]:
         app = args.input / (title + '.app')
         info = audit_native(app)
         output = args.output / filename
@@ -107,8 +107,8 @@ def smoke_native(args):
         if key.startswith(('DYLD_', 'SWIFT_')) or key in {'DEVELOPER_DIR', 'NODE_PATH', 'NODE_OPTIONS', 'GH_TOKEN', 'GITHUB_TOKEN'}:
             environment.pop(key, None)
     records = []
-    for title, filename in [('InkSpace Writing', 'InkSpace-Writing-macos-universal.zip'),
-                            ('InkSpace Preferences', 'InkSpace-Preferences-macos-universal.zip')]:
+    for title, filename in [("Life's winner Writing", 'InkSpace-Writing-macos-universal.zip'),
+                            ("Life's winner Preferences", 'InkSpace-Preferences-macos-universal.zip')]:
         destination = args.output / title
         run(['/usr/bin/ditto', '-x', '-k', args.assets / filename, destination])
         app = destination / (title + '.app')

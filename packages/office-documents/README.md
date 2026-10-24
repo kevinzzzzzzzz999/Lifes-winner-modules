@@ -30,7 +30,7 @@ npm pack --ignore-scripts
 npm install /path/to/inkspace-modules-office-documents-0.1.0.tgz --ignore-scripts
 ```
 
-安装将获取声明的 npm 依赖。无需完整 InkSpace，也无需登录 npm。最小 DOCX 生成示例：
+安装将获取声明的 npm 依赖。无需完整 Life's winner，也无需登录 npm。最小 DOCX 生成示例：
 
 ```js
 const tools = require('@inkspace-modules/office-documents');

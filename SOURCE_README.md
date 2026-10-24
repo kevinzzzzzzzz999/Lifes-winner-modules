@@ -1,59 +1,67 @@
-# life'winner Modules · 散装功能库
+# 人生赢家 / Life's winner · 独立模块 / Modules
 
-希望每一个使用我开源功能的人，都是各自的 life'winner。
+希望每一个使用我开源功能的人，都是各自的 Life's winner。
 
-Reusable parts of life'winner, separated from the integrated notes application.
+I hope everyone who uses my open-source tools can be their own Life's winner.
 
-这里保存从 life'winner（人生赢家）拆出的独立功能库。完整软件另保留在同一 GitHub 账号的 `inkspace` 仓库中。你可以只取需要的包，也可以组合使用。
+从 Mac、iPad、iPhone 完整软件拆出的独立工具与组件。完整软件在 `Lifes-winner` 仓库，功能库在 `Lifes-winner-modules` 仓库。技术包名、API、格式和存储标记保持兼容。
 
-## 普通用户：直接使用 Mac 应用
+Standalone tools and reusable components from the integrated Mac, iPad and iPhone application. The full application is in `Lifes-winner`; reusable modules are in `Lifes-winner-modules`. Technical package names, APIs, formats and storage identifiers remain compatible.
 
-本仓库的 Releases 发行区提供书写画板、偏好方案编辑器和文档工作台的应用下载，使用者无需安装开发工具。选择应用 ZIP，解压后将其中的 `.app` 放入“应用程序”。芯片选择、用途、保存与首次系统确认见[下载与使用指南](samples/packaging/macos/DOWNLOAD-HELP.md)。
+## 普通用户 / Ready-to-use tools
 
-对应的[公开构建配方](samples/packaging/macos/README.md)记录了源码到应用的发行适配；个人资料、私人配置、开发缓存和个人签名身份不属于发行内容。下面的库/组件入口面向需要集成源码的开发者。
+| 工具 / Tool | 获取与安装 / Get and install |
+| --- | --- |
+| iPhone / iPad 书写、偏好与文档 / Writing, Preferences and Documents | 仓库首页的正式 HTTPS 入口；Safari → 分享 → 添加到主屏幕。<br>Use the published HTTPS links on the repository home page; Safari → Share → Add to Home Screen. |
+| Mac 独立应用 / Standalone Mac apps | 本仓库 Releases 的已验证 ZIP；解压后把 `.app` 拖入“应用程序”。<br>Choose a verified ZIP from Releases, extract it and move the `.app` to Applications. |
+| 安装与限制 / Installation and limits | [移动工具 / Mobile tools](samples/mobile-web/README.md) · [Mac 指南 / Mac guide](samples/packaging/macos/DOWNLOAD-HELP.md) |
 
-## 选择功能
+普通使用者不需要安装 Xcode、Node.js 或完整版软件。Mac 需要 macOS 13+，应用为无个人身份的 ad-hoc 签名、未经过 Apple 公证，首次打开可能需要按系统提示确认。iPhone/iPad 为主屏幕网页应用，首次联网加载并等待“可离线使用”，源码 ZIP 不是 IPA 安装包。工具可切换中文 / English；各自功能范围见说明。
 
-- **JavaScript / Node.js**：白板数据、笔迹、合并、PDF、Office、Notebook、文件存储、搜索、笔记交换、学习、任务日历、浏览器工具、翻译、媒体与数学计算。包目录见 [`packages/`](packages/)，准确的API、依赖和例子见各包 README。
-- **Swift**：可分别导入的原生产品，见 [`swift/`](swift/)。每个产品的 Apple 框架和平台要求单独说明。
-- **Obsidian**：可安装的独立伴侣，见 [`integrations/obsidian/`](integrations/obsidian/)。
-- **Safari 分享剪藏**：可复用扩展源代码，见 [`integrations/safari-share-clipper/`](integrations/safari-share-clipper/)。它需要自己的承载应用与签名配置。
+These tools need no Xcode, Node.js or full application. Mac apps require macOS 13+, use ad-hoc signing without a personal identity and are not Apple-notarized; first opening may need system approval. iPhone/iPad tools are home-screen web apps: load online once and wait for Ready for offline use. A source ZIP is not an installable IPA. The tools offer 中文 / English; see each guide for its scope.
 
-完整功能清单和边界见 [FEATURES.md](FEATURES.md)，共覆盖 63 个真实功能组。已提取的核心代码与需要平台宿主的界面分别标明；没有把所有功能都宣称为现成独立安装程序。
+## 开发者入口 / Developer entry points
 
-## 三个独立使用入口 / Three standalone starters
+| 内容 / Contents | 源码与说明 / Source and guide |
+| --- | --- |
+| 20 个 JavaScript / Node.js 包 / 20 Node packages | [packages/](packages/)：白板、笔迹、PDF、文档、Notebook、存储、搜索、学习、日历、浏览器、翻译、媒体、数学与应用壳。<br>Boards, ink, PDF, documents, notebooks, storage, search, study, calendars, browsers, translation, media, mathematics and an application shell. |
+| 18 个 Swift 产品 / 18 Swift products | [swift/](swift/)：原生模型与 Apple 框架工具；各产品单独说明平台要求。<br>Native models and Apple-framework tools, with product-specific platform requirements. |
+| React UI | [ui/](ui/)：30 个表面、10 个入口；按需提供宿主适配。<br>30 surfaces and 10 entry points with explicit host adapters. |
+| Obsidian 伴侣 / Companion | [integrations/obsidian/](integrations/obsidian/)：可安装白板查看伴侣。<br>Installable board-viewing companion. |
+| Safari 分享剪藏 / Share clipper | [integrations/safari-share-clipper/](integrations/safari-share-clipper/)：扩展源码，需自己的承载 App 和签名。<br>Extension source requiring your own containing app and signing. |
 
-| 功能 | 库与说明 | 独立运行示例 |
+仓库首页提供逐包下载，每个 ZIP 包含源码、README、许可和已声明的依赖闭包。Node 包解压后在包目录安装依赖并测试；Swift ZIP 在 Xcode 添加本地 Package；React 需要构建。外部 Python/IPython、OCR、FFmpeg、Tectonic、AI/翻译账号、浏览器宿主和文件授权按包说明准备，不依赖完整软件的隐式配置。
+
+Individual downloads on the repository home page include source, a README, license and the declared dependency closure. Extract Node packages and install dependencies inside their own directory; add Swift ZIPs as local packages in Xcode; build React components before integration. Supply documented Python/IPython, OCR, FFmpeg, Tectonic, AI/translation accounts, browser hosts and file authorization explicitly.
+
+## 可运行示例 / Runnable starters
+
+| 功能 / Feature | 库 / Library | 示例 / Example |
 | --- | --- | --- |
-| 书写与演示辅助 | [InkSpaceWritingAids](swift/Documentation/InkSpaceWritingAids/README.md) | [WritingAidsDemo](samples/writing-aids/README.md) |
-| 语言、布局、工具栏与操作偏好 | [InkSpacePreferences](swift/Documentation/InkSpacePreferences/README.md) | [InkSpacePreferencesDemo](samples/preferences/README.md) |
-| 首页、文档路由和多窗口应用壳 | [application-shell](packages/application-shell/README.md) | 包内 Electron 示例，按该包说明启动 |
+| 书写与演示 / Writing and presentation | [InkSpaceWritingAids](swift/Documentation/InkSpaceWritingAids/README.md) | [WritingAidsDemo](samples/writing-aids/README.md) |
+| 语言、布局、工具栏与手势 / Language, layout, toolbars and gestures | [InkSpacePreferences](swift/Documentation/InkSpacePreferences/README.md) | [PreferencesDemo](samples/preferences/README.md) |
+| 文档路由和多窗口 / Document routing and windows | [application-shell](packages/application-shell/README.md) | 包内 Electron 示例 / Included Electron example |
 
-它们不需要完整 life'winner。Swift 示例需要 macOS 和 Xcode/Swift 工具链；应用壳示例需要 Node.js 和声明的 Electron 依赖。发布的独立 Swift ZIP 自带 `Example/`，可以直接按随包说明启动；克隆完整仓库时使用上表 `samples/` 入口。示例采用合成内容与独立存储，不读取原 App 的笔记、账号和偏好。Apple Pencil、系统随手写和系统协议登记等能力按包内平台说明接入。
+Swift 示例需 macOS 与 Xcode/Swift；Electron 源示例需 Node.js 与声明依赖。每个独立 Swift ZIP 包含 `Example/`；克隆仓库使用上表 `samples/`。示例只用合成内容和独立存储，不读取完整软件的私人资料。Apple Pencil、系统随手写和协议登记仍按平台说明接入。
 
-## JavaScript 使用
+Swift samples require macOS and Xcode/Swift; the Electron source example requires Node.js and declared dependencies. Individual Swift ZIPs include `Example/`; use the linked `samples/` when cloning the repository. Samples use synthetic content and isolated storage, without reading the full application's private data. Apple Pencil, system Scribble and protocol registration retain their documented platform requirements.
 
-需要 Node.js 24.15 或更新版本。下载或克隆本仓库后：
+## 验证、隐私与更新 / Validation, privacy and updates
 
-```sh
-npm install
-npm test
-```
+[功能与边界 / Features and limits](FEATURES.md) · [验证 / Validation](VALIDATION.md) · [Node 验证 / Node checks](NODE-VALIDATION.md)
 
-每个 `packages/` 子目录都是自己的 npm 包，可以通过本地目录安装到其他项目；它们不需要完整 life'winner 应用的 Electron 入口。PDF、Office、Python、翻译和媒体等功能仍有各自的软件、账号或宿主接口要求，请先阅读包说明。
+共记录 63 个真实功能组。源码与模块化不代表完整软件的所有设备稳定性、云同步或压力流程已解决；每项实际验证和剩余依赖单独标明。请先用合成样例与非重要文件试用。
 
-## Swift 使用
+The catalog records 63 real feature groups. Source availability and modularization do not establish full-app device stability, cloud sync or every stress workflow. Actual checks and remaining dependencies are listed separately; start with synthetic samples or non-critical files.
 
-使用 Swift Package Manager 添加 `swift/` 中的包，选择自己需要的 product。纯逻辑库与 Apple 专属库的平台要求不同；SwiftUI、PencilKit、Vision、PDFKit 等依赖不会被伪装成跨平台功能。
+发布排除个人笔记、课件、账号、凭据、设备记录、私人路径、开发缓存与个人签名材料。工具只处理主动导入或选择的内容；主屏幕工具没有内容上传接口，但静态托管方仍会收到普通网页请求。草稿不跨设备自动同步，清理网站数据或系统回收可能删除草稿，重要内容请导出。
 
-具体产品、构建指令和实际验证以 Swift 包说明为准。
+Releases exclude personal notes, course materials, accounts, credentials, device records, private paths, development caches and personal signing materials. Tools process explicitly selected/imported content. Home-screen tools have no content-upload endpoint; static hosts still receive ordinary page requests. Drafts do not sync between devices and may be erased by site-data or storage cleanup; export important work.
 
-## 状态与验证
+每月检查已完成更新，经过隐私审查和相关测试后同步源码、模块与已验证应用。离线更新等待工具安全关闭重开，不强制刷新正在编辑的页面。
 
-这是开发中的模块源码发行。模块化不代表原完整软件的所有界面、设备稳定性和云同步问题都已解决。首次拆分的实际测试见 [VALIDATION.md](VALIDATION.md)，各包的限制见各自 README。
+Completed changes are reviewed monthly and synchronized after privacy and relevant validation checks. Offline updates wait for a safe close/reopen without forcing a refresh during editing.
 
-## 隐私、许可与来源
+项目自有代码采用 [MIT License](LICENSE)，允许使用、修改、分发和商用，保留许可及版权声明。第三方组件保持各自许可，来源记录使用相对路径。
 
-仓库只包含经检查的软件源码、测试和必要通用资源。个人资料、笔记、账号、凭据、设备信息和签名不属于发布内容。示例使用合成数据。
-
-项目代码使用 [MIT License](LICENSE)。第三方代码保留原许可；各包记录原完整软件中的相对来源，后续更新必须同时核对完整软件和模块实现。首次拆分与集成边界见功能清单。
+Original code is MIT-licensed: use, modify, redistribute or use commercially while keeping copyright and license notices. Third-party components retain their licenses; provenance uses relative source paths.

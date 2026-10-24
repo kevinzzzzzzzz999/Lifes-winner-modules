@@ -15,6 +15,7 @@ import zlib
 
 SOURCE = Path(__file__).resolve().parent.parent
 APPS = {'writing': '书写画板', 'preferences': '偏好方案', 'documents': '文档工作台'}
+EN_NAMES = {'writing':'Writing','preferences':'Preferences','documents':'Documents'}
 CSP = "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'"
 
 
@@ -86,8 +87,11 @@ def main():
     groups={}
     versions={}
     for slug, name in APPS.items():
-        manifest={'name':"life'winner "+name,'short_name':name,'lang':'zh-CN','start_url':'./','scope':'./','display':'standalone','background_color':'#f5f7fb','theme_color':'#ffffff','description':name+'，独立安装、本机保存、离线使用。','icons':[{'src':f'./icon-{size}.png','sizes':f'{size}x{size}','type':'image/png','purpose':'any maskable'} for size in (192,512)]}
+        manifest={'name':"Life's winner "+name,'short_name':name,'lang':'zh-CN','start_url':'./','scope':'./','display':'standalone','background_color':'#f5f7fb','theme_color':'#ffffff','description':name+'，独立安装、本机保存、离线使用。','icons':[{'src':f'./icon-{size}.png','sizes':f'{size}x{size}','type':'image/png','purpose':'any maskable'} for size in (192,512)]}
+        manifest['name']=APPS[slug]+" · Life's winner "+EN_NAMES[slug]
         (output/slug/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+        english={**manifest,'name':"Life's winner "+EN_NAMES[slug]+' · '+APPS[slug],'short_name':EN_NAMES[slug],'lang':'en','description':EN_NAMES[slug]+'. Install independently, save locally and work offline.'}
+        (output/slug/'manifest-en.json').write_text(json.dumps(english,ensure_ascii=False,indent=2)+'\n')
         for size in (180,192,512):
             (output/slug/f'icon-{size}.png').write_bytes(icon(slug,size))
         files=['shared.css','shared.js','privacy.html']+[p.relative_to(output).as_posix() for p in sorted((output/slug).iterdir())]

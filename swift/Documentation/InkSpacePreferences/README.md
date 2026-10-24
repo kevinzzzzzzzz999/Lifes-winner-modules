@@ -1,6 +1,6 @@
 # InkSpacePreferences
 
-可独立复用的语言、布局、工具栏、笔栏、Pencil操作选择和播放/字幕外观偏好。只依赖 Foundation、CoreGraphics；支持 macOS 13+、iOS 18+。不需要完整 InkSpace、资料库、账号或服务密钥。
+可独立复用的语言、布局、工具栏、笔栏、Pencil操作选择和播放/字幕外观偏好。只依赖 Foundation、CoreGraphics；支持 macOS 13+、iOS 18+。不需要完整 Life's winner、资料库、账号或服务密钥。
 
 ## 示例
 

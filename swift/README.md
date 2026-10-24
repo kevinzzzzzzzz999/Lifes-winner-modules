@@ -1,4 +1,4 @@
-# InkSpace Swift Modules
+# Life's winner Swift Modules
 
 18个独立库产品，每个产品是单独Swift target，可以只把所需产品加入自己的软件。它们不依赖完整App的BoardStore、主窗口或私人资料。它们是供开发者集成的库，不是18个可双击启动的成品App；完整应用的界面/硬件流程保留在完整仓库。
 

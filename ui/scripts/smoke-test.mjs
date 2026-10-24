@@ -31,7 +31,7 @@ const errors=[];const pages=[];
 async function pageFor(entry,host='none'){
  const page=await browser.newPage({viewport:{width:1280,height:900}});pages.push(page);page.on('pageerror',error=>errors.push(`${entry}: ${error.message}`));page.on('console',message=>{if(message.type()==='error')errors.push(`${entry}: ${message.text()}`)});
  await page.route('**/*',route=>{const value=route.request().url();if(value.startsWith(`http://127.0.0.1:${port}/`)||value.startsWith('data:')||value.startsWith('blob:'))return route.continue();errors.push(`${entry}: unexpected remote request`);return route.abort();});
- await page.goto(`${url}?entry=${entry}&host=${host}`,{waitUntil:'networkidle'});assert.equal(await page.title(),'InkSpace UI independent smoke');await page.locator('[data-inkspace-module]').waitFor();assert.equal(await page.locator('vite-error-overlay').count(),0);return page;
+ await page.goto(`${url}?entry=${entry}&host=${host}`,{waitUntil:'networkidle'});assert.equal(await page.title(),"Life's winner UI independent smoke");await page.locator('[data-inkspace-module]').waitFor();assert.equal(await page.locator('vite-error-overlay').count(),0);return page;
 }
 try{
  for(const entry of pure){const page=await pageFor(entry);assert.equal(await page.locator('[data-inkspace-ui-error="render"]').count(),0,entry);assert.equal(await page.locator('[data-inkspace-host-error="configuration"]').count(),0,entry);if(entry==='PDFPage')await page.locator('canvas[data-pdf-ready="true"]').waitFor();

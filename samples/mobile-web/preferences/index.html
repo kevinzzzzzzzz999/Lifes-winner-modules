@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>偏好方案 · life'winner</title>
+  <title>偏好方案 · Life's winner</title>
   <link rel="stylesheet" href="../shared.css">
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.js"></script>
 </head>
 <body>
   <header class="app-header">
-    <div><a class="back-link" href="../">life'winner 工具</a><h1 class="app-title" id="app-title">偏好方案</h1></div>
-    <button class="primary" data-install>安装</button>
+    <div><a class="back-link" id="back-link" href="../">Life's winner 工具</a><h1 class="app-title" id="app-title">偏好方案</h1></div>
+    <div class="header-actions"><button data-language>English</button><button class="primary" data-install>安装</button></div>
   </header>
   <div class="preferences-shell">
-    <nav class="tabs" role="tablist" aria-label="设置类别">
+    <nav class="tabs" id="settings-tabs" role="tablist" aria-label="设置类别">
       <button id="tab-appearance" role="tab" aria-selected="true" aria-controls="group-appearance" data-tab="appearance">外观</button>
       <button id="tab-tools" role="tab" aria-selected="false" aria-controls="group-tools" data-tab="tools" tabindex="-1">工具栏</button>
       <button id="tab-gestures" role="tab" aria-selected="false" aria-controls="group-gestures" data-tab="gestures" tabindex="-1">手势</button>
@@ -40,7 +40,7 @@
         <div class="toolbar"><button id="reload-plan">重新读取</button><button id="reset-plan">恢复默认</button></div>
         <details><summary id="help-summary">怎样保存和使用</summary><div class="help" id="help-content"></div></details>
       </section>
-      <noscript><p class="panel">请允许此页面运行 JavaScript，才能编辑并保存本地方案。</p></noscript>
+      <noscript><p class="panel">请允许此页面运行 JavaScript，才能编辑并保存本地方案。<br>Allow JavaScript to edit and save local preference plans.</p></noscript>
     </main>
     <footer class="save-bar">
       <p class="status" id="plan-status" role="status" aria-live="polite">正在读取本机方案…</p>

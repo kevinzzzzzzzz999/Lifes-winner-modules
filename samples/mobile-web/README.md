@@ -1,34 +1,58 @@
-# life'winner · 三个独立主屏幕应用
+# 人生赢家 / Life's winner · iPhone / iPad 主屏幕工具 / Home-screen tools
 
-希望每一个使用我开源功能的人，都是各自的 life'winner。
+希望每一个使用我开源功能的人，都是各自的 Life's winner。
 
-书写画板、偏好方案、文档工作台分别安装到 iPhone / iPad 主屏幕。只需要 Safari；使用者无需 Xcode、Node.js、npm、账号或完整版 life'winner。三个入口各有自己的 manifest 身份、启动页、安装 scope、本地草稿键及离线缓存。公共界面文件会随所选工具下载，不会预先下载另外两个工具。
+I hope everyone who uses my open-source tools can be their own Life's winner.
 
-用正式 HTTPS 链接打开某个工具 → Safari 分享 → 添加到主屏幕 → 添加。若出现“作为网页 App 打开”，保持开启。首次联网打开，等到“可离线使用”。重要文件应导出备份；浏览器页面与安装后的 App、不同浏览器、设备之间不保证共用存储。推荐使用近期版本的 iOS / iPadOS。
+三个独立工具，分别安装到 iPhone / iPad 主屏幕。只需 Safari，无需 Xcode、Node.js、npm、账号或完整版。右上角可切换中文 / English，语言选择按工具保存，切换不会清空当前编辑。
 
-- [书写画板](writing/README.md)：矢量笔迹、停留形状、演示辅助、内部复制与可见拖动、文字卡片，独立 JSON 文件。
-- [偏好方案](preferences/README.md)：四组配置、实际试写预览及 JSON 方案；只作用本工具和导出的方案。
-- [文档工作台](documents/README.md)：有界 UTF-8 文本打开、只读预览、编辑副本、多标签、本机草稿、导出及分享。
+Three independent tools, each installable on an iPhone/iPad Home Screen. Only Safari is needed: no Xcode, Node.js, npm, account or full application. Switch 中文 / English at the top. Each tool remembers its own language without clearing current edits.
 
-## 隐私与存储
+| 工具 / Tool | 功能与源码 / Features and source |
+| --- | --- |
+| [书写画板 / Writing](writing/README.md) | 矢量笔迹、形状、演示工具、内部复制与可见拖动、文字卡及 JSON。<br>Vector ink, shapes, presentation aids, visible copy/drag, text cards and JSON files. |
+| [偏好方案 / Preferences](preferences/README.md) | 四组配置、试写预览与 JSON 方案，只作用本工具。<br>Four configuration groups, live drawing preview and JSON plans; affects this tool only. |
+| [文档工作台 / Documents](documents/README.md) | UTF-8 文件、只读预览、编辑副本、多标签、本机草稿、导出和分享。<br>UTF-8 files, read-only previews, editable copies, tabs, local drafts, export and sharing. |
 
-没有账号、内容上传接口、广告或统计，不读取原 life'winner 数据。应用只处理显式导入的内容；文件导出/系统分享由用户主动触发。静态托管方仍会收到普通网页请求和连接信息；内容不放入请求或网址。独立存储键与缓存是逻辑边界，同源网页不是操作系统安全沙盒。清理网站数据、卸载或系统回收可能清除草稿，不能取代导出备份。完整说明见 `privacy.html`。
+## 安装 / Installation
 
-## 开发与自托管
+从仓库首页的正式 HTTPS 链接打开某个工具 → Safari 分享 → 添加到主屏幕 → 添加。如出现“作为网页 App 打开”，保持开启。首次联网打开，等“可离线使用”。另两个工具按需分别安装；不会预先下载它们。建议使用近期 iOS / iPadOS。
 
-本目录是完整可编辑源，MIT 许可。运行时无构建依赖和外部 CDN。下面的 Python 与 Node 命令只供开发者检查/生成站点，普通使用者不用安装。
+Use a tool's published HTTPS link from the repository home page → Safari Share → Add to Home Screen → Add. Leave Open as Web App enabled if shown. Open online once and wait for Ready for offline use. Install the other tools separately if needed; they are not predownloaded. A recent iOS/iPadOS is recommended.
+
+浏览器页面、安装后的应用、其他浏览器和设备不保证共享存储。安装前先导出重要草稿，再在主屏幕应用中打开。不要在“文件”中双击源码 HTML 安装；模块和离线功能需要 HTTPS。源码 ZIP 不是原生 IPA。
+
+Browser tabs, installed apps, other browsers and devices may use different storage. Export important drafts before installation, then open them in the installed app. Opening a source HTML file in Files is not an installation method: modules and offline features need HTTPS. A source ZIP is not a native IPA.
+
+## 隐私、保存与范围 / Privacy, saving and scope
+
+没有账号、内容上传接口、广告或统计，不读取完整软件的私人资料。只处理主动导入或选择的内容；导出/分享由用户点击触发。静态托管方仍会收到普通网页请求和连接信息，内容与文件名不放入请求或网址。同源网页的独立键和缓存是逻辑隔离，不等同系统安全沙盒。
+
+There are no accounts, content-upload endpoints, ads or analytics, and the full application's private data is not read. Only explicitly selected/imported content is processed. Export/sharing is user-triggered. Static hosts still receive ordinary page requests and connection information; content and filenames are not put into requests or URLs. Separate keys/caches on one origin are logical isolation, not operating-system sandboxes.
+
+草稿仅在当前设备/浏览器，不自动跨设备同步。清理网站数据、卸载或系统回收可能删除草稿，重要内容请导出到“文件”。每个工具独立安装身份、启动范围、草稿键和缓存；公共资源随所选工具下载。各工具的限制见上表 README 和 `privacy.html`，不等同完整原生编辑器。
+
+Drafts stay in the current device/browser without automatic device sync. Site-data removal, uninstalling or storage cleanup can erase them: export important work to Files. Each tool has its own installation identity, start/scope, draft keys and cache; shared resources download with the selected tool. See each README and `privacy.html` for limits. These are lightweight tools rather than complete native editors.
+
+## 开发与自托管 / Development and self-hosting
+
+完整可编辑源码采用 MIT 许可；运行时无 npm 依赖或外部 CDN。以下命令供开发者检查/生成站点，普通使用者不用安装这些工具。
+
+Editable MIT-licensed source, without npm runtime dependencies or external CDNs. These commands are for developers; ordinary users do not need these tools.
 
 ```sh
 node writing/tests.mjs
 node preferences/tests.mjs
 node documents/tests.mjs
-python3 scripts/build-site.py --output /tmp/inkspace-mobile-site
+python3 scripts/build-site.py --output /tmp/lifes-winner-mobile-site
 ```
 
-输出目录必须尚不存在，且在源码目录之外。将输出目录部署为 HTTPS 静态站点即可；支持放在子路径。构建显式只复制每个工具的四个运行文件与公共界面，再生成 metadata-free PNG 图标、manifest、按工具隔离的离线 worker 和逐文件 SHA 清单。测试、README、本机配置、开发缓存与原始个人数据不进入站点。
+输出目录必须尚不存在且位于源码外。将输出部署到 HTTPS 静态站点，支持子路径。构建仅复制各工具四个运行文件及公共界面，生成无多余元数据的 PNG、双语 manifest、各工具离线 worker 与逐文件 SHA 清单；测试、README、配置、开发缓存和个人资料不进入站点。App Store/TestFlight 原生发行另需合适账号、签名与审核，本发布不使用个人 Apple 身份。
 
-不要直接在 iPhone 的“文件”中双击源码 HTML 作为安装方式，模块脚本和离线能力需要正式 HTTPS 网站；源码 ZIP 不是可直接安装的 IPA。原生 App Store / TestFlight 版本另需合适的组织账号、签名和审核，本发布不使用个人 Apple 身份。
+The output directory must not exist and must be outside the source. Deploy it as an HTTPS static site, including under a subpath. The build copies only each tool's four runtime files and shared UI, then generates minimal-metadata PNGs, bilingual manifests, per-tool offline workers and file hashes. Tests, READMEs, settings, development caches and personal data are excluded. Native App Store/TestFlight distribution separately requires an appropriate account, signing and review; no personal Apple identity is used here.
 
-## 更新
+## 每月更新 / Monthly updates
 
-在现有每月同步中审查完成的源修改、运行受影响测试与浏览器验证，再部署新站点。离线新版本等待当前工具的所有窗口安全关闭后接管，不强行刷新正在编辑的内容。不能在未通过公开链接、文件摘要和断网验证前宣称发布完成。
+每月审查已完成源码变更，通过受影响测试与浏览器验证后部署。新离线版本等待当前工具所有窗口安全关闭再接管，不强刷正在编辑的内容。先保存或导出，再关闭重开；公开链接、摘要与离线检查未通过前不宣称发布完成。
+
+Completed source changes are reviewed monthly and deployed after relevant tests and browser validation. New offline versions wait until all windows of that tool close safely, without forcing a refresh during editing. Save/export, close and reopen. Publication is complete only after public-link, hash and offline checks pass.

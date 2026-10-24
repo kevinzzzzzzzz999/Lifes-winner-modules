@@ -19,8 +19,14 @@ export const PLAYBACK_RATES = [0.25,0.5,0.75,1,1.25,1.5,1.75,2];
 const encoder = new TextEncoder();
 const clone = value => JSON.parse(JSON.stringify(value));
 const uuidPattern = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
-export class PlanError extends Error { constructor(message) { super(message); this.name = 'PlanError'; } }
-function fail(field) { throw new PlanError(`方案字段无效或不完整：${field}。当前方案未改变。`); }
+export class PlanError extends Error {
+  constructor(zh, en) { super(zh); this.name = 'PlanError'; this.messages = {zh, en:en || 'The plan is invalid. Your current plan is unchanged.'}; }
+}
+export function planErrorMessage(error, language='zh') {
+  if(error instanceof PlanError)return error.messages[language==='en'?'en':'zh'];
+  return language==='en'?'Could not finish. Your current plan is preserved; export a backup if needed.':'操作未完成，当前方案仍保留；必要时请先导出备份。';
+}
+function fail(field) { throw new PlanError(`方案字段无效或不完整：${field}。当前方案未改变。`, `Invalid or incomplete plan field: ${field}. Your current plan is unchanged.`); }
 function record(value, keys, field, optional=[]) {
   if (!value || typeof value !== 'object' || Array.isArray(value) || ![Object.prototype,null].includes(Object.getPrototypeOf(value))) fail(field);
   if (Object.keys(value).some(key => !keys.includes(key) && !optional.includes(key)) || keys.some(key => !Object.hasOwn(value,key))) fail(field);
@@ -68,10 +74,10 @@ export function defaultPlan() {
 /// optional selectedID may be missing/null; all other fields are required.
 export function validatePlan(input) {
   record(input,['formatVersion','domain','preferences'],'plan');
-  if (input.formatVersion!==1) throw new PlanError('不支持此方案版本。当前方案未改变。');
-  if (input.domain!==DOMAIN) throw new PlanError('这不是本工具的方案文件。当前方案未改变。');
+  if (input.formatVersion!==1) throw new PlanError('不支持此方案版本。当前方案未改变。', 'Unsupported plan version. Your current plan is unchanged.');
+  if (input.domain!==DOMAIN) throw new PlanError('这不是本工具的方案文件。当前方案未改变。', 'This file is not a plan for this tool. Your current plan is unchanged.');
   const p=record(input.preferences,['version','language','panels','toolbar','gestures','holdLine','geometry','dock','savedPens','palette','playback','aiWebsite','translationService'],'preferences');
-  if (p.version!==1) throw new PlanError('不支持此设置版本。当前方案未改变。');
+  if (p.version!==1) throw new PlanError('不支持此设置版本。当前方案未改变。', 'Unsupported preferences version. Your current plan is unchanged.');
   const panels=record(p.panels,['version','leftWidth','rightWidth','leftOpen'],'panels');
   if (panels.version!==1) fail('panels.version');
   const toolbar=record(p.toolbar,['hiddenMask'],'toolbar');
@@ -115,18 +121,18 @@ export function validatePlan(input) {
 }
 export function serializePlan(value) {
   const text=JSON.stringify(validatePlan(value),null,2);
-  if (encoder.encode(text).length>MAX_BYTES) throw new PlanError('方案超过64 KiB，请减少笔预设或名称长度。当前方案未改变。');
+  if (encoder.encode(text).length>MAX_BYTES) throw new PlanError('方案超过64 KiB，请减少笔预设或名称长度。当前方案未改变。', 'The plan exceeds 64 KiB. Use fewer pens or shorter names. Your current plan is unchanged.');
   return text;
 }
 export function parsePlan(text) {
-  if (typeof text!=='string' || encoder.encode(text).length>MAX_BYTES) throw new PlanError('方案超过64 KiB或不是文本。当前方案未改变。');
-  let input;try {input=JSON.parse(text);} catch {throw new PlanError('文件不是有效的JSON方案。当前方案未改变。');}
+  if (typeof text!=='string' || encoder.encode(text).length>MAX_BYTES) throw new PlanError('方案超过64 KiB或不是文本。当前方案未改变。', 'The plan exceeds 64 KiB or is not text. Your current plan is unchanged.');
+  let input;try {input=JSON.parse(text);} catch {throw new PlanError('文件不是有效的JSON方案。当前方案未改变。', 'This file is not a valid JSON plan. Your current plan is unchanged.');}
   const value=validatePlan(input);serializePlan(value);return value;
 }
 export function parsePlanBytes(input) {
   const bytes=input instanceof Uint8Array?input:input instanceof ArrayBuffer?new Uint8Array(input):null;
-  if(!bytes||bytes.byteLength>MAX_BYTES)throw new PlanError('文件超过64 KiB或不是有效文件。当前方案未改变。');
-  let text;try{text=new TextDecoder('utf-8',{fatal:true}).decode(bytes);}catch{throw new PlanError('文件不是完整的UTF-8文本。当前方案未改变。');}
+  if(!bytes||bytes.byteLength>MAX_BYTES)throw new PlanError('文件超过64 KiB或不是有效文件。当前方案未改变。', 'The file exceeds 64 KiB or is not a valid file. Your current plan is unchanged.');
+  let text;try{text=new TextDecoder('utf-8',{fatal:true}).decode(bytes);}catch{throw new PlanError('文件不是完整的UTF-8文本。当前方案未改变。', 'The file is not complete UTF-8 text. Your current plan is unchanged.');}
   return parsePlan(text);
 }
 export function reconcilePalette(p) {
@@ -152,6 +158,6 @@ export class PreferencesSession {
   importText(text) {const candidate=parsePlan(text);this.value=candidate;this.revision++;return candidate;}
   importBytes(bytes) {const candidate=parsePlanBytes(bytes);this.value=candidate;this.revision++;return candidate;}
   exportText() {return serializePlan(this.value);}
-  save() {const candidate=parsePlan(this.exportText());if(typeof this.write!=='function')throw new PlanError('本机保存暂不可用，请先导出方案。');this.write(this.key,candidate);this.value=candidate;this.saved=clone(candidate);this.hasSaved=true;this.revision++;return candidate;}
+  save() {const candidate=parsePlan(this.exportText());if(typeof this.write!=='function')throw new PlanError('本机保存暂不可用，请先导出方案。', 'Local saving is unavailable. Export the plan first.');this.write(this.key,candidate);this.value=candidate;this.saved=clone(candidate);this.hasSaved=true;this.revision++;return candidate;}
   reset() {this.value=validatePlan(defaultPlan());this.revision++;return this.value;}
 }

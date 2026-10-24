@@ -4,50 +4,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#2563eb">
-  <title>文档工作台 · life'winner</title>
+  <title>文档工作台 · Life's winner</title>
   <link rel="stylesheet" href="../shared.css">
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.js"></script>
 </head>
 <body>
   <header class="app-header">
-    <div class="header-main"><a class="back-link" href="../" aria-label="返回全部应用">‹</a><span class="document-icon" aria-hidden="true">▤</span><div><h1 class="app-title">文档工作台</h1><p class="subtitle">文本预览与副本编辑</p></div></div>
-    <button class="button install-button" type="button" data-install>添加到主屏幕</button>
+    <div class="header-main"><a class="back-link" href="../" aria-label="返回全部应用" data-aria-zh="返回全部应用" data-aria-en="Back to all apps">‹</a><span class="document-icon" aria-hidden="true">▤</span><div><h1 class="app-title" data-zh="文档工作台" data-en="Document Workbench">文档工作台</h1><p class="subtitle" data-zh="Life's winner · 文本预览与副本编辑" data-en="Life's winner · Text previews and copies">Life's winner · 文本预览与副本编辑</p></div></div>
+    <div class="header-actions"><button class="button language-button" type="button" data-language aria-label="切换语言">English</button><button class="button install-button" type="button" data-install data-zh="添加到主屏幕" data-en="Add to Home Screen">添加到主屏幕</button></div>
   </header>
   <main class="app-content">
-    <section class="toolbar main-toolbar" aria-label="文档操作">
-      <button class="button primary" id="open-files" type="button">打开文本文件</button>
-      <button class="button" id="new-document" type="button">＋ 新建文本</button>
-      <span class="privacy-note">仅处理你选择的文件</span>
-      <input id="file-input" type="file" multiple hidden aria-label="选择文本文件" accept=".txt,.md,.markdown,.json,.csv,.tsv,.log,.html,.htm,.xml,.yaml,.yml,.css,.js,.mjs,.cjs,.ts,.tsx,.jsx,.py,.swift,.tex,.ipynb,.sql,.toml,.ini,.cfg">
+    <section class="toolbar main-toolbar" aria-label="文档操作" data-aria-zh="文档操作" data-aria-en="Document actions">
+      <button class="button primary" id="open-files" type="button" data-zh="打开文本文件" data-en="Open text files">打开文本文件</button>
+      <button class="button" id="new-document" type="button" data-zh="＋ 新建文本" data-en="＋ New text">＋ 新建文本</button>
+      <span class="privacy-note" data-zh="仅处理你选择的文件" data-en="Only files you choose">仅处理你选择的文件</span>
+      <input id="file-input" type="file" multiple hidden aria-label="选择文本文件" data-aria-zh="选择文本文件" data-aria-en="Choose text files" accept=".txt,.md,.markdown,.json,.csv,.tsv,.log,.html,.htm,.xml,.yaml,.yml,.css,.js,.mjs,.cjs,.ts,.tsx,.jsx,.py,.swift,.tex,.ipynb,.sql,.toml,.ini,.cfg">
     </section>
     <p class="status" id="status" role="status" aria-live="polite">原文件只读打开，编辑始终发生在副本中。</p>
     <div class="workbench-layout">
       <details class="panel local-library" id="saved-library">
-        <summary>本机草稿 <span class="count" id="draft-count">0</span></summary>
-        <p class="library-note">只有点击“保存到本机”后，副本才会保留。</p>
-        <ul id="saved-list" class="saved-list" aria-label="已保存的本机草稿"></ul>
-        <p id="no-drafts" class="empty-library">还没有保存的草稿</p>
+        <summary><span data-zh="本机草稿" data-en="Local drafts">本机草稿</span> <span class="count" id="draft-count">0</span></summary>
+        <p class="library-note" data-zh="只有点击“保存到本机”后，副本才会保留。" data-en="A copy is kept only after you choose Save locally.">只有点击“保存到本机”后，副本才会保留。</p>
+        <ul id="saved-list" class="saved-list" aria-label="已保存的本机草稿" data-aria-zh="已保存的本机草稿" data-aria-en="Saved local drafts"></ul>
+        <p id="no-drafts" class="empty-library" data-zh="还没有保存的草稿" data-en="No saved drafts yet">还没有保存的草稿</p>
       </details>
       <div class="document-column">
         <section class="panel welcome" id="welcome">
-          <div class="welcome-icon" aria-hidden="true">▤</div><h2>打开一份文档，安心阅读。</h2>
-          <p>从“文件”选择文本、Markdown、代码或 Notebook 源文件。需要修改时，编辑一份副本，原件不会被覆盖。</p>
-          <p class="supported-note">UTF-8 文本 · 单文件最多 512 KiB · 最多 12 个标签</p>
-          <button class="button primary" id="welcome-open" type="button">选择文本文件</button>
+          <div class="welcome-icon" aria-hidden="true">▤</div><h2 data-zh="打开一份文档，安心阅读。" data-en="Your text, ready to read.">打开一份文档，安心阅读。</h2>
+          <p data-zh="从“文件”选择文本、Markdown、代码或 Notebook 源文件。需要修改时，编辑一份副本，原件不会被覆盖。" data-en="Choose text, Markdown, code or Notebook source from Files. Edit a copy when needed; the original stays unchanged.">从“文件”选择文本、Markdown、代码或 Notebook 源文件。需要修改时，编辑一份副本，原件不会被覆盖。</p>
+          <p class="supported-note" data-zh="UTF-8 文本 · 单文件最多 512 KiB · 最多 12 个标签" data-en="UTF-8 text · Up to 512 KiB per file · 12 tabs">UTF-8 文本 · 单文件最多 512 KiB · 最多 12 个标签</p>
+          <button class="button primary" id="welcome-open" type="button" data-zh="选择文本文件" data-en="Choose text files">选择文本文件</button>
         </section>
-        <section class="panel workspace" id="workspace" hidden aria-label="当前文档">
-          <div class="tab-strip" id="tabs" role="tablist" aria-label="已打开的文档"></div>
+        <section class="panel workspace" id="workspace" hidden aria-label="当前文档" data-aria-zh="当前文档" data-aria-en="Current document">
+          <div class="tab-strip" id="tabs" role="tablist" aria-label="已打开的文档" data-aria-zh="已打开的文档" data-aria-en="Open documents"></div>
           <div id="document-panel" role="tabpanel"><div class="document-heading"><div><h2 id="document-name"></h2><p id="document-meta" class="document-meta"></p></div><button class="button" id="edit-copy" type="button">编辑副本</button></div>
-          <label class="field name-field" id="name-field" hidden>副本名称<input id="document-filename" type="text" maxlength="160" autocomplete="off" spellcheck="false"></label>
-          <div class="text-area"><pre id="preview-text" class="text-preview" tabindex="0" aria-label="只读文本预览"></pre><textarea id="editor-text" hidden aria-label="编辑文本副本" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea></div>
-          <div class="toolbar document-actions"><button class="button primary" id="save-draft" type="button">保存到本机</button><button class="button" id="export-file" type="button">导出 .txt</button><button class="button" id="share-file" type="button">分享 / 存到文件</button></div>
-          <p class="export-note">导出与分享均生成 UTF-8 .txt 副本，不会覆盖打开的原文件。</p>
+          <label class="field name-field" id="name-field" hidden><span data-zh="副本名称" data-en="Copy name">副本名称</span><input id="document-filename" type="text" maxlength="160" autocomplete="off" spellcheck="false"></label>
+          <div class="text-area"><pre id="preview-text" class="text-preview" tabindex="0" aria-label="只读文本预览" data-aria-zh="只读文本预览" data-aria-en="Read-only text preview" data-empty-label="这份文本目前为空"></pre><textarea id="editor-text" hidden aria-label="编辑文本副本" data-aria-zh="编辑文本副本" data-aria-en="Edit text copy" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea></div>
+          <div class="toolbar document-actions"><button class="button primary" id="save-draft" type="button" data-zh="保存到本机" data-en="Save locally">保存到本机</button><button class="button" id="export-file" type="button" data-zh="导出 .txt" data-en="Export .txt">导出 .txt</button><button class="button" id="share-file" type="button" data-zh="分享 / 存到文件" data-en="Share / Save to Files">分享 / 存到文件</button></div>
+          <p class="export-note" data-zh="导出与分享均生成 UTF-8 .txt 副本，不会覆盖打开的原文件。" data-en="Export and share create UTF-8 .txt copies. The opened original is never overwritten.">导出与分享均生成 UTF-8 .txt 副本，不会覆盖打开的原文件。</p>
         </div></section>
       </div>
     </div>
     <p class="offline-state" data-offline-status role="status">正在准备离线…</p>
-    <details class="help panel"><summary>使用帮助与保存说明</summary><div class="help-content"><h2>从选择文件开始</h2><p>“打开文本文件”使用系统的文件选择器。只读取你明确选择的文件；不扫描文件夹、不上传内容。PDF、Office、图片和未知类型不在当前支持范围内，请用适合的软件打开。</p><h2>预览、编辑、保存</h2><p>打开后默认只读。点击“编辑副本”可修改文字或名称。点击“保存到本机”才会保留草稿；未保存的编辑只在当前页面，离开或关闭后可能丢失。切换标签不会丢失当前副本。</p><p>草稿仅保存在此设备当前浏览器或主屏幕应用中，不会自动同步或备份。清理浏览器数据、系统回收存储或删除应用，可能删除本机草稿。重要内容请导出到“文件”。无痕浏览可能不支持保存。</p><h2>导出到“文件”</h2><p>“导出 .txt”生成下载文件。“分享 / 存到文件”会优先打开系统分享菜单，你可以选择“存储到文件”；不支持文件分享的浏览器会改为下载。保存位置由你选择，若选择 iCloud 等位置，同步由系统或所选服务处理。</p><h2>添加到主屏幕</h2><p>iPhone、iPad 可在 Safari 分享菜单中选择“添加到主屏幕”。首次打开需加载应用；之后离线是否可用以页面显示的离线准备状态为准。本应用不需要 Node.js 或 Xcode。</p><p>HTML、Markdown 和代码只显示为文字，不执行脚本。这是轻量文本工作台，不是 PDF、Office 或高级代码编辑器。</p></div></details>
+    <details class="help panel"><summary data-zh="使用帮助与保存说明" data-en="Help and saving your work">使用帮助与保存说明</summary><div class="help-content">
+      <h2 data-zh="从选择文件开始" data-en="Choose your files">从选择文件开始</h2>
+      <p data-zh="“打开文本文件”使用系统的文件选择器。只读取你明确选择的文件；不扫描文件夹、不上传内容。PDF、Office、图片和未知类型不在当前支持范围内，请用适合的软件打开。" data-en="Open text files uses the system picker. Only your selected files are read; folders are not scanned and content is not uploaded. Open PDF, Office, images and unknown formats in a suitable app.">“打开文本文件”使用系统的文件选择器。只读取你明确选择的文件；不扫描文件夹、不上传内容。PDF、Office、图片和未知类型不在当前支持范围内，请用适合的软件打开。</p>
+      <h2 data-zh="预览、编辑、保存" data-en="Preview, edit and save">预览、编辑、保存</h2>
+      <p data-zh="打开后默认只读。点击“编辑副本”可修改文字或名称。点击“保存到本机”才会保留草稿；未保存的编辑只在当前页面，离开或关闭后可能丢失。切换标签不会丢失当前副本。" data-en="Documents open read-only. Choose Edit copy to change text or its name. Only Save locally keeps a draft. Unsaved edits remain in this page and may be lost when it closes. Switching tabs or languages preserves your current copies.">打开后默认只读。点击“编辑副本”可修改文字或名称。点击“保存到本机”才会保留草稿；未保存的编辑只在当前页面，离开或关闭后可能丢失。切换标签不会丢失当前副本。</p>
+      <p data-zh="草稿仅保存在此设备当前浏览器或主屏幕应用中，不会自动同步或备份。清理浏览器数据、系统回收存储或删除应用，可能删除本机草稿。重要内容请导出到“文件”。无痕浏览可能不支持保存。" data-en="Drafts stay in this device’s current browser or home-screen app, without automatic sync or backup. Clearing site data, storage eviction or removing the app may delete them. Export important work to Files. Private browsing may not support saving.">草稿仅保存在此设备当前浏览器或主屏幕应用中，不会自动同步或备份。清理浏览器数据、系统回收存储或删除应用，可能删除本机草稿。重要内容请导出到“文件”。无痕浏览可能不支持保存。</p>
+      <h2 data-zh="导出到“文件”" data-en="Export to Files">导出到“文件”</h2>
+      <p data-zh="“导出 .txt”生成下载文件。“分享 / 存到文件”会优先打开系统分享菜单，你可以选择“存储到文件”；不支持文件分享的浏览器会改为下载。保存位置由你选择，若选择 iCloud 等位置，同步由系统或所选服务处理。" data-en="Export .txt starts a download. Share / Save to Files opens the system share sheet when supported; choose Save to Files there. Otherwise it downloads a copy. You choose the destination; if you choose iCloud, the system or selected service handles sync.">“导出 .txt”生成下载文件。“分享 / 存到文件”会优先打开系统分享菜单，你可以选择“存储到文件”；不支持文件分享的浏览器会改为下载。保存位置由你选择，若选择 iCloud 等位置，同步由系统或所选服务处理。</p>
+      <h2 data-zh="添加到主屏幕" data-en="Add to your Home Screen">添加到主屏幕</h2>
+      <p data-zh="iPhone、iPad 可在 Safari 分享菜单中选择“添加到主屏幕”。首次打开需加载应用；之后离线是否可用以页面显示的离线准备状态为准。本应用不需要 Node.js 或 Xcode。" data-en="In Safari on iPhone or iPad, choose Add to Home Screen from Share. The first visit needs a connection; wait for the offline-ready status. No Node.js or Xcode is needed.">iPhone、iPad 可在 Safari 分享菜单中选择“添加到主屏幕”。首次打开需加载应用；之后离线是否可用以页面显示的离线准备状态为准。本应用不需要 Node.js 或 Xcode。</p>
+      <p data-zh="HTML、Markdown 和代码只显示为文字，不执行脚本。这是轻量文本工作台，不是 PDF、Office 或高级代码编辑器。" data-en="HTML, Markdown and code are displayed as text; scripts are never run. This is a lightweight text workbench, not a PDF, Office or advanced code editor.">HTML、Markdown 和代码只显示为文字，不执行脚本。这是轻量文本工作台，不是 PDF、Office 或高级代码编辑器。</p>
+    </div></details>
   </main>
 </body>
 </html>

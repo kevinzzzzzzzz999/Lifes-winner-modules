@@ -6,6 +6,45 @@ const distance = (a,b) => Math.hypot(a.x-b.x,a.y-b.y);
 const clamp = (v,a,b) => Math.min(b,Math.max(a,v));
 const colorOK = v => typeof v==='string' && /^#[0-9a-f]{6}$/i.test(v);
 const fail = message => { throw new Error(message); };
+// Error presentation is separate from the versioned document and fitting rules.
+const ERROR_MESSAGES = Object.freeze({
+  '这不是支持的书写画板文件；当前画板已保留。':'This is not a supported Writing file. Your current board has been kept.',
+  '画板范围无效。':'The board dimensions are invalid.',
+  '画板内容超过数量上限。':'The board contains too many items.',
+  '内容标识重复或无效。':'An item identifier is invalid or duplicated.',
+  '笔迹点数无效。':'A stroke has an invalid number of points.',
+  '画板笔迹太多，请导出后另建画板。':'The board has too many stroke points. Export a backup, then start a new board.',
+  '笔迹超出画板范围。':'A stroke extends beyond the board.',
+  '笔迹样式无效。':'A stroke style is invalid.',
+  '笔迹类型无效。':'A stroke type is invalid.',
+  '胶带状态无效。':'A tape state is invalid.',
+  '文字卡范围或内容无效。':'A text card has invalid content or dimensions.',
+  '文件超过 8 MiB，请减少内容或分成多个画板。':'The file exceeds 8 MiB. Reduce the content or split it into separate boards.',
+  '文件超过 8 MiB。':'The file exceeds 8 MiB.',
+  '无法生成波浪线。':'A wave cannot be generated from this stroke.',
+  '线条太短。':'The stroke is too short.',
+  '波浪线过长。':'The wave is too long.',
+  '波浪线需要留出画板边距。':'Leave space around the wave inside the board.',
+  '请围出一个区域再填色。':'Draw around an area before filling it.',
+  '填色轮廓无效。':'The fill outline is invalid.',
+  '填色轮廓太小或无效。':'The fill outline is too small or invalid.',
+  '剪贴板内容无效。':'The internal clipboard content is invalid.',
+  '读取期间画板已改变，请重试打开。':'The board changed while the file was being read. Open it again.',
+  '无效的本机存储名称':'The local storage name is invalid.',
+  '此工具不能读取其他工具的草稿':'This tool cannot read another tool’s drafts.',
+  '本机草稿过大，请先导出备份':'The local draft is too large. Export a backup first.',
+  '本机草稿超过 8 MiB，请先导出备份':'The local draft exceeds 8 MiB. Export a backup first.',
+  '无法导出此文件':'This file cannot be exported.',
+  '无法分享此文件':'This file cannot be shared.'
+});
+export function localizeError(error,language='zh') {
+  const message=typeof error==='string'?error:error?.message;
+  const pair=Object.entries(ERROR_MESSAGES).find(([zh,en])=>message===zh||message===en);
+  if(pair)return pair[language==='en'?1:0];
+  if(error?.name==='SyntaxError')return language==='en'?'The file is not valid JSON. Your current board has been kept.':'文件不是有效的 JSON，当前画板已保留。';
+  if(error?.name==='QuotaExceededError')return language==='en'?'Device storage is full. Your board is still in memory; export a backup.':'设备存储空间不足；画板仍在内存中，请导出备份。';
+  return language==='en'?'The operation could not be completed. Your board has been kept; try again or export a backup.':'操作未完成，画板仍保留；请重试或导出备份。';
+}
 export function newID() { return globalThis.crypto?.randomUUID?.() || `item-${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`; }
 export function emptyDocument() { return {format:'inkspace-writing-web',version:1,width:1200,height:1600,strokes:[],tapes:[],cards:[]}; }
 export function validateDocument(input) {

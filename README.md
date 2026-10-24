@@ -107,7 +107,7 @@ console.log(square({ x: 3 })); // 9
 
 ## 范围与验证
 
-[63个功能组与依赖边界](FEATURES.md) · [逐项覆盖审计](coverage-audit.json) · [实际验证结果](VALIDATION.md) · [Node独立安装验证](NODE-VALIDATION.md) · [下载包摘要](download-manifest.json)
+[公开下载与使用验收](DOWNLOAD-CHECKS.md) · [63个功能组与依赖边界](FEATURES.md) · [逐项覆盖审计](coverage-audit.json) · [实际验证结果](VALIDATION.md) · [Node独立安装验证](NODE-VALIDATION.md) · [下载包摘要](download-manifest.json)
 
 19个Node包当前217项行为回归通过；16个Swift独立消费者编译、链接与API运行通过；React组件45次独立挂载及严格TypeScript消费检查通过。它们是可复用功能、组件或源码集成，平台宿主、外部引擎和界面依赖见包内说明。完整软件已有的设备稳定性问题仍按原记录保留。
 

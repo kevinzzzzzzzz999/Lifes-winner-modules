@@ -1,0 +1,2005 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-10-24",
+  "auditBaseCommit": "28d298d6099658043ba5e992e97c6c28bccfc6ac",
+  "scope": "公开的桌面105/原生106.3基础源码与下载模块；不代表后来私有开发版本自动覆盖。",
+  "completeSourceRepository": "inkspace",
+  "completeSourceArchive": "InkSpace-source-2026-10-24.zip",
+  "featureGroupCount": 63,
+  "allOriginalFeaturesExtracted": false,
+  "allDownloadsAreReadyToRunApps": false,
+  "statusDefinitions": {
+    "reusable-core": "有可独立集成的库核心；原工作流的其余部分和外部环境见boundary。",
+    "reusable-component": "有React组件；调用者需提供props/明确的宿主接口。",
+    "core-and-component": "核心与组件均有独立导出；不代表所有原生平台流程都已拆成App。",
+    "installable-plugin": "可安装插件，需要对应插件宿主。",
+    "integration-source": "只提供集成源码；尚需target/承载App/签名。",
+    "app-source-only": "只在完整源包提供，尚无完整独立模块。"
+  },
+  "statusCounts": {
+    "reusable-core": 23,
+    "core-and-component": 35,
+    "app-source-only": 3,
+    "installable-plugin": 1,
+    "integration-source": 1
+  },
+  "sourceReferencesValidated": true,
+  "exportNamesValidated": true,
+  "downloadBytesAndFreshInstallVerification": "见本轮下载审计结果；本矩阵仅核对功能范围、实际导出与所需宿主。",
+  "features": [
+    {
+      "id": "A01",
+      "name": "本地资料库与授权",
+      "scope": "选择自己的本地/iCloud资料文件夹，列举文件与白板，读取授权范围内的原件。",
+      "originalSources": [
+        "desktop/src/main/vault-service.cjs",
+        "desktop/src/renderer/Sidebar.tsx",
+        "ios/InkSpace/Documents/DocumentLibrary.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "file-storage",
+          "namespacesOrExports": [
+            "paths",
+            "storage"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpacePaths",
+        "InkSpaceStorage"
+      ],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-file-storage.zip",
+        "swift-InkSpacePaths.zip",
+        "swift-InkSpaceStorage.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "系统文件夹授权/选择器和完整资料库类未独立提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "A02",
+      "name": "文件整理与回收",
+      "scope": "多选、创建、重命名、复制/移动、分享、废纸篓及恢复，保持文件操作冲突检查。",
+      "originalSources": [
+        "desktop/src/main/vault-file-management.cjs",
+        "desktop/src/renderer/FileManagementDialog.tsx",
+        "ios/InkSpace/FileManagement/"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "file-storage",
+          "namespacesOrExports": [
+            "fileManagement",
+            "actions",
+            "identity",
+            "storage"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceStorage"
+      ],
+      "reactComponents": [
+        "FileManagement"
+      ],
+      "downloadArchives": [
+        "node-file-storage.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceStorage.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "完整原生文件管理UI/系统分享/回收入口仍在原App；库仅处理注入后的授权目录。",
+      "pendingExports": []
+    },
+    {
+      "id": "A03",
+      "name": "最近浏览与多窗口",
+      "scope": "最近文件/文件夹、重新打开、多标签/并排布局、独立文件夹窗口和窗口状态恢复。",
+      "originalSources": [
+        "desktop/src/main/window-contexts.cjs",
+        "desktop/src/renderer/App.tsx",
+        "ios/InkSpace/Core/WorkspaceWindowPersistence.swift",
+        "ios/InkSpace/UI/RecentBrowseSection.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "file-storage",
+          "namespacesOrExports": [
+            "recent"
+          ]
+        },
+        {
+          "package": "document-workspace",
+          "namespacesOrExports": [
+            "tabs"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-document-workspace.zip",
+        "node-file-storage.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "Electron/SwiftUI独立窗口创建、恢复和最近文件界面仍在原App。",
+      "pendingExports": []
+    },
+    {
+      "id": "A04",
+      "name": "全文搜索、标签与双向关联",
+      "scope": "受限文本扫描、关键词结果、标签、Markdown出链/反链、歧义链接提示；不声称全文搜索所有PDF。",
+      "originalSources": [
+        "desktop/src/main/knowledge-service.cjs",
+        "desktop/src/renderer/KnowledgePanel.tsx"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "knowledge-search",
+          "namespacesOrExports": [
+            "links"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-knowledge-search.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "搜索/反向链接核心已提取，搜索对话框/文件路由未独立提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "A05",
+      "name": "文件变更与同步衔接",
+      "scope": "外部文件变化刷新、冲突保护、iCloud下载状态与后台刷新衔接；云文件传输仍由系统负责。",
+      "originalSources": [
+        "desktop/src/main/vault-watch.cjs",
+        "desktop/src/main/vault-watch-lifecycle.cjs",
+        "ios/InkSpace/Core/BoardBackgroundRefreshController.swift",
+        "ios/InkSpace/Core/VaultFileIO.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "file-storage",
+          "namespacesOrExports": [
+            "watch",
+            "watchLifecycle"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceStorage"
+      ],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-file-storage.zip",
+        "swift-InkSpaceStorage.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "iCloud下载、系统后台调度和跨设备同步不是独立服务。",
+      "pendingExports": []
+    },
+    {
+      "id": "B01",
+      "name": "文字与代码编辑",
+      "scope": "纯文字、Python/LaTeX/HTML等源文件编辑、保存、撤销、文件导出和原应用打开。",
+      "originalSources": [
+        "desktop/src/renderer/EditorPane.tsx",
+        "desktop/src/renderer/WorkspaceFileEditor.tsx",
+        "desktop/src/main/source-file-export.cjs"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "file-storage",
+          "namespacesOrExports": [
+            "exports"
+          ]
+        },
+        {
+          "package": "document-workspace",
+          "namespacesOrExports": [
+            "autosave",
+            "shortcuts"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "CodeEditor",
+        "TextBoxEditor"
+      ],
+      "downloadArchives": [
+        "node-document-workspace.zip",
+        "node-file-storage.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "保存、系统打开和执行引擎由调用方提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "B02",
+      "name": "Markdown与富文本公式",
+      "scope": "Markdown原文/预览、标题纲要、链接、富文本与行内公式、Markdown内嵌白板及打开跳转。",
+      "originalSources": [
+        "desktop/src/renderer/EditorPane.tsx",
+        "desktop/src/renderer/rich-text-math.ts",
+        "ios/InkSpace/UI/MarkdownDocumentView.swift",
+        "ios/InkSpace/Documents/BoardRichTextRenderer.swift",
+        "desktop/src/renderer/BoardEmbed.tsx"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "document-workspace",
+          "namespacesOrExports": [
+            "richText",
+            "math",
+            "links"
+          ]
+        },
+        {
+          "package": "note-exchange",
+          "namespacesOrExports": [
+            "outline"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceTextHistory",
+        "InkSpaceOutline"
+      ],
+      "reactComponents": [
+        "DocumentPreview",
+        "FormulaView",
+        "TextBoxEditor"
+      ],
+      "downloadArchives": [
+        "node-document-workspace.zip",
+        "node-note-exchange.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceOutline.zip",
+        "swift-InkSpaceTextHistory.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "Markdown嵌入白板/附件/外链需要声明的资源和导航接口；没有独立原生阅读器。",
+      "pendingExports": []
+    },
+    {
+      "id": "B03",
+      "name": "标准文档创建与结构编辑",
+      "scope": "创建DOCX、PPTX及带可编辑源模型的PDF，编辑标题/段落/列表并保存；PDF渲染需注入，不等于完整Office套件。",
+      "originalSources": [
+        "desktop/src/renderer/NewDocumentDialog.tsx",
+        "desktop/src/renderer/StandaloneDocumentEditor.tsx",
+        "desktop/src/main/editable-office.cjs",
+        "desktop/src/main/document-pdf.cjs"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "office-documents",
+          "namespacesOrExports": [
+            "model",
+            "office",
+            "pdf"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "StructuredDocumentEditor"
+      ],
+      "downloadArchives": [
+        "node-office-documents.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "DOCX/PPTX字节创建与可编辑PDF封装/回读可独立复用；PDF渲染必须注入printPDF或显式Electron宿主，保存由调用方提供，不是完整Office套件。",
+      "pendingExports": []
+    },
+    {
+      "id": "B04",
+      "name": "Office和图片阅读",
+      "scope": "Word/PowerPoint/图片/Markdown阅读与关联阅读PDF，原文和批注版双入口、保留源文件。",
+      "originalSources": [
+        "desktop/src/renderer/DocumentPreview.tsx",
+        "desktop/src/main/docx-preview.cjs",
+        "ios/InkSpace/Documents/OfficeDocumentRenderer.swift",
+        "ios/InkSpace/UI/InlineImageReadingView.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "office-documents",
+          "namespacesOrExports": [
+            "docxPreview",
+            "office",
+            "images",
+            "legacyDoc"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "DocumentPreview"
+      ],
+      "downloadArchives": [
+        "node-office-documents.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "完整原生文档转换/QuickLook渲染由系统或宿主提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "B05",
+      "name": "Excel阅读与嵌图",
+      "scope": "工作簿/工作表、保存的公式值、单元格阅读版及嵌入图片；不声称完全还原Excel排版/图表。",
+      "originalSources": [
+        "desktop/src/main/excel-reading.cjs",
+        "desktop/src/main/office-embedded-images.cjs",
+        "ios/InkSpace/Documents/ExcelDocumentRenderer.swift",
+        "ios/InkSpace/UI/ExcelPicturesReadingView.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "office-documents",
+          "namespacesOrExports": [
+            "images"
+          ]
+        },
+        {
+          "package": "notebook-data",
+          "namespacesOrExports": [
+            "workbooks"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceExcelPictures"
+      ],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-notebook-data.zip",
+        "node-office-documents.zip",
+        "swift-InkSpaceExcelPictures.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "完整App的Excel阅读HTML/打印服务没有作为独立工作簿阅读器提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "B06",
+      "name": "CSV/TSV/JSON数据预览",
+      "scope": "数据文件解析、表格预览与列/行浏览；与Notebook变量导入分开。",
+      "originalSources": [
+        "desktop/src/renderer/DataFilePreview.tsx",
+        "desktop/src/renderer/data-file-parsers.ts"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "notebook-data",
+          "namespacesOrExports": [
+            "delimited",
+            "workbooks"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "CsvPreview",
+        "HtmlPreview"
+      ],
+      "downloadArchives": [
+        "node-notebook-data.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "表格输入由调用方提供；CSV预览和解析不需要完整App。",
+      "pendingExports": []
+    },
+    {
+      "id": "B07",
+      "name": "本地Python脚本",
+      "scope": "显式运行、取消、输出/错误、超时与大小限制；需要使用者提供Python运行环境。",
+      "originalSources": [
+        "desktop/src/main/python-service.cjs",
+        "desktop/src/renderer/PythonConsole.tsx"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "notebook-runtime",
+          "namespacesOrExports": [
+            "python"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-notebook-runtime.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "Python二进制/执行目录/权限由调用方提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "B08",
+      "name": "Jupyter Notebook编辑运行",
+      "scope": "代码/Markdown单元格、语法色、快捷键、纲要、逐格/连续运行、结果显示与保存。",
+      "originalSources": [
+        "desktop/src/renderer/NotebookEditor.tsx",
+        "desktop/src/renderer/NotebookCode.tsx",
+        "desktop/src/renderer/notebook-run-controller.ts",
+        "desktop/src/main/notebook-service.cjs"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "notebook-runtime",
+          "namespacesOrExports": [
+            "notebooks",
+            "runController"
+          ]
+        },
+        {
+          "package": "notebook-data",
+          "namespacesOrExports": [
+            "format",
+            "actions",
+            "sessions",
+            "events",
+            "html",
+            "outline"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "NotebookEditor"
+      ],
+      "downloadArchives": [
+        "node-notebook-data.zip",
+        "node-notebook-runtime.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "Python运行时和文件/会话接口由调用方注入。",
+      "pendingExports": []
+    },
+    {
+      "id": "B09",
+      "name": "Notebook表格数据交换",
+      "scope": "CSV/TSV/Excel多表导入、表头/变量选择、数据导出与运行中数据交换。",
+      "originalSources": [
+        "desktop/src/main/notebook-data.cjs",
+        "desktop/src/main/notebook-data-worker.cjs",
+        "desktop/src/renderer/NotebookCSVPicker.tsx",
+        "desktop/src/renderer/NotebookCSVExport.tsx"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "notebook-data",
+          "namespacesOrExports": [
+            "workbooks",
+            "delimited"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-notebook-data.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "文件访问与可选Python科学计算环境由调用方提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "B10",
+      "name": "LaTeX编译与公式排版",
+      "scope": "编辑TeX，主动调用Tectonic编译PDF，管理缓存、取消和诊断；完整离线TeX缓存需另备。",
+      "originalSources": [
+        "desktop/src/main/tex-service.cjs",
+        "desktop/scripts/packaging/prepare-latex.mjs",
+        "desktop/src/renderer/EditorPane.tsx"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "office-documents",
+          "namespacesOrExports": [
+            "tex"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-office-documents.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "Tectonic可执行文件、TeX缓存和资料快照/发布接口需另提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "B11",
+      "name": "科学计算与数学工作台",
+      "scope": "表达式、函数采样/绘图、数值微分积分、梯度/Hessian、CSV统计、OLS、时间序列和财务数值函数、工作表导出请求校验；不是符号代数系统。",
+      "originalSources": [
+        "desktop/src/renderer/MathWorkbench.tsx",
+        "ios/InkSpace/Resources/MathLab/",
+        "ios/InkSpace/UI/MathWorkbenchView.swift",
+        "ios/InkSpace/UI/FloatingCalculatorOverlay.swift",
+        "desktop/src/main/math-export.cjs"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "math-lab",
+          "namespacesOrExports": [
+            "engine",
+            "simple",
+            "mathExport"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "MathWorkbench"
+      ],
+      "downloadArchives": [
+        "node-math-lab.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "数学静态网页需托管；mathExport只返回已校验内容和建议文件名，剪贴板/实际保存仍由宿主提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "B12",
+      "name": "旁注空白区",
+      "scope": "为原文创建关联Markdown旁注、插入图片、编辑/预览、右侧或下方布局及保存。",
+      "originalSources": [
+        "desktop/src/renderer/App.tsx",
+        "desktop/src/renderer/MarginPanel.tsx"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "office-documents",
+          "namespacesOrExports": [
+            "noteExtraction"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "MarginNotes"
+      ],
+      "downloadArchives": [
+        "node-office-documents.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "创建关联文件、导入图片和保存由调用方注入；不读真实资料库。",
+      "pendingExports": []
+    },
+    {
+      "id": "B13",
+      "name": "提取为Markdown笔记",
+      "scope": "从PDF/Office/表格文字生成带原件链接的Markdown新笔记，保留截断提示，不覆盖原文件。",
+      "originalSources": [
+        "desktop/src/renderer/App.tsx",
+        "desktop/src/renderer/PDFViewer.tsx"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "office-documents",
+          "namespacesOrExports": [
+            "noteExtraction"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-office-documents.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "PDF/HTML提取器和文件发布回调需由调用方提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "C01",
+      "name": "白板文件与浏览导航",
+      "scope": "白板JSON校验、对象/连线/定位点、总览、缩放平移、目录定位、最后一笔定位与保存视口。",
+      "originalSources": [
+        "desktop/src/main/board-json.cjs",
+        "desktop/src/main/board-validation.cjs",
+        "desktop/src/renderer/BoardViewer.tsx",
+        "ios/InkSpace/Core/Models.swift",
+        "ios/InkSpace/Core/BoardInkLocator.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "board-model",
+          "namespacesOrExports": [
+            "json",
+            "validation",
+            "elements",
+            "navigation",
+            "sourceResolver"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceGeometry"
+      ],
+      "reactComponents": [
+        "BoardViewer"
+      ],
+      "downloadArchives": [
+        "node-board-model.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceGeometry.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生无限画布/BoardStore仍与App耦合，最后一笔PencilKit定位尚未形成独立Swift模块。",
+      "pendingExports": []
+    },
+    {
+      "id": "C02",
+      "name": "原生手写与工具预设",
+      "scope": "PencilKit书写、橡皮、高亮、粗线、直尺、笔色/粗细/透明度预设及原生撤销重做。",
+      "originalSources": [
+        "ios/InkSpace/Canvas/NativeBoardCanvas.swift",
+        "ios/InkSpace/UI/BoardSheets.swift",
+        "desktop/src/native/InkSpaceInkHelper.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "board-ink",
+          "namespacesOrExports": [
+            "paint",
+            "clip"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-board-ink.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "实际PencilKit书写/橡皮/直尺/原生Undo与Mac原生helper尚未独立封装。",
+      "pendingExports": []
+    },
+    {
+      "id": "C03",
+      "name": "圈选、变换与排版",
+      "scope": "混合笔迹/对象圈选、移动缩放、复制粘贴、成组/拆组、对齐排布及历史保护。",
+      "originalSources": [
+        "desktop/src/main/board-operations.cjs",
+        "desktop/src/renderer/BoardArrangeToolbar.tsx",
+        "ios/InkSpace/Canvas/BoardLassoSelection.swift",
+        "ios/InkSpace/Core/BoardLassoClipboard.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "board-model",
+          "namespacesOrExports": [
+            "operations",
+            "paste"
+          ]
+        },
+        {
+          "package": "board-ink",
+          "namespacesOrExports": [
+            "clip",
+            "placement"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "BoardViewer"
+      ],
+      "downloadArchives": [
+        "node-board-ink.zip",
+        "node-board-model.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生Pencil手势、跨代Undo和大笔迹稳定性未因拆包完成。",
+      "pendingExports": []
+    },
+    {
+      "id": "C04",
+      "name": "文字、公式和思维导图节点",
+      "scope": "文字/公式节点、富文本输入、样式和连接箭头、可编辑图形框架。",
+      "originalSources": [
+        "desktop/src/renderer/GraphWorkspace.tsx",
+        "desktop/src/main/board-elements.cjs",
+        "ios/InkSpace/UI/BoardRichTextEditor.swift",
+        "ios/InkSpace/UI/BoardSheets.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "board-model",
+          "namespacesOrExports": [
+            "elements"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceTextHistory"
+      ],
+      "reactComponents": [
+        "MindMapEditor",
+        "TextBoxEditor"
+      ],
+      "downloadArchives": [
+        "node-board-model.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceTextHistory.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "保存/附件/原生富文本编辑器需要宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "C05",
+      "name": "文档卡片与页面展开",
+      "scope": "PDF/Office/图片加入白板、按纵向/横向/网格展开、缩放和收起；原文仍保留。",
+      "originalSources": [
+        "desktop/src/main/board-file-cards.cjs",
+        "desktop/src/main/board-operations.cjs",
+        "ios/InkSpace/UI/DocumentExpansionSheet.swift",
+        "ios/InkSpace/Documents/SourceDocumentRenderStore.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "board-model",
+          "namespacesOrExports": [
+            "fileCards",
+            "operations"
+          ]
+        },
+        {
+          "package": "office-documents",
+          "namespacesOrExports": [
+            "images"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "BoardViewer"
+      ],
+      "downloadArchives": [
+        "node-board-model.zip",
+        "node-office-documents.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "文档转换、资产读取和白板事务由宿主提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "C06",
+      "name": "子白板与入口嵌入",
+      "scope": "创建/连接子白板、父子跳转、嵌入预览与原文件定位。",
+      "originalSources": [
+        "desktop/src/main/board-child-links.cjs",
+        "desktop/src/renderer/ChildBoardPortal.tsx",
+        "ios/InkSpace/UI/ChildBoardsSheet.swift",
+        "ios/InkSpace/Canvas/BoardChildCanvasOverlay.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "board-model",
+          "namespacesOrExports": [
+            "childLinks"
+          ]
+        },
+        {
+          "package": "board-merge",
+          "namespacesOrExports": [
+            "childSession"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "BoardViewer"
+      ],
+      "downloadArchives": [
+        "node-board-merge.zip",
+        "node-board-model.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生子白板场景/路由未独立；Web资源/操作需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "C07",
+      "name": "白板合并与明确撤回",
+      "scope": "来源预览、自选位置、平移缩放、合并记录和撤回；保持原板与既有笔迹。",
+      "originalSources": [
+        "desktop/src/main/board-merge.cjs",
+        "desktop/src/renderer/BoardMergeDialog.tsx",
+        "ios/InkSpace/Core/BoardMerge.swift",
+        "ios/InkSpace/UI/BoardMergeView.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "board-merge",
+          "namespacesOrExports": [
+            "merge",
+            "history",
+            "sessions"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-board-merge.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "合并放置UI和原生笔迹转换桥需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "C08",
+      "name": "原文重关联与引用修复",
+      "scope": "源文件移动/变化时核对摘要并重关联PDF与批注引用，保留失败/冲突保护。",
+      "originalSources": [
+        "desktop/src/main/board-relink.cjs",
+        "desktop/src/main/board-relink-stream.cjs",
+        "desktop/src/renderer/BoardRelinkDialog.tsx",
+        "ios/InkSpace/Documents/VaultPathResolver.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "board-model",
+          "namespacesOrExports": [
+            "operations",
+            "sourceResolver"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "BoardViewer"
+      ],
+      "downloadArchives": [
+        "node-board-model.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "操作需注入资料快照、文件确认和持久化接口。",
+      "pendingExports": []
+    },
+    {
+      "id": "C09",
+      "name": "辅助书写与演示",
+      "scope": "几何辅助、停留直线、高亮底层、激光轨迹、胶带复习遮挡和系统随手写转文字卡；胶带不是隐私涂黑。",
+      "originalSources": [
+        "ios/InkSpace/Core/BoardHeldLineStroke.swift",
+        "ios/InkSpace/Core/BoardWritingAid.swift",
+        "ios/InkSpace/UI/BoardWritingAidSettingsView.swift",
+        "ios/InkSpace/UI/BoardWritingAidScribbleView.swift"
+      ],
+      "extractionStatus": "app-source-only",
+      "node": [],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [],
+      "runtimeOrUnextractedBoundary": "辅助笔激光/波浪线/闭合填色/胶带/手写转字、停留直线、形状拟合与持久化尚无独立包。",
+      "pendingExports": []
+    },
+    {
+      "id": "C10",
+      "name": "历史版本、备份与恢复",
+      "scope": "自动/手动本机历史、容量设置、可编辑ZIP备份、导入恢复独立副本及附件检查。",
+      "originalSources": [
+        "desktop/src/main/board-history-service.cjs",
+        "ios/InkSpace/Core/LocalBoardBackupStore.swift",
+        "ios/InkSpace/Backup/",
+        "ios/InkSpace/UI/BoardBackupSettingsView.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "board-merge",
+          "namespacesOrExports": [
+            "history"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-board-merge.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生ZIP备份、恢复控制器和备份UI尚未形成独立产品；历史服务在board-merge而不是file-storage。",
+      "pendingExports": []
+    },
+    {
+      "id": "C11",
+      "name": "分页、打印与图片/PDF导出",
+      "scope": "Letter纸框、页序、裁剪、分页PDF/PNG/JPEG与当前视图输出；平台导出能力不同。",
+      "originalSources": [
+        "desktop/src/renderer/board-export.tsx",
+        "desktop/src/renderer/ExportDialog.tsx",
+        "ios/InkSpace/Core/BoardPrintExporter.swift",
+        "ios/InkSpace/UI/BoardPrintPagesView.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "board-ink",
+          "namespacesOrExports": [
+            "exportInk"
+          ]
+        },
+        {
+          "package": "pdf-tools",
+          "namespacesOrExports": [
+            "mergePDFs",
+            "extractPDFPages",
+            "splitPDF"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceGeometry"
+      ],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-board-ink.zip",
+        "node-pdf-tools.zip",
+        "swift-InkSpaceGeometry.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生完整白板渲染/PDF与图像导出及系统打印未独立；Web导出需要调用方提供文档/打印接口。",
+      "pendingExports": []
+    },
+    {
+      "id": "C12",
+      "name": "现存笔迹回放",
+      "scope": "播放/暂停/倍速、背景、显示模式和镜头控制；只读回放仍存在的笔迹，缺失时间不补造历史。",
+      "originalSources": [
+        "desktop/src/renderer/ink-replay.ts",
+        "desktop/src/renderer/InkReplayDialog.tsx",
+        "ios/InkSpace/Core/InkReplay.swift",
+        "ios/InkSpace/UI/InkReplayView.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "board-ink",
+          "namespacesOrExports": [
+            "replay",
+            "replayCamera",
+            "replayPaint",
+            "replayDisplay"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "InkReplay"
+      ],
+      "downloadArchives": [
+        "node-board-ink.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生回放Canvas/系统窗口与资源读取需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "D01",
+      "name": "PDF独立阅读",
+      "scope": "PDF页面、目录、文本选择、缩放/定位与高倍率可视区绘制。",
+      "originalSources": [
+        "desktop/src/renderer/PDFViewer.tsx",
+        "desktop/src/renderer/pdf-reader-zoom.ts",
+        "ios/InkSpace/PDFExtension/PDFOutlineView.swift",
+        "ios/InkSpace/PDFWorkspace/PhonePDFReader.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "pdf-tools",
+          "namespacesOrExports": [
+            "zoom"
+          ]
+        },
+        {
+          "package": "document-workspace",
+          "namespacesOrExports": [
+            "zoom"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceGeometry"
+      ],
+      "reactComponents": [
+        "PDFPage",
+        "PDFReader"
+      ],
+      "downloadArchives": [
+        "node-document-workspace.zip",
+        "node-pdf-tools.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceGeometry.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生PDFKit阅读器没有独立产品，Web阅读器需要URL/可选宿主能力。",
+      "pendingExports": []
+    },
+    {
+      "id": "D02",
+      "name": "并排阅读与白板联动",
+      "scope": "同源/双PDF阅读窗格、白板与文档切换、阅读状态和选区联动。",
+      "originalSources": [
+        "desktop/src/renderer/PDFWorkspace.tsx",
+        "desktop/src/renderer/PDFBoardStudyLayout.tsx",
+        "ios/InkSpace/PDFWorkspace/PDFWorkspaceView.swift",
+        "ios/InkSpace/PDFWorkspace/BoardPDFWorkspaceView.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "document-workspace",
+          "namespacesOrExports": [
+            "workspace"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-document-workspace.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "完整多窗格PDFWorkspace/PDFBoardStudyLayout和原生工作台仍未作为独立组件导出。",
+      "pendingExports": []
+    },
+    {
+      "id": "D03",
+      "name": "PDF高亮与独立笔迹图层",
+      "scope": "文本高亮、手写/图层开关、标准注释写回和本白板注释去重/归属保护。",
+      "originalSources": [
+        "desktop/src/main/pdf-layer-service.cjs",
+        "desktop/src/main/pdf-native-ink.cjs",
+        "desktop/src/renderer/PDFLayers.tsx",
+        "ios/InkSpace/Documents/PDFAnnotationWritebackService.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "pdf-annotations",
+          "namespacesOrExports": [
+            "layers",
+            "nativeInk"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpacePDFRecords"
+      ],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-pdf-annotations.zip",
+        "swift-InkSpacePDFRecords.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "PencilKit笔迹投影、PDF增量写回与归属验证仍在原App。",
+      "pendingExports": []
+    },
+    {
+      "id": "D04",
+      "name": "PDF增页与页外扩展笔记",
+      "scope": "在PDF旁增加阅读/手写空间、扩展块、页序、原文引用及合成输出。",
+      "originalSources": [
+        "desktop/src/main/pdf-extend-model.cjs",
+        "desktop/src/renderer/PDFExtend.tsx",
+        "ios/InkSpace/PDFExtension/PDFExtensionModel.swift",
+        "ios/InkSpace/PDFExtension/PDFExtensionExporter.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "pdf-annotations",
+          "namespacesOrExports": [
+            "extensionModel",
+            "extensionStore"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpacePDFRecords"
+      ],
+      "reactComponents": [
+        "PDFReader"
+      ],
+      "downloadArchives": [
+        "node-pdf-annotations.zip",
+        "react-ui-components.zip",
+        "swift-InkSpacePDFRecords.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "交互编辑控制器、笔迹/图像和文件写回由宿主提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "D05",
+      "name": "原文摘录、截图与回链定位",
+      "scope": "文本/区域截图摘录、保存原文位置、白板选区定位、原文/批注版返回跳转。",
+      "originalSources": [
+        "desktop/src/main/pdf-visual-excerpt.cjs",
+        "desktop/src/renderer/board-source-navigation.ts",
+        "ios/InkSpace/PDFWorkspace/PDFImageExcerpt.swift",
+        "ios/InkSpace/PDFExtension/PDFSourceReference.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "pdf-tools",
+          "namespacesOrExports": [
+            "capture"
+          ]
+        },
+        {
+          "package": "board-model",
+          "namespacesOrExports": [
+            "operations"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "PDFReader",
+        "BoardViewer"
+      ],
+      "downloadArchives": [
+        "node-board-model.zip",
+        "node-pdf-tools.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原App的pdf-visual-excerpt持久化服务未单独导出，跨文件路由/截图和提交需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "D06",
+      "name": "本机OCR",
+      "scope": "PDF/图片/选区文字识别、文本框位置、结果检查和另存，不覆盖源文档。",
+      "originalSources": [
+        "desktop/src/main/local-ocr-service.cjs",
+        "desktop/src/native/ocr/LocalOCR.swift",
+        "ios/InkSpace/Core/LocalOCR.swift",
+        "ios/InkSpace/UI/LocalOCRView.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "ocr-tools",
+          "namespacesOrExports": [
+            "service",
+            "images",
+            "capture"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceOCR"
+      ],
+      "reactComponents": [
+        "LocalOCR"
+      ],
+      "downloadArchives": [
+        "node-ocr-tools.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceOCR.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "需要Apple Vision/PDFKit或另提供OCR运行时；不含独立扫描App。",
+      "pendingExports": []
+    },
+    {
+      "id": "D07",
+      "name": "朗读与跟随高亮",
+      "scope": "白板文字/PDF/OCR内容朗读、暂停/速度和当前段高亮。",
+      "originalSources": [
+        "desktop/src/renderer/BoardSpeech.tsx",
+        "ios/InkSpace/Core/BoardReadAloudController.swift",
+        "ios/InkSpace/Core/BoardReadAloudPDF.swift",
+        "ios/InkSpace/PDFWorkspace/PDFReadAloudControls.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [],
+      "swiftProducts": [
+        "InkSpaceSpeechText"
+      ],
+      "reactComponents": [
+        "BoardViewer"
+      ],
+      "downloadArchives": [
+        "react-ui-components.zip",
+        "swift-InkSpaceSpeechText.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生AVSpeech控制器未独立；Web朗读能力含于白板组件，音频会话/数据仍需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "D08",
+      "name": "选区/整段/页面翻译",
+      "scope": "选择文本或图像、提供方/密钥设置、页面范围翻译、显示与导出。",
+      "originalSources": [
+        "desktop/src/main/translation-service.cjs",
+        "desktop/src/renderer/PDFRangeTranslation.tsx",
+        "ios/InkSpace/AI/PDFTranslationClient.swift",
+        "ios/InkSpace/PDFWorkspace/PDFWorkspaceTranslationExport.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "translation-tools",
+          "namespacesOrExports": [
+            "service"
+          ]
+        },
+        {
+          "package": "pdf-tools",
+          "namespacesOrExports": [
+            "translationExport"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceAI"
+      ],
+      "reactComponents": [
+        "TranslationSettings",
+        "PDFReader"
+      ],
+      "downloadArchives": [
+        "node-pdf-tools.zip",
+        "node-translation-tools.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceAI.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "联网服务、自己的密钥和文件发布接口由调用方提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "D09",
+      "name": "相机扫描与扫描页整理",
+      "scope": "系统相机扫描、扫描页编辑、命名与保存到所选文件夹的PDF。",
+      "originalSources": [
+        "ios/InkSpace/UI/DocumentScannerView.swift",
+        "ios/InkSpace/UI/ScannedPageEditor.swift",
+        "ios/InkSpace/Documents/ScannedPDFExport.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [],
+      "swiftProducts": [
+        "InkSpaceScanPDF"
+      ],
+      "reactComponents": [],
+      "downloadArchives": [
+        "swift-InkSpaceScanPDF.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "相机扫描、裁边/旋转编辑器和VisionKit界面未独立。",
+      "pendingExports": []
+    },
+    {
+      "id": "D10",
+      "name": "OneNote连续PDF与高清对照",
+      "scope": "OneNote导出PDF的连续布局、分片几何与高清来源匹配/发布保护。",
+      "originalSources": [
+        "desktop/src/main/onenote-pdf.cjs",
+        "desktop/src/main/onenote-hd.cjs",
+        "desktop/src/main/onenote-geometry-guard.cjs",
+        "desktop/src/main/onenote-publication.cjs"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "pdf-tools",
+          "namespacesOrExports": [
+            "oneNote",
+            "geometry",
+            "hd"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-pdf-tools.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "高清匹配预览/确认UI及原App的发布保护接线仍需宿主；不是.one文件解码器。",
+      "pendingExports": []
+    },
+    {
+      "id": "E01",
+      "name": "笔记关系图与思维结构",
+      "scope": "从Markdown链接生成知识图、浏览节点关系，白板节点图使用独立编辑机制。",
+      "originalSources": [
+        "desktop/src/main/knowledge-service.cjs",
+        "desktop/src/renderer/GraphWorkspace.tsx",
+        "desktop/src/renderer/MindSourcePreview.tsx"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "knowledge-search",
+          "namespacesOrExports": [
+            "links"
+          ]
+        },
+        {
+          "package": "board-model",
+          "namespacesOrExports": [
+            "elements"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "KnowledgeGraph",
+        "MindMapEditor"
+      ],
+      "downloadArchives": [
+        "node-board-model.zip",
+        "node-knowledge-search.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "图谱数据与打开文件回调由调用方提供。",
+      "pendingExports": []
+    },
+    {
+      "id": "E02",
+      "name": "知识空间、记忆宫殿与漫游",
+      "scope": "按真实文件夹显示平面/三维空间、容量统计、摆放排序与可行走浏览。",
+      "originalSources": [
+        "desktop/src/renderer/KnowledgeSpace.tsx",
+        "desktop/src/renderer/KnowledgePalace.tsx",
+        "desktop/src/renderer/KnowledgeWalkthrough.tsx",
+        "desktop/src/renderer/knowledge-walk-renderer.ts"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "knowledge-search",
+          "namespacesOrExports": [
+            "palace",
+            "metadata",
+            "walkMath",
+            "walkRenderer",
+            "walkGL"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "KnowledgeSpace",
+        "MemoryPalace",
+        "KnowledgeWalkthrough"
+      ],
+      "downloadArchives": [
+        "node-knowledge-search.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "KnowledgeSpace扫描目录和排序需要宿主；宫殿/漫游可由props驱动。",
+      "pendingExports": []
+    },
+    {
+      "id": "E03",
+      "name": "手机批注与待处理评论",
+      "scope": "独立评论/高亮记录、笔画/原文定位、跨端读取、删除标记和待处理列表。",
+      "originalSources": [
+        "desktop/src/main/review-service.cjs",
+        "desktop/src/renderer/ReviewPanel.tsx",
+        "ios/InkSpace/Core/BoardReviews.swift",
+        "ios/InkSpace/UI/BoardReviewViews.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "study-tools",
+          "namespacesOrExports": [
+            "reviews"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "ReviewPanel"
+      ],
+      "downloadArchives": [
+        "node-study-tools.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生批注UI和跨文件定位未独立，评论记录和列表可复用。",
+      "pendingExports": []
+    },
+    {
+      "id": "E04",
+      "name": "问答、挖空与图像遮挡复习",
+      "scope": "问答卡、富文本/图片答案、挖空、遮挡区、评分、到期队列与间隔复习记录。",
+      "originalSources": [
+        "desktop/src/main/study-model.cjs",
+        "desktop/src/renderer/StudyPanel.tsx",
+        "ios/InkSpace/Study/StudyModel.swift",
+        "ios/InkSpace/Study/StudyImageAnswer.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "study-tools",
+          "namespacesOrExports": [
+            "model",
+            "store",
+            "outline"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceStudy"
+      ],
+      "reactComponents": [
+        "StudyPanel"
+      ],
+      "downloadArchives": [
+        "node-study-tools.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceStudy.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生复习会话/文件库/编辑器尚未独立；Web学习需记录/来源接口。",
+      "pendingExports": []
+    },
+    {
+      "id": "E05",
+      "name": "学习卡片CSV/TSV交换",
+      "scope": "两列问答预览、去重、分批导入/重试和导出；文本交换不含笔迹/遮挡/复习历史。",
+      "originalSources": [
+        "desktop/src/main/study-transfer-model.cjs",
+        "desktop/src/renderer/StudyTransferPanel.tsx",
+        "ios/InkSpace/Study/StudyCSV.swift",
+        "ios/InkSpace/Study/StudyTransferView.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "study-tools",
+          "namespacesOrExports": [
+            "transfer",
+            "transferModel"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceStudy"
+      ],
+      "reactComponents": [
+        "StudyPanel"
+      ],
+      "downloadArchives": [
+        "node-study-tools.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceStudy.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "文件选择和原生导入界面仍需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "E06",
+      "name": "任务与课程清单",
+      "scope": "任务排序、截止日期、完成/归档、进度和诗词奖励，保存在用户资料中。",
+      "originalSources": [
+        "desktop/src/renderer/course-checklist.ts",
+        "desktop/src/renderer/CourseChecklist.tsx",
+        "ios/InkSpace/CourseChecklist/"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "task-calendar",
+          "namespacesOrExports": [
+            "checklists",
+            "checklistLocations"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceChecklist"
+      ],
+      "reactComponents": [
+        "CourseChecklist"
+      ],
+      "downloadArchives": [
+        "node-task-calendar.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceChecklist.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "完整原生清单Store/View未独立；Web清单写入需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "E07",
+      "name": "随手便签",
+      "scope": "快速记事项、排序/编辑/完成/归档，与现有任务清单共用记录和截止日期。",
+      "originalSources": [
+        "desktop/src/renderer/quick-notes.ts",
+        "desktop/src/renderer/QuickNotes.tsx"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "task-calendar",
+          "namespacesOrExports": [
+            "quickNotes"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "QuickNotes"
+      ],
+      "downloadArchives": [
+        "node-task-calendar.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "存储/冲突与订阅需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "E08",
+      "name": "日历、ICS与提醒",
+      "scope": "日程/课程和任务日期、ICS导入导出、重复事项、系统通知及提醒去重。",
+      "originalSources": [
+        "desktop/src/renderer/calendar-model.ts",
+        "desktop/src/renderer/calendar-ics.ts",
+        "desktop/src/renderer/TaskCalendar.tsx",
+        "desktop/src/main/calendar-service.cjs"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "task-calendar",
+          "namespacesOrExports": [
+            "calendar",
+            "ics",
+            "calendarStore",
+            "calendarFiles",
+            "courseCalendar"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "Calendar"
+      ],
+      "downloadArchives": [
+        "node-task-calendar.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "系统通知和文件存储需宿主，不含Google/Outlook云日历。",
+      "pendingExports": []
+    },
+    {
+      "id": "E09",
+      "name": "通用笔记交换与纲要",
+      "scope": "PDF/图片/Markdown/音视频原件副本、Markdown纲要转节点、节点标题树导出；私有原档可仅保留。",
+      "originalSources": [
+        "desktop/src/main/note-exchange.cjs",
+        "desktop/src/main/note-outline.cjs",
+        "ios/InkSpace/Exchange/NoteExchange.swift",
+        "ios/InkSpace/Exchange/NoteOutline.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "note-exchange",
+          "namespacesOrExports": [
+            "exchange",
+            "outline",
+            "archives"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceOutline"
+      ],
+      "reactComponents": [
+        "NoteExchange"
+      ],
+      "downloadArchives": [
+        "node-note-exchange.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceOutline.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "选择器、原文访问和白板组装需宿主，不解码其它应用全部私有格式。",
+      "pendingExports": []
+    },
+    {
+      "id": "E10",
+      "name": "BoardNotes原生格式转换",
+      "scope": "解析支持的.boardNotes归档，保留可识别手写、图片/PDF/文字及位置，保留原档和转换记录。",
+      "originalSources": [
+        "desktop/src/main/boardnotes-format.cjs",
+        "desktop/src/main/boardnotes-import.cjs",
+        "desktop/src/main/boardnotes-objects.cjs",
+        "desktop/src/main/boardnotes-file-zip.cjs"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "note-exchange",
+          "namespacesOrExports": [
+            "format",
+            "objects",
+            "archives"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "NoteExchange"
+      ],
+      "downloadArchives": [
+        "node-note-exchange.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "PencilKit桥与文件授权需宿主，不能保证任意归档完全还原。",
+      "pendingExports": []
+    },
+    {
+      "id": "F01",
+      "name": "内置浏览器",
+      "scope": "多标签、地址搜索、前后退、查找、独立缩放、恢复会话和下载。",
+      "originalSources": [
+        "desktop/src/main/browser-service.cjs",
+        "desktop/src/browser/browser.js",
+        "desktop/src/main/browser-state.cjs",
+        "ios/InkSpace/Browser/EmbeddedBrowserPanel.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "browser-utilities",
+          "namespacesOrExports": [
+            "urls",
+            "routing",
+            "sessions"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-browser-utilities.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "Electron/WebKit浏览器引擎与完整标签/下载壳未独立。",
+      "pendingExports": []
+    },
+    {
+      "id": "F02",
+      "name": "浏览器扩展管理",
+      "scope": "本地解包扩展安装/启停/移除与权限说明；iOS支持受限MV3内容脚本/样式/存储。",
+      "originalSources": [
+        "desktop/src/main/browser-extensions.cjs",
+        "desktop/src/main/browser-security.cjs",
+        "ios/InkSpace/Browser/BrowserExtensionHost.swift",
+        "ios/InkSpace/Browser/BrowserExtensionManagerView.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "browser-utilities",
+          "namespacesOrExports": [
+            "urls",
+            "extensions"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-browser-utilities.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "manifest权限摘要在urls.extensionSummary；extensions.BrowserExtensions提供快照安装/启停/移除，但需要显式session/dialog/directory；原生WKWebView扩展宿主未独立。",
+      "pendingExports": []
+    },
+    {
+      "id": "F03",
+      "name": "网页摘录、截图与PDF剪藏",
+      "scope": "用户主动选择文字/图片/网页PDF、剪藏到资料库/白板，导入版本化inkclip文件。",
+      "originalSources": [
+        "desktop/src/main/browser-clips.cjs",
+        "desktop/src/main/board-web-url.cjs",
+        "ios/InkSpace/Browser/BrowserWebClip.swift",
+        "ios/InkSpace/Core/BoardWebClipPath.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "browser-utilities",
+          "namespacesOrExports": [
+            "urls",
+            "web",
+            "network"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceWebClips"
+      ],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-browser-utilities.zip",
+        "swift-InkSpaceWebClips.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "页面内容截取、截图与写白板服务需宿主；数据格式可独立处理。",
+      "pendingExports": []
+    },
+    {
+      "id": "F04",
+      "name": "AI网页助手与附件衔接",
+      "scope": "隔离AI网页、提供方切换、用户登录、显式截图/图片粘贴、下载和网页健康状态。",
+      "originalSources": [
+        "desktop/src/main/ai-panel.cjs",
+        "desktop/src/main/ai-image-transfer.cjs",
+        "desktop/src/renderer/AIPanel.tsx",
+        "ios/InkSpace/AI/ChatGPTWebSession.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "browser-utilities",
+          "namespacesOrExports": [
+            "providers",
+            "pageHealth",
+            "downloads",
+            "images",
+            "mediaPermissions"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-browser-utilities.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "AI网页WebView/会话/登录/发送/附件交互未独立封装。",
+      "pendingExports": []
+    },
+    {
+      "id": "F05",
+      "name": "原生高级AI API会话",
+      "scope": "用户自己的API服务/模型/密钥、白板临时截图与高级提问界面。",
+      "originalSources": [
+        "ios/InkSpace/AI/AIClient.swift",
+        "ios/InkSpace/AI/AIWorkspaceView.swift",
+        "ios/InkSpace/AI/TemporaryBoardCapture.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [],
+      "swiftProducts": [
+        "InkSpaceAI"
+      ],
+      "reactComponents": [],
+      "downloadArchives": [
+        "swift-InkSpaceAI.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "需要调用者的服务与密钥；原生会话UI/白板截图未独立。",
+      "pendingExports": []
+    },
+    {
+      "id": "G01",
+      "name": "视频/音频播放与浮窗",
+      "scope": "本地媒体播放、倍速/快进、白板视频叠层、独立/浮动播放窗。",
+      "originalSources": [
+        "desktop/src/main/video-service.cjs",
+        "desktop/src/renderer/VideoPlayer.tsx",
+        "desktop/src/renderer/FloatingVideo.tsx",
+        "ios/InkSpace/Video/BoardVideoPlayerView.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "media-tools",
+          "namespacesOrExports": [
+            "video",
+            "controls"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [
+        "VideoPlayer"
+      ],
+      "downloadArchives": [
+        "node-media-tools.zip",
+        "react-ui-components.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "视频URL/字幕/窗口/原生AVPlayer需宿主。",
+      "pendingExports": []
+    },
+    {
+      "id": "G02",
+      "name": "字幕与原媒体关联",
+      "scope": "SRT/VTT/TXT解析、字幕选择/关联、时间定位、外观与持久化。",
+      "originalSources": [
+        "desktop/src/main/video-subtitles.cjs",
+        "desktop/src/renderer/useVideoSubtitles.ts",
+        "ios/InkSpace/Video/BoardVideoSubtitles.swift",
+        "ios/InkSpace/Video/BoardSubtitleAssociationStore.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "media-tools",
+          "namespacesOrExports": [
+            "captions",
+            "subtitleFormat",
+            "subtitles",
+            "subtitlePersistence"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceSubtitles"
+      ],
+      "reactComponents": [
+        "VideoPlayer"
+      ],
+      "downloadArchives": [
+        "node-media-tools.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceSubtitles.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生字幕关联存储/UI尚未独立，解析/查询逻辑可单独使用。",
+      "pendingExports": []
+    },
+    {
+      "id": "G03",
+      "name": "非破坏式媒体剪辑与导出",
+      "scope": "时间线裁剪/拆分/排序、倍速/音量、转场、画中画/混音、字幕和项目保存、视频/音频渲染输出。",
+      "originalSources": [
+        "desktop/src/main/media-editor-compose.cjs",
+        "desktop/src/renderer/MediaEditor.tsx",
+        "ios/InkSpace/MediaEditor/MediaEffectsEditor.swift",
+        "ios/InkSpace/MediaEditor/MediaExportService.swift"
+      ],
+      "extractionStatus": "core-and-component",
+      "node": [
+        {
+          "package": "media-tools",
+          "namespacesOrExports": [
+            "format",
+            "compose",
+            "editorModel"
+          ]
+        }
+      ],
+      "swiftProducts": [
+        "InkSpaceMediaTimeline"
+      ],
+      "reactComponents": [
+        "MediaEditor"
+      ],
+      "downloadArchives": [
+        "node-media-tools.zip",
+        "react-ui-components.zip",
+        "swift-InkSpaceMediaTimeline.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生AVFoundation渲染及媒体导入/导出服务未独立；JS导出需要FFmpeg和宿主资源/发布接口。",
+      "pendingExports": []
+    },
+    {
+      "id": "H01",
+      "name": "Obsidian白板查看器",
+      "scope": "已有白板/PDF/文字/公式/连线/定位点查看、Markdown嵌入、搜索定位和原文件打开。",
+      "originalSources": [
+        "obsidian/inkspace-companion/",
+        "obsidian/tests/companion.test.cjs"
+      ],
+      "extractionStatus": "installable-plugin",
+      "node": [],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "obsidian-companion.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "需要Obsidian；原生创建/书写按钮另需inkspace协议处理程序。",
+      "pendingExports": []
+    },
+    {
+      "id": "H02",
+      "name": "Safari系统分享剪藏",
+      "scope": "显式分享标题/URL/选中文字，系统文件选择器保存版本化JSON供任意兼容导入器消费。",
+      "originalSources": [
+        "ios/OptionalShareExtension/"
+      ],
+      "extractionStatus": "integration-source",
+      "node": [],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "safari-share-clipper.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "只有扩展源码，尚无独立承载App/已生成target、签名安装和Safari真机验收。",
+      "pendingExports": []
+    },
+    {
+      "id": "H03",
+      "name": "语言、外观与操作偏好",
+      "scope": "英文/简体中文、布局/侧栏、工具栏自定义、笔工具预设、Pencil双击/握压、字号/无障碍语义和播放等本机设置。",
+      "originalSources": [
+        "desktop/src/renderer/i18n.ts",
+        "desktop/src/renderer/PanelLayout.tsx",
+        "ios/InkSpace/UI/AppSettingsView.swift",
+        "ios/InkSpace/UI/BoardToolbarCustomizationView.swift",
+        "ios/InkSpace/Core/BoardPencilGestureSettings.swift"
+      ],
+      "extractionStatus": "app-source-only",
+      "node": [],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [],
+      "runtimeOrUnextractedBoundary": "全局偏好、工具栏/调色板、Pencil双击/握压设置和原生辅助功能依赖App路由与系统环境；UI组件只接受language等props。",
+      "pendingExports": []
+    },
+    {
+      "id": "H04",
+      "name": "本机问题记录与诊断导出",
+      "scope": "受限问题记录、状态/错误码和手动导出，不把私人日志作为发布内容。",
+      "originalSources": [
+        "desktop/src/main/diagnostics.cjs",
+        "ios/InkSpace/Core/DiagnosticsCenter.swift",
+        "ios/InkSpace/UI/DiagnosticsCenterView.swift"
+      ],
+      "extractionStatus": "reusable-core",
+      "node": [
+        {
+          "package": "file-storage",
+          "namespacesOrExports": [
+            "diagnostics"
+          ]
+        }
+      ],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [
+        "node-file-storage.zip"
+      ],
+      "runtimeOrUnextractedBoundary": "原生诊断中心与系统导出界面未独立；Node诊断类已可注入目录单独使用。",
+      "pendingExports": []
+    },
+    {
+      "id": "H05",
+      "name": "完整应用壳与系统入口",
+      "scope": "统一首页/路由、资料选择、窗口生命周期、系统文件打开和inkspace协议，装配所有模块。",
+      "originalSources": [
+        "desktop/src/main/main.cjs",
+        "desktop/src/preload/preload.cjs",
+        "desktop/src/renderer/App.tsx",
+        "ios/InkSpace/InkSpaceApp.swift"
+      ],
+      "extractionStatus": "app-source-only",
+      "node": [],
+      "swiftProducts": [],
+      "reactComponents": [],
+      "downloadArchives": [],
+      "runtimeOrUnextractedBoundary": "完整应用壳、系统入口、多窗口和快速切换器是整合层，不作为独立模块交付。",
+      "pendingExports": []
+    }
+  ],
+  "publishedCompleteSourceReferenceCheck": {
+    "completeArchiveEntries": 761,
+    "functionalSourceReferences": 229,
+    "allSourceReferencesPresentInPublishedCompleteArchive": true
+  }
+}

@@ -637,22 +637,26 @@
     {
       "id": "office-documents",
       "name": "@inkspace-modules/office-documents",
-      "title": "Office文档模型",
-      "description": "基础DOCX/PPTX生成和自身模型回读、外部文档只读预览、嵌入图片与ZIP容量检查。",
+      "title": "Office、PDF、TeX与文档笔记",
+      "description": "基础Office创建与模型回读、可编辑PDF封装、文档提取/旁注计划及Tectonic进程适配；渲染器、TeX引擎和文件接口由调用者提供。",
       "path": "packages/office-documents",
       "api": {
         "model": "main/editable-document-model.cjs",
         "office": "main/editable-office.cjs",
         "docxPreview": "main/docx-preview.cjs",
         "images": "main/office-embedded-images.cjs",
-        "legacyDoc": "main/legacy-doc-preview.cjs"
+        "legacyDoc": "main/legacy-doc-preview.cjs",
+        "tex": "main/tex-service.cjs",
+        "noteExtraction": "main/note-extraction.cjs",
+        "pdf": "main/document-pdf.cjs"
       },
       "dependencies": {
         "@xmldom/xmldom": "0.8.15",
         "jszip": "3.10.2",
-        "mammoth": "1.12.3"
+        "mammoth": "1.12.3",
+        "pdf-lib": "1.17.1"
       },
-      "boundary": "依赖JSZip、mammoth与XML解析器。仅支持现有基础Office模型，不声称完整还原Word/PowerPoint排版。旧.doc转换调用Mac系统textutil，其他平台需转换器。",
+      "boundary": "依赖JSZip、mammoth与XML解析器。仅支持现有基础Office模型，不声称完整还原Word/PowerPoint排版。旧.doc转换调用Mac系统textutil，其他平台需转换器。 TexService需要使用者提供Tectonic可执行文件、缓存目录和snapshot/createData接口；PDF/HTML提取解析器和文件保存为显式回调，不读取原App状态。 可编辑PDF创建须注入printPDF回调，printDocumentPDF可选接受electron宿主对象；包不会默认加载Electron。",
       "sourceFiles": [
         {
           "path": "main/editable-document-model.cjs",
@@ -688,6 +692,26 @@
           "path": "main/legacy-doc-preview.cjs",
           "sha256": "149be2c6a9767f4cc904037c9d49e490633dbf0f73ab94191348f13ff17ec2b2",
           "adaptation": "relative-imports-only"
+        },
+        {
+          "path": "main/tex-service.cjs",
+          "sha256": "f1f10b53afa3fa2b3f4ba228a7faced9f15dc1a685ab82c450cdd8cd938422a0",
+          "origin": "Original application TeX service or extracted App.tsx/vault-service workflow"
+        },
+        {
+          "path": "main/vault-service.cjs",
+          "sha256": "4c9d8265e3b22c343422abc41a2a762cb79324f0d0ba06c3d726c7f90a585996",
+          "origin": "Original application TeX service or extracted App.tsx/vault-service workflow"
+        },
+        {
+          "path": "main/note-extraction.cjs",
+          "sha256": "6a74a49ebdae34917435ebddd9d3b1972407cd8880e6a472a2db7ab262487efc",
+          "origin": "Original application TeX service or extracted App.tsx/vault-service workflow"
+        },
+        {
+          "path": "main/document-pdf.cjs",
+          "sha256": "03494a74050d58d00cd43063ca5fc8216b74518b0fdc28a781348fd566f0495d",
+          "origin": "Original application PDF source; runtime requires explicit renderer injection"
         }
       ],
       "tests": [],
@@ -695,11 +719,19 @@
         "status": "passed",
         "isolatedRequire": true,
         "packageImports": "contained",
-        "tests": 1,
-        "pass": 1,
+        "tests": 11,
+        "pass": 11,
         "fail": 0,
         "cancelled": 0,
-        "skipped": 0
+        "skipped": 0,
+        "verificationMode": "official npm registry dependencies; fresh npm pack tarball installed in an isolated consumer",
+        "artifactStage": "corrected candidate source before re-publication",
+        "realTectonicEngineTested": false,
+        "additionalCoverage": [
+          "PDF source-model roundtrip and explicit renderer contract",
+          "document extraction and margin-note plans",
+          "TeX process, cache and publication protection using a synthetic compiler"
+        ]
       },
       "packageTest": "test/package.test.cjs"
     },
@@ -869,7 +901,7 @@
       "id": "notebook-runtime",
       "name": "@inkspace-modules/notebook-runtime",
       "title": "Python与IPython运行协议",
-      "description": "显式运行Python、Notebook单元格读取与受限输出协议、重启和运行请求控制。",
+      "description": "Python/Notebook运行协议、真实IPython环境准备、输出/取消与kernel生命周期；实际执行限定受支持的Apple Silicon Mac与外部CPython环境。",
       "path": "packages/notebook-runtime",
       "api": {
         "notebooks": "main/notebook-service.cjs",
@@ -963,9 +995,34 @@
         "pass": 18,
         "fail": 0,
         "cancelled": 0,
-        "skipped": 0
+        "skipped": 0,
+        "verificationMode": "official npm registry dependencies; fresh npm pack tarball installed in an isolated consumer",
+        "artifactStage": "corrected candidate source before re-publication",
+        "realIPythonIntegration": {
+          "status": "passed",
+          "syntheticCells": 3,
+          "variableContinuity": true,
+          "inlinePNG": true,
+          "cleanClose": true,
+          "bundledRuntimeBinaries": false,
+          "userNotebooksRead": false
+        }
       },
-      "packageTest": "test/package.test.cjs"
+      "packageTest": "test/package.test.cjs",
+      "standaloneRuntimePreparation": {
+        "script": "resources/prepare-runtime.py",
+        "requirements": "resources/requirements-darwin-arm64.lock",
+        "kernel": "resources/kernel.py",
+        "smoke": "resources/smoke-runtime.cjs",
+        "generatedRuntimeOutsideSource": true,
+        "supportedExecutionPlatform": "Apple Silicon Mac, macOS 14+",
+        "python": "CPython 3.14 with pip",
+        "provenanceContract": {
+          "pythonVersion": "version string",
+          "packages": "array of {name, version}"
+        },
+        "containsRuntimeBinaries": false
+      }
     },
     {
       "id": "knowledge-search",
@@ -1621,10 +1678,11 @@
         "pageHealth": "main/ai-page-health.cjs",
         "downloads": "main/ai-downloads.cjs",
         "mediaPermissions": "main/ai-media-permissions.cjs",
-        "images": "main/ai-image-transfer.cjs"
+        "images": "main/ai-image-transfer.cjs",
+        "extensions": "main/browser-extensions.cjs"
       },
       "dependencies": {},
-      "boundary": "URL/会话数据处理可在Node使用；页面、权限、剪贴板等策略接受宿主对象，不附带浏览器界面或用户登录状态。需要真实浏览器的行为仍由调用者集成与验收。",
+      "boundary": "URL/会话数据处理可在Node使用；页面、权限、剪贴板等策略接受宿主对象，不附带浏览器界面或用户登录状态。需要真实浏览器的行为仍由调用者集成与验收。 扩展管理extensions.BrowserExtensions通过显式session.extensions/dialog/getWindow/directory接口完成快照安装、启停和移除，不导入Electron或提供浏览器内核。",
       "sourceFiles": [
         {
           "path": "main/browser-security.cjs",
@@ -1690,6 +1748,11 @@
           "path": "main/diagnostics.cjs",
           "sha256": "a129bed552a97d93a2eab35a19c31e92f23763e8b341a93907131b240778e95d",
           "adaptation": "relative-imports-only"
+        },
+        {
+          "path": "main/browser-extensions.cjs",
+          "sha256": "802e503bcbebc7155ff689e3ca53c0418053b07c315320976df992e379a907e5",
+          "adaptation": "original-source-byte-copy"
         }
       ],
       "tests": [
@@ -1712,17 +1775,25 @@
         {
           "name": "ai-web-diagnostics.test.cjs",
           "status": "migrated"
+        },
+        {
+          "name": "extensions.test.cjs",
+          "status": "standalone-module-behavior"
         }
       ],
       "verification": {
         "status": "passed",
         "isolatedRequire": true,
         "packageImports": "contained",
-        "tests": 41,
-        "pass": 41,
+        "tests": 46,
+        "pass": 46,
         "fail": 0,
         "cancelled": 0,
-        "skipped": 0
+        "skipped": 0,
+        "npmPack": true,
+        "freshConsumerInstall": true,
+        "sourceEnvironmentIsolation": "NODE_PATH/NODE_OPTIONS cleared; separate empty npm configurations and cache; offline local-tarball install",
+        "actualBrowserOrKeychainUsed": false
       },
       "testFixtures": [
         {
@@ -1877,10 +1948,11 @@
       "path": "packages/math-lab",
       "api": {
         "engine": "math-lab/engine.js",
-        "simple": "math-lab/simple-core.js"
+        "simple": "math-lab/simple-core.js",
+        "mathExport": "main/math-export.cjs"
       },
       "dependencies": {},
-      "boundary": "现有双精度教育计算引擎；没有实时市场数据、联网、符号代数或数值精度保证。独立网页资源同时提供，财务公式不是投资建议。",
+      "boundary": "现有双精度教育计算引擎；没有实时市场数据、联网、符号代数或数值精度保证。独立网页资源同时提供，财务公式不是投资建议。 mathExport.decodeMathExport独立验证PNG/CSV/JSON导出内容并返回建议文件名，不自行写文件或读剪贴板；PNG仅核验签名。",
       "sourceFiles": [
         {
           "path": "math-lab/engine.js",
@@ -1891,18 +1963,32 @@
           "path": "math-lab/simple-core.js",
           "sha256": "4ec15e82bb70838cc68e08d69845a77482273e5419de96e63655e23549f66492",
           "adaptation": "relative-imports-only"
+        },
+        {
+          "path": "main/math-export.cjs",
+          "sha256": "35603f7aebd234587aac6af62f7e6e310dc4e08b9069eb5922b5dd3272734261",
+          "adaptation": "original-source-byte-copy"
         }
       ],
-      "tests": [],
+      "tests": [
+        {
+          "name": "math-export.test.cjs",
+          "status": "standalone-module-behavior"
+        }
+      ],
       "verification": {
         "status": "passed",
         "isolatedRequire": true,
         "packageImports": "contained",
-        "tests": 1,
-        "pass": 1,
+        "tests": 5,
+        "pass": 5,
         "fail": 0,
         "cancelled": 0,
-        "skipped": 0
+        "skipped": 0,
+        "npmPack": true,
+        "freshConsumerInstall": true,
+        "sourceEnvironmentIsolation": "NODE_PATH/NODE_OPTIONS cleared; separate empty npm configurations and cache; offline local-tarball install",
+        "actualBrowserOrKeychainUsed": false
       },
       "packageTest": "test/package.test.cjs"
     },
@@ -2150,9 +2236,31 @@
     "status": "passed",
     "packages": 19,
     "failedOrPendingPackages": 0,
-    "tests": 198,
+    "tests": 217,
     "skipped": 0,
     "isolatedOutsideRepository": true,
-    "dependencyMode": "Only declared installed npm dependencies were made available; no network installation was performed."
+    "dependencyMode": "Only declared registry dependencies were installed in isolated consumers; no original application dependency links or NODE_PATH.",
+    "verificationMode": "official npm registry fresh npm pack/install; original public downloads and corrected candidates tracked separately",
+    "originalPublicDownloadCheck": {
+      "commit": "28d298d6099658043ba5e992e97c6c28bccfc6ac",
+      "packages": 19,
+      "tests": 198,
+      "readmeJavaScriptExamples": 19,
+      "status": "passed"
+    },
+    "correctedCandidateCheck": {
+      "stage": "before re-publication",
+      "retestedPackages": [
+        "office-documents",
+        "notebook-runtime",
+        "browser-utilities",
+        "math-lab"
+      ],
+      "retestedBehaviorTests": 80,
+      "combinedBehaviorTestsWithUnchangedPackages": 217,
+      "status": "passed",
+      "readmeZipInstallInstructionsCorrected": 19,
+      "realIPythonSyntheticCells": 3
+    }
   }
 }

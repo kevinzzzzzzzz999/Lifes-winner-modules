@@ -1,0 +1,5012 @@
+{
+  "release": "2026-10-24-r2",
+  "archive": "InkSpace-modules-source-2026-10-24-r2.zip",
+  "archiveSha256": "7c0d5dd434103e342d00964a98b9725dfe9b5ebac5bb76e02905d3303c3b3394",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 185,
+      "sha256": "c58a8f908d08c37c9e368e4ac817c1ef3f31ac752ca7b091f0fe0d371f7ee9cc"
+    },
+    {
+      "path": "FEATURES.md",
+      "bytes": 34967,
+      "sha256": "bcd7e204b50ff085c364517eaef6462c635861d0fd0832cfff2533b5cc3be7d7"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "NODE-VALIDATION.md",
+      "bytes": 1884,
+      "sha256": "47a73228d5bb2cc69ef8784f2111dc474506a484a1351516ab77e0c632e708ae"
+    },
+    {
+      "path": "Package.swift",
+      "bytes": 3283,
+      "sha256": "8dc714ecacb41abbd14a75ddeb8525645f1b5ad5886d52a7af681d0e5c594032"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2704,
+      "sha256": "0e70a6b1be18ef35e69102eed7d6e22484a22dfd06db144919adac59166b7c0b"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 3148,
+      "sha256": "b69371b09ca31b0e90ef761c41a53b9d8327150cddc1d7480bca443724cfb664"
+    },
+    {
+      "path": "coverage-audit.json",
+      "bytes": 65166,
+      "sha256": "8e121966313a3899feaed6be6d63e80b60984371b2ed499e7df7a3a421940f13"
+    },
+    {
+      "path": "integrations/obsidian/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "integrations/obsidian/README.md",
+      "bytes": 3061,
+      "sha256": "71a11004273884e5ccb1fdd2c8ea7dceff1d1cad4502c66563ae374b1b70fc88"
+    },
+    {
+      "path": "integrations/obsidian/inkspace-companion/README.md",
+      "bytes": 17077,
+      "sha256": "6c5dcb46fc2638ada36fc52a58b93b2b651aeb6337676695bd3215b7a18ed06c"
+    },
+    {
+      "path": "integrations/obsidian/inkspace-companion/main.js",
+      "bytes": 67157,
+      "sha256": "a6a64e471e3fe51ff574b5c6aecbf46fead79fd3e8f46ebd92a7a213312ac96e"
+    },
+    {
+      "path": "integrations/obsidian/inkspace-companion/manifest.json",
+      "bytes": 319,
+      "sha256": "127bd0be0c75f251a70bffcae5a6d2bd6c796c580f495517a68acaa9e4505287"
+    },
+    {
+      "path": "integrations/obsidian/inkspace-companion/styles.css",
+      "bytes": 2996,
+      "sha256": "ca7dd967f3d2d06f3fd639c115bb0c001f24f44b10d47d5233a7cfcc17561e0a"
+    },
+    {
+      "path": "integrations/obsidian/tests/companion.test.cjs",
+      "bytes": 52888,
+      "sha256": "22716d3ed58a4cd3d57a34b31d029772c0babfcc3152196dae8b652c3f15eb3a"
+    },
+    {
+      "path": "integrations/safari-share-clipper/ClipPreprocessor.js",
+      "bytes": 501,
+      "sha256": "7271b86febb148fe33104aedec90ae9755febfe5a96ba0518ee37ea6102020e5"
+    },
+    {
+      "path": "integrations/safari-share-clipper/Info.plist",
+      "bytes": 1344,
+      "sha256": "e1a64762bde2b8d89242723d968cc92be1c61d34fa262dd2550b7e6c5ae8d0d0"
+    },
+    {
+      "path": "integrations/safari-share-clipper/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "integrations/safari-share-clipper/README.md",
+      "bytes": 2902,
+      "sha256": "2f0ee7f367475f5125a8ed70a95ae793878a914af69d1891f5f15b8bbe58c4a0"
+    },
+    {
+      "path": "integrations/safari-share-clipper/ShareClipViewController.swift",
+      "bytes": 6832,
+      "sha256": "fe79a820fc545b0e52f1a4b3ad59e18ff40de38a39a829c8769b968e9e651fab"
+    },
+    {
+      "path": "modules.json",
+      "bytes": 89984,
+      "sha256": "a0287a8898e707fa8237601c689ba037410f456c364bfbc04f3dd7c7f9ec53ff"
+    },
+    {
+      "path": "package.json",
+      "bytes": 446,
+      "sha256": "6d2ac4f67eec9978307b55bd9aa120e2d18fe72e47d7f8ee13e9ef5ea1ec50a1"
+    },
+    {
+      "path": "packages/board-ink/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/board-ink/README.md",
+      "bytes": 3298,
+      "sha256": "cc2c9d3ff968e60c6e1a29e4d9efdd3bd4156315003fb2096271627144e4609a"
+    },
+    {
+      "path": "packages/board-ink/index.cjs",
+      "bytes": 777,
+      "sha256": "9e08e865322a16a39a933967b72f4c40aa651c64f1d905001d58666dc754f217"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/board-export-ink.cjs",
+      "bytes": 5005,
+      "sha256": "876a5e5cd6c786cccf259143a1bb2c34aca4392ce897322cb6e654ea99851e45"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/board-ink-clip.cjs",
+      "bytes": 5068,
+      "sha256": "4f833c1197fa99f9594aac8e88f9f9f70b0539fb15aeaffdc7eaf5f5e210a89e"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/board-ink-paint.cjs",
+      "bytes": 1592,
+      "sha256": "089c6e6db9749d13565155015df032f77f12a5f9722b8c2b916e299479fe2ea9"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/board-merge-placement.cjs",
+      "bytes": 2160,
+      "sha256": "f8d716c8a5214f303615a0c9e1f32087f5918e622caea28e979d280fc0a3a7a4"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/board-pdf-progressive.cjs",
+      "bytes": 3701,
+      "sha256": "71afa7c5d7d215eff52792352ab44582f3968eedc858e02fadd092dd8b80a6a5"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/board-pdf-resolution.cjs",
+      "bytes": 3831,
+      "sha256": "58e3899b6a244a70286fa32fe7510d45be9deb061af1cf6c1a9c8cc563a123a0"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/child-board-model.cjs",
+      "bytes": 10855,
+      "sha256": "9fef9411c8f84686c1f05659747b9d7f70624dcc784e70adf8c35c18ea5aa8f4"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/ink-replay-camera.cjs",
+      "bytes": 6050,
+      "sha256": "e8b904bee989d005d8825bd0565d8d2b90371953787069696e8b28c3740317db"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/ink-replay.cjs",
+      "bytes": 1969,
+      "sha256": "c50ebae3d7120941ba2d48ec88df09d1125c4eccbaa76f3b8f4e2371370c5eeb"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/replay-display.cjs",
+      "bytes": 638,
+      "sha256": "2e2dcf73630ed733c24ddc36b152e3cbba412869db0c0311cc3452a702769b68"
+    },
+    {
+      "path": "packages/board-ink/lib/renderer/replay-paint.cjs",
+      "bytes": 1510,
+      "sha256": "30a6eba9240353896f4aa1e566468c7f1b0a941cc776f96e8e45f696878afe48"
+    },
+    {
+      "path": "packages/board-ink/lib/shared/desktop-api.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-ink/lib/shared/media-editor.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-ink/lib/shared/pdf-extend.cjs",
+      "bytes": 1253,
+      "sha256": "4ab4f543de9d95144f4d818dfb18bdc2477fb10c5de03fca527705333d35f3bf"
+    },
+    {
+      "path": "packages/board-ink/lib/shared/study-transfer.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-ink/lib/shared/study.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-ink/lib/shared/video-playback.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-ink/package.json",
+      "bytes": 582,
+      "sha256": "5f48fe92700419f68653e0508ffc030a4576238935de283e6952af478f43a53c"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/board-export-ink.ts",
+      "bytes": 5862,
+      "sha256": "8539fdec3fe7384e16e9bf961d78f35055240a236705051ef34a2a0470735c60"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/board-ink-clip.ts",
+      "bytes": 6083,
+      "sha256": "9170f1c7fd9302259c122bd6397e3fd278fd2b3faa01ad51e3f7c575423381d7"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/board-ink-paint.ts",
+      "bytes": 1353,
+      "sha256": "cd927f6c6f4779c3c761e6c94697b97ea05994242089ad0b0d020efd661cd4d6"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/board-merge-placement.ts",
+      "bytes": 1831,
+      "sha256": "8724eab1ac6156bd9e6629054c4a6b00281551dfd61387ef88799c4431714fb5"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/board-pdf-progressive.ts",
+      "bytes": 3677,
+      "sha256": "7f40cab10128f54795c9f51721ceb1cf25c904a345a7a0293d3e563ddcf605e9"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/board-pdf-resolution.ts",
+      "bytes": 3632,
+      "sha256": "65428cb9ac7b3c13ea22fdf225074d97765ea602e530f0469a46aca034161e3e"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/child-board-model.ts",
+      "bytes": 9913,
+      "sha256": "0fe852b0cb19fa44fcd1e20a2407d5674441f66175fb877ec133e4cad74305e0"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/ink-replay-camera.ts",
+      "bytes": 5868,
+      "sha256": "7f1eed7da88f5460f8da9def21a679a271c14239954a7581861a9d0e424b90f3"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/ink-replay.ts",
+      "bytes": 1727,
+      "sha256": "39addd5b685ce9548c6bcb43859663406aa113e40aa028cb6015e41a3cd64a1c"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/replay-display.ts",
+      "bytes": 507,
+      "sha256": "f676c0971bbd163b899351e24521ff08d8c07055a7ddd912ef675caa36275fba"
+    },
+    {
+      "path": "packages/board-ink/sources/renderer/replay-paint.ts",
+      "bytes": 1221,
+      "sha256": "9e6b85b14c6d9ebd8f1e221654cd945625e1d9e31e46cb71762c584de408047f"
+    },
+    {
+      "path": "packages/board-ink/sources/shared/desktop-api.ts",
+      "bytes": 30468,
+      "sha256": "fd059b18dcadeb058efe0fb3bcdaf71a60e349fb3eaff681395ddd23f7ea58e9"
+    },
+    {
+      "path": "packages/board-ink/sources/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "packages/board-ink/sources/shared/pdf-extend.ts",
+      "bytes": 2273,
+      "sha256": "a800f354aff8c48bac5ba9390542793bcfa2963b5b66511fb327d2acb869f717"
+    },
+    {
+      "path": "packages/board-ink/sources/shared/study-transfer.ts",
+      "bytes": 783,
+      "sha256": "159fae06af83dece21ee48006a77c8c5af0ceca0181b4922ede5e2791ea29233"
+    },
+    {
+      "path": "packages/board-ink/sources/shared/study.ts",
+      "bytes": 900,
+      "sha256": "b0a1936ddfeb292c251afd3b293a7cbce2a05b3c1cb4432d84aed0dbafac8acb"
+    },
+    {
+      "path": "packages/board-ink/sources/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "packages/board-ink/test/board-merge-renderer-placement.test.cjs",
+      "bytes": 2661,
+      "sha256": "eef532284ddcc82e143f91436361fa3aed04b6ae7738a31cdb6a4ca75a34b48e"
+    },
+    {
+      "path": "packages/board-ink/test/board-pdf-progressive.test.cjs",
+      "bytes": 9286,
+      "sha256": "e2d5c26c818e55a48a67db16ac4334c54b649d1583cc84a7f2e152891b4ddc59"
+    },
+    {
+      "path": "packages/board-ink/test/package.test.cjs",
+      "bytes": 666,
+      "sha256": "f4895ed401c76dd58092ec287773b7881487627875ba4a55740e3306184909bc"
+    },
+    {
+      "path": "packages/board-merge/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/board-merge/README.md",
+      "bytes": 2874,
+      "sha256": "7e2fe86c70d3f9a66fa27581fd7c3e0973f923ae610985080b8745acc587ff32"
+    },
+    {
+      "path": "packages/board-merge/index.cjs",
+      "bytes": 333,
+      "sha256": "b6ce4605f5ea60725d5e659e0905a90c9007f8b7a8dcf31ed11c37e4c4a77b77"
+    },
+    {
+      "path": "packages/board-merge/lib/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "52900b6fdb184972d4c0f3949156889c2fdda223e390cd58c2c596766c36e641"
+    },
+    {
+      "path": "packages/board-merge/lib/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "f73309311e7baef6b7fddaaa778e56793e7bb54892cd7f7ee86fe775d1e20d8b"
+    },
+    {
+      "path": "packages/board-merge/lib/main/board-history-service.cjs",
+      "bytes": 9324,
+      "sha256": "6d5d62557d9699b7a56ba3396ccf6e2100aeb776ce2e3ca7e445c39692948b36"
+    },
+    {
+      "path": "packages/board-merge/lib/main/board-merge.cjs",
+      "bytes": 51343,
+      "sha256": "bbf367b9539f4930dba5a76e8b000e1119e7fe2341b9ad3a7d202a40118af7eb"
+    },
+    {
+      "path": "packages/board-merge/lib/main/board-source-resolver.cjs",
+      "bytes": 10331,
+      "sha256": "78481edf279dfc8251ee96979e111d2d01dfc3891c2ba8c03d76bf57de8082a5"
+    },
+    {
+      "path": "packages/board-merge/lib/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "5f6ec7470ce276e80ad300c40d194d451873b5599536ee107251d7b898e8e973"
+    },
+    {
+      "path": "packages/board-merge/lib/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "02033b792aac4f78783a6b12d2c1ef3ce0861e0d150aa55f6a1de2d7ac88aaad"
+    },
+    {
+      "path": "packages/board-merge/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/board-merge/lib/main/exchange-stream.cjs",
+      "bytes": 5218,
+      "sha256": "566bb489ea4a916bd260bb45b58123707acba1c5af45a98e3dadf9883c3af7d0"
+    },
+    {
+      "path": "packages/board-merge/lib/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "cc32843d3936412631b1e95bd05478373b4de16077244f70e14552a74d0f5433"
+    },
+    {
+      "path": "packages/board-merge/lib/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/board-merge/lib/main/review-service.cjs",
+      "bytes": 11285,
+      "sha256": "b97bc904a6422d2c0ad6c6824a3a03be30fb264f56f1e9fa0d643a049e37be4f"
+    },
+    {
+      "path": "packages/board-merge/lib/main/study-model.cjs",
+      "bytes": 7017,
+      "sha256": "25b640b999b12ef471fdec8a4f20477bf0f3ea01eeeed86625f8b73ff2936cd7"
+    },
+    {
+      "path": "packages/board-merge/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/board-merge/lib/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "c975a353291876cf9c4dc822f44b3e6c0ddd7c6836baf37190b31a65f5b787e1"
+    },
+    {
+      "path": "packages/board-merge/lib/renderer/board-merge-tabs.cjs",
+      "bytes": 1469,
+      "sha256": "8405452fc86709d8856808990e56a985b808a9f9eae16475380e5b5b6e7799a6"
+    },
+    {
+      "path": "packages/board-merge/lib/renderer/child-board-session.cjs",
+      "bytes": 5556,
+      "sha256": "073e2974a1a80e1bfa4869f6fa276bf8f87680c82d09e41cb8e1aa94c13572f6"
+    },
+    {
+      "path": "packages/board-merge/lib/shared/desktop-api.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-merge/lib/shared/media-editor.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-merge/lib/shared/pdf-extend.cjs",
+      "bytes": 1253,
+      "sha256": "4ab4f543de9d95144f4d818dfb18bdc2477fb10c5de03fca527705333d35f3bf"
+    },
+    {
+      "path": "packages/board-merge/lib/shared/study-transfer.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-merge/lib/shared/study.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-merge/lib/shared/video-playback.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/board-merge/package.json",
+      "bytes": 596,
+      "sha256": "40187a178881e9dc8bf7f34c876b01c9c65be695831165b63483448e622e66da"
+    },
+    {
+      "path": "packages/board-merge/sources/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "02e577e158f2cf7dfdbc01b3da2e805b16f2ffe06707600660550dcabd4701e7"
+    },
+    {
+      "path": "packages/board-merge/sources/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "cbf362e74fec07422d7d272f84231d37103087009117bc52c19a62be4b705572"
+    },
+    {
+      "path": "packages/board-merge/sources/main/board-history-service.cjs",
+      "bytes": 9324,
+      "sha256": "0cd6b891ad0d1fea1ce0bb4fd8285d0df4757702a889fa42ba0de361433b9bfb"
+    },
+    {
+      "path": "packages/board-merge/sources/main/board-merge.cjs",
+      "bytes": 51343,
+      "sha256": "75ef4c456c49f2a2372194137cc24d980625c8be2b3da98188f286e8584a3b9b"
+    },
+    {
+      "path": "packages/board-merge/sources/main/board-source-resolver.cjs",
+      "bytes": 10331,
+      "sha256": "5fda386c43c20194a25ea6d3fdb85d5cf1a7198310b0dbcd928a03c9ffd2ed23"
+    },
+    {
+      "path": "packages/board-merge/sources/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "838e6f0e0725afcbce1759af08550bbcc462538f30e264748a8375d4451928ff"
+    },
+    {
+      "path": "packages/board-merge/sources/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "9528b977d6d5f4628d6f8dcf73812848baa08dbfa6ac8577fb6bfd1bda8ff334"
+    },
+    {
+      "path": "packages/board-merge/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/board-merge/sources/main/exchange-stream.cjs",
+      "bytes": 5218,
+      "sha256": "7b6497db7886d9b48e8a1b561bb2fae82d4d628e4bc7d61047bec3d0fe4d639b"
+    },
+    {
+      "path": "packages/board-merge/sources/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "900be87f5c8f111e7f767c104924e9c3dc7b4eee786f75d074259a129e21be55"
+    },
+    {
+      "path": "packages/board-merge/sources/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/board-merge/sources/main/review-service.cjs",
+      "bytes": 11285,
+      "sha256": "eec1d45183c2437da4642153e0c31d9191f20e4c2738c9dd6aa3ada2efb43d18"
+    },
+    {
+      "path": "packages/board-merge/sources/main/study-model.cjs",
+      "bytes": 7017,
+      "sha256": "d6723e6420cd6a11199fe6553ff83e7e67141394652e4c08a81ad9a54f1f4dae"
+    },
+    {
+      "path": "packages/board-merge/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/board-merge/sources/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "9a5fac73c0225920f91081e066279dd0d734e26c64a82b5e1472ea650f71e7cb"
+    },
+    {
+      "path": "packages/board-merge/sources/renderer/board-merge-tabs.ts",
+      "bytes": 1409,
+      "sha256": "b363707ae8f61d44ac5dd81eecc3a4dd2855a810e7abd7ecd1ad3f6cb711e3a1"
+    },
+    {
+      "path": "packages/board-merge/sources/renderer/child-board-session.ts",
+      "bytes": 5162,
+      "sha256": "d17082a42aac56830c4ac5b2c1177cc1a1fb4f609ed26316b38e37f8ab6a9faf"
+    },
+    {
+      "path": "packages/board-merge/sources/shared/desktop-api.ts",
+      "bytes": 30468,
+      "sha256": "fd059b18dcadeb058efe0fb3bcdaf71a60e349fb3eaff681395ddd23f7ea58e9"
+    },
+    {
+      "path": "packages/board-merge/sources/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "packages/board-merge/sources/shared/pdf-extend.ts",
+      "bytes": 2273,
+      "sha256": "a800f354aff8c48bac5ba9390542793bcfa2963b5b66511fb327d2acb869f717"
+    },
+    {
+      "path": "packages/board-merge/sources/shared/study-transfer.ts",
+      "bytes": 783,
+      "sha256": "159fae06af83dece21ee48006a77c8c5af0ceca0181b4922ede5e2791ea29233"
+    },
+    {
+      "path": "packages/board-merge/sources/shared/study.ts",
+      "bytes": 900,
+      "sha256": "b0a1936ddfeb292c251afd3b293a7cbce2a05b3c1cb4432d84aed0dbafac8acb"
+    },
+    {
+      "path": "packages/board-merge/sources/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "packages/board-merge/test/board-merge-tabs.test.cjs",
+      "bytes": 2806,
+      "sha256": "3af2cdc25eeb597f8cd0a49ef6673168e4bf7fdd77bb5615d22cfe162fe91099"
+    },
+    {
+      "path": "packages/board-merge/test/package.test.cjs",
+      "bytes": 745,
+      "sha256": "aae4a6ed1b31312c48ff2d65dd418683011693dabd675c5264e35db7981e55ec"
+    },
+    {
+      "path": "packages/board-model/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/board-model/README.md",
+      "bytes": 3275,
+      "sha256": "5f2f88cdb0a7049621e484a1e80055a2de1a90e053d7f88fc7fe496a5a5096aa"
+    },
+    {
+      "path": "packages/board-model/index.cjs",
+      "bytes": 655,
+      "sha256": "cbb95a5ee8b30aa5faaed45ef51d1dfb2f06e4be3ce568bf88aaa4bba4567571"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "52900b6fdb184972d4c0f3949156889c2fdda223e390cd58c2c596766c36e641"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-clipboard.cjs",
+      "bytes": 10443,
+      "sha256": "ba560f8f9ac8c6c1e97c031984536b5777297acce1dd601c7c55d0f738714ed6"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "f73309311e7baef6b7fddaaa778e56793e7bb54892cd7f7ee86fe775d1e20d8b"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-file-cards.cjs",
+      "bytes": 2872,
+      "sha256": "8f6d2e2cb0351e46864e3b06ca36a3ebd4e2b9c2ae633894d926e150c54674c4"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-generated-assets.cjs",
+      "bytes": 1906,
+      "sha256": "a4193f269e6a9d5b09edd999ee31ecd762d9499e530b31c1418302f3c9d2bad8"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-json.cjs",
+      "bytes": 980,
+      "sha256": "7e21fff39c070cc4dd35cb2b1fda5b80cc60103cd0cdd2d819ee93bafae802c5"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-navigation.cjs",
+      "bytes": 2626,
+      "sha256": "ac1972cc3a29582c28527da09ae794ac2e9c72aa84935d5d53ec06cf23c6596a"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-operations.cjs",
+      "bytes": 21861,
+      "sha256": "9cb37e68c6f2cc9f1c43409a47c5dc94894443aeb4d4221549e0ed5a0aa43bc0"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-paste.cjs",
+      "bytes": 8429,
+      "sha256": "a30ee4e377c2682e81bbeedaffc8ae3c2071813701409a5f1dc136b4799c67f0"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-relink-stream.cjs",
+      "bytes": 5898,
+      "sha256": "feb041a9417f23a3fd89acc3500204393e1d504e60a928570b7787775c7e6f8f"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-relink.cjs",
+      "bytes": 7875,
+      "sha256": "afff10dab0001a66b534d94b4ee11ff7ebe57a4c016cbc7990d5df10867d9f32"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-source-resolver.cjs",
+      "bytes": 10331,
+      "sha256": "78481edf279dfc8251ee96979e111d2d01dfc3891c2ba8c03d76bf57de8082a5"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "5f6ec7470ce276e80ad300c40d194d451873b5599536ee107251d7b898e8e973"
+    },
+    {
+      "path": "packages/board-model/lib/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "02033b792aac4f78783a6b12d2c1ef3ce0861e0d150aa55f6a1de2d7ac88aaad"
+    },
+    {
+      "path": "packages/board-model/lib/main/clipboard-files.cjs",
+      "bytes": 5968,
+      "sha256": "a75a3d11db545d30ab316a69d58ed0aa117a45108d59b26e3a1c88408ec9b238"
+    },
+    {
+      "path": "packages/board-model/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/board-model/lib/main/exchange-file-identity.cjs",
+      "bytes": 3555,
+      "sha256": "d02dcbad0125fe2a24ecf715feeb076f2b8783b6084993deba9bb50f900f8c80"
+    },
+    {
+      "path": "packages/board-model/lib/main/exchange-stream.cjs",
+      "bytes": 5218,
+      "sha256": "566bb489ea4a916bd260bb45b58123707acba1c5af45a98e3dadf9883c3af7d0"
+    },
+    {
+      "path": "packages/board-model/lib/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "27224d9b54282356dafed40a0ea77249efe52b8014c098550355d87d762855c8"
+    },
+    {
+      "path": "packages/board-model/lib/main/onenote-geometry-guard.cjs",
+      "bytes": 13291,
+      "sha256": "71e1fd0e6fd4e8d0e0a2833517bc05cdd3ab7b6487ac4ee2b166837c5c87556a"
+    },
+    {
+      "path": "packages/board-model/lib/main/onenote-pdf.cjs",
+      "bytes": 19975,
+      "sha256": "40dd752a1b89a7c22b7805094842eae02e4abc07c74937c3a071696d3df997ec"
+    },
+    {
+      "path": "packages/board-model/lib/main/onenote-publication.cjs",
+      "bytes": 7885,
+      "sha256": "7712674f5eea45cf3f44d5e595639ef7dc4ccc1a6326d04e0d915af8fb695a65"
+    },
+    {
+      "path": "packages/board-model/lib/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "cc32843d3936412631b1e95bd05478373b4de16077244f70e14552a74d0f5433"
+    },
+    {
+      "path": "packages/board-model/lib/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/board-model/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/board-model/lib/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "c975a353291876cf9c4dc822f44b3e6c0ddd7c6836baf37190b31a65f5b787e1"
+    },
+    {
+      "path": "packages/board-model/package.json",
+      "bytes": 633,
+      "sha256": "73fe1bf2745a726758295f4d869424d82d41217e94c0b8384959c550a7654e91"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "02e577e158f2cf7dfdbc01b3da2e805b16f2ffe06707600660550dcabd4701e7"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-clipboard.cjs",
+      "bytes": 10443,
+      "sha256": "833ddeae83783465d6d73067b8253dc8ba8b2eab33aecd6c127013858476bdce"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "cbf362e74fec07422d7d272f84231d37103087009117bc52c19a62be4b705572"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-file-cards.cjs",
+      "bytes": 2872,
+      "sha256": "1331897bdd2344a329ad5d73763d4ef6aca76cca0bfc3d0c29afee4e7359a05b"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-generated-assets.cjs",
+      "bytes": 1906,
+      "sha256": "bc635e51ba713857ab53f8c0ffebd6c022c9c700f4c64aae57a0683dddc9d6ff"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-json.cjs",
+      "bytes": 980,
+      "sha256": "508c2c23f5748b30acf5f24ad58b7e0810cb52363f220c5af5388647dc4447a2"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-navigation.cjs",
+      "bytes": 2626,
+      "sha256": "c8aa1dc05183cd8ffd151138847b59663e0f847a5cae697fde82461aee4b4e7b"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-operations.cjs",
+      "bytes": 21861,
+      "sha256": "c82a963a4bfb1578efcf8f12d49fe09a4dad933eaba79a1104c1e0741632962f"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-paste.cjs",
+      "bytes": 8429,
+      "sha256": "422629594540bbfe02cbd9adc61ef81e7876693b2c5470e4680f4c334d7e3b83"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-relink-stream.cjs",
+      "bytes": 5898,
+      "sha256": "ffb807d054c97573219e6fc283ac7ef8c1d52c4e2b40441c5029a55a5753e4c1"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-relink.cjs",
+      "bytes": 7875,
+      "sha256": "190e6e65167b8230424336e350312f25b5d7d54261b3bc1cbd3488fa79395489"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-source-resolver.cjs",
+      "bytes": 10331,
+      "sha256": "5fda386c43c20194a25ea6d3fdb85d5cf1a7198310b0dbcd928a03c9ffd2ed23"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "838e6f0e0725afcbce1759af08550bbcc462538f30e264748a8375d4451928ff"
+    },
+    {
+      "path": "packages/board-model/sources/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "9528b977d6d5f4628d6f8dcf73812848baa08dbfa6ac8577fb6bfd1bda8ff334"
+    },
+    {
+      "path": "packages/board-model/sources/main/clipboard-files.cjs",
+      "bytes": 5968,
+      "sha256": "4510adad747431497dd02f0049e626e36da4cf9462e4651541055516f5b91324"
+    },
+    {
+      "path": "packages/board-model/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/board-model/sources/main/exchange-file-identity.cjs",
+      "bytes": 3555,
+      "sha256": "343e02dbffb24b885726ab92130413e3403ebbdfbf73449c750492991fb6d4c1"
+    },
+    {
+      "path": "packages/board-model/sources/main/exchange-stream.cjs",
+      "bytes": 5218,
+      "sha256": "7b6497db7886d9b48e8a1b561bb2fae82d4d628e4bc7d61047bec3d0fe4d639b"
+    },
+    {
+      "path": "packages/board-model/sources/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "bd4a888cb79d4103656c0575d1f65f3980671a98499a829c1ba5c0c73af66172"
+    },
+    {
+      "path": "packages/board-model/sources/main/onenote-geometry-guard.cjs",
+      "bytes": 13291,
+      "sha256": "71e1fd0e6fd4e8d0e0a2833517bc05cdd3ab7b6487ac4ee2b166837c5c87556a"
+    },
+    {
+      "path": "packages/board-model/sources/main/onenote-pdf.cjs",
+      "bytes": 19975,
+      "sha256": "bf120cbabaed8713f7e8511f17de27b61eade81eaffaf29635dbb6e8d0e37b79"
+    },
+    {
+      "path": "packages/board-model/sources/main/onenote-publication.cjs",
+      "bytes": 7885,
+      "sha256": "5e3bac919a0ac19eaf6c1bceea1285fce137b2510726e3d92eff1aab0a7aa9e8"
+    },
+    {
+      "path": "packages/board-model/sources/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "900be87f5c8f111e7f767c104924e9c3dc7b4eee786f75d074259a129e21be55"
+    },
+    {
+      "path": "packages/board-model/sources/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/board-model/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/board-model/sources/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "9a5fac73c0225920f91081e066279dd0d734e26c64a82b5e1472ea650f71e7cb"
+    },
+    {
+      "path": "packages/board-model/test/package.test.cjs",
+      "bytes": 650,
+      "sha256": "04ae04a4df37c3b3e5aa58b0a543b5cae47575034672a5191cd4ea8a70fa349e"
+    },
+    {
+      "path": "packages/browser-utilities/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/browser-utilities/README.md",
+      "bytes": 4519,
+      "sha256": "5af2fb02cf8957e1338cbd6d128f706d65a22f9d13fbf7ef0d4c62cd01f67abb"
+    },
+    {
+      "path": "packages/browser-utilities/index.cjs",
+      "bytes": 715,
+      "sha256": "8c6158452ba151e0eff0295af13ea312a63022bbec45f35e750b8ea8e37bc603"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/ai-downloads.cjs",
+      "bytes": 3366,
+      "sha256": "0eda1156eb5bb6ccce790e438b62d232ce3424d30829a8db8f32b03f353695c7"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/ai-image-transfer.cjs",
+      "bytes": 8474,
+      "sha256": "9e6f9305368b48e61c630f17cc331a9f2603dc4427466a2c6e6be35495edc8d5"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/ai-media-permissions.cjs",
+      "bytes": 6732,
+      "sha256": "da8d8c7de7d47c227287c48030b19b656a38c4fece340b1f542d0f9878432887"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/ai-page-health.cjs",
+      "bytes": 3332,
+      "sha256": "a14740ef378b94d5073cc7ad6fdd5aef6d7a8daf4722650f62a6b027e6afc41b"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/ai-web-providers.cjs",
+      "bytes": 4297,
+      "sha256": "8a03d7b5d6de387b48413903f10f04b83576e8e4f221e9177ff930f8335175b5"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/board-web-network.cjs",
+      "bytes": 959,
+      "sha256": "a2094438a6094150b0d159cb3482cb73fd8c8853e0595b48a073a1fe72b3920f"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "02033b792aac4f78783a6b12d2c1ef3ce0861e0d150aa55f6a1de2d7ac88aaad"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/browser-extensions.cjs",
+      "bytes": 5319,
+      "sha256": "802e503bcbebc7155ff689e3ca53c0418053b07c315320976df992e379a907e5"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/browser-link-routing.cjs",
+      "bytes": 507,
+      "sha256": "6ffbaf0586e65e587f95c824e9d8f059608eab078569ab65b5b4c4b6dfdfa74b"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/browser-security.cjs",
+      "bytes": 3871,
+      "sha256": "e03b258d6064eadb4b61415f019455da822bf176f80cd4eebbf476e8e826dc37"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/browser-state.cjs",
+      "bytes": 6478,
+      "sha256": "7dcdc3f8a7c354b5f0ac463af02c409a591688f7d40c120323f3b5f4cc65a911"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/diagnostics.cjs",
+      "bytes": 7861,
+      "sha256": "429c4b14f0e8d90364fb8fc3fd7786c99df8ee4a91dca6a97b6b53c240647d5a"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/browser-utilities/lib/main/security.cjs",
+      "bytes": 1193,
+      "sha256": "03d8fff4409657bd50d38895ee726de523f6b0e035a20168470ccf43106076d9"
+    },
+    {
+      "path": "packages/browser-utilities/package.json",
+      "bytes": 605,
+      "sha256": "185ea418ca98cf4580c3a272fa37e21277a35fe6307ec790b73ea32e70b60284"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/ai-downloads.cjs",
+      "bytes": 3366,
+      "sha256": "0eda1156eb5bb6ccce790e438b62d232ce3424d30829a8db8f32b03f353695c7"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/ai-image-transfer.cjs",
+      "bytes": 8474,
+      "sha256": "aa46f09931c656223d044c4fd3a492a0e21d5f76a87c78ea2b15460c0f421ab1"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/ai-media-permissions.cjs",
+      "bytes": 6732,
+      "sha256": "d55629e40d2dfeddf787d11f368923ab9076ff1ce528d9ee153acd23ad98dad9"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/ai-page-health.cjs",
+      "bytes": 3332,
+      "sha256": "a14740ef378b94d5073cc7ad6fdd5aef6d7a8daf4722650f62a6b027e6afc41b"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/ai-web-providers.cjs",
+      "bytes": 4297,
+      "sha256": "423175c087b406301d7e221df2cb3aab0eb9cc67cef1cd9ee33a4f06ca3af45e"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/board-web-network.cjs",
+      "bytes": 959,
+      "sha256": "a2094438a6094150b0d159cb3482cb73fd8c8853e0595b48a073a1fe72b3920f"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "9528b977d6d5f4628d6f8dcf73812848baa08dbfa6ac8577fb6bfd1bda8ff334"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/browser-extensions.cjs",
+      "bytes": 5319,
+      "sha256": "802e503bcbebc7155ff689e3ca53c0418053b07c315320976df992e379a907e5"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/browser-link-routing.cjs",
+      "bytes": 507,
+      "sha256": "a9ff6329043eb260662a68da3b8606eeef16ebf11123a35430a4468264756d3e"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/browser-security.cjs",
+      "bytes": 3871,
+      "sha256": "3a30aaefb5a4a011399f7bd3218da3b1514ed260a81622554e817dd795540605"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/browser-state.cjs",
+      "bytes": 6478,
+      "sha256": "73e0f51e65f6031f65c2f082779b6e1f5cfadd6d66c81e86d21b8e2390422d68"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/diagnostics.cjs",
+      "bytes": 7861,
+      "sha256": "a129bed552a97d93a2eab35a19c31e92f23763e8b341a93907131b240778e95d"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/browser-utilities/sources/main/security.cjs",
+      "bytes": 1193,
+      "sha256": "fab299199ff2978c3d1d4c3456baae511d4246366cea534fa0876fed42813003"
+    },
+    {
+      "path": "packages/browser-utilities/test/ai-media-permissions.test.cjs",
+      "bytes": 10459,
+      "sha256": "acf5ba69710cdb07d4f02d734700245416d692941622f750c2650a5dac54a063"
+    },
+    {
+      "path": "packages/browser-utilities/test/ai-page-health.test.cjs",
+      "bytes": 6873,
+      "sha256": "0eeca897da21061f9883322e43c2f5b1264171368f119aa27cec1c5b62d1c04b"
+    },
+    {
+      "path": "packages/browser-utilities/test/ai-web-diagnostics.test.cjs",
+      "bytes": 13871,
+      "sha256": "db8ef0f4e4e1f01412b2766683bd00ced8b0bcf22c04328549998c350ecc0d2b"
+    },
+    {
+      "path": "packages/browser-utilities/test/extensions.test.cjs",
+      "bytes": 4369,
+      "sha256": "f2a6c33cc84f7882f11944675f348df661aa608dda1f4fe1d38653416724b62c"
+    },
+    {
+      "path": "packages/browser-utilities/test/fixtures/macos-privacy.cjs",
+      "bytes": 229,
+      "sha256": "0c3e8253a8f8dce1bdfa11e05342fc6440dbac5bc87055a85dee70d87a6bb307"
+    },
+    {
+      "path": "packages/browser-utilities/test/package.test.cjs",
+      "bytes": 701,
+      "sha256": "9c1dad99fbad963ec6bee64d75c800a6107677cbb0428b7a71e6d0510c9db967"
+    },
+    {
+      "path": "packages/document-workspace/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/document-workspace/README.md",
+      "bytes": 3852,
+      "sha256": "65263d8c8731efe2dd681fe9f25148a10db24a6e8137276411454e074fb75fbc"
+    },
+    {
+      "path": "packages/document-workspace/index.cjs",
+      "bytes": 1066,
+      "sha256": "3e795eed3f40d457026d5e2dc01c987e92dc6527f6566a7736bce5836e83bcc0"
+    },
+    {
+      "path": "packages/document-workspace/lib/main/document-menu.cjs",
+      "bytes": 1702,
+      "sha256": "d482bc4dbf523ce33f1a2cb8e9958db7374989f3c45b48800bbd50822f628883"
+    },
+    {
+      "path": "packages/document-workspace/lib/main/editable-context-menu.cjs",
+      "bytes": 1248,
+      "sha256": "326bc7c484be6de2053ee772480a408a37eba40766a4621dc84f111f3508deae"
+    },
+    {
+      "path": "packages/document-workspace/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/document-workspace/lib/main/external-document-open.cjs",
+      "bytes": 7636,
+      "sha256": "ec7fe89aeffcf5c95d9785331394340a9db2f5c042c22288310ce06fe72d0fb5"
+    },
+    {
+      "path": "packages/document-workspace/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/document-workspace/lib/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "c975a353291876cf9c4dc822f44b3e6c0ddd7c6836baf37190b31a65f5b787e1"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/BoardPagePreviews.cjs",
+      "bytes": 5920,
+      "sha256": "9fe8cede6a5fcf4c7c6bb1525d669e8e4cb06f9ff5c4e775edd7275032b491a1"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/PDFWorkspaceState.cjs",
+      "bytes": 922,
+      "sha256": "ff96821bca18fe68fbaa3a17b95588f73de7b101ba1fd1960d9ca5aac368e6fa"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/app-shortcuts.cjs",
+      "bytes": 700,
+      "sha256": "a0bed4d9f3853d4c25d930c4e40fb4f1fd6acb01c4148dff3a5d3e302b8b1f8e"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/autosave-tabs.cjs",
+      "bytes": 715,
+      "sha256": "6fbea07e98dc4d10a1b757c8204478fdb6691bc3977902050ae98bfb71437719"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/clipboard-rich-text.cjs",
+      "bytes": 16300,
+      "sha256": "3ff4e6aa649ce38b42fe4481308f433829d8e749967c0c167cd8f0ce0de87698"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/document-zoom.cjs",
+      "bytes": 1051,
+      "sha256": "ba57e1f6b2ec18d9358f38de031ba445ab3f1335f18e52e3bd0216c34193ccee"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/export-view.cjs",
+      "bytes": 2931,
+      "sha256": "478b31aa36596a22d3d3a3912e5ec4b1062419c9bcad78e7948fabb86bd7bafa"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/external-open-tabs.cjs",
+      "bytes": 452,
+      "sha256": "19387a0edd115a7393192a12766d57274e2f7e12260679051f262c84f929095f"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/file-tree-management.cjs",
+      "bytes": 3458,
+      "sha256": "014c94daa51445b8da275a4ca50e164591c4c13bc3489e24d313173efe92a4f1"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/office-preparation-deadline.cjs",
+      "bytes": 1209,
+      "sha256": "7743791323fc23cb010eb0ff292b9959b983df31815b326c90e0fa611f437c85"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/rich-text-math.cjs",
+      "bytes": 8814,
+      "sha256": "00cc7898e8ab95809ce55d7d069ce1795d7acc49d375bc7963a1321f446cf2af"
+    },
+    {
+      "path": "packages/document-workspace/lib/renderer/workspace-file-kinds.cjs",
+      "bytes": 742,
+      "sha256": "2897b15f95d2d6e19e09829c95ebf34a9b1dfd19b251d8b0abd5a5855b23c0b9"
+    },
+    {
+      "path": "packages/document-workspace/lib/shared/desktop-api.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/document-workspace/lib/shared/internal-file-links.cjs",
+      "bytes": 1972,
+      "sha256": "4d97b8f49cf3cf3c2e55546ffbb79ea8dbf09bda55face29b61b7b5685563b00"
+    },
+    {
+      "path": "packages/document-workspace/lib/shared/media-editor.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/document-workspace/lib/shared/pdf-extend.cjs",
+      "bytes": 1253,
+      "sha256": "4ab4f543de9d95144f4d818dfb18bdc2477fb10c5de03fca527705333d35f3bf"
+    },
+    {
+      "path": "packages/document-workspace/lib/shared/study-transfer.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/document-workspace/lib/shared/study.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/document-workspace/lib/shared/video-playback.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/document-workspace/package.json",
+      "bytes": 697,
+      "sha256": "6beaf7f68e4c6a8156be2e34791975e3382fe8fc3005b8235d68a1de16815eff"
+    },
+    {
+      "path": "packages/document-workspace/sources/main/document-menu.cjs",
+      "bytes": 1702,
+      "sha256": "d482bc4dbf523ce33f1a2cb8e9958db7374989f3c45b48800bbd50822f628883"
+    },
+    {
+      "path": "packages/document-workspace/sources/main/editable-context-menu.cjs",
+      "bytes": 1248,
+      "sha256": "326bc7c484be6de2053ee772480a408a37eba40766a4621dc84f111f3508deae"
+    },
+    {
+      "path": "packages/document-workspace/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/document-workspace/sources/main/external-document-open.cjs",
+      "bytes": 7636,
+      "sha256": "2c1654a44ba8d92db5d9bd4a9b25b9d903b6c3497bcd0648a3512ed8dbe7e81b"
+    },
+    {
+      "path": "packages/document-workspace/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/document-workspace/sources/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "9a5fac73c0225920f91081e066279dd0d734e26c64a82b5e1472ea650f71e7cb"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/BoardPagePreviews.ts",
+      "bytes": 5964,
+      "sha256": "730d966ad55eeddebf293e5b91b4c600f153b17229f031a0581b10a0223ed22a"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/PDFWorkspaceState.ts",
+      "bytes": 746,
+      "sha256": "d64af688e12b9165f56acb5570e6c3016e3528619e36c0965c88a502a275c9b1"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/app-shortcuts.ts",
+      "bytes": 743,
+      "sha256": "0fba7f6d0bd2330f5a729cc8129f1f5a282dcfb8a50dc87adcb302e2dc78ce73"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/autosave-tabs.ts",
+      "bytes": 910,
+      "sha256": "e78f9382fa6e82a7a36f47f521bd7b1929e5a32534c65cbeaf327032cc93efcd"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/clipboard-rich-text.ts",
+      "bytes": 14306,
+      "sha256": "0c65905715e67150774cab0c813cd691e5bb24c615e0cf1bfdf2b7647c082ff3"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/document-zoom.ts",
+      "bytes": 798,
+      "sha256": "21cf149d04067336abf8e589460a38e31f324c33869e7d9091f56443b4ad82e8"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/export-view.ts",
+      "bytes": 2602,
+      "sha256": "49ae5636beb23e282d60c30704be3f13b5d8cee0d945d5a2d3ffad4dccd5c30b"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/external-open-tabs.ts",
+      "bytes": 292,
+      "sha256": "e51ca15079d6be050c85d03a1b639de642b68a93dea8bfe0eb4b5e56eb39b33f"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/file-tree-management.ts",
+      "bytes": 3237,
+      "sha256": "fc79835acc787641f7ad573776d95cbeb98905462c718fe6f0b4e1bcf982b0b9"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/office-preparation-deadline.ts",
+      "bytes": 914,
+      "sha256": "d98fecc58d7cf6332f762d96f7e67b550218e5e83d27eaffaf2408c0643ccd42"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/rich-text-math.ts",
+      "bytes": 6848,
+      "sha256": "84f69797dd48c3c1e5080fc25846e2553fa236082350e5f40d39bfcb5ad702b7"
+    },
+    {
+      "path": "packages/document-workspace/sources/renderer/workspace-file-kinds.ts",
+      "bytes": 679,
+      "sha256": "0d06bdb81e0290897b437bbcbfee402664159546c7ffaf2ca0bdc3fb1134c2b3"
+    },
+    {
+      "path": "packages/document-workspace/sources/shared/desktop-api.ts",
+      "bytes": 30468,
+      "sha256": "fd059b18dcadeb058efe0fb3bcdaf71a60e349fb3eaff681395ddd23f7ea58e9"
+    },
+    {
+      "path": "packages/document-workspace/sources/shared/internal-file-links.ts",
+      "bytes": 1637,
+      "sha256": "e66bff2dfe75d2cd253c5b9ffc15f9289bbb41a4191633aa2c1c221c3b4ecaf9"
+    },
+    {
+      "path": "packages/document-workspace/sources/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "packages/document-workspace/sources/shared/pdf-extend.ts",
+      "bytes": 2273,
+      "sha256": "a800f354aff8c48bac5ba9390542793bcfa2963b5b66511fb327d2acb869f717"
+    },
+    {
+      "path": "packages/document-workspace/sources/shared/study-transfer.ts",
+      "bytes": 783,
+      "sha256": "159fae06af83dece21ee48006a77c8c5af0ceca0181b4922ede5e2791ea29233"
+    },
+    {
+      "path": "packages/document-workspace/sources/shared/study.ts",
+      "bytes": 900,
+      "sha256": "b0a1936ddfeb292c251afd3b293a7cbce2a05b3c1cb4432d84aed0dbafac8acb"
+    },
+    {
+      "path": "packages/document-workspace/sources/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "packages/document-workspace/test/app-shortcuts.test.cjs",
+      "bytes": 1665,
+      "sha256": "306faf57b41fba873dbf6393a62019864974c025dbea0e4f9732bb4c5cd491e9"
+    },
+    {
+      "path": "packages/document-workspace/test/document-menu.test.cjs",
+      "bytes": 1625,
+      "sha256": "917b9673b4b3f211a64a119e45882c0674c88df3e7d61b883d0698ec9f49437c"
+    },
+    {
+      "path": "packages/document-workspace/test/document-zoom.test.cjs",
+      "bytes": 1133,
+      "sha256": "04203f5e4cdff98d2d3f42dbd6902b20d1427e6864d88866e01e69802ae977c9"
+    },
+    {
+      "path": "packages/document-workspace/test/external-open-tabs.test.cjs",
+      "bytes": 1168,
+      "sha256": "15e7366ec2391be2474d23f759ec7fb25b5bbea421e0f62f63083cf928c5cd3b"
+    },
+    {
+      "path": "packages/document-workspace/test/package.test.cjs",
+      "bytes": 691,
+      "sha256": "3d0de78f9ced614e890c4dd1fcd53c31159f65ac17258d7433ec45ad2907c604"
+    },
+    {
+      "path": "packages/file-storage/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/file-storage/README.md",
+      "bytes": 3435,
+      "sha256": "688c4951c84c39b6433bad733bf87184f150ef52596158c5f429d669437f1564"
+    },
+    {
+      "path": "packages/file-storage/index.cjs",
+      "bytes": 716,
+      "sha256": "922fc4766ea11b53084beed96ba1777a3641a14ca0a9b66da79894e0965d2c7a"
+    },
+    {
+      "path": "packages/file-storage/lib/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "52900b6fdb184972d4c0f3949156889c2fdda223e390cd58c2c596766c36e641"
+    },
+    {
+      "path": "packages/file-storage/lib/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "f73309311e7baef6b7fddaaa778e56793e7bb54892cd7f7ee86fe775d1e20d8b"
+    },
+    {
+      "path": "packages/file-storage/lib/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "5f6ec7470ce276e80ad300c40d194d451873b5599536ee107251d7b898e8e973"
+    },
+    {
+      "path": "packages/file-storage/lib/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "02033b792aac4f78783a6b12d2c1ef3ce0861e0d150aa55f6a1de2d7ac88aaad"
+    },
+    {
+      "path": "packages/file-storage/lib/main/diagnostics.cjs",
+      "bytes": 7861,
+      "sha256": "429c4b14f0e8d90364fb8fc3fd7786c99df8ee4a91dca6a97b6b53c240647d5a"
+    },
+    {
+      "path": "packages/file-storage/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/file-storage/lib/main/exchange-file-identity.cjs",
+      "bytes": 3555,
+      "sha256": "d02dcbad0125fe2a24ecf715feeb076f2b8783b6084993deba9bb50f900f8c80"
+    },
+    {
+      "path": "packages/file-storage/lib/main/exchange-stream.cjs",
+      "bytes": 5218,
+      "sha256": "566bb489ea4a916bd260bb45b58123707acba1c5af45a98e3dadf9883c3af7d0"
+    },
+    {
+      "path": "packages/file-storage/lib/main/file-context-actions.cjs",
+      "bytes": 1793,
+      "sha256": "4ff77058eb26690d20bbf83d5fd59fc15f1f104397297b334a5a6788ac220b07"
+    },
+    {
+      "path": "packages/file-storage/lib/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "27224d9b54282356dafed40a0ea77249efe52b8014c098550355d87d762855c8"
+    },
+    {
+      "path": "packages/file-storage/lib/main/pdf-extend-model.cjs",
+      "bytes": 4692,
+      "sha256": "adf6fc938435b74606c2ef730020cd745bf1537964a072d4d870c45b03b77fa6"
+    },
+    {
+      "path": "packages/file-storage/lib/main/pdf-extend-service.cjs",
+      "bytes": 6441,
+      "sha256": "33f90fe15b15ddfeb289fdb4fadd839f1956d4d706d7d26332f733d0a4330407"
+    },
+    {
+      "path": "packages/file-storage/lib/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "cc32843d3936412631b1e95bd05478373b4de16077244f70e14552a74d0f5433"
+    },
+    {
+      "path": "packages/file-storage/lib/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/file-storage/lib/main/recent-vaults.cjs",
+      "bytes": 7340,
+      "sha256": "db2aab3f512150c5755aeec08de71d7b21fe6cd61d141fcee91de677396919ad"
+    },
+    {
+      "path": "packages/file-storage/lib/main/review-service.cjs",
+      "bytes": 11285,
+      "sha256": "b97bc904a6422d2c0ad6c6824a3a03be30fb264f56f1e9fa0d643a049e37be4f"
+    },
+    {
+      "path": "packages/file-storage/lib/main/source-file-export.cjs",
+      "bytes": 1666,
+      "sha256": "d5987b1f5df226e0c17cfaa132257714c513351aa8c3a993910fdde96ef3c003"
+    },
+    {
+      "path": "packages/file-storage/lib/main/subtitle-format-validation.cjs",
+      "bytes": 2076,
+      "sha256": "8fc59ca445febf0a01c2900d8f485bd66cb7f02bda7dd9f2f6216d0d8f9178b6"
+    },
+    {
+      "path": "packages/file-storage/lib/main/vault-file-management.cjs",
+      "bytes": 44626,
+      "sha256": "4c4ba4e8bb28cf796a17820760ea8c5fe83718262eed95f4ca146cffb2a111bd"
+    },
+    {
+      "path": "packages/file-storage/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/file-storage/lib/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "c975a353291876cf9c4dc822f44b3e6c0ddd7c6836baf37190b31a65f5b787e1"
+    },
+    {
+      "path": "packages/file-storage/lib/main/vault-watch-lifecycle.cjs",
+      "bytes": 1858,
+      "sha256": "baad8c93e32614bc16372eacc4296c1c4e6aad93290406810b1fabd45ff125f5"
+    },
+    {
+      "path": "packages/file-storage/lib/main/vault-watch.cjs",
+      "bytes": 11838,
+      "sha256": "37d71f342783e4e629332a48b253a5a59950e7e7fbb55bea2077f0ab01a4ba1b"
+    },
+    {
+      "path": "packages/file-storage/lib/main/video-service.cjs",
+      "bytes": 6828,
+      "sha256": "af75ddf3367a4363cf04b524dd21119add5422080da27cb683ee9330dab838d9"
+    },
+    {
+      "path": "packages/file-storage/lib/main/video-subtitles.cjs",
+      "bytes": 5877,
+      "sha256": "72ca13d055931059eaf7fd3776c899d2015a657d7ab6c4e41c662a0c2a75406d"
+    },
+    {
+      "path": "packages/file-storage/package.json",
+      "bytes": 617,
+      "sha256": "f37316cb8f141dd5c03da0e38a0ae3dd53dfba88e0ca663c821050656d5725ac"
+    },
+    {
+      "path": "packages/file-storage/sources/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "02e577e158f2cf7dfdbc01b3da2e805b16f2ffe06707600660550dcabd4701e7"
+    },
+    {
+      "path": "packages/file-storage/sources/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "cbf362e74fec07422d7d272f84231d37103087009117bc52c19a62be4b705572"
+    },
+    {
+      "path": "packages/file-storage/sources/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "838e6f0e0725afcbce1759af08550bbcc462538f30e264748a8375d4451928ff"
+    },
+    {
+      "path": "packages/file-storage/sources/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "9528b977d6d5f4628d6f8dcf73812848baa08dbfa6ac8577fb6bfd1bda8ff334"
+    },
+    {
+      "path": "packages/file-storage/sources/main/diagnostics.cjs",
+      "bytes": 7861,
+      "sha256": "a129bed552a97d93a2eab35a19c31e92f23763e8b341a93907131b240778e95d"
+    },
+    {
+      "path": "packages/file-storage/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/file-storage/sources/main/exchange-file-identity.cjs",
+      "bytes": 3555,
+      "sha256": "343e02dbffb24b885726ab92130413e3403ebbdfbf73449c750492991fb6d4c1"
+    },
+    {
+      "path": "packages/file-storage/sources/main/exchange-stream.cjs",
+      "bytes": 5218,
+      "sha256": "7b6497db7886d9b48e8a1b561bb2fae82d4d628e4bc7d61047bec3d0fe4d639b"
+    },
+    {
+      "path": "packages/file-storage/sources/main/file-context-actions.cjs",
+      "bytes": 1793,
+      "sha256": "5cabd0ce54879d0b7b107df3f7a636784cf9d16ccfd1f5b6560c6721ecc96c4c"
+    },
+    {
+      "path": "packages/file-storage/sources/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "bd4a888cb79d4103656c0575d1f65f3980671a98499a829c1ba5c0c73af66172"
+    },
+    {
+      "path": "packages/file-storage/sources/main/pdf-extend-model.cjs",
+      "bytes": 4692,
+      "sha256": "e7bb20f7d8a2eea1c0f2924f15837391a8c88e8fb8173b52504798e1ef4a96a0"
+    },
+    {
+      "path": "packages/file-storage/sources/main/pdf-extend-service.cjs",
+      "bytes": 6441,
+      "sha256": "5eb6900fbf1f9f4cb03b0a3a4cc6d4425ff57f7a6cd852f3ea2bbb5f788627dc"
+    },
+    {
+      "path": "packages/file-storage/sources/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "900be87f5c8f111e7f767c104924e9c3dc7b4eee786f75d074259a129e21be55"
+    },
+    {
+      "path": "packages/file-storage/sources/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/file-storage/sources/main/recent-vaults.cjs",
+      "bytes": 7340,
+      "sha256": "a3575f775bde6179a310869cc72e2c6a3070329620efde58798b35d46c278257"
+    },
+    {
+      "path": "packages/file-storage/sources/main/review-service.cjs",
+      "bytes": 11285,
+      "sha256": "eec1d45183c2437da4642153e0c31d9191f20e4c2738c9dd6aa3ada2efb43d18"
+    },
+    {
+      "path": "packages/file-storage/sources/main/source-file-export.cjs",
+      "bytes": 1666,
+      "sha256": "93d27e8bbc418741adede70747668113ac92b72853bd9683ba6ea3f160a42b1e"
+    },
+    {
+      "path": "packages/file-storage/sources/main/subtitle-format-validation.cjs",
+      "bytes": 2076,
+      "sha256": "53fcccbeced1c0c0f588516c431ce1a940013c97ac72ed9d058287189618cc04"
+    },
+    {
+      "path": "packages/file-storage/sources/main/vault-file-management.cjs",
+      "bytes": 44626,
+      "sha256": "e3ef1956509dadfdca4d5b06d3fbfed711bf49dfdac63067d8166696dd5307e5"
+    },
+    {
+      "path": "packages/file-storage/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/file-storage/sources/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "9a5fac73c0225920f91081e066279dd0d734e26c64a82b5e1472ea650f71e7cb"
+    },
+    {
+      "path": "packages/file-storage/sources/main/vault-watch-lifecycle.cjs",
+      "bytes": 1858,
+      "sha256": "baad8c93e32614bc16372eacc4296c1c4e6aad93290406810b1fabd45ff125f5"
+    },
+    {
+      "path": "packages/file-storage/sources/main/vault-watch.cjs",
+      "bytes": 11838,
+      "sha256": "1e1f37f6d8f517ae0dde8a21c91e0d6993702d52811a388e3a94750e7b2989fb"
+    },
+    {
+      "path": "packages/file-storage/sources/main/video-service.cjs",
+      "bytes": 6828,
+      "sha256": "bb27d4c9d263d5e2f8b8a2697013241496065e25af0a3552d9bd17e401df635f"
+    },
+    {
+      "path": "packages/file-storage/sources/main/video-subtitles.cjs",
+      "bytes": 5877,
+      "sha256": "ac39edb18266f37cd8e47c302cf66ace874931a067ed5e9b1f6a35864a78ad7b"
+    },
+    {
+      "path": "packages/file-storage/test/package.test.cjs",
+      "bytes": 933,
+      "sha256": "69118cfc1628ea46e8ee1848fae56b520a11715f7c04ca07804a576471cbcc28"
+    },
+    {
+      "path": "packages/knowledge-search/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/knowledge-search/README.md",
+      "bytes": 2970,
+      "sha256": "e82122507a4c3787495fa149c2b4f3950937924143fa2bfe564c092d1163bb98"
+    },
+    {
+      "path": "packages/knowledge-search/index.cjs",
+      "bytes": 476,
+      "sha256": "3e283b39edbe5a1c4e13c2f83a236465253de2a51ef10b4d46bcf5bc140dd3e3"
+    },
+    {
+      "path": "packages/knowledge-search/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/knowledge-search/lib/main/knowledge-service.cjs",
+      "bytes": 10890,
+      "sha256": "2a5a7b9cca51a3562d1a7968ed395aabb3a6d400b8e71997c06966d964bce4ab"
+    },
+    {
+      "path": "packages/knowledge-search/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/knowledge-search/lib/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "c975a353291876cf9c4dc822f44b3e6c0ddd7c6836baf37190b31a65f5b787e1"
+    },
+    {
+      "path": "packages/knowledge-search/lib/renderer/knowledge-palace-math.cjs",
+      "bytes": 2728,
+      "sha256": "056e0b2235c5450f42c948980c046ae12b0bc4d5458a3d8e26594024067bc42d"
+    },
+    {
+      "path": "packages/knowledge-search/lib/renderer/knowledge-space-metadata.cjs",
+      "bytes": 4058,
+      "sha256": "80c09b554c5b7c3de0257468ee4ba0bd07746d174f4543c996f70e26dadd3688"
+    },
+    {
+      "path": "packages/knowledge-search/lib/renderer/knowledge-walk-gl.cjs",
+      "bytes": 13865,
+      "sha256": "0f3172dfafb3c3727146c291aa845bfc995bf1da8d2d21e9c0f9fab80eb6d939"
+    },
+    {
+      "path": "packages/knowledge-search/lib/renderer/knowledge-walk-math.cjs",
+      "bytes": 10017,
+      "sha256": "07b07b23637fcb156f9049cf9a0c00666f8dc013bfcd292352214932caa4f1df"
+    },
+    {
+      "path": "packages/knowledge-search/lib/renderer/knowledge-walk-renderer.cjs",
+      "bytes": 14822,
+      "sha256": "9cbbaa91e97118d23793be41390e734c31843eeed598ffffbe7b86762f904793"
+    },
+    {
+      "path": "packages/knowledge-search/lib/shared/desktop-api.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/knowledge-search/lib/shared/media-editor.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/knowledge-search/lib/shared/pdf-extend.cjs",
+      "bytes": 1253,
+      "sha256": "4ab4f543de9d95144f4d818dfb18bdc2477fb10c5de03fca527705333d35f3bf"
+    },
+    {
+      "path": "packages/knowledge-search/lib/shared/study-transfer.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/knowledge-search/lib/shared/study.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/knowledge-search/lib/shared/video-playback.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/knowledge-search/package.json",
+      "bytes": 599,
+      "sha256": "1368b1190487b3d7f70a0e89d43c7747d412e69ee2e97edfec98d2f8c1bd34d5"
+    },
+    {
+      "path": "packages/knowledge-search/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/knowledge-search/sources/main/knowledge-service.cjs",
+      "bytes": 10890,
+      "sha256": "5feb608bae08b78a54ac0d8aa3251d54a2bed785eb225d379e5342f37437cb22"
+    },
+    {
+      "path": "packages/knowledge-search/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/knowledge-search/sources/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "9a5fac73c0225920f91081e066279dd0d734e26c64a82b5e1472ea650f71e7cb"
+    },
+    {
+      "path": "packages/knowledge-search/sources/renderer/knowledge-palace-math.ts",
+      "bytes": 2092,
+      "sha256": "9373d266a26d06142d301cde4b48ee5cf69a5bb8946b031a1be6d648c34a6e4b"
+    },
+    {
+      "path": "packages/knowledge-search/sources/renderer/knowledge-space-metadata.ts",
+      "bytes": 3651,
+      "sha256": "a802cef77fe8fb4019647bbe565147ba3d9c504bfc770aed4add56aed9b88c75"
+    },
+    {
+      "path": "packages/knowledge-search/sources/renderer/knowledge-walk-gl.ts",
+      "bytes": 12383,
+      "sha256": "de0c443b4b880650577d5718cefdb41c9e55e39d85df7b70326391c26921f63f"
+    },
+    {
+      "path": "packages/knowledge-search/sources/renderer/knowledge-walk-math.ts",
+      "bytes": 9734,
+      "sha256": "e44762c477e7c826611ebb7e7d6503b9552c9a6cb0a1f86f5008cfa192630084"
+    },
+    {
+      "path": "packages/knowledge-search/sources/renderer/knowledge-walk-renderer.ts",
+      "bytes": 13082,
+      "sha256": "c60e048b447c2e4836d346fe61a54b9b0bd5e8d2fa9c75c1e07754994d280a8f"
+    },
+    {
+      "path": "packages/knowledge-search/sources/shared/desktop-api.ts",
+      "bytes": 30468,
+      "sha256": "fd059b18dcadeb058efe0fb3bcdaf71a60e349fb3eaff681395ddd23f7ea58e9"
+    },
+    {
+      "path": "packages/knowledge-search/sources/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "packages/knowledge-search/sources/shared/pdf-extend.ts",
+      "bytes": 2273,
+      "sha256": "a800f354aff8c48bac5ba9390542793bcfa2963b5b66511fb327d2acb869f717"
+    },
+    {
+      "path": "packages/knowledge-search/sources/shared/study-transfer.ts",
+      "bytes": 783,
+      "sha256": "159fae06af83dece21ee48006a77c8c5af0ceca0181b4922ede5e2791ea29233"
+    },
+    {
+      "path": "packages/knowledge-search/sources/shared/study.ts",
+      "bytes": 900,
+      "sha256": "b0a1936ddfeb292c251afd3b293a7cbce2a05b3c1cb4432d84aed0dbafac8acb"
+    },
+    {
+      "path": "packages/knowledge-search/sources/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "packages/knowledge-search/test/package.test.cjs",
+      "bytes": 756,
+      "sha256": "f5f661fc61369c2e9d4c6ae637dc7b0bc1e156706657c2d624e15ab3564012b4"
+    },
+    {
+      "path": "packages/math-lab/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/math-lab/README.md",
+      "bytes": 3479,
+      "sha256": "3738ab9b5347f515ad81d2bb7938cf9cefef27a4a9f99d88d992266cc6994bae"
+    },
+    {
+      "path": "packages/math-lab/index.cjs",
+      "bytes": 250,
+      "sha256": "3ea58c71e314352ec750d31fe47b762d55320d7b9ec732778457d3f67a23afa0"
+    },
+    {
+      "path": "packages/math-lab/lib/main/math-export.cjs",
+      "bytes": 1562,
+      "sha256": "35603f7aebd234587aac6af62f7e6e310dc4e08b9069eb5922b5dd3272734261"
+    },
+    {
+      "path": "packages/math-lab/lib/math-lab/engine.js",
+      "bytes": 35866,
+      "sha256": "f4b1fe5f46f6891c87364c66d35fe3316377bcb7ea3a2fd318ae2332be4cd9b7"
+    },
+    {
+      "path": "packages/math-lab/lib/math-lab/simple-core.js",
+      "bytes": 19849,
+      "sha256": "4ec15e82bb70838cc68e08d69845a77482273e5419de96e63655e23549f66492"
+    },
+    {
+      "path": "packages/math-lab/package.json",
+      "bytes": 609,
+      "sha256": "b792fe206336fe8a357d5a4dc4db3be956d122b21c2e703d1da6c85daec918cc"
+    },
+    {
+      "path": "packages/math-lab/sources/main/math-export.cjs",
+      "bytes": 1562,
+      "sha256": "35603f7aebd234587aac6af62f7e6e310dc4e08b9069eb5922b5dd3272734261"
+    },
+    {
+      "path": "packages/math-lab/sources/math-lab/engine.js",
+      "bytes": 35866,
+      "sha256": "f4b1fe5f46f6891c87364c66d35fe3316377bcb7ea3a2fd318ae2332be4cd9b7"
+    },
+    {
+      "path": "packages/math-lab/sources/math-lab/simple-core.js",
+      "bytes": 19849,
+      "sha256": "4ec15e82bb70838cc68e08d69845a77482273e5419de96e63655e23549f66492"
+    },
+    {
+      "path": "packages/math-lab/test/math-export.test.cjs",
+      "bytes": 1897,
+      "sha256": "807842767921d2199fa35c0a9afd6e385c127c693cedbdf03ed8d0c2db0dfd7d"
+    },
+    {
+      "path": "packages/math-lab/test/package.test.cjs",
+      "bytes": 574,
+      "sha256": "08e2dfbf4da32594b2389294417e795ab3c76cff436c0467420fe441d14b30ac"
+    },
+    {
+      "path": "packages/math-lab/web/app.js",
+      "bytes": 53758,
+      "sha256": "ee44926959543c65e3a4f98c5c3dc8b7c06c55bcffea1fe59f532451ea5d384d"
+    },
+    {
+      "path": "packages/math-lab/web/engine.js",
+      "bytes": 35866,
+      "sha256": "f4b1fe5f46f6891c87364c66d35fe3316377bcb7ea3a2fd318ae2332be4cd9b7"
+    },
+    {
+      "path": "packages/math-lab/web/index.html",
+      "bytes": 799,
+      "sha256": "1d41c9a18b3ac0b903fd77747a8ca1019c272439aa2c33e73844c59fc885aeae"
+    },
+    {
+      "path": "packages/math-lab/web/simple-core.js",
+      "bytes": 19849,
+      "sha256": "4ec15e82bb70838cc68e08d69845a77482273e5419de96e63655e23549f66492"
+    },
+    {
+      "path": "packages/math-lab/web/simple.css",
+      "bytes": 8486,
+      "sha256": "edeed86a4c2f9876e31f5cfd553e6c369c38faed53078e5e190e4b89fd6e5b82"
+    },
+    {
+      "path": "packages/math-lab/web/simple.html",
+      "bytes": 4218,
+      "sha256": "e8cdf5e62f4944af8222d2d38e558a974117be63736f0085f2453287663c5443"
+    },
+    {
+      "path": "packages/math-lab/web/simple.js",
+      "bytes": 41736,
+      "sha256": "800bb55ca753b2b055ce586f715c2e25f8b769bb7acae2647dbedb9b16cb8063"
+    },
+    {
+      "path": "packages/math-lab/web/style.css",
+      "bytes": 7661,
+      "sha256": "428ef30a6a03c04dc30fd746d514258232636d95744922f110bd5181f71bc7d6"
+    },
+    {
+      "path": "packages/media-tools/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/media-tools/README.md",
+      "bytes": 3233,
+      "sha256": "52cf7551c80a2a6c5dad7304a371881e653c03cd84b34b3d58f9f1f141c5e864"
+    },
+    {
+      "path": "packages/media-tools/index.cjs",
+      "bytes": 657,
+      "sha256": "e078ebd6a5ea180724ce3100bd58c9b4578bbb7d7946e57bf2738b5c0c39d327"
+    },
+    {
+      "path": "packages/media-tools/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/media-tools/lib/main/media-editor-captions.cjs",
+      "bytes": 4061,
+      "sha256": "ac12f79e5c86ae55fd7f91c73a4833b893befdfe4b9190b093eca5feee8c1cd0"
+    },
+    {
+      "path": "packages/media-tools/lib/main/media-editor-compose.cjs",
+      "bytes": 3466,
+      "sha256": "541c93534c14f4a840c84a58a9f29f4af01760962323fc57a1db7f3c71da27e9"
+    },
+    {
+      "path": "packages/media-tools/lib/main/media-editor-format.cjs",
+      "bytes": 8289,
+      "sha256": "f74708060149a28e9c5355270e9a95cba85180ec32f1d4da094c27c7c4e2ad44"
+    },
+    {
+      "path": "packages/media-tools/lib/main/subtitle-format-validation.cjs",
+      "bytes": 2076,
+      "sha256": "8fc59ca445febf0a01c2900d8f485bd66cb7f02bda7dd9f2f6216d0d8f9178b6"
+    },
+    {
+      "path": "packages/media-tools/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/media-tools/lib/main/video-service.cjs",
+      "bytes": 6828,
+      "sha256": "af75ddf3367a4363cf04b524dd21119add5422080da27cb683ee9330dab838d9"
+    },
+    {
+      "path": "packages/media-tools/lib/main/video-subtitles.cjs",
+      "bytes": 5877,
+      "sha256": "72ca13d055931059eaf7fd3776c899d2015a657d7ab6c4e41c662a0c2a75406d"
+    },
+    {
+      "path": "packages/media-tools/lib/renderer/media-editor-model.cjs",
+      "bytes": 8248,
+      "sha256": "ebbedb37bff414bf769d38de3b9befebcb83cd7e7e11fdcc256922c76b1cdffd"
+    },
+    {
+      "path": "packages/media-tools/lib/renderer/video-controls.cjs",
+      "bytes": 5695,
+      "sha256": "8c56a2ff4588c3560597d9dc4f9bb917294b2f37e234d2a9506cd225eb2a79fa"
+    },
+    {
+      "path": "packages/media-tools/lib/renderer/video-subtitle-persistence.cjs",
+      "bytes": 3803,
+      "sha256": "64eb6148028d80ac5efb97bef717c501b91c08cdc3aa6bd20542452a3c00c165"
+    },
+    {
+      "path": "packages/media-tools/lib/shared/media-editor.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/media-tools/lib/shared/video-playback.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/media-tools/package.json",
+      "bytes": 610,
+      "sha256": "ca9d9a5912d814562898f8a789f916de3fe99321c1c7b44a03f95cbe1b1d108d"
+    },
+    {
+      "path": "packages/media-tools/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/media-tools/sources/main/media-editor-captions.cjs",
+      "bytes": 4061,
+      "sha256": "d7b6734f6d8b8f581d5e9cf9bb650fda11698ccbec212a81d0b11f2d0ae62f00"
+    },
+    {
+      "path": "packages/media-tools/sources/main/media-editor-compose.cjs",
+      "bytes": 3466,
+      "sha256": "b046f1762a3ce5aef382827f00aa809739dadccbab81abf947aca7f7f92c5002"
+    },
+    {
+      "path": "packages/media-tools/sources/main/media-editor-format.cjs",
+      "bytes": 8289,
+      "sha256": "c8643b04c2cb3ea4dc16330181f53687f7422b18a11d454d6036cbb914c546f0"
+    },
+    {
+      "path": "packages/media-tools/sources/main/subtitle-format-validation.cjs",
+      "bytes": 2076,
+      "sha256": "53fcccbeced1c0c0f588516c431ce1a940013c97ac72ed9d058287189618cc04"
+    },
+    {
+      "path": "packages/media-tools/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/media-tools/sources/main/video-service.cjs",
+      "bytes": 6828,
+      "sha256": "bb27d4c9d263d5e2f8b8a2697013241496065e25af0a3552d9bd17e401df635f"
+    },
+    {
+      "path": "packages/media-tools/sources/main/video-subtitles.cjs",
+      "bytes": 5877,
+      "sha256": "ac39edb18266f37cd8e47c302cf66ace874931a067ed5e9b1f6a35864a78ad7b"
+    },
+    {
+      "path": "packages/media-tools/sources/renderer/media-editor-model.ts",
+      "bytes": 7377,
+      "sha256": "25b045721737569dfa294e5deac8e007c560e37fb7b0b52ec7af51143d1d9583"
+    },
+    {
+      "path": "packages/media-tools/sources/renderer/video-controls.ts",
+      "bytes": 4911,
+      "sha256": "3a5aa85e8f91d5371dc5561d2d519d513513a11115c1024c11c0e7c156024e0d"
+    },
+    {
+      "path": "packages/media-tools/sources/renderer/video-subtitle-persistence.ts",
+      "bytes": 4192,
+      "sha256": "00009008415f08e7c16a0a09de02b30076c311c53698b01de48f94782fc0e8b1"
+    },
+    {
+      "path": "packages/media-tools/sources/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "packages/media-tools/sources/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "packages/media-tools/test/package.test.cjs",
+      "bytes": 728,
+      "sha256": "9eefa863df1c896c5f2aea0cd84eeaf31a5f3cb86a59de2bfaa7178b98064c48"
+    },
+    {
+      "path": "packages/note-exchange/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/note-exchange/README.md",
+      "bytes": 2819,
+      "sha256": "28344290aad5326eb63455a5fb5faf8c0c19ab875b621db002886d2d03b524bd"
+    },
+    {
+      "path": "packages/note-exchange/index.cjs",
+      "bytes": 368,
+      "sha256": "8238a42041b8788ac6ac2bf36019a90b4a87f2a3151d455b56715bfe56dc7928"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "52900b6fdb184972d4c0f3949156889c2fdda223e390cd58c2c596766c36e641"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "f73309311e7baef6b7fddaaa778e56793e7bb54892cd7f7ee86fe775d1e20d8b"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "5f6ec7470ce276e80ad300c40d194d451873b5599536ee107251d7b898e8e973"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "02033b792aac4f78783a6b12d2c1ef3ce0861e0d150aa55f6a1de2d7ac88aaad"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/boardnotes-file-zip.cjs",
+      "bytes": 7597,
+      "sha256": "475f8c04f2f53b976a49586dfc8e4a28ca045076407bf13e19ec8fd6fcfc5aaf"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/boardnotes-format.cjs",
+      "bytes": 260,
+      "sha256": "ee1116eae636f8e73169cb4a84c30f5c9b6a0622ffda8add3170d23e396787e1"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/boardnotes-import.cjs",
+      "bytes": 21602,
+      "sha256": "3ab0b93a7af031cdbfec4586c398f9ca67a5a403a0e95a4a1d4496e9a018cb83"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/boardnotes-objects.cjs",
+      "bytes": 12107,
+      "sha256": "55ee6656295f4abe3d002b2668ce0bbabc817c20dd17185e294e01152b09368e"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/boardnotes-zip.cjs",
+      "bytes": 7630,
+      "sha256": "7e05d3ed99f17b19216890dac1578109e855fc72b70204284427f67b9638ed8c"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/exchange-file-identity.cjs",
+      "bytes": 3555,
+      "sha256": "d02dcbad0125fe2a24ecf715feeb076f2b8783b6084993deba9bb50f900f8c80"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/exchange-stream.cjs",
+      "bytes": 5218,
+      "sha256": "566bb489ea4a916bd260bb45b58123707acba1c5af45a98e3dadf9883c3af7d0"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "27224d9b54282356dafed40a0ea77249efe52b8014c098550355d87d762855c8"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/note-exchange.cjs",
+      "bytes": 15090,
+      "sha256": "6fa0818d0a5d639369ab116bcee7a5b045c3ee19e9dc7b11093edd841af3639b"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/note-outline.cjs",
+      "bytes": 3920,
+      "sha256": "862f759f95d3c51a137104d7afe65489d79654c6b017bd5ade4684a052a7ba66"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "cc32843d3936412631b1e95bd05478373b4de16077244f70e14552a74d0f5433"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/note-exchange/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/note-exchange/package.json",
+      "bytes": 648,
+      "sha256": "9cb4854325d4bd3157ee4bfa7679af63ff388b7541611d384b9f9356b0f58442"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "02e577e158f2cf7dfdbc01b3da2e805b16f2ffe06707600660550dcabd4701e7"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "cbf362e74fec07422d7d272f84231d37103087009117bc52c19a62be4b705572"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "838e6f0e0725afcbce1759af08550bbcc462538f30e264748a8375d4451928ff"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "9528b977d6d5f4628d6f8dcf73812848baa08dbfa6ac8577fb6bfd1bda8ff334"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/boardnotes-file-zip.cjs",
+      "bytes": 7597,
+      "sha256": "573244e240efe51f00d55d1960c4a8a567279f8f55e191455b6e9b9425bbb5db"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/boardnotes-format.cjs",
+      "bytes": 260,
+      "sha256": "ee1116eae636f8e73169cb4a84c30f5c9b6a0622ffda8add3170d23e396787e1"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/boardnotes-import.cjs",
+      "bytes": 21602,
+      "sha256": "3ebcf0d0329659d884fb7400b666a6a910dc66e2348fbbe259c1aa0476639ce4"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/boardnotes-objects.cjs",
+      "bytes": 12107,
+      "sha256": "55ee6656295f4abe3d002b2668ce0bbabc817c20dd17185e294e01152b09368e"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/boardnotes-zip.cjs",
+      "bytes": 7630,
+      "sha256": "561c4e5bf63dba8af244adb53fa100af1d81543e8c48cad4e91cc27873467c5f"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/exchange-file-identity.cjs",
+      "bytes": 3555,
+      "sha256": "343e02dbffb24b885726ab92130413e3403ebbdfbf73449c750492991fb6d4c1"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/exchange-stream.cjs",
+      "bytes": 5218,
+      "sha256": "7b6497db7886d9b48e8a1b561bb2fae82d4d628e4bc7d61047bec3d0fe4d639b"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "bd4a888cb79d4103656c0575d1f65f3980671a98499a829c1ba5c0c73af66172"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/note-exchange.cjs",
+      "bytes": 15090,
+      "sha256": "6981eb02ee680c3d0acaca53b776146642bf2d3e3a3a30403ccac9df9bc8c883"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/note-outline.cjs",
+      "bytes": 3920,
+      "sha256": "41e50aa6e0b3207672af3f653e0681e3800ea7753d45ad917772b2cc0fa05324"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "900be87f5c8f111e7f767c104924e9c3dc7b4eee786f75d074259a129e21be55"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/note-exchange/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/note-exchange/test/package.test.cjs",
+      "bytes": 608,
+      "sha256": "57a6d748543827273f2681469a30e4bee7b4567db751efff9d29389a7c2118ff"
+    },
+    {
+      "path": "packages/notebook-data/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/notebook-data/README.md",
+      "bytes": 3119,
+      "sha256": "9d2e14ef4f0d6561a9b9fe8d6f1bbc13e49012d51716201cae55092b9d2c7e0e"
+    },
+    {
+      "path": "packages/notebook-data/index.cjs",
+      "bytes": 564,
+      "sha256": "d36664018867c40fe5b08c85b822bcf9806973ea5a253ed27f333f6dcf63be1d"
+    },
+    {
+      "path": "packages/notebook-data/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/notebook-data/lib/main/excel-zip-budget.cjs",
+      "bytes": 1932,
+      "sha256": "4612b00a5aec7606219b29372bd7283d586f7874231e2524647354c973109b46"
+    },
+    {
+      "path": "packages/notebook-data/lib/main/notebook-data-worker.cjs",
+      "bytes": 6019,
+      "sha256": "9956c122abdaf09b59d12421e8a374c04e43d00f0b888ed10b6460dbd30f66c9"
+    },
+    {
+      "path": "packages/notebook-data/lib/main/notebook-data.cjs",
+      "bytes": 3660,
+      "sha256": "210f1b5937de3522bfce8167d8340198b3c95851f6cad66d18d2da1521e49eb5"
+    },
+    {
+      "path": "packages/notebook-data/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/notebook-data/lib/renderer/data-file-parsers.cjs",
+      "bytes": 3421,
+      "sha256": "c0a7af5b2dc852a802ca6e52b4bfc6a7279c8508d212471dc4146b306fab8727"
+    },
+    {
+      "path": "packages/notebook-data/lib/renderer/notebook-actions.cjs",
+      "bytes": 9985,
+      "sha256": "5fa11b401c211b19a84f0924a34a50f9d187af6b24300ed175f2199f42349a4f"
+    },
+    {
+      "path": "packages/notebook-data/lib/renderer/notebook-events.cjs",
+      "bytes": 2646,
+      "sha256": "31a39cab2c4d1bedba65e39409ad583bb5abf43ec6565d5904599c6f99231949"
+    },
+    {
+      "path": "packages/notebook-data/lib/renderer/notebook-html-format.cjs",
+      "bytes": 3112,
+      "sha256": "21978a0be1a65dca6fa9c85ed4ce63866893d8f084de2776cdc74081443fffb0"
+    },
+    {
+      "path": "packages/notebook-data/lib/renderer/notebook-html-format.css",
+      "bytes": 7834,
+      "sha256": "f49373359fe1b2ce90a426cc4cdc07ab53d07774e231d17b2034ecf04f36836e"
+    },
+    {
+      "path": "packages/notebook-data/lib/renderer/notebook-outline.cjs",
+      "bytes": 4036,
+      "sha256": "9d7dbad289f33523d2b07b081a063b0e0651319e82f2a40c1048b537c4b7e06e"
+    },
+    {
+      "path": "packages/notebook-data/lib/renderer/notebook-session.cjs",
+      "bytes": 5464,
+      "sha256": "514715cdf69b76489051ef48479ef7138b8843f8c813b50ba8718f34c1b6d712"
+    },
+    {
+      "path": "packages/notebook-data/lib/shared/desktop-api.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-data/lib/shared/media-editor.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-data/lib/shared/notebook-format.cjs",
+      "bytes": 16370,
+      "sha256": "ccea56555e11ce16445c882836c851f405e8e46df98b886a3e5b658fbed4f126"
+    },
+    {
+      "path": "packages/notebook-data/lib/shared/pdf-extend.cjs",
+      "bytes": 1253,
+      "sha256": "4ab4f543de9d95144f4d818dfb18bdc2477fb10c5de03fca527705333d35f3bf"
+    },
+    {
+      "path": "packages/notebook-data/lib/shared/study-transfer.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-data/lib/shared/study.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-data/lib/shared/video-playback.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-data/lib/vendor/excel/LICENSE-SheetJS.txt",
+      "bytes": 11355,
+      "sha256": "4d2a38ac35cda06a555c84074a819d413339cd3691b822cae50f8f322fe01f64"
+    },
+    {
+      "path": "packages/notebook-data/lib/vendor/excel/PROVENANCE.json",
+      "bytes": 436,
+      "sha256": "10ae69028281a1fa76160e1b4125ee65366456007886565cf2d5cf8de8dd47fa"
+    },
+    {
+      "path": "packages/notebook-data/lib/vendor/excel/xlsx.full.min.js",
+      "bytes": 951904,
+      "sha256": "cc015130aa8521e7f088f88898eba949ccdcbfb38df0bd129b44b7273c3a6f41"
+    },
+    {
+      "path": "packages/notebook-data/package.json",
+      "bytes": 703,
+      "sha256": "9958003f5c8c042345ec28c1af1d4eda6525eb1858155a10ee1ba28abcb98f34"
+    },
+    {
+      "path": "packages/notebook-data/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/notebook-data/sources/main/excel-zip-budget.cjs",
+      "bytes": 1932,
+      "sha256": "4612b00a5aec7606219b29372bd7283d586f7874231e2524647354c973109b46"
+    },
+    {
+      "path": "packages/notebook-data/sources/main/notebook-data-worker.cjs",
+      "bytes": 6019,
+      "sha256": "0d09d2e21b4d8ab6a18c0949937c1cbb8f088186068c1fb9e8889b3fb5767ec5"
+    },
+    {
+      "path": "packages/notebook-data/sources/main/notebook-data.cjs",
+      "bytes": 3660,
+      "sha256": "808e11056d660abc5cfa617fb59bd33353731c1a61313a14de65a622b71c9af7"
+    },
+    {
+      "path": "packages/notebook-data/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/notebook-data/sources/renderer/data-file-parsers.ts",
+      "bytes": 3068,
+      "sha256": "260811b2864253f08ed1e3a81a82a51d3cf6e8a7e7a46e4b868525c940562c17"
+    },
+    {
+      "path": "packages/notebook-data/sources/renderer/notebook-actions.ts",
+      "bytes": 9146,
+      "sha256": "d12c36ae38923d0cec19c816c2b7f6e2d2a1dbbdddd532560750f4a9221b0f7c"
+    },
+    {
+      "path": "packages/notebook-data/sources/renderer/notebook-events.ts",
+      "bytes": 2068,
+      "sha256": "3583affcc8ac228c45dabeebf1cb0d25c0e8616ca9f9b15e35754fce90158abd"
+    },
+    {
+      "path": "packages/notebook-data/sources/renderer/notebook-html-format.css",
+      "bytes": 7834,
+      "sha256": "f49373359fe1b2ce90a426cc4cdc07ab53d07774e231d17b2034ecf04f36836e"
+    },
+    {
+      "path": "packages/notebook-data/sources/renderer/notebook-html-format.ts",
+      "bytes": 2747,
+      "sha256": "ba39116ca77527ffb89b02706da18b851b30e9839035f496bbbc101b33af1e07"
+    },
+    {
+      "path": "packages/notebook-data/sources/renderer/notebook-outline.ts",
+      "bytes": 4898,
+      "sha256": "189521c8ca371042893f29e40fa7c4985fe8d90811b0f950e580ca5363bb28af"
+    },
+    {
+      "path": "packages/notebook-data/sources/renderer/notebook-session.ts",
+      "bytes": 5784,
+      "sha256": "c44cb08a67196a62f79af70da363a1928aab0132138a983070ca662a595527a0"
+    },
+    {
+      "path": "packages/notebook-data/sources/shared/desktop-api.ts",
+      "bytes": 30468,
+      "sha256": "fd059b18dcadeb058efe0fb3bcdaf71a60e349fb3eaff681395ddd23f7ea58e9"
+    },
+    {
+      "path": "packages/notebook-data/sources/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "packages/notebook-data/sources/shared/notebook-format.ts",
+      "bytes": 17866,
+      "sha256": "6df2c30693c173d3191411adcfc2adc94c8dfef8bd2e70b611dc461eea81ea5c"
+    },
+    {
+      "path": "packages/notebook-data/sources/shared/pdf-extend.ts",
+      "bytes": 2273,
+      "sha256": "a800f354aff8c48bac5ba9390542793bcfa2963b5b66511fb327d2acb869f717"
+    },
+    {
+      "path": "packages/notebook-data/sources/shared/study-transfer.ts",
+      "bytes": 783,
+      "sha256": "159fae06af83dece21ee48006a77c8c5af0ceca0181b4922ede5e2791ea29233"
+    },
+    {
+      "path": "packages/notebook-data/sources/shared/study.ts",
+      "bytes": 900,
+      "sha256": "b0a1936ddfeb292c251afd3b293a7cbce2a05b3c1cb4432d84aed0dbafac8acb"
+    },
+    {
+      "path": "packages/notebook-data/sources/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "packages/notebook-data/sources/vendor/excel/LICENSE-SheetJS.txt",
+      "bytes": 11355,
+      "sha256": "4d2a38ac35cda06a555c84074a819d413339cd3691b822cae50f8f322fe01f64"
+    },
+    {
+      "path": "packages/notebook-data/sources/vendor/excel/PROVENANCE.json",
+      "bytes": 436,
+      "sha256": "10ae69028281a1fa76160e1b4125ee65366456007886565cf2d5cf8de8dd47fa"
+    },
+    {
+      "path": "packages/notebook-data/sources/vendor/excel/xlsx.full.min.js",
+      "bytes": 951904,
+      "sha256": "cc015130aa8521e7f088f88898eba949ccdcbfb38df0bd129b44b7273c3a6f41"
+    },
+    {
+      "path": "packages/notebook-data/test/notebook-csv.test.cjs",
+      "bytes": 13592,
+      "sha256": "47797e9b0faf948a36275dd2f09fcbf517b730ee1b530935c2a4f8caada269b7"
+    },
+    {
+      "path": "packages/notebook-data/test/notebook-html-format.test.cjs",
+      "bytes": 4985,
+      "sha256": "3070beaffb8e7c5525e9f7486a820cba42a53ca11dca8a758a8d497131577b53"
+    },
+    {
+      "path": "packages/notebook-data/test/notebook-outline.test.cjs",
+      "bytes": 6470,
+      "sha256": "4a62491d2ad6337b0acca8e37e7d64d7ec85aca7d3ae19b9a75a27fd32d00121"
+    },
+    {
+      "path": "packages/notebook-data/test/notebook-session.test.cjs",
+      "bytes": 6161,
+      "sha256": "98e32fb9e7ab147d99d3b6745c0d8a8e6a915da2d86a433ebf01a926f84cfb5a"
+    },
+    {
+      "path": "packages/notebook-data/test/package.test.cjs",
+      "bytes": 930,
+      "sha256": "421240999eb810a6e93dc14fb92ac7a2c9aa4d311b32c73a39dd7d48ef6fd261"
+    },
+    {
+      "path": "packages/notebook-runtime/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/notebook-runtime/README.md",
+      "bytes": 5598,
+      "sha256": "c3a52b9e1bd284b6f2319ce263b29cb2e36ae0ccfb0935282f08f6ffe4d9f70d"
+    },
+    {
+      "path": "packages/notebook-runtime/index.cjs",
+      "bytes": 279,
+      "sha256": "1ce62f1a063aa6d8f1af69c388ae0ce114155bef5560f1b7f1bc73d98d2a14de"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/main/notebook-service.cjs",
+      "bytes": 12722,
+      "sha256": "d244c7bbc69ba911d0cb395d9475615373bcbca394214b5246c6531e074fae8b"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/main/python-service.cjs",
+      "bytes": 4989,
+      "sha256": "6ed56c01c60dd5affaaefe93b058375a58acbafc2f9eddefa4df2aac67d3ab2d"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "c975a353291876cf9c4dc822f44b3e6c0ddd7c6836baf37190b31a65f5b787e1"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/renderer/notebook-run-controller.cjs",
+      "bytes": 7192,
+      "sha256": "ff83caec6568e208ec24bde380083dfe0d67cc4eec521bef66af4e15fc1a48d4"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/shared/desktop-api.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/shared/media-editor.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/shared/notebook-format.cjs",
+      "bytes": 16370,
+      "sha256": "ccea56555e11ce16445c882836c851f405e8e46df98b886a3e5b658fbed4f126"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/shared/pdf-extend.cjs",
+      "bytes": 1253,
+      "sha256": "4ab4f543de9d95144f4d818dfb18bdc2477fb10c5de03fca527705333d35f3bf"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/shared/study-transfer.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/shared/study.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-runtime/lib/shared/video-playback.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/notebook-runtime/package.json",
+      "bytes": 594,
+      "sha256": "fd448abf544eec445407fc6518558340f73954437a98374ddd375f49370d1858"
+    },
+    {
+      "path": "packages/notebook-runtime/resources/kernel.py",
+      "bytes": 7374,
+      "sha256": "79c8b68a839a977596e4b8d6cafdf55cc8cd511c3aa51ac2814b9b622864231d"
+    },
+    {
+      "path": "packages/notebook-runtime/resources/prepare-runtime.py",
+      "bytes": 3294,
+      "sha256": "4d31c0f3a2e6efbd32ae4b9c6fdb5482290f70579f1164d02f4feda1be1e10eb"
+    },
+    {
+      "path": "packages/notebook-runtime/resources/requirements-darwin-arm64.lock",
+      "bytes": 2986,
+      "sha256": "069ad5702f33279c01b41eec8ed68ebd896b62b512d9c7b41513d029defe394e"
+    },
+    {
+      "path": "packages/notebook-runtime/resources/smoke-runtime.cjs",
+      "bytes": 3879,
+      "sha256": "fd1e416e0076e6320c2ff11499616f2c940c703e2beb964c0b5f4f343c27cd38"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/main/notebook-service.cjs",
+      "bytes": 12722,
+      "sha256": "3078873460e6a2feb13d35b62c33af78be0859a0149f5bb2f7baf4874a64eb45"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/main/python-service.cjs",
+      "bytes": 4989,
+      "sha256": "7f0bbce261757ae15d8b29883b4334489e79c6c3683dc0d40bb8bcd1739d4dde"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "9a5fac73c0225920f91081e066279dd0d734e26c64a82b5e1472ea650f71e7cb"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/renderer/notebook-run-controller.ts",
+      "bytes": 6870,
+      "sha256": "56b5dd1de13bd95a459239089470e60ee104ea5df29d9b56b0896eb3d85b302c"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/shared/desktop-api.ts",
+      "bytes": 30468,
+      "sha256": "fd059b18dcadeb058efe0fb3bcdaf71a60e349fb3eaff681395ddd23f7ea58e9"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/shared/notebook-format.ts",
+      "bytes": 17866,
+      "sha256": "6df2c30693c173d3191411adcfc2adc94c8dfef8bd2e70b611dc461eea81ea5c"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/shared/pdf-extend.ts",
+      "bytes": 2273,
+      "sha256": "a800f354aff8c48bac5ba9390542793bcfa2963b5b66511fb327d2acb869f717"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/shared/study-transfer.ts",
+      "bytes": 783,
+      "sha256": "159fae06af83dece21ee48006a77c8c5af0ceca0181b4922ede5e2791ea29233"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/shared/study.ts",
+      "bytes": 900,
+      "sha256": "b0a1936ddfeb292c251afd3b293a7cbce2a05b3c1cb4432d84aed0dbafac8acb"
+    },
+    {
+      "path": "packages/notebook-runtime/sources/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "packages/notebook-runtime/test/notebook-restart.test.cjs",
+      "bytes": 8271,
+      "sha256": "0f1b8d04429951a8c30c1070d96a9c5bc796493bc73bb573f6bf6ec04fbc604f"
+    },
+    {
+      "path": "packages/notebook-runtime/test/notebook-session-runtime.test.cjs",
+      "bytes": 10290,
+      "sha256": "0ce1e4685077ec7f4f1e5532cf86c8cc2d2e40c1303979c194554260ccd24a5a"
+    },
+    {
+      "path": "packages/notebook-runtime/test/package.test.cjs",
+      "bytes": 794,
+      "sha256": "c9e12af749542a81eb6f75f84526f9d83a03741a81549dda43870d7aede2fa0b"
+    },
+    {
+      "path": "packages/ocr-tools/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/ocr-tools/README.md",
+      "bytes": 2668,
+      "sha256": "f173652c4ad476ceb20a4353d2c62e8f376adfe5292b8cf5366671dfcb9cf92b"
+    },
+    {
+      "path": "packages/ocr-tools/index.cjs",
+      "bytes": 258,
+      "sha256": "ab33462f22f1ede04ac67274abe9749cd7896a8199aa7876b42536c2aef4901b"
+    },
+    {
+      "path": "packages/ocr-tools/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/ocr-tools/lib/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "27224d9b54282356dafed40a0ea77249efe52b8014c098550355d87d762855c8"
+    },
+    {
+      "path": "packages/ocr-tools/lib/main/local-ocr-service.cjs",
+      "bytes": 11567,
+      "sha256": "521ffb91fe423c1857b26988b4bbc2fd0ff9393da00b37e97ea26a1f7e147bb9"
+    },
+    {
+      "path": "packages/ocr-tools/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/ocr-tools/lib/renderer/ocr-capture.cjs",
+      "bytes": 2184,
+      "sha256": "20e4c731c09915cefd6248f30ba5ffc3d463fd538dee907b3693eb8249083779"
+    },
+    {
+      "path": "packages/ocr-tools/package.json",
+      "bytes": 567,
+      "sha256": "feec0364f1d1712ed1f0620068e7d88dfb13e9a4f667b3a2c5555c99303031c0"
+    },
+    {
+      "path": "packages/ocr-tools/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/ocr-tools/sources/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "bd4a888cb79d4103656c0575d1f65f3980671a98499a829c1ba5c0c73af66172"
+    },
+    {
+      "path": "packages/ocr-tools/sources/main/local-ocr-service.cjs",
+      "bytes": 11567,
+      "sha256": "f4cc6dfe619fc9b7c2788743978bf12c87635d3643646839daed0a107a4dad82"
+    },
+    {
+      "path": "packages/ocr-tools/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/ocr-tools/sources/renderer/ocr-capture.ts",
+      "bytes": 1866,
+      "sha256": "1c1c59142b6563e63eeadc3c3aa1b28ecb5e8221eb75a5ecd57ef79e4067d9a6"
+    },
+    {
+      "path": "packages/ocr-tools/test/package.test.cjs",
+      "bytes": 645,
+      "sha256": "8aac619e87858a90f98a5bf5b09e8b6c308a24f0a179c3229e1dce298a3cdbe3"
+    },
+    {
+      "path": "packages/office-documents/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/office-documents/README.md",
+      "bytes": 5140,
+      "sha256": "6183ba8d68f82e3fefe92b1e01a6149557edffb7fd76f6f32b2d1c826b224892"
+    },
+    {
+      "path": "packages/office-documents/index.cjs",
+      "bytes": 539,
+      "sha256": "c5be7f30685ba2281984cb1b7c57d26bb8484a31defb765e1836ca71bd5a9d0a"
+    },
+    {
+      "path": "packages/office-documents/lib/main/document-pdf.cjs",
+      "bytes": 6103,
+      "sha256": "e8652dd6ef8ef3787e16d2b282f5f7133d07c85ee2be7c2cdfd0c4e72750f64d"
+    },
+    {
+      "path": "packages/office-documents/lib/main/docx-preview.cjs",
+      "bytes": 3201,
+      "sha256": "b5b038f2cad18111f1ce2cbbca9c1d9934baa6e2a2df072de0a06a846db0c75d"
+    },
+    {
+      "path": "packages/office-documents/lib/main/editable-document-model.cjs",
+      "bytes": 2447,
+      "sha256": "f6f57fd5a696b429262002170fab6aae59c41a6e2a6b7dcd862f05bba4649eb9"
+    },
+    {
+      "path": "packages/office-documents/lib/main/editable-office.cjs",
+      "bytes": 12980,
+      "sha256": "52b2888b997c5dbb2dc0f6e682b84403c1cd1e57333687c03bc62d6e0617b822"
+    },
+    {
+      "path": "packages/office-documents/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/office-documents/lib/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "27224d9b54282356dafed40a0ea77249efe52b8014c098550355d87d762855c8"
+    },
+    {
+      "path": "packages/office-documents/lib/main/legacy-doc-preview.cjs",
+      "bytes": 2652,
+      "sha256": "f72661f9a9bcf240218112c19c5176f7b1252f9e0f4ae6aacdd8ca3d5ac44788"
+    },
+    {
+      "path": "packages/office-documents/lib/main/note-extraction.cjs",
+      "bytes": 3836,
+      "sha256": "6a74a49ebdae34917435ebddd9d3b1972407cd8880e6a472a2db7ab262487efc"
+    },
+    {
+      "path": "packages/office-documents/lib/main/office-embedded-images.cjs",
+      "bytes": 9902,
+      "sha256": "b2203c18740241fc92442ecc5f8a9a417c78fd605ebfb24a80c99cbda68bd806"
+    },
+    {
+      "path": "packages/office-documents/lib/main/tex-service.cjs",
+      "bytes": 11769,
+      "sha256": "f1f10b53afa3fa2b3f4ba228a7faced9f15dc1a685ab82c450cdd8cd938422a0"
+    },
+    {
+      "path": "packages/office-documents/lib/main/vault-service.cjs",
+      "bytes": 814,
+      "sha256": "4c9d8265e3b22c343422abc41a2a762cb79324f0d0ba06c3d726c7f90a585996"
+    },
+    {
+      "path": "packages/office-documents/package.json",
+      "bytes": 755,
+      "sha256": "4e7539dca8ca826861d7d97ecde301c31996d67145af51d958dd076f52d49876"
+    },
+    {
+      "path": "packages/office-documents/sources/main/document-pdf.cjs",
+      "bytes": 5982,
+      "sha256": "03494a74050d58d00cd43063ca5fc8216b74518b0fdc28a781348fd566f0495d"
+    },
+    {
+      "path": "packages/office-documents/sources/main/docx-preview.cjs",
+      "bytes": 3201,
+      "sha256": "3f1eb537e5f55fc8ab69623810cb50c4a57e08119d75616061b8bed9e47a80eb"
+    },
+    {
+      "path": "packages/office-documents/sources/main/editable-document-model.cjs",
+      "bytes": 2447,
+      "sha256": "f13c4a73ef1feef21e108e717ff6bcb3f3c43d40c41aa5ddc2648912ebdefa35"
+    },
+    {
+      "path": "packages/office-documents/sources/main/editable-office.cjs",
+      "bytes": 12980,
+      "sha256": "d84b227d0247d3d58f28f7a2d2e3bd6a2ac24a2410f3049cc1326e7279f99037"
+    },
+    {
+      "path": "packages/office-documents/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/office-documents/sources/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "bd4a888cb79d4103656c0575d1f65f3980671a98499a829c1ba5c0c73af66172"
+    },
+    {
+      "path": "packages/office-documents/sources/main/legacy-doc-preview.cjs",
+      "bytes": 2652,
+      "sha256": "149be2c6a9767f4cc904037c9d49e490633dbf0f73ab94191348f13ff17ec2b2"
+    },
+    {
+      "path": "packages/office-documents/sources/main/note-extraction.cjs",
+      "bytes": 3836,
+      "sha256": "6a74a49ebdae34917435ebddd9d3b1972407cd8880e6a472a2db7ab262487efc"
+    },
+    {
+      "path": "packages/office-documents/sources/main/office-embedded-images.cjs",
+      "bytes": 9902,
+      "sha256": "d7de35523b4f06c19a03de5a5666f562ca0916ced1bb1d1d618bc514b505fdb3"
+    },
+    {
+      "path": "packages/office-documents/sources/main/tex-service.cjs",
+      "bytes": 11769,
+      "sha256": "f1f10b53afa3fa2b3f4ba228a7faced9f15dc1a685ab82c450cdd8cd938422a0"
+    },
+    {
+      "path": "packages/office-documents/sources/main/vault-service.cjs",
+      "bytes": 814,
+      "sha256": "4c9d8265e3b22c343422abc41a2a762cb79324f0d0ba06c3d726c7f90a585996"
+    },
+    {
+      "path": "packages/office-documents/test/package.test.cjs",
+      "bytes": 714,
+      "sha256": "9b50fbac7332c06fe52eb4970bd83b76dba885d0421694083a1845658c1903db"
+    },
+    {
+      "path": "packages/office-documents/test/tex-and-notes.test.cjs",
+      "bytes": 6793,
+      "sha256": "8c8ca15982146718ee40009357c67754c551a56bb797690499934bb78e89d794"
+    },
+    {
+      "path": "packages/pdf-annotations/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/pdf-annotations/README.md",
+      "bytes": 2727,
+      "sha256": "8a312da73c5a52564f38c5970ac7d7b84beef56ecb68fcb6f48d80102decfb93"
+    },
+    {
+      "path": "packages/pdf-annotations/index.cjs",
+      "bytes": 334,
+      "sha256": "e0b37b79c245c2fe64dd01799b2e5a72594081eee73badf5e89357c058ed1491"
+    },
+    {
+      "path": "packages/pdf-annotations/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/pdf-annotations/lib/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "27224d9b54282356dafed40a0ea77249efe52b8014c098550355d87d762855c8"
+    },
+    {
+      "path": "packages/pdf-annotations/lib/main/pdf-extend-model.cjs",
+      "bytes": 4692,
+      "sha256": "adf6fc938435b74606c2ef730020cd745bf1537964a072d4d870c45b03b77fa6"
+    },
+    {
+      "path": "packages/pdf-annotations/lib/main/pdf-extend-service.cjs",
+      "bytes": 6441,
+      "sha256": "33f90fe15b15ddfeb289fdb4fadd839f1956d4d706d7d26332f733d0a4330407"
+    },
+    {
+      "path": "packages/pdf-annotations/lib/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "cc32843d3936412631b1e95bd05478373b4de16077244f70e14552a74d0f5433"
+    },
+    {
+      "path": "packages/pdf-annotations/lib/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/pdf-annotations/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/pdf-annotations/package.json",
+      "bytes": 585,
+      "sha256": "b300a75c76358fe32009df343aabe6a1a7b0cd9df26d7e1205cf225b280128f4"
+    },
+    {
+      "path": "packages/pdf-annotations/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/pdf-annotations/sources/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "bd4a888cb79d4103656c0575d1f65f3980671a98499a829c1ba5c0c73af66172"
+    },
+    {
+      "path": "packages/pdf-annotations/sources/main/pdf-extend-model.cjs",
+      "bytes": 4692,
+      "sha256": "e7bb20f7d8a2eea1c0f2924f15837391a8c88e8fb8173b52504798e1ef4a96a0"
+    },
+    {
+      "path": "packages/pdf-annotations/sources/main/pdf-extend-service.cjs",
+      "bytes": 6441,
+      "sha256": "5eb6900fbf1f9f4cb03b0a3a4cc6d4425ff57f7a6cd852f3ea2bbb5f788627dc"
+    },
+    {
+      "path": "packages/pdf-annotations/sources/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "900be87f5c8f111e7f767c104924e9c3dc7b4eee786f75d074259a129e21be55"
+    },
+    {
+      "path": "packages/pdf-annotations/sources/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/pdf-annotations/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/pdf-annotations/test/package.test.cjs",
+      "bytes": 663,
+      "sha256": "61d7eedd5429ace07df867bbe0006a503441eb2deef6746cc6eb9df133e63a35"
+    },
+    {
+      "path": "packages/pdf-tools/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/pdf-tools/README.md",
+      "bytes": 3745,
+      "sha256": "145ae0c8886ed9b3b4ae61a148c98ac77bdf1fdcbc1ac9c1ef9d17b283659fdb"
+    },
+    {
+      "path": "packages/pdf-tools/index.cjs",
+      "bytes": 631,
+      "sha256": "bfb314c17d9396dd96691c59a9fbd6459c58de73be87147af15023c77dd54cce"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/board-pdf-preview.cjs",
+      "bytes": 1897,
+      "sha256": "3fb2d0ba1c9c995a40cb89b5276da4fb69e51f24ad4647812a6d546b9d3f3deb"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/onenote-geometry-guard.cjs",
+      "bytes": 13291,
+      "sha256": "71e1fd0e6fd4e8d0e0a2833517bc05cdd3ab7b6487ac4ee2b166837c5c87556a"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/onenote-hd.cjs",
+      "bytes": 15621,
+      "sha256": "38e1531e040ef95b17a067b919c17e569f3cf58fc19cbc2b84185f8dc6b240f3"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/onenote-pdf.cjs",
+      "bytes": 19975,
+      "sha256": "40dd752a1b89a7c22b7805094842eae02e4abc07c74937c3a071696d3df997ec"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "cc32843d3936412631b1e95bd05478373b4de16077244f70e14552a74d0f5433"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/pdf-translation-export.cjs",
+      "bytes": 5645,
+      "sha256": "9cd138dc8828b416f449002a7922499861e2bbfe36ac46f300bcca1b4db359b3"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/translation-service.cjs",
+      "bytes": 15486,
+      "sha256": "207a244931555e9acb72adac2dd7f324ad3c5f9a46ebcb2912cd80a0d7819e0a"
+    },
+    {
+      "path": "packages/pdf-tools/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/pdf-tools/lib/pdf-documents.cjs",
+      "bytes": 2038,
+      "sha256": "a4865fd26518011053bd83f0eecc716eb6c5ebad18db77089ae449db4cf9237f"
+    },
+    {
+      "path": "packages/pdf-tools/lib/renderer/browser-pdf-links.cjs",
+      "bytes": 1655,
+      "sha256": "3fcc538fc8b6a8715ef36eea8a31c0e89aba095f05fd4f3eb4a6ea2b13c85635"
+    },
+    {
+      "path": "packages/pdf-tools/lib/renderer/pdf-reader-zoom.cjs",
+      "bytes": 2098,
+      "sha256": "bbc47aab18f5acf84561d747ede16abf39a17d07b27fc9e2a0eb29e99b5cf5ef"
+    },
+    {
+      "path": "packages/pdf-tools/lib/renderer/pdf-selection-capture.cjs",
+      "bytes": 3388,
+      "sha256": "a16bc28fe1c847841c64b2b9288e7458987ad153afe6439d9dac1bd55241b6c4"
+    },
+    {
+      "path": "packages/pdf-tools/package.json",
+      "bytes": 683,
+      "sha256": "2ae8553093216c6a6201e6a83ec6f2d9edfcab8ba2061b46ee3e30bcca9515ab"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/board-pdf-preview.cjs",
+      "bytes": 1897,
+      "sha256": "b5185f9962aa02bb96e571218c0605b60130d5a13c87318b9e466f13144888f0"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/onenote-geometry-guard.cjs",
+      "bytes": 13291,
+      "sha256": "71e1fd0e6fd4e8d0e0a2833517bc05cdd3ab7b6487ac4ee2b166837c5c87556a"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/onenote-hd.cjs",
+      "bytes": 15621,
+      "sha256": "38e1531e040ef95b17a067b919c17e569f3cf58fc19cbc2b84185f8dc6b240f3"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/onenote-pdf.cjs",
+      "bytes": 19975,
+      "sha256": "bf120cbabaed8713f7e8511f17de27b61eade81eaffaf29635dbb6e8d0e37b79"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "900be87f5c8f111e7f767c104924e9c3dc7b4eee786f75d074259a129e21be55"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/pdf-translation-export.cjs",
+      "bytes": 5645,
+      "sha256": "d94bb004b06f22806c3fe193dfefa6d2bd2d38db07d482fe5083fc00ffee7801"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/translation-service.cjs",
+      "bytes": 15486,
+      "sha256": "5b87761b4639855cec8b3e3d934103e0171c7059147a687174701f6d9bfbc267"
+    },
+    {
+      "path": "packages/pdf-tools/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/pdf-tools/sources/renderer/browser-pdf-links.ts",
+      "bytes": 1694,
+      "sha256": "3d6ba7cf2988ddb411297344b655c875cd8953ad30d27056b739a172fb259335"
+    },
+    {
+      "path": "packages/pdf-tools/sources/renderer/pdf-reader-zoom.ts",
+      "bytes": 2154,
+      "sha256": "124ebc71df305b3eee4651bb43a4f285c1dfb40566451eea428302edc1ea8a78"
+    },
+    {
+      "path": "packages/pdf-tools/sources/renderer/pdf-selection-capture.ts",
+      "bytes": 3090,
+      "sha256": "bd008e0eb593a8e88f925731a4df2ce7f8eda7bc0d7bcc388e50928ca57316b3"
+    },
+    {
+      "path": "packages/pdf-tools/test/onenote-pdf-geometry.test.cjs",
+      "bytes": 9194,
+      "sha256": "dd08f2f3099d14e8980272382b52b787ce8859dbb059da8fae447d3a347dfda5"
+    },
+    {
+      "path": "packages/pdf-tools/test/onenote-pdf.test.cjs",
+      "bytes": 4153,
+      "sha256": "ae5bc61fe897974197c2ffee7145555a846f56442d64c196588b23329ee88691"
+    },
+    {
+      "path": "packages/pdf-tools/test/package.test.cjs",
+      "bytes": 1164,
+      "sha256": "339c565b5010c8bcce0f50b3e07785d2dad76625dbe6c895be29538284ed63db"
+    },
+    {
+      "path": "packages/pdf-tools/test/pdf-reader-zoom.test.cjs",
+      "bytes": 4329,
+      "sha256": "1e177c31f3f41b57c09cd55ca5d27ec2cfb316237cb719304e007b5064d6e01c"
+    },
+    {
+      "path": "packages/pdf-tools/test/pdf-selection-capture.test.cjs",
+      "bytes": 4629,
+      "sha256": "17d203caae183a6052c54c5159ed13b2758ba7fb7e2b6395ec5505fba293b393"
+    },
+    {
+      "path": "packages/study-tools/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/study-tools/README.md",
+      "bytes": 2835,
+      "sha256": "372f08d1202ea44ba7aab656bd2d8c1ff8eae698f408c4334dd8c25317ae1ed8"
+    },
+    {
+      "path": "packages/study-tools/index.cjs",
+      "bytes": 432,
+      "sha256": "5461aaad8bec10d88677045b665f9d61a13575c09bdd445e554757e462cb9407"
+    },
+    {
+      "path": "packages/study-tools/lib/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "52900b6fdb184972d4c0f3949156889c2fdda223e390cd58c2c596766c36e641"
+    },
+    {
+      "path": "packages/study-tools/lib/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "f73309311e7baef6b7fddaaa778e56793e7bb54892cd7f7ee86fe775d1e20d8b"
+    },
+    {
+      "path": "packages/study-tools/lib/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "5f6ec7470ce276e80ad300c40d194d451873b5599536ee107251d7b898e8e973"
+    },
+    {
+      "path": "packages/study-tools/lib/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "02033b792aac4f78783a6b12d2c1ef3ce0861e0d150aa55f6a1de2d7ac88aaad"
+    },
+    {
+      "path": "packages/study-tools/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/study-tools/lib/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "27224d9b54282356dafed40a0ea77249efe52b8014c098550355d87d762855c8"
+    },
+    {
+      "path": "packages/study-tools/lib/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "cc32843d3936412631b1e95bd05478373b4de16077244f70e14552a74d0f5433"
+    },
+    {
+      "path": "packages/study-tools/lib/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/study-tools/lib/main/review-service.cjs",
+      "bytes": 11285,
+      "sha256": "b97bc904a6422d2c0ad6c6824a3a03be30fb264f56f1e9fa0d643a049e37be4f"
+    },
+    {
+      "path": "packages/study-tools/lib/main/study-image.cjs",
+      "bytes": 2190,
+      "sha256": "70b9d938f551be32283a768c18f47b72148206a2a49a61cd9f08129236f8a93b"
+    },
+    {
+      "path": "packages/study-tools/lib/main/study-model.cjs",
+      "bytes": 7017,
+      "sha256": "25b640b999b12ef471fdec8a4f20477bf0f3ea01eeeed86625f8b73ff2936cd7"
+    },
+    {
+      "path": "packages/study-tools/lib/main/study-service.cjs",
+      "bytes": 8595,
+      "sha256": "773d020c45562066ab01e8c8363b97fb315ef048d0c079919079ce2ecf897297"
+    },
+    {
+      "path": "packages/study-tools/lib/main/study-transfer-model.cjs",
+      "bytes": 4717,
+      "sha256": "fe10d9de901122f476a13603b18e30613a691c6e409fff7ac9fdb63c512bfc47"
+    },
+    {
+      "path": "packages/study-tools/lib/main/study-transfer-service.cjs",
+      "bytes": 9633,
+      "sha256": "5096b4b1a05030e9aec8a85aad404b1bcfe36ab6d846713bb501ea136bf7952b"
+    },
+    {
+      "path": "packages/study-tools/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/study-tools/lib/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "c975a353291876cf9c4dc822f44b3e6c0ddd7c6836baf37190b31a65f5b787e1"
+    },
+    {
+      "path": "packages/study-tools/lib/renderer/study-outline.cjs",
+      "bytes": 4216,
+      "sha256": "a4f2340df432e913d689367d54761411c2f9c34a5fbedf266745c60df553d33a"
+    },
+    {
+      "path": "packages/study-tools/package.json",
+      "bytes": 586,
+      "sha256": "6fc0f16f2eec548d5b8c43ea6f4b39d7f43c932297bfaf9fe1d0b0b1e991530e"
+    },
+    {
+      "path": "packages/study-tools/sources/main/board-child-links.cjs",
+      "bytes": 5991,
+      "sha256": "02e577e158f2cf7dfdbc01b3da2e805b16f2ffe06707600660550dcabd4701e7"
+    },
+    {
+      "path": "packages/study-tools/sources/main/board-elements.cjs",
+      "bytes": 7838,
+      "sha256": "cbf362e74fec07422d7d272f84231d37103087009117bc52c19a62be4b705572"
+    },
+    {
+      "path": "packages/study-tools/sources/main/board-validation.cjs",
+      "bytes": 8875,
+      "sha256": "838e6f0e0725afcbce1759af08550bbcc462538f30e264748a8375d4451928ff"
+    },
+    {
+      "path": "packages/study-tools/sources/main/board-web-url.cjs",
+      "bytes": 667,
+      "sha256": "9528b977d6d5f4628d6f8dcf73812848baa08dbfa6ac8577fb6bfd1bda8ff334"
+    },
+    {
+      "path": "packages/study-tools/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/study-tools/sources/main/image-import.cjs",
+      "bytes": 2724,
+      "sha256": "bd4a888cb79d4103656c0575d1f65f3980671a98499a829c1ba5c0c73af66172"
+    },
+    {
+      "path": "packages/study-tools/sources/main/pdf-layer-service.cjs",
+      "bytes": 13849,
+      "sha256": "900be87f5c8f111e7f767c104924e9c3dc7b4eee786f75d074259a129e21be55"
+    },
+    {
+      "path": "packages/study-tools/sources/main/pdf-native-ink.cjs",
+      "bytes": 1029,
+      "sha256": "b59e36fcbbbe3c277356a30cda47498a45e3db941c6f949a0947192df3996ddd"
+    },
+    {
+      "path": "packages/study-tools/sources/main/review-service.cjs",
+      "bytes": 11285,
+      "sha256": "eec1d45183c2437da4642153e0c31d9191f20e4c2738c9dd6aa3ada2efb43d18"
+    },
+    {
+      "path": "packages/study-tools/sources/main/study-image.cjs",
+      "bytes": 2190,
+      "sha256": "262c45add82000b5e182d6f952aa64992722437d2ba996d4258d2297cdc964d4"
+    },
+    {
+      "path": "packages/study-tools/sources/main/study-model.cjs",
+      "bytes": 7017,
+      "sha256": "d6723e6420cd6a11199fe6553ff83e7e67141394652e4c08a81ad9a54f1f4dae"
+    },
+    {
+      "path": "packages/study-tools/sources/main/study-service.cjs",
+      "bytes": 8595,
+      "sha256": "b542dc93ba4f0780fbe3a74bf5d8d3cd207a296b01075c258d198bfe5630ee82"
+    },
+    {
+      "path": "packages/study-tools/sources/main/study-transfer-model.cjs",
+      "bytes": 4717,
+      "sha256": "3ae4d7b73f8482b2f355328eb866500df645654d43aad978da2145a1c5537a62"
+    },
+    {
+      "path": "packages/study-tools/sources/main/study-transfer-service.cjs",
+      "bytes": 9633,
+      "sha256": "374afaab89e0e694062577df548dbcfa33c62ed5e9a8afef014c3d170dd8d40a"
+    },
+    {
+      "path": "packages/study-tools/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/study-tools/sources/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "9a5fac73c0225920f91081e066279dd0d734e26c64a82b5e1472ea650f71e7cb"
+    },
+    {
+      "path": "packages/study-tools/sources/renderer/study-outline.ts",
+      "bytes": 4008,
+      "sha256": "4c2fe4633cd3ad0ad99aa1cd0d6452814ff7421280053ad8959da0afa3f2be9f"
+    },
+    {
+      "path": "packages/study-tools/test/package.test.cjs",
+      "bytes": 584,
+      "sha256": "09796a7d42da62b6f956f266011f8b8b54dbc12aaefd038d1320cdf8bbbde23c"
+    },
+    {
+      "path": "packages/task-calendar/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/task-calendar/README.md",
+      "bytes": 3179,
+      "sha256": "4fe67318f130f8ff46231ff45c4454ae19b23f932f635dad265e56cb7742827b"
+    },
+    {
+      "path": "packages/task-calendar/index.cjs",
+      "bytes": 587,
+      "sha256": "9558f1bc205b21ec8b19c7185ac1d1971f805d55653f07d6fade6b0f1a633f6e"
+    },
+    {
+      "path": "packages/task-calendar/lib/main/calendar-service.cjs",
+      "bytes": 12758,
+      "sha256": "9985b5ada16078bb603cb32bef29d545c87435d79641c8b0aa2ee383c54e7ae3"
+    },
+    {
+      "path": "packages/task-calendar/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/task-calendar/lib/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "effc3ffafefd23541698ba8bc6c9b141ccf29cc731497aaf8c638e5acee65cba"
+    },
+    {
+      "path": "packages/task-calendar/lib/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "c975a353291876cf9c4dc822f44b3e6c0ddd7c6836baf37190b31a65f5b787e1"
+    },
+    {
+      "path": "packages/task-calendar/lib/renderer/calendar-ics.cjs",
+      "bytes": 24462,
+      "sha256": "7a93832408640344b0da9faf59fa8633cb5779f5506259788d83fa51e524d479"
+    },
+    {
+      "path": "packages/task-calendar/lib/renderer/calendar-model.cjs",
+      "bytes": 15833,
+      "sha256": "ceaa36071e5163e7dde021ddab56883458a65822d8d2e1a133f05e2bd309676d"
+    },
+    {
+      "path": "packages/task-calendar/lib/renderer/calendar-store.cjs",
+      "bytes": 3959,
+      "sha256": "bda22c629ec87b4281333132e6c7032f27d3a59b3438cb573eb31b770616a529"
+    },
+    {
+      "path": "packages/task-calendar/lib/renderer/calendar-types.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/task-calendar/lib/renderer/checklist-location.cjs",
+      "bytes": 1283,
+      "sha256": "e63f34dd72121b4bd7407803c5d6c6c39c3dbc987efea66cd2b50fb563de77a6"
+    },
+    {
+      "path": "packages/task-calendar/lib/renderer/course-calendar.cjs",
+      "bytes": 10026,
+      "sha256": "04daba83ebada4090bfa67e087e1ca3adf5e8cb1e4915d3ce0fe9aa1c135f935"
+    },
+    {
+      "path": "packages/task-calendar/lib/renderer/course-checklist.cjs",
+      "bytes": 12091,
+      "sha256": "7f0bdd0193905605dc60d072813a1d214a8442e32dc25a92528c453eff4ef6e4"
+    },
+    {
+      "path": "packages/task-calendar/lib/renderer/quick-notes.cjs",
+      "bytes": 7635,
+      "sha256": "2974551eec43fcbc37767e0dc85f6db7262c67cecc3c52256464f743c10d2470"
+    },
+    {
+      "path": "packages/task-calendar/lib/shared/desktop-api.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/task-calendar/lib/shared/internal-file-links.cjs",
+      "bytes": 1972,
+      "sha256": "4d97b8f49cf3cf3c2e55546ffbb79ea8dbf09bda55face29b61b7b5685563b00"
+    },
+    {
+      "path": "packages/task-calendar/lib/shared/media-editor.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/task-calendar/lib/shared/pdf-extend.cjs",
+      "bytes": 1253,
+      "sha256": "4ab4f543de9d95144f4d818dfb18bdc2477fb10c5de03fca527705333d35f3bf"
+    },
+    {
+      "path": "packages/task-calendar/lib/shared/study-transfer.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/task-calendar/lib/shared/study.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/task-calendar/lib/shared/video-playback.cjs",
+      "bytes": 73,
+      "sha256": "d5eedf2cc2b16ca9aedca6b764107874d552988b5fcb6b3779cbb9aba6bbd084"
+    },
+    {
+      "path": "packages/task-calendar/package.json",
+      "bytes": 586,
+      "sha256": "b0d9698de2983daf016792d59f2bf28b5e0ace254fb7e8f2751d980ed88e5efb"
+    },
+    {
+      "path": "packages/task-calendar/sources/main/calendar-service.cjs",
+      "bytes": 12758,
+      "sha256": "dae6ec31a6f7b03f5513fbe52fdd89e70a031520b571a80e900bc66cc6145158"
+    },
+    {
+      "path": "packages/task-calendar/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/task-calendar/sources/main/vault-path.cjs",
+      "bytes": 951,
+      "sha256": "cc653522260d048652e02f98bcecd9881cac73f7821648a257430a3a1aaf6ab5"
+    },
+    {
+      "path": "packages/task-calendar/sources/main/vault-service.cjs",
+      "bytes": 1813,
+      "sha256": "9a5fac73c0225920f91081e066279dd0d734e26c64a82b5e1472ea650f71e7cb"
+    },
+    {
+      "path": "packages/task-calendar/sources/renderer/calendar-ics.ts",
+      "bytes": 24772,
+      "sha256": "80b82cd0f4210bb5ddf030270d668c0e433caf0295fa8a187cb7eb195f085d63"
+    },
+    {
+      "path": "packages/task-calendar/sources/renderer/calendar-model.ts",
+      "bytes": 16447,
+      "sha256": "432bef16cb032ce60b83cc2636d0f2ca190a53083dbc930127fdee3180cec3ac"
+    },
+    {
+      "path": "packages/task-calendar/sources/renderer/calendar-store.ts",
+      "bytes": 3735,
+      "sha256": "308c1c9175f70f674be65f743d2c4f37d8f27c66006befec01f7fc751c1e3550"
+    },
+    {
+      "path": "packages/task-calendar/sources/renderer/calendar-types.ts",
+      "bytes": 994,
+      "sha256": "2bb5812b582966803d62dadf544e84b27b07d2b4c3b8fe8023a9d17f2fffaa45"
+    },
+    {
+      "path": "packages/task-calendar/sources/renderer/checklist-location.ts",
+      "bytes": 927,
+      "sha256": "531d8be3a4d3eefbeba214399e4f48c68c5fa3b1fcfe0a647c744681e24d7dc4"
+    },
+    {
+      "path": "packages/task-calendar/sources/renderer/course-calendar.ts",
+      "bytes": 9748,
+      "sha256": "370f05db98d9e9321cf586f11af075b53f311c35825042fae0bf0c8e23eed141"
+    },
+    {
+      "path": "packages/task-calendar/sources/renderer/course-checklist.ts",
+      "bytes": 11939,
+      "sha256": "b2d2c4920958938b2c2ce23163e1a7ee429f5f0d1bdddcbcb3dd2cf730f09ea2"
+    },
+    {
+      "path": "packages/task-calendar/sources/renderer/quick-notes.ts",
+      "bytes": 7202,
+      "sha256": "f12278a13a71882102fa84bd3bf4fdc2e7790b5776f6a29b9f044c6d592cf2d1"
+    },
+    {
+      "path": "packages/task-calendar/sources/shared/desktop-api.ts",
+      "bytes": 30468,
+      "sha256": "fd059b18dcadeb058efe0fb3bcdaf71a60e349fb3eaff681395ddd23f7ea58e9"
+    },
+    {
+      "path": "packages/task-calendar/sources/shared/internal-file-links.ts",
+      "bytes": 1637,
+      "sha256": "e66bff2dfe75d2cd253c5b9ffc15f9289bbb41a4191633aa2c1c221c3b4ecaf9"
+    },
+    {
+      "path": "packages/task-calendar/sources/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "packages/task-calendar/sources/shared/pdf-extend.ts",
+      "bytes": 2273,
+      "sha256": "a800f354aff8c48bac5ba9390542793bcfa2963b5b66511fb327d2acb869f717"
+    },
+    {
+      "path": "packages/task-calendar/sources/shared/study-transfer.ts",
+      "bytes": 783,
+      "sha256": "159fae06af83dece21ee48006a77c8c5af0ceca0181b4922ede5e2791ea29233"
+    },
+    {
+      "path": "packages/task-calendar/sources/shared/study.ts",
+      "bytes": 900,
+      "sha256": "b0a1936ddfeb292c251afd3b293a7cbce2a05b3c1cb4432d84aed0dbafac8acb"
+    },
+    {
+      "path": "packages/task-calendar/sources/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "packages/task-calendar/test/package.test.cjs",
+      "bytes": 740,
+      "sha256": "5afc7a26ef2b7df1208139e430461787c2265be29ff5f72c8318990ea76c3f93"
+    },
+    {
+      "path": "packages/task-calendar/test/quick-notes.test.cjs",
+      "bytes": 10406,
+      "sha256": "fab3e30f1ed5d538c4ccb43f19abfcc25e3b209d8aa95c1c60454c33e642090a"
+    },
+    {
+      "path": "packages/translation-tools/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "packages/translation-tools/README.md",
+      "bytes": 2753,
+      "sha256": "1bc5071b1f0d2260b9c9a4a615ed3edabbf307b415a184f48ed14ec485723185"
+    },
+    {
+      "path": "packages/translation-tools/index.cjs",
+      "bytes": 156,
+      "sha256": "058799e520e750d6a1fc26706762efaffd7baf3af1ddcaa0506f51cf73a18a82"
+    },
+    {
+      "path": "packages/translation-tools/lib/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/translation-tools/lib/main/translation-service.cjs",
+      "bytes": 15486,
+      "sha256": "207a244931555e9acb72adac2dd7f324ad3c5f9a46ebcb2912cd80a0d7819e0a"
+    },
+    {
+      "path": "packages/translation-tools/package.json",
+      "bytes": 600,
+      "sha256": "bb6414ef0081c391f73c5e0e5f87cf05f8b4aec3f6aa38dc5e74e981343ed6a0"
+    },
+    {
+      "path": "packages/translation-tools/sources/main/errors.cjs",
+      "bytes": 10023,
+      "sha256": "fd1bdcb92e67beb50d2666afe1865cd35c6d4d91997442c8a6c8a28d6203156f"
+    },
+    {
+      "path": "packages/translation-tools/sources/main/translation-service.cjs",
+      "bytes": 15486,
+      "sha256": "5b87761b4639855cec8b3e3d934103e0171c7059147a687174701f6d9bfbc267"
+    },
+    {
+      "path": "packages/translation-tools/test/package.test.cjs",
+      "bytes": 649,
+      "sha256": "d075a77fced0f6182013c029b9050445521a9613006e24a44c2bf465688e73c4"
+    },
+    {
+      "path": "scripts/test-packages.cjs",
+      "bytes": 6525,
+      "sha256": "47e427f633b40b1a206d35927a01356031fdb4dd7520eda9669d484be1c94c17"
+    },
+    {
+      "path": "swift-modules.json",
+      "bytes": 16004,
+      "sha256": "b96e23d0523349cd340f11f660b412d6770796ec857c30fe932dc2914fef1a6b"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceAI/README.md",
+      "bytes": 1556,
+      "sha256": "5ef20dc2cc7b2988202cfc5e77b0e3703c987c6f2495c95fdacff9fff077695a"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceChecklist/README.md",
+      "bytes": 1220,
+      "sha256": "40a20bce9644aa9784e5f2c3bb520c5e0488328e861e5a9517a44828a36fa3fb"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceExcelPictures/README.md",
+      "bytes": 1180,
+      "sha256": "cbde5ba88f2c99692b59a9eb24858ff783aea08534f01cf73d4fe7c8b4b01b3a"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceGeometry/README.md",
+      "bytes": 1364,
+      "sha256": "f5228174ee2b34b8857592db6268005301ff8c6b4ccad5da351e053efe033ddd"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceMediaTimeline/README.md",
+      "bytes": 1363,
+      "sha256": "fa0753f50cfdb29cb51750eeac4819123b34f6bddcc1ea5ad46171b511531c63"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceOCR/README.md",
+      "bytes": 1279,
+      "sha256": "89ab7d76b9d893041982a2d895ceb8d7807e9c1405967f4c8d95c4cb996b283a"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceOutline/README.md",
+      "bytes": 1042,
+      "sha256": "6daf532da6ec87a01d21f1bf68ffd78f15675fc72b6e4e99d454647eb23d518f"
+    },
+    {
+      "path": "swift/Documentation/InkSpacePDFRecords/README.md",
+      "bytes": 1550,
+      "sha256": "3bc3cd22d4455e45a7a6c5e775641e6dff1fcf9782a3f309bc31e0bf2243acde"
+    },
+    {
+      "path": "swift/Documentation/InkSpacePaths/README.md",
+      "bytes": 1162,
+      "sha256": "e6a96355105cbfacf0f2e8fc37b49bd002810f9d5987a54d4083656ab3a60c51"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceScanPDF/README.md",
+      "bytes": 1124,
+      "sha256": "7b4c0a134cfce5a9cebae29983d636558e470efd5651de9af6b07055ec509019"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceSpeechText/README.md",
+      "bytes": 1129,
+      "sha256": "0f3f45b6180675046ad03d41b7a720b023ee49a13d99b2c3a5ac172eafc22c8e"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceStorage/README.md",
+      "bytes": 1331,
+      "sha256": "2a518e94fed08e040d8034ac87cc01a7a5263bf5bf7599fb7a4222253a99b046"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceStudy/README.md",
+      "bytes": 1379,
+      "sha256": "0ccf1c5d8fcbb362613a59fa23eaa41b876a12af640b53750645eaaed893b4d9"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceSubtitles/README.md",
+      "bytes": 1138,
+      "sha256": "cec728efccf9c22f3d515aec04c609c5f2c22536404b4a2dbc515d1f998ce2b9"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceTextHistory/README.md",
+      "bytes": 1025,
+      "sha256": "56afd46858e78d716e6073d9e7788261d8281a4b3f06c2ee11aff9fb6dc951cc"
+    },
+    {
+      "path": "swift/Documentation/InkSpaceWebClips/README.md",
+      "bytes": 1218,
+      "sha256": "c1095b92350072f591b3e0dc8e0aa0b9af420eb50fbfd3e4e7681e44e789a384"
+    },
+    {
+      "path": "swift/Documentation/VALIDATION.md",
+      "bytes": 2920,
+      "sha256": "d0b4876207103ce54266ee19082b5eaca01c09016fbbd1434985176082dbd2e5"
+    },
+    {
+      "path": "swift/FEATURES.md",
+      "bytes": 8016,
+      "sha256": "4a6dc118b3d7d9ec0a847268cdd449e3682bd8fc2f94a88adb3ca48159d3b1e3"
+    },
+    {
+      "path": "swift/Package.swift",
+      "bytes": 2603,
+      "sha256": "2d13cf2302d473fbd2a550f9cbff32eb4cdb52f5cc2a8db9f30322f411882f2e"
+    },
+    {
+      "path": "swift/README.md",
+      "bytes": 3603,
+      "sha256": "3a7c0b413ff9537f6091a09dd72c4587255d381805b5fbfb53f5ed328bdb92cd"
+    },
+    {
+      "path": "swift/Sources/InkSpaceAI/AIClient.swift",
+      "bytes": 6966,
+      "sha256": "e43fedc990c2b49c212111827a3616f79df63868e3a77ba54041b8b4cf24cdea"
+    },
+    {
+      "path": "swift/Sources/InkSpaceAI/PDFTranslationClient.swift",
+      "bytes": 8991,
+      "sha256": "59e3524da934fddcedeb043ae663f80a32c05ec2aec12435ff72f9f88ec67391"
+    },
+    {
+      "path": "swift/Sources/InkSpaceAI/PDFTranslationProvider.swift",
+      "bytes": 4693,
+      "sha256": "fd42b8ff00e10d231bf09811a04cb706770bdba87ff5038aa607013a2b4dae53"
+    },
+    {
+      "path": "swift/Sources/InkSpaceChecklist/CourseChecklistModel.swift",
+      "bytes": 9227,
+      "sha256": "44f6a3487a74e812262805df8932b10fe80b452a8828c8f50b3db86caaa799b8"
+    },
+    {
+      "path": "swift/Sources/InkSpaceChecklist/Resources/poetry-rewards.json",
+      "bytes": 4186,
+      "sha256": "0b291dc4a6760d18bb3dc80833a6cebcc787e3c88ce99de268dd3fe9e12bfc85"
+    },
+    {
+      "path": "swift/Sources/InkSpaceExcelPictures/ExcelEmbeddedPictures.swift",
+      "bytes": 26032,
+      "sha256": "2449d0adfcb9dd3bc6a9dfc5f24ec6eb8b3cb64327d104d467da9799aa41066f"
+    },
+    {
+      "path": "swift/Sources/InkSpaceGeometry/BoardTextSelectionGeometry.swift",
+      "bytes": 6775,
+      "sha256": "f693cd7e7c33b4c1e82ce373b214e390ec5cfcb3caea581ed914c5e3c2390294"
+    },
+    {
+      "path": "swift/Sources/InkSpaceGeometry/PageGrid.swift",
+      "bytes": 6897,
+      "sha256": "abe1e636967ffea7c5fac59de116e0de949d7a2090a73ca4b3eb0d24449299e5"
+    },
+    {
+      "path": "swift/Sources/InkSpaceGeometry/PrintPageGeometry.swift",
+      "bytes": 7764,
+      "sha256": "f890eff452895487afbea67ff043bd7782d784f6a42ecf2f833b43ceca4e9a8d"
+    },
+    {
+      "path": "swift/Sources/InkSpaceMediaTimeline/MediaCaptionImporter.swift",
+      "bytes": 4380,
+      "sha256": "9af33fadc36b3f96166f843fec90355a5bae91d9a91f407282ffb170654bdbb1"
+    },
+    {
+      "path": "swift/Sources/InkSpaceMediaTimeline/MediaProject.swift",
+      "bytes": 14803,
+      "sha256": "85c97020586749a08f4f2a9f0259e693216d0f74668b8ec2a0da6b245ba28291"
+    },
+    {
+      "path": "swift/Sources/InkSpaceOCR/LocalOCR.swift",
+      "bytes": 23191,
+      "sha256": "87c608fcbe17b994e0b60496f4fe915a31e0211e5998af0f1f3523b6ca197ab7"
+    },
+    {
+      "path": "swift/Sources/InkSpaceOutline/NoteOutline.swift",
+      "bytes": 6155,
+      "sha256": "4afb5b6cf4e780a5afa66052aa1beefa92711b310752fd88486dbc47a8a45cd2"
+    },
+    {
+      "path": "swift/Sources/InkSpacePDFRecords/PDFExtensionGeometry.swift",
+      "bytes": 2058,
+      "sha256": "d1b2f91b9c9ea669b7d6b125cd59d4fe13a4a38d0b6898a025ede9a33f07073f"
+    },
+    {
+      "path": "swift/Sources/InkSpacePDFRecords/PDFExtensionModel.swift",
+      "bytes": 13074,
+      "sha256": "54677a0d09210fd414e77e7838ab678d71ddba72c1a3b1a0145d8081b3a8bcdc"
+    },
+    {
+      "path": "swift/Sources/InkSpacePDFRecords/PDFNativeInkArchive.swift",
+      "bytes": 1090,
+      "sha256": "8a6b60d9741dc48e6402b87fd0f4213341608b30028d23f77625ec19ba4fccd7"
+    },
+    {
+      "path": "swift/Sources/InkSpacePDFRecords/PDFWorkspaceEvent.swift",
+      "bytes": 14165,
+      "sha256": "5ee2995f34ac5d565fa473e521ffe91cab4eb004584835ba522a509afbd13f27"
+    },
+    {
+      "path": "swift/Sources/InkSpacePaths/VaultPath.swift",
+      "bytes": 462,
+      "sha256": "9d5154fcc98f99f992fa838448e54efcddc82b679cd8e205ccf00ec118cc8b01"
+    },
+    {
+      "path": "swift/Sources/InkSpacePaths/VaultPathResolver.swift",
+      "bytes": 1299,
+      "sha256": "ba8246d7b1eaa535d0ee17008963cdfc15835234760f5d2a5ccb829b6e031d4f"
+    },
+    {
+      "path": "swift/Sources/InkSpaceScanPDF/ScannedPDFExport.swift",
+      "bytes": 3111,
+      "sha256": "69e2e342167d05d68e0b7c61f85052424bcfaf4345f601920d601b6575fa363e"
+    },
+    {
+      "path": "swift/Sources/InkSpaceSpeechText/BoardReadAloudText.swift",
+      "bytes": 3828,
+      "sha256": "356990033f6a28242657cce6574bec1caa50f9f21488629cbb00b455c739ec56"
+    },
+    {
+      "path": "swift/Sources/InkSpaceStorage/BoardStorageLocations.swift",
+      "bytes": 6960,
+      "sha256": "0b1356367ffbd2eefd2d5b512989c36a5a7124dff9d56f0812d89a0767364b0b"
+    },
+    {
+      "path": "swift/Sources/InkSpaceStorage/VaultFileIO.swift",
+      "bytes": 4597,
+      "sha256": "ab8c655203a0b56f6c0bdb2e8469ee1456caf9cbd7913ed56803eb35ea3d2125"
+    },
+    {
+      "path": "swift/Sources/InkSpaceStudy/StudyCSV.swift",
+      "bytes": 8069,
+      "sha256": "6cdfa14ad78bbf9a61a348a4096323d1f8cc3a0265cf3142edc5ad27942f3fc2"
+    },
+    {
+      "path": "swift/Sources/InkSpaceStudy/StudyModel.swift",
+      "bytes": 14616,
+      "sha256": "f4fa94e89df1b2becfa4365c4b81c5e6d94ded650c759cf137f98a7147ce1393"
+    },
+    {
+      "path": "swift/Sources/InkSpaceStudy/StudyRichContent.swift",
+      "bytes": 3365,
+      "sha256": "ce2c878fd03e6d0a279a9ebcd65200b5e9cc175bfcd7c34252f52a5fd2a2c56c"
+    },
+    {
+      "path": "swift/Sources/InkSpaceSubtitles/BoardVideoSubtitles.swift",
+      "bytes": 8084,
+      "sha256": "6fe0c401fde2315da9fdec7c11aa7b67254213e26c9e718d28df5bde3e291d74"
+    },
+    {
+      "path": "swift/Sources/InkSpaceTextHistory/DraftTextHistory.swift",
+      "bytes": 1652,
+      "sha256": "ac3504d360bec26a2f78a0d5e106b075da7baaf1b7eeb7b05b43d7ec6bb7cb62"
+    },
+    {
+      "path": "swift/Sources/InkSpaceWebClips/BrowserWebClip.swift",
+      "bytes": 7188,
+      "sha256": "9d580889c77c39880a7a93bcf693409ab61a3eccbe9ec507ab3972534d350ea0"
+    },
+    {
+      "path": "swift/Tests/InkSpaceModuleTests/ModuleTests.swift",
+      "bytes": 16461,
+      "sha256": "d1e9cfb5b0ab8af1498f45b9bbfeb61791abc4a0cd894830e76cae8c39cdac0f"
+    },
+    {
+      "path": "swift/module-sources.json",
+      "bytes": 1514,
+      "sha256": "a5a7dda124b9ad8ab0f3d599e48054687dbce845011939ba080d900546e20f81"
+    },
+    {
+      "path": "ui/HOST-CONTRACT.md",
+      "bytes": 4197,
+      "sha256": "109e31beda6f3fe85e9c0140c9f6fb6aaa912fa48152e8e730de0a44df56cea8"
+    },
+    {
+      "path": "ui/LICENSE",
+      "bytes": 1078,
+      "sha256": "92d00dec9eef92d08f29632f73a0663c664bdbc59ea9db9ca15938185cff27e8"
+    },
+    {
+      "path": "ui/README.md",
+      "bytes": 9134,
+      "sha256": "2de5e663f8b76becd71955346fab466e6ea55f8fc197ff2a91d8c7f9a50ab7d2"
+    },
+    {
+      "path": "ui/math-lab/app.js",
+      "bytes": 53758,
+      "sha256": "ee44926959543c65e3a4f98c5c3dc8b7c06c55bcffea1fe59f532451ea5d384d"
+    },
+    {
+      "path": "ui/math-lab/engine.js",
+      "bytes": 35866,
+      "sha256": "f4b1fe5f46f6891c87364c66d35fe3316377bcb7ea3a2fd318ae2332be4cd9b7"
+    },
+    {
+      "path": "ui/math-lab/index.html",
+      "bytes": 799,
+      "sha256": "1d41c9a18b3ac0b903fd77747a8ca1019c272439aa2c33e73844c59fc885aeae"
+    },
+    {
+      "path": "ui/math-lab/simple-core.js",
+      "bytes": 19849,
+      "sha256": "4ec15e82bb70838cc68e08d69845a77482273e5419de96e63655e23549f66492"
+    },
+    {
+      "path": "ui/math-lab/simple.css",
+      "bytes": 8486,
+      "sha256": "edeed86a4c2f9876e31f5cfd553e6c369c38faed53078e5e190e4b89fd6e5b82"
+    },
+    {
+      "path": "ui/math-lab/simple.html",
+      "bytes": 4218,
+      "sha256": "e8cdf5e62f4944af8222d2d38e558a974117be63736f0085f2453287663c5443"
+    },
+    {
+      "path": "ui/math-lab/simple.js",
+      "bytes": 41736,
+      "sha256": "800bb55ca753b2b055ce586f715c2e25f8b769bb7acae2647dbedb9b16cb8063"
+    },
+    {
+      "path": "ui/math-lab/style.css",
+      "bytes": 7661,
+      "sha256": "428ef30a6a03c04dc30fd746d514258232636d95744922f110bd5181f71bc7d6"
+    },
+    {
+      "path": "ui/package.json",
+      "bytes": 3103,
+      "sha256": "6e111311d380c18cd2437605947a01028527abeee355c9f706e0ce166bd693cc"
+    },
+    {
+      "path": "ui/scripts/build.mjs",
+      "bytes": 2430,
+      "sha256": "2c18c3c50a05b68acd3cd9afe898dad809183644fead98e89e69b44b20d6f2f4"
+    },
+    {
+      "path": "ui/scripts/smoke-test.mjs",
+      "bytes": 9027,
+      "sha256": "ee1b55ddb4e6cb23916466f53071c9775c905e46f77637a34b62094f148cdb55"
+    },
+    {
+      "path": "ui/smoke/index.html",
+      "bytes": 460,
+      "sha256": "b9dacc5fbf4563a967d931e18ac696d41bc86e1d6fe1781bc029a15facebbba6"
+    },
+    {
+      "path": "ui/smoke/main.tsx",
+      "bytes": 9250,
+      "sha256": "ab0e4983d803c87df86dc8c8cf0285c9eb822b3f8984e4970cba1f21a9b7055c"
+    },
+    {
+      "path": "ui/source-manifest.json",
+      "bytes": 8727,
+      "sha256": "199eeb95c88658ec7cd02275f8ae3441112d24e0e358a5ccda4355d6bc1b51b2"
+    },
+    {
+      "path": "ui/src/entries/board.tsx",
+      "bytes": 371,
+      "sha256": "a7acabb21021891449c0aad0cb6d8f9b91ea0d83bc5dd681c054779c9d537fb7"
+    },
+    {
+      "path": "ui/src/entries/documents.tsx",
+      "bytes": 790,
+      "sha256": "58bd4542b067e41cf9b969c58ba2bf3a7873f745c4e6ccfad0a6164606b37208"
+    },
+    {
+      "path": "ui/src/entries/editor.tsx",
+      "bytes": 334,
+      "sha256": "163679ad7efb9a0e9b21fc4c9d43265f9dea799ec570af3b0e44d2aa0956bb5f"
+    },
+    {
+      "path": "ui/src/entries/host.ts",
+      "bytes": 25,
+      "sha256": "18bf13869b1a1a34948506cd1873f101439ad655cb12695da0229d1100f32df7"
+    },
+    {
+      "path": "ui/src/entries/index.ts",
+      "bytes": 417,
+      "sha256": "1420a5e954cec8f4ebdc045e3d946a8ec6f10ebfbe22364d35234b1099cc8d59"
+    },
+    {
+      "path": "ui/src/entries/knowledge.tsx",
+      "bytes": 738,
+      "sha256": "1632ab6521462d82c263ac9b2d1a98e8285ee85d2e6eb1d18b4710f8799fe15c"
+    },
+    {
+      "path": "ui/src/entries/media.tsx",
+      "bytes": 392,
+      "sha256": "764fe2e660238b8228f2e69455d63f2a132496ba800a3d6cd0b1774fa2c4ba72"
+    },
+    {
+      "path": "ui/src/entries/notebook.tsx",
+      "bytes": 274,
+      "sha256": "97794023c6fc7886de63cf2b23de18fcd7b26abcf38a0fbf644d9f503ad807b9"
+    },
+    {
+      "path": "ui/src/entries/pdf.tsx",
+      "bytes": 309,
+      "sha256": "a3e74de9e041198c5320d95c85e8bbeea2558347dd43b7b5dfb9afa1aa455d5e"
+    },
+    {
+      "path": "ui/src/entries/planning.tsx",
+      "bytes": 622,
+      "sha256": "c4ee7a0947aa03e4822e448f71db2b3ab8589d927a590ea6f39c69c6f014b0b7"
+    },
+    {
+      "path": "ui/src/entries/study.tsx",
+      "bytes": 314,
+      "sha256": "a07952ad86945d2008f4380c65e0651db9b92df16daa45e2f9d46012dd4c2e74"
+    },
+    {
+      "path": "ui/src/entries/tools.tsx",
+      "bytes": 815,
+      "sha256": "fc7cf06f3012063766f6c305112fafcbe6b6928d8dbbf1de1a8ba0cdf6a60a5a"
+    },
+    {
+      "path": "ui/src/foundation-original.css",
+      "bytes": 21282,
+      "sha256": "1e4fd3ff84fc1c8b3974891f45f9bbdf67d55e4d40e54d94c648a744f48fe3a6"
+    },
+    {
+      "path": "ui/src/foundation.css",
+      "bytes": 28257,
+      "sha256": "2f9a9323afcc471182ca80370bdda33e029b201b3614686fc8f1204c1b7efc17"
+    },
+    {
+      "path": "ui/src/host.ts",
+      "bytes": 2904,
+      "sha256": "e3b90edc9e71ee67f992af66cc28588f053db547ea5d7f4e2da03f60d12a0439"
+    },
+    {
+      "path": "ui/src/renderer/BoardArrangeToolbar.tsx",
+      "bytes": 3824,
+      "sha256": "f58f7fd74acbf1b23f642fc90e4fb92321904fdb6f0c0c3a78623242b94be44c"
+    },
+    {
+      "path": "ui/src/renderer/BoardEmbed.tsx",
+      "bytes": 9501,
+      "sha256": "1770bffb6af65dba4a97e957cc91f8f5e8be0536152159075e68ae5d81386bd4"
+    },
+    {
+      "path": "ui/src/renderer/BoardMergeGhost.tsx",
+      "bytes": 3178,
+      "sha256": "538bc1c23ee04305c97aeb9e3ae4e8d925d3f36f4fb07897ff7f91c7cfa807d3"
+    },
+    {
+      "path": "ui/src/renderer/BoardPDFDetail.tsx",
+      "bytes": 2721,
+      "sha256": "5512085f4a1a21f651b12696af0814b39df2e5c3c3b2974ee0993bda9449bb0e"
+    },
+    {
+      "path": "ui/src/renderer/BoardPagePreviews.ts",
+      "bytes": 5964,
+      "sha256": "730d966ad55eeddebf293e5b91b4c600f153b17229f031a0581b10a0223ed22a"
+    },
+    {
+      "path": "ui/src/renderer/BoardRelinkDialog.tsx",
+      "bytes": 10873,
+      "sha256": "590314e69f0c63b1d886deb0e5e3514c71a094a171b03451b2a80979cc1c93c5"
+    },
+    {
+      "path": "ui/src/renderer/BoardSpeech.tsx",
+      "bytes": 5619,
+      "sha256": "b2218c26469f14203f909a56d304ddd482d6f5abb6e7c783f9193f3a1321f8f9"
+    },
+    {
+      "path": "ui/src/renderer/BoardTextSelection.tsx",
+      "bytes": 19498,
+      "sha256": "fdda0a8f4fa18b2d4f92228e8bebc4f598371a0c69950187095473aebd01585c"
+    },
+    {
+      "path": "ui/src/renderer/BoardViewer.tsx",
+      "bytes": 111101,
+      "sha256": "5620372b14954ee6716b2234cdba46dc1f6a0d13d953a75911923b0fb8ab6fc0"
+    },
+    {
+      "path": "ui/src/renderer/BoardWebCard.tsx",
+      "bytes": 4754,
+      "sha256": "c19a0bfd1f10f2397c9f019f06c41e2c7d2590ba5b2bf598c5e1b9e7c8c0e1a2"
+    },
+    {
+      "path": "ui/src/renderer/BoxContent.tsx",
+      "bytes": 4704,
+      "sha256": "a5915b360a5e842435359f78a9f3a26871f06bfa333f1942b1b63314d82ddf19"
+    },
+    {
+      "path": "ui/src/renderer/Calendar.tsx",
+      "bytes": 44156,
+      "sha256": "985a9bb55f2901cb31596acb734c7de938fea88b1472ccbae82e87c76df13011"
+    },
+    {
+      "path": "ui/src/renderer/ChildBoardPortal.tsx",
+      "bytes": 16826,
+      "sha256": "bc356c14e1652e013065c86c602ee2d835984894c8556b98f0e492b3b2828f74"
+    },
+    {
+      "path": "ui/src/renderer/ContextMenu.tsx",
+      "bytes": 3953,
+      "sha256": "f2092cf21b1fd899166dd88c0bb4895ad52441e2377f20d2d3b109d6e83f44a6"
+    },
+    {
+      "path": "ui/src/renderer/CourseChecklist.tsx",
+      "bytes": 22388,
+      "sha256": "fb97a8bdf9e2c8995e83738e0584dd73165d2c6dc2f1d84a399b123f5319f171"
+    },
+    {
+      "path": "ui/src/renderer/DataFilePreview.tsx",
+      "bytes": 12622,
+      "sha256": "09e285484ff2d7e3b5d96069d75535c1174d28dc28431bd7a4127e5bb7e887ae"
+    },
+    {
+      "path": "ui/src/renderer/DocumentPreview.tsx",
+      "bytes": 10801,
+      "sha256": "f3d1cc90d7123edcb9dbb083cbeec2998203dfc808dfc1173e8a557da9e2408e"
+    },
+    {
+      "path": "ui/src/renderer/DocumentTranslationSelection.tsx",
+      "bytes": 8283,
+      "sha256": "f2470996f12c3a960f79f5ddf6a1941dd95e099d523b87e921f70c57bc64f6d1"
+    },
+    {
+      "path": "ui/src/renderer/DocumentZoomControls.tsx",
+      "bytes": 1077,
+      "sha256": "a0c2e39fe7268919c54571e99fbec986cf9395645a303c2595fcb2c950e41abc"
+    },
+    {
+      "path": "ui/src/renderer/EditorPane.tsx",
+      "bytes": 7697,
+      "sha256": "cef5df8b41a6c9e4ede8e56a6c0bc0fcc60b229332de236206a07560e686dd16"
+    },
+    {
+      "path": "ui/src/renderer/EventEditor.tsx",
+      "bytes": 14555,
+      "sha256": "4fefcf7688f232f3cbc1cff0843b96ca9cf4fda426966d99d66269b8b1309446"
+    },
+    {
+      "path": "ui/src/renderer/ExportDialog.tsx",
+      "bytes": 6514,
+      "sha256": "96fda1a7f1832efb06004c45a412c5d1ff4ca67a5bb624e8c9c95af9ef45cc22"
+    },
+    {
+      "path": "ui/src/renderer/FileManagementDialog.tsx",
+      "bytes": 7937,
+      "sha256": "237ee103bff700a86d8d726b951908a2239decfdc4db0424e3b7e36b9d2e9f9a"
+    },
+    {
+      "path": "ui/src/renderer/GraphWorkspace.tsx",
+      "bytes": 62598,
+      "sha256": "e0731d2f6aba3073a4eb8649b3b2114e1b7a4f13ea24dba4e0e8d4bf59dd3c83"
+    },
+    {
+      "path": "ui/src/renderer/InkReplayDialog.tsx",
+      "bytes": 13777,
+      "sha256": "4b7a314b983ed01730710fe936b58bfc94aafdf9965ba82321507b09ae642f1a"
+    },
+    {
+      "path": "ui/src/renderer/KnowledgePalace.tsx",
+      "bytes": 9085,
+      "sha256": "951fc709acadcfa66a52bae0f4c3458846e6906f3218cc83b6d348ce0291e274"
+    },
+    {
+      "path": "ui/src/renderer/KnowledgePanel.tsx",
+      "bytes": 4015,
+      "sha256": "c5cfcaa974dec27612fae1b56ed9c1f2a6a99939dacac12c84a7fef2ff013841"
+    },
+    {
+      "path": "ui/src/renderer/KnowledgeSpace.tsx",
+      "bytes": 15291,
+      "sha256": "6773c5c2dd41a33a6f6d9ceb0010d528a09ea79583297ab32acb2dce9c3c6bfb"
+    },
+    {
+      "path": "ui/src/renderer/KnowledgeWalkthrough.tsx",
+      "bytes": 13210,
+      "sha256": "f49b1352699f6da21e0d448e71192c7a5721ea0f309e2f7344304fab1915d5d5"
+    },
+    {
+      "path": "ui/src/renderer/LocalOCRDialog.tsx",
+      "bytes": 7685,
+      "sha256": "f8ffe9a671f6d9b252623f6404b351cf6e0cdc1d11c325aa9f0065786c30410a"
+    },
+    {
+      "path": "ui/src/renderer/MarginPanel.tsx",
+      "bytes": 2154,
+      "sha256": "daf0bff8944b0df76704ab9997792a4a4122482bc761ebe56c8122c19c1223c4"
+    },
+    {
+      "path": "ui/src/renderer/MathWorkbench.tsx",
+      "bytes": 4448,
+      "sha256": "9d055c3390d5dd84aec3e38dd0f18c557ff6eebaeade9e8aee1cdc681d98df9f"
+    },
+    {
+      "path": "ui/src/renderer/MediaAdvancedControls.tsx",
+      "bytes": 14556,
+      "sha256": "b90427e2797b8d52ed30d4b075d1738c7aeef366f26b67e914c243c7150feb07"
+    },
+    {
+      "path": "ui/src/renderer/MediaEditor.tsx",
+      "bytes": 29740,
+      "sha256": "16b1f54451cb92577c2f64701a0f1dd8d29a2a92dec4310fad00c09a457d60be"
+    },
+    {
+      "path": "ui/src/renderer/MindInkPreview.tsx",
+      "bytes": 2201,
+      "sha256": "b56a5c05c8ebe114cd51a48c875f7ee28b56ecb151a3b8a25f64ad9b2ea8f4db"
+    },
+    {
+      "path": "ui/src/renderer/MindSourcePreview.tsx",
+      "bytes": 1562,
+      "sha256": "1108d6001b3bcb99f1fb1cce922e13e854b93c7d7e357ae75b456b10394fbf8a"
+    },
+    {
+      "path": "ui/src/renderer/NoteExchange.tsx",
+      "bytes": 20438,
+      "sha256": "6e64e8461f8da42110368a22af3c1a13c6470570d339d014d44211568adbbf06"
+    },
+    {
+      "path": "ui/src/renderer/NotebookCSVExport.tsx",
+      "bytes": 2370,
+      "sha256": "189ab20eb15e307788f0b80330148dc8a1d4b34147a1e51e5f1807ada3208706"
+    },
+    {
+      "path": "ui/src/renderer/NotebookCSVPicker.tsx",
+      "bytes": 11822,
+      "sha256": "a749d0ab419cbcf900ed3523e56016235ebf47668cd636713acbc78d757255ed"
+    },
+    {
+      "path": "ui/src/renderer/NotebookCode.tsx",
+      "bytes": 1194,
+      "sha256": "4a49b9e9edef6214a8cbdf511c6d62008b1dab48c74fe84f4cf2684a9be7b012"
+    },
+    {
+      "path": "ui/src/renderer/NotebookEditor.tsx",
+      "bytes": 39093,
+      "sha256": "ff2d0e15a92fad1457db82bcbd4aa33a650aacb485d0b92196eda2454fa4f742"
+    },
+    {
+      "path": "ui/src/renderer/NotebookOutline.tsx",
+      "bytes": 4940,
+      "sha256": "a1dde7c74bda000628f5385efdea802c08ab6f200a264be43f9038833922ddcd"
+    },
+    {
+      "path": "ui/src/renderer/NotebookRuns.ts",
+      "bytes": 1250,
+      "sha256": "83f95e534ec40667b8730a221fca801cbfaa3f0937ba7e7a37bc4e835f7110f6"
+    },
+    {
+      "path": "ui/src/renderer/NotebookShortcutHelp.tsx",
+      "bytes": 3650,
+      "sha256": "bcfd87e5e90d85725511bacaf358fa012225da735b63aaf7281fb43e68c3f5a9"
+    },
+    {
+      "path": "ui/src/renderer/OfficeTextSelection.tsx",
+      "bytes": 15885,
+      "sha256": "10a17514f5f3bfb3ee1a4cd4229751c5ff64111dd3d878ffd9574eb32031fe01"
+    },
+    {
+      "path": "ui/src/renderer/PDFExtend.tsx",
+      "bytes": 15724,
+      "sha256": "8cc33d00aed0030bab7eb010c9d3d37a26e7920afddce06ebc5d53c927b7b5c4"
+    },
+    {
+      "path": "ui/src/renderer/PDFTextSelection.tsx",
+      "bytes": 6108,
+      "sha256": "bb6f578eead84b6d2dc1ef29c3077f474eb951357043abc01ebeb337c331198c"
+    },
+    {
+      "path": "ui/src/renderer/PDFToolbarMenu.tsx",
+      "bytes": 3448,
+      "sha256": "7abd834286e420dfb5babce78da3e1d824f08d111a0e0f80f49fc618e3a87d80"
+    },
+    {
+      "path": "ui/src/renderer/PDFTranslation.tsx",
+      "bytes": 19509,
+      "sha256": "f12e081996f22e027669b4f9ff8d608c2a3834eae655727ffc8378c59a3ea2eb"
+    },
+    {
+      "path": "ui/src/renderer/PDFViewer.tsx",
+      "bytes": 43421,
+      "sha256": "bd10545fc42f1d0569eb29353719191fa1610b3641039709475f29fc2b336e46"
+    },
+    {
+      "path": "ui/src/renderer/PDFWorkspaceState.ts",
+      "bytes": 746,
+      "sha256": "d64af688e12b9165f56acb5570e6c3016e3528619e36c0965c88a502a275c9b1"
+    },
+    {
+      "path": "ui/src/renderer/QuickNotes.tsx",
+      "bytes": 14889,
+      "sha256": "a7549b272e13a6de39929afcad9ae665de8f00215b1ab485a29e33c75bde36ef"
+    },
+    {
+      "path": "ui/src/renderer/ReplayBackgrounds.tsx",
+      "bytes": 5249,
+      "sha256": "38094cd0d587bd7893a939a5c240bb7d6e83bfbb5e4dd4bd38be8f843d2facda"
+    },
+    {
+      "path": "ui/src/renderer/ReplayDisplayControl.tsx",
+      "bytes": 2073,
+      "sha256": "3dc5580834f0c03a98be623e1c8fd15b789869a5b951c0628f51e36d73d94ccf"
+    },
+    {
+      "path": "ui/src/renderer/ResolvedChildBoardPortal.tsx",
+      "bytes": 3732,
+      "sha256": "0a535184a404f21f450be7f7b610f4981d248a40012ee78c13d954944313f6af"
+    },
+    {
+      "path": "ui/src/renderer/ReviewPanel.tsx",
+      "bytes": 8831,
+      "sha256": "7656e30410ab40cf58cfd1ab3626fde8378b272fd71292f7c9b27d7c9f4a57a2"
+    },
+    {
+      "path": "ui/src/renderer/StandaloneDocumentEditor.tsx",
+      "bytes": 6991,
+      "sha256": "17ac82c0d789799158e8afd471ad5976e5dc6962b0d9990c15951543bb937431"
+    },
+    {
+      "path": "ui/src/renderer/StudyContentBlocks.tsx",
+      "bytes": 8273,
+      "sha256": "a0f5f3ab07e6f3d1ec5487cb6752e7d6760f05c2cac9f5e7f3af6d27ec7bda80"
+    },
+    {
+      "path": "ui/src/renderer/StudyImageAnswer.tsx",
+      "bytes": 2237,
+      "sha256": "31e242845ffd8f21e799f764116d1374d55d0461779ca6a057c30917cca3cbf1"
+    },
+    {
+      "path": "ui/src/renderer/StudyPanel.tsx",
+      "bytes": 27095,
+      "sha256": "f342124303dda75f037d213fcdd597451e90264bd07d7191c487515f000abc5b"
+    },
+    {
+      "path": "ui/src/renderer/StudyTransferPanel.tsx",
+      "bytes": 11695,
+      "sha256": "91b722a400aa198023f81ed9791f6aae9a3910cb289949380623a148c2879bcc"
+    },
+    {
+      "path": "ui/src/renderer/TaskCalendar.tsx",
+      "bytes": 18686,
+      "sha256": "92b07eca1393db2aefaf965396d2cf6e9ba0f3ecbe612254b340faebc2db8d59"
+    },
+    {
+      "path": "ui/src/renderer/TextBoxEditor.tsx",
+      "bytes": 8373,
+      "sha256": "ec72d97537c8bd4b1eba7fe53142719665fbb85b7bbb2867c6848f113bf7db2b"
+    },
+    {
+      "path": "ui/src/renderer/TranslationSettings.tsx",
+      "bytes": 7745,
+      "sha256": "e504e502b23a783f9cf8dadddb0126f5db8865fd6f95ea3afca352e097b00d93"
+    },
+    {
+      "path": "ui/src/renderer/VideoPlayer.tsx",
+      "bytes": 20038,
+      "sha256": "93a169bb6e57475b3826bcd644a9cca6b52ee7d597a9e33af4a73ce097322a7a"
+    },
+    {
+      "path": "ui/src/renderer/app-shortcuts.ts",
+      "bytes": 743,
+      "sha256": "0fba7f6d0bd2330f5a729cc8129f1f5a282dcfb8a50dc87adcb302e2dc78ce73"
+    },
+    {
+      "path": "ui/src/renderer/board-embed.css",
+      "bytes": 1680,
+      "sha256": "8ad4168e166f3c32f4d63960060b099ab55f7fb4119302f2ba3e61a2583a8d13"
+    },
+    {
+      "path": "ui/src/renderer/board-export-ink.ts",
+      "bytes": 5862,
+      "sha256": "8539fdec3fe7384e16e9bf961d78f35055240a236705051ef34a2a0470735c60"
+    },
+    {
+      "path": "ui/src/renderer/board-export.tsx",
+      "bytes": 14326,
+      "sha256": "a5ec6a726bec53159ffdd22f7c2080469f86a1b2ccfbcd7acde0cfae9b745d08"
+    },
+    {
+      "path": "ui/src/renderer/board-ink-clip.ts",
+      "bytes": 6083,
+      "sha256": "9170f1c7fd9302259c122bd6397e3fd278fd2b3faa01ad51e3f7c575423381d7"
+    },
+    {
+      "path": "ui/src/renderer/board-ink-paint.ts",
+      "bytes": 1353,
+      "sha256": "cd927f6c6f4779c3c761e6c94697b97ea05994242089ad0b0d020efd661cd4d6"
+    },
+    {
+      "path": "ui/src/renderer/board-merge-placement.ts",
+      "bytes": 1831,
+      "sha256": "8724eab1ac6156bd9e6629054c4a6b00281551dfd61387ef88799c4431714fb5"
+    },
+    {
+      "path": "ui/src/renderer/board-paste.ts",
+      "bytes": 4767,
+      "sha256": "72e48a723907b3764f8d8a6b382e5beb5ef403822aa221890335eeb6d6d10c39"
+    },
+    {
+      "path": "ui/src/renderer/board-pdf-progressive.ts",
+      "bytes": 3677,
+      "sha256": "7f40cab10128f54795c9f51721ceb1cf25c904a345a7a0293d3e563ddcf605e9"
+    },
+    {
+      "path": "ui/src/renderer/board-pdf-resolution.ts",
+      "bytes": 3632,
+      "sha256": "65428cb9ac7b3c13ea22fdf225074d97765ea602e530f0469a46aca034161e3e"
+    },
+    {
+      "path": "ui/src/renderer/board-relink.css",
+      "bytes": 918,
+      "sha256": "c1045bab0fbb931633915f9b0566a2464f1b7743a155f368c63d3b995d677d91"
+    },
+    {
+      "path": "ui/src/renderer/board-source-navigation.ts",
+      "bytes": 1568,
+      "sha256": "efcd2d228e4c4034d58639a401b7e2bb488b3b4a03790fac5d14bdf3a6e1e74b"
+    },
+    {
+      "path": "ui/src/renderer/board-source.ts",
+      "bytes": 1227,
+      "sha256": "f92930528c96a79cc94d697c6442fc2da1395cd003e0e93275d8f8bbea9e48d2"
+    },
+    {
+      "path": "ui/src/renderer/board-text-selection.css",
+      "bytes": 2543,
+      "sha256": "5c9719cb88224421909af88c8148024314a9d74440ef284f14b2a14ab952b5b4"
+    },
+    {
+      "path": "ui/src/renderer/board-viewer.css",
+      "bytes": 13256,
+      "sha256": "6e9ed764b635c8d19b30242ebfd1d5a94a38c0e166f18f58499f84689f6da990"
+    },
+    {
+      "path": "ui/src/renderer/board-web-card.css",
+      "bytes": 2108,
+      "sha256": "796f16e496ef621b4c5dcb3f37a959ad80fe5c8f90fb48f90bc1979d706cccc7"
+    },
+    {
+      "path": "ui/src/renderer/board-web-links.ts",
+      "bytes": 1186,
+      "sha256": "92d10f29786bf04157dcb56947f5eb378b0ce1e4e7a1fde515152672ccd81198"
+    },
+    {
+      "path": "ui/src/renderer/box-content.css",
+      "bytes": 3704,
+      "sha256": "56e18cda7949fd3272d1874a9b8e23929d0aea972d0c84d990a2428c1fc02041"
+    },
+    {
+      "path": "ui/src/renderer/browser-pdf-links.ts",
+      "bytes": 1694,
+      "sha256": "3d6ba7cf2988ddb411297344b655c875cd8953ad30d27056b739a172fb259335"
+    },
+    {
+      "path": "ui/src/renderer/calendar-ics.ts",
+      "bytes": 24772,
+      "sha256": "80b82cd0f4210bb5ddf030270d668c0e433caf0295fa8a187cb7eb195f085d63"
+    },
+    {
+      "path": "ui/src/renderer/calendar-model.ts",
+      "bytes": 16447,
+      "sha256": "432bef16cb032ce60b83cc2636d0f2ca190a53083dbc930127fdee3180cec3ac"
+    },
+    {
+      "path": "ui/src/renderer/calendar-store.ts",
+      "bytes": 3735,
+      "sha256": "308c1c9175f70f674be65f743d2c4f37d8f27c66006befec01f7fc751c1e3550"
+    },
+    {
+      "path": "ui/src/renderer/calendar-types.ts",
+      "bytes": 994,
+      "sha256": "2bb5812b582966803d62dadf544e84b27b07d2b4c3b8fe8023a9d17f2fffaa45"
+    },
+    {
+      "path": "ui/src/renderer/calendar-workspace.css",
+      "bytes": 20831,
+      "sha256": "7d20f9a6da1910b268237f9c1550cd97886cc598dcb7a1d0c37aca930d219a6e"
+    },
+    {
+      "path": "ui/src/renderer/calendar.css",
+      "bytes": 7726,
+      "sha256": "e0b87135770867ca4f8b4c7bd8c04c7e01b7498dfa4b0a3a0cb6b9ecdf588121"
+    },
+    {
+      "path": "ui/src/renderer/checklist-location.ts",
+      "bytes": 927,
+      "sha256": "531d8be3a4d3eefbeba214399e4f48c68c5fa3b1fcfe0a647c744681e24d7dc4"
+    },
+    {
+      "path": "ui/src/renderer/child-board-model.ts",
+      "bytes": 9913,
+      "sha256": "0fe852b0cb19fa44fcd1e20a2407d5674441f66175fb877ec133e4cad74305e0"
+    },
+    {
+      "path": "ui/src/renderer/child-board-session.ts",
+      "bytes": 5206,
+      "sha256": "bfcf6db584192a3a3811588ebad29806e9cb9c704fa2492ba5c65505c5f31ab8"
+    },
+    {
+      "path": "ui/src/renderer/clipboard-rich-text.ts",
+      "bytes": 14306,
+      "sha256": "0c65905715e67150774cab0c813cd691e5bb24c615e0cf1bfdf2b7647c082ff3"
+    },
+    {
+      "path": "ui/src/renderer/context-menu.css",
+      "bytes": 1616,
+      "sha256": "7355f95a25f871fb3fea26722f856626456c7215b8096d14870d081de268a3fd"
+    },
+    {
+      "path": "ui/src/renderer/course-calendar.ts",
+      "bytes": 9748,
+      "sha256": "370f05db98d9e9321cf586f11af075b53f311c35825042fae0bf0c8e23eed141"
+    },
+    {
+      "path": "ui/src/renderer/course-checklist.css",
+      "bytes": 8379,
+      "sha256": "44f427e156cf7a11378bb9ab88c0529605769da36fa190456af81d5ec1128dd8"
+    },
+    {
+      "path": "ui/src/renderer/course-checklist.ts",
+      "bytes": 11939,
+      "sha256": "b2d2c4920958938b2c2ce23163e1a7ee429f5f0d1bdddcbcb3dd2cf730f09ea2"
+    },
+    {
+      "path": "ui/src/renderer/data-file-parsers.ts",
+      "bytes": 3068,
+      "sha256": "260811b2864253f08ed1e3a81a82a51d3cf6e8a7e7a46e4b868525c940562c17"
+    },
+    {
+      "path": "ui/src/renderer/data-file-preview.css",
+      "bytes": 2128,
+      "sha256": "1ff23f4b3911c81c42e208ffcfed2ccfb659ff467da5aab7f20c909b58b873a6"
+    },
+    {
+      "path": "ui/src/renderer/document-editing.css",
+      "bytes": 5340,
+      "sha256": "9f4c637fbebff17a9fee5ca4abbd9a1c98965d99185b9861de58b0d9a567ed23"
+    },
+    {
+      "path": "ui/src/renderer/document-translation.css",
+      "bytes": 2186,
+      "sha256": "b68024d99880a8b9ccfcea48eb11b91c81e6df33f8d31e3112777f3168ebf2fc"
+    },
+    {
+      "path": "ui/src/renderer/document-zoom.css",
+      "bytes": 1265,
+      "sha256": "9fdf0c4a3c2a3b0b267283c465175554dd7f48279bf46fba70ac22543252ff36"
+    },
+    {
+      "path": "ui/src/renderer/document-zoom.ts",
+      "bytes": 798,
+      "sha256": "21cf149d04067336abf8e589460a38e31f324c33869e7d9091f56443b4ad82e8"
+    },
+    {
+      "path": "ui/src/renderer/export-view.ts",
+      "bytes": 2602,
+      "sha256": "49ae5636beb23e282d60c30704be3f13b5d8cee0d945d5a2d3ffad4dccd5c30b"
+    },
+    {
+      "path": "ui/src/renderer/file-management.css",
+      "bytes": 2226,
+      "sha256": "e6a22837aeab6934abd030f133c98af7001d91a6f79652ff289a59edabf0cfd0"
+    },
+    {
+      "path": "ui/src/renderer/file-tree-management.ts",
+      "bytes": 3237,
+      "sha256": "fc79835acc787641f7ad573776d95cbeb98905462c718fe6f0b4e1bcf982b0b9"
+    },
+    {
+      "path": "ui/src/renderer/graph.css",
+      "bytes": 5384,
+      "sha256": "430b1a556afcd237b1be658573c7e1d65728171ae7181a26aae300a4b4737e80"
+    },
+    {
+      "path": "ui/src/renderer/i18n.ts",
+      "bytes": 8026,
+      "sha256": "82cfaadd0e5dca2149af5af48de26e6feab4fcef517487e0ad617413311774e1"
+    },
+    {
+      "path": "ui/src/renderer/ink-replay-camera.ts",
+      "bytes": 5868,
+      "sha256": "7f1eed7da88f5460f8da9def21a679a271c14239954a7581861a9d0e424b90f3"
+    },
+    {
+      "path": "ui/src/renderer/ink-replay.css",
+      "bytes": 4953,
+      "sha256": "6537480883af23888e4743c24cc20d591c15284841f30a23c0dc64643f8975db"
+    },
+    {
+      "path": "ui/src/renderer/ink-replay.ts",
+      "bytes": 1727,
+      "sha256": "39addd5b685ce9548c6bcb43859663406aa113e40aa028cb6015e41a3cd64a1c"
+    },
+    {
+      "path": "ui/src/renderer/knowledge-palace-math.ts",
+      "bytes": 2092,
+      "sha256": "9373d266a26d06142d301cde4b48ee5cf69a5bb8946b031a1be6d648c34a6e4b"
+    },
+    {
+      "path": "ui/src/renderer/knowledge-space-metadata.ts",
+      "bytes": 3695,
+      "sha256": "c3a8a22f34e7d92f8d1e2a30c6026c86af857055e9e7b62c22255ebafa7274cf"
+    },
+    {
+      "path": "ui/src/renderer/knowledge-space.css",
+      "bytes": 11531,
+      "sha256": "3827abcd30c0a7ac910bb835cc043748f422f7202e5d79ef61675745b9306f9f"
+    },
+    {
+      "path": "ui/src/renderer/knowledge-walk-gl.ts",
+      "bytes": 12383,
+      "sha256": "de0c443b4b880650577d5718cefdb41c9e55e39d85df7b70326391c26921f63f"
+    },
+    {
+      "path": "ui/src/renderer/knowledge-walk-math.ts",
+      "bytes": 9734,
+      "sha256": "e44762c477e7c826611ebb7e7d6503b9552c9a6cb0a1f86f5008cfa192630084"
+    },
+    {
+      "path": "ui/src/renderer/knowledge-walk-renderer.ts",
+      "bytes": 13082,
+      "sha256": "c60e048b447c2e4836d346fe61a54b9b0bd5e8d2fa9c75c1e07754994d280a8f"
+    },
+    {
+      "path": "ui/src/renderer/knowledge-walk.css",
+      "bytes": 6563,
+      "sha256": "83ad402bd7e1e9a353e3c787efa5ca2088335938d2aa6e2adae1a64ceb2bbf7e"
+    },
+    {
+      "path": "ui/src/renderer/local-ocr-english.json",
+      "bytes": 1709,
+      "sha256": "7db56c7a2cd167d70e9812f95f91c6e7cb95a33443f7533efae91f3ad9f2ded8"
+    },
+    {
+      "path": "ui/src/renderer/local-ocr.css",
+      "bytes": 1262,
+      "sha256": "bb1560a4a6fdb8cecd5897cdc1265e0044c1e04b4bcdef85e456c9721d9d103b"
+    },
+    {
+      "path": "ui/src/renderer/math-workbench.css",
+      "bytes": 861,
+      "sha256": "b537f226d80a89d22b9105cc7b248f167982131d48f7300e9f1b84634bd2bbb2"
+    },
+    {
+      "path": "ui/src/renderer/media-editor-model.ts",
+      "bytes": 7377,
+      "sha256": "25b045721737569dfa294e5deac8e007c560e37fb7b0b52ec7af51143d1d9583"
+    },
+    {
+      "path": "ui/src/renderer/media-editor.css",
+      "bytes": 6914,
+      "sha256": "277a4af55774039b5592aa736e6241eb64c7255097bde057f80c886ffdd938cb"
+    },
+    {
+      "path": "ui/src/renderer/note-exchange.css",
+      "bytes": 3044,
+      "sha256": "5e7cee4ea650d1084361a29210a1bd3a65e5f20d1fd6de7116ad61805de09122"
+    },
+    {
+      "path": "ui/src/renderer/notebook-actions.ts",
+      "bytes": 9146,
+      "sha256": "d12c36ae38923d0cec19c816c2b7f6e2d2a1dbbdddd532560750f4a9221b0f7c"
+    },
+    {
+      "path": "ui/src/renderer/notebook-csv-export.css",
+      "bytes": 406,
+      "sha256": "f8fbd33505dec24aa1b6c19f3696ac90eed84d6c502f084cd8d8a689827bb70b"
+    },
+    {
+      "path": "ui/src/renderer/notebook-document.css",
+      "bytes": 9783,
+      "sha256": "5e8afe3ef35feb145db594ad3abea21ea01d95d86c049ef877263a7cd66f1f14"
+    },
+    {
+      "path": "ui/src/renderer/notebook-html-format.css",
+      "bytes": 7834,
+      "sha256": "f49373359fe1b2ce90a426cc4cdc07ab53d07774e231d17b2034ecf04f36836e"
+    },
+    {
+      "path": "ui/src/renderer/notebook-html-format.ts",
+      "bytes": 2747,
+      "sha256": "ba39116ca77527ffb89b02706da18b851b30e9839035f496bbbc101b33af1e07"
+    },
+    {
+      "path": "ui/src/renderer/notebook-outline.css",
+      "bytes": 4258,
+      "sha256": "1ce010e91d64b29b5df1b938913251d2951fb0d3705fbc5e0eb63c13267eab66"
+    },
+    {
+      "path": "ui/src/renderer/notebook-outline.ts",
+      "bytes": 4898,
+      "sha256": "189521c8ca371042893f29e40fa7c4985fe8d90811b0f950e580ca5363bb28af"
+    },
+    {
+      "path": "ui/src/renderer/notebook-run-controller.ts",
+      "bytes": 6870,
+      "sha256": "56b5dd1de13bd95a459239089470e60ee104ea5df29d9b56b0896eb3d85b302c"
+    },
+    {
+      "path": "ui/src/renderer/notebook-session.ts",
+      "bytes": 5784,
+      "sha256": "c44cb08a67196a62f79af70da363a1928aab0132138a983070ca662a595527a0"
+    },
+    {
+      "path": "ui/src/renderer/notebook-word-selection.ts",
+      "bytes": 741,
+      "sha256": "b955474c3cfc19a771b91af6974bed66c31af5555c674503327d69bf5367d12c"
+    },
+    {
+      "path": "ui/src/renderer/notebook.css",
+      "bytes": 9021,
+      "sha256": "857a49adae1e93c4b0643ddb91821b7b170145f9f4e4b1cc5feff7c944a2d9d2"
+    },
+    {
+      "path": "ui/src/renderer/ocr-capture.ts",
+      "bytes": 1866,
+      "sha256": "1c1c59142b6563e63eeadc3c3aa1b28ecb5e8221eb75a5ecd57ef79e4067d9a6"
+    },
+    {
+      "path": "ui/src/renderer/office-preparation-deadline.ts",
+      "bytes": 914,
+      "sha256": "d98fecc58d7cf6332f762d96f7e67b550218e5e83d27eaffaf2408c0643ccd42"
+    },
+    {
+      "path": "ui/src/renderer/office-reading-labels.ts",
+      "bytes": 3813,
+      "sha256": "2d01232b9afcffb4ff3162f3ade5b5a90e978d89866042286cd6ebae4247578c"
+    },
+    {
+      "path": "ui/src/renderer/office-text-selection.css",
+      "bytes": 2061,
+      "sha256": "04d76abe7fda99bc831d2a70ae02df8c64cacbed78c5d976b290500a422d440c"
+    },
+    {
+      "path": "ui/src/renderer/pdf-board-links.ts",
+      "bytes": 4175,
+      "sha256": "9ef6155598389d2145ac81996864b5f114ff599a6b4f59dbdb85bc005e9d4894"
+    },
+    {
+      "path": "ui/src/renderer/pdf-extend.css",
+      "bytes": 2652,
+      "sha256": "a095d25bd11cdefac5ea44cd6305209936aeef448512e9774a0b13df092c14d5"
+    },
+    {
+      "path": "ui/src/renderer/pdf-reader-zoom.ts",
+      "bytes": 2154,
+      "sha256": "124ebc71df305b3eee4651bb43a4f285c1dfb40566451eea428302edc1ea8a78"
+    },
+    {
+      "path": "ui/src/renderer/pdf-reading-export.tsx",
+      "bytes": 17115,
+      "sha256": "e25e8b369e67d3ffb1394a26f6ce775e89a5c3d1c0c2dec63508956adcdaab81"
+    },
+    {
+      "path": "ui/src/renderer/pdf-reading.css",
+      "bytes": 1569,
+      "sha256": "1ad985b7b63a1f395fdc1bd1a4eb57edc551056771781f0c9a13b0446e7fe9eb"
+    },
+    {
+      "path": "ui/src/renderer/pdf-selection-capture.ts",
+      "bytes": 3090,
+      "sha256": "bd008e0eb593a8e88f925731a4df2ce7f8eda7bc0d7bcc388e50928ca57316b3"
+    },
+    {
+      "path": "ui/src/renderer/pdf-text-selection.css",
+      "bytes": 829,
+      "sha256": "ea88b4bafe6f1f78b123173ae42c753b1e5a972ce2fe96120ea244396ef88951"
+    },
+    {
+      "path": "ui/src/renderer/pdf-toolbar-menu.css",
+      "bytes": 2390,
+      "sha256": "1c320ed4b4f424c7cc6c5f2e935cffd7b453546e728eebb9206e3e177c852f4a"
+    },
+    {
+      "path": "ui/src/renderer/pdf-translation.css",
+      "bytes": 2890,
+      "sha256": "84d6d9a2c713654d00867b9a26b9f7a1907878af1fe570aac3fa810f6ccb4272"
+    },
+    {
+      "path": "ui/src/renderer/pdf-visual-snapshot.ts",
+      "bytes": 1489,
+      "sha256": "cd1bacab7d72cea9e1608d325eb1b9df4206367f6bfb8d828025eb2c4bc9e106"
+    },
+    {
+      "path": "ui/src/renderer/poetry-rewards.json",
+      "bytes": 4186,
+      "sha256": "0b291dc4a6760d18bb3dc80833a6cebcc787e3c88ce99de268dd3fe9e12bfc85"
+    },
+    {
+      "path": "ui/src/renderer/quick-notes.css",
+      "bytes": 4754,
+      "sha256": "711af420b18d26c58c7f73e8898cd8b47ceedb528c843de491fe0d5cec1342e3"
+    },
+    {
+      "path": "ui/src/renderer/quick-notes.ts",
+      "bytes": 7202,
+      "sha256": "f12278a13a71882102fa84bd3bf4fdc2e7790b5776f6a29b9f044c6d592cf2d1"
+    },
+    {
+      "path": "ui/src/renderer/reading-overlay-context.ts",
+      "bytes": 153,
+      "sha256": "2cd444d2e7e7f7bd14d59237ff35c6f4033c3353c03d2588eb529b0d6c13cb44"
+    },
+    {
+      "path": "ui/src/renderer/replay-assets.ts",
+      "bytes": 2785,
+      "sha256": "a371903760407a3fc4b149522e70e861062cc9fdbd229123e6c417e9004d8e99"
+    },
+    {
+      "path": "ui/src/renderer/replay-display.css",
+      "bytes": 289,
+      "sha256": "738ce1cad4033e5d6a2e30988190a486be616587dfaa6e918286f8332337bf76"
+    },
+    {
+      "path": "ui/src/renderer/replay-display.ts",
+      "bytes": 507,
+      "sha256": "f676c0971bbd163b899351e24521ff08d8c07055a7ddd912ef675caa36275fba"
+    },
+    {
+      "path": "ui/src/renderer/replay-paint.ts",
+      "bytes": 1221,
+      "sha256": "9e6b85b14c6d9ebd8f1e221654cd945625e1d9e31e46cb71762c584de408047f"
+    },
+    {
+      "path": "ui/src/renderer/reviews.css",
+      "bytes": 3955,
+      "sha256": "575d7b3fbb09da31dde0d5cf54f918072a0e7838ae32dae5168df1016c8b2c2d"
+    },
+    {
+      "path": "ui/src/renderer/rich-text-math.ts",
+      "bytes": 6848,
+      "sha256": "84f69797dd48c3c1e5080fc25846e2553fa236082350e5f40d39bfcb5ad702b7"
+    },
+    {
+      "path": "ui/src/renderer/study-content-blocks.css",
+      "bytes": 1829,
+      "sha256": "5cfcea562677ff531bc9f0408c1aaf25402e16124a9318c5007539d160930778"
+    },
+    {
+      "path": "ui/src/renderer/study-outline.ts",
+      "bytes": 4008,
+      "sha256": "4c2fe4633cd3ad0ad99aa1cd0d6452814ff7421280053ad8959da0afa3f2be9f"
+    },
+    {
+      "path": "ui/src/renderer/study-transfer.css",
+      "bytes": 1464,
+      "sha256": "ef8aa40798b7d7a955ce90ff5578233e504ab08754a2f238639488d311f2067d"
+    },
+    {
+      "path": "ui/src/renderer/study.css",
+      "bytes": 6088,
+      "sha256": "2c31dadf82f82c7aba720cff9fdf6aa9783468faee63c7a01791d91fba1b86c0"
+    },
+    {
+      "path": "ui/src/renderer/ui.tsx",
+      "bytes": 1330,
+      "sha256": "4324f3b49a12a14b996d4785b2060d01a500579bbdcd5b53258c926f92a75601"
+    },
+    {
+      "path": "ui/src/renderer/useCalendarReminders.ts",
+      "bytes": 5353,
+      "sha256": "32813e022dc3156efd5dac4dab2c86e16c887efb0ffdfc90479ee3279bf2a957"
+    },
+    {
+      "path": "ui/src/renderer/useDocumentZoom.ts",
+      "bytes": 3421,
+      "sha256": "5e7f4c794e83ead29db3b484b9a1a3af6c2f8f23a81725299bc1c0557d596b2a"
+    },
+    {
+      "path": "ui/src/renderer/usePDFPinchZoom.ts",
+      "bytes": 3546,
+      "sha256": "7db31e8733149e90a865ea9461093df1339735cbe2d380d4c2fdf746ef3d8bbc"
+    },
+    {
+      "path": "ui/src/renderer/usePDFReaderRegion.ts",
+      "bytes": 2504,
+      "sha256": "11c39fb718dbf9d0eec834640c09339b0b107ada354fbde8676d19e2e74341ca"
+    },
+    {
+      "path": "ui/src/renderer/useVideoSubtitles.ts",
+      "bytes": 5095,
+      "sha256": "5102e614ed38da1cfdd3d1458af9fcfc5f4a092c0e3eca53cf714d1b3ec127d1"
+    },
+    {
+      "path": "ui/src/renderer/video-controls.ts",
+      "bytes": 4911,
+      "sha256": "3a5aa85e8f91d5371dc5561d2d519d513513a11115c1024c11c0e7c156024e0d"
+    },
+    {
+      "path": "ui/src/renderer/video-player.css",
+      "bytes": 4604,
+      "sha256": "d02c7dd95db8be0c2d160e31a947b220840f044cd0a053ba7476df14c04abfdb"
+    },
+    {
+      "path": "ui/src/renderer/video-subtitle-persistence.ts",
+      "bytes": 4192,
+      "sha256": "00009008415f08e7c16a0a09de02b30076c311c53698b01de48f94782fc0e8b1"
+    },
+    {
+      "path": "ui/src/shared/board-pdf-owners.ts",
+      "bytes": 462,
+      "sha256": "bd853baa422305f01fda14ad8864ed54f8299e25f3784c45fa96b8666ed1eea5"
+    },
+    {
+      "path": "ui/src/shared/desktop-api.ts",
+      "bytes": 30468,
+      "sha256": "fd059b18dcadeb058efe0fb3bcdaf71a60e349fb3eaff681395ddd23f7ea58e9"
+    },
+    {
+      "path": "ui/src/shared/internal-file-links.ts",
+      "bytes": 1637,
+      "sha256": "e66bff2dfe75d2cd253c5b9ffc15f9289bbb41a4191633aa2c1c221c3b4ecaf9"
+    },
+    {
+      "path": "ui/src/shared/media-editor.ts",
+      "bytes": 1034,
+      "sha256": "50b1bec7fc3ccdc75e2162b14c9b928e38fc0445690f65ec5d42f8f14aa9bb6f"
+    },
+    {
+      "path": "ui/src/shared/notebook-format.ts",
+      "bytes": 17866,
+      "sha256": "6df2c30693c173d3191411adcfc2adc94c8dfef8bd2e70b611dc461eea81ea5c"
+    },
+    {
+      "path": "ui/src/shared/pdf-extend.ts",
+      "bytes": 2273,
+      "sha256": "a800f354aff8c48bac5ba9390542793bcfa2963b5b66511fb327d2acb869f717"
+    },
+    {
+      "path": "ui/src/shared/study-transfer.ts",
+      "bytes": 783,
+      "sha256": "159fae06af83dece21ee48006a77c8c5af0ceca0181b4922ede5e2791ea29233"
+    },
+    {
+      "path": "ui/src/shared/study.ts",
+      "bytes": 900,
+      "sha256": "b0a1936ddfeb292c251afd3b293a7cbce2a05b3c1cb4432d84aed0dbafac8acb"
+    },
+    {
+      "path": "ui/src/shared/video-playback.ts",
+      "bytes": 468,
+      "sha256": "acd942f17e788075da58e35aace986815172b208d091936550bb8a77f38f2af0"
+    },
+    {
+      "path": "ui/src/surface.tsx",
+      "bytes": 2052,
+      "sha256": "4d722700ec83e31526754149a95e1dd2b07ff528c83b0ad2d4fe9492342f8c61"
+    },
+    {
+      "path": "ui/tsconfig.json",
+      "bytes": 504,
+      "sha256": "1427b184885849d5f3fd0ef6d957257506cac6521909592e27a694258490a26a"
+    },
+    {
+      "path": "ui/vite.config.ts",
+      "bytes": 2886,
+      "sha256": "1d692205f406d94dc2a53cb11c7fe04f11971bf6332f0402be4e1e2f680f7251"
+    }
+  ]
+}

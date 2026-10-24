@@ -1,6 +1,6 @@
 # InkSpace 功能目录与独立模块边界
 
-本目录按已脱敏完整软件的真实源码整理，共 **61 个功能组**。同一功能中的菜单、按钮和快捷键没有拆成多个“软件”。完整 InkSpace 软件仍保留；本仓库提供可复用核心及独立集成，并明确仍需应用宿主或进一步解耦的界面。
+本目录按已脱敏完整软件的真实源码整理，共 **63 个功能组**（复核新增旁注与提取笔记两组）。同一功能中的菜单、按钮和快捷键没有拆成多个“软件”。完整 InkSpace 软件仍保留；本仓库提供可复用核心及独立集成，并明确仍需应用宿主或进一步解耦的界面。
 
 ## 如何阅读
 
@@ -14,11 +14,11 @@
 
 JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tools`、`pdf-annotations`、`office-documents`、`notebook-data`、`notebook-runtime`、`knowledge-search`、`file-storage`、`note-exchange`、`study-tools`、`task-calendar`、`browser-utilities`、`translation-tools`、`media-tools`、`math-lab`、`document-workspace`、`ocr-tools`。这是一组可独立加载的库，不是19个桌面安装程序。
 
-[Swift包清单](swift/Package.swift)目前声明16个product：`InkSpaceTextHistory`、`InkSpaceOutline`、`InkSpaceSubtitles`、`InkSpacePaths`、`InkSpaceGeometry`、`InkSpaceStudy`、`InkSpaceChecklist`、`InkSpacePDFRecords`、`InkSpaceMediaTimeline`、`InkSpaceAI`、`InkSpaceWebClips`、`InkSpaceSpeechText`、`InkSpaceStorage`、`InkSpaceOCR`、`InkSpaceExcelPictures`、`InkSpaceScanPDF`。16个product已完成SwiftPM测试及arm64 iOS Simulator无签名构建，具体平台、API和行为验证范围以Swift包说明为准；未纳入纯库的原生UI仍在表中标明。后续拆分必须保持格式、数据完整性、原功能和宿主接口约束。
+[Swift产品清单](swift-modules.json)目前声明16个product：`InkSpaceTextHistory`、`InkSpaceOutline`、`InkSpaceSubtitles`、`InkSpacePaths`、`InkSpaceGeometry`、`InkSpaceStudy`、`InkSpaceChecklist`、`InkSpacePDFRecords`、`InkSpaceMediaTimeline`、`InkSpaceAI`、`InkSpaceWebClips`、`InkSpaceSpeechText`、`InkSpaceStorage`、`InkSpaceOCR`、`InkSpaceExcelPictures`、`InkSpaceScanPDF`。16个product已完成SwiftPM测试及arm64 iOS Simulator无签名构建，具体平台、API和行为验证范围以Swift包说明为准；未纳入纯库的原生UI仍在表中标明。后续拆分必须保持格式、数据完整性、原功能和宿主接口约束。
 
 ## React界面的独立使用边界
 
-`@inkspace/ui`另提供29个原有React表面、10个分域ESM入口和类型声明，见 [UI说明](ui/README.md) 与 [宿主契约](ui/HOST-CONTRACT.md)。代码编辑/文档预览/结构编辑/知识图/宫殿漫游等可由props独立驱动；便签、日历、Notebook、白板、媒体、OCR等使用明确注入的文件/资源/运行时适配器。缺失宿主能力必须显示错误，不能回退到完整App全局接口或伪造结果。
+`@inkspace/ui`另提供30个原有React表面、10个分域ESM入口和类型声明，见 [React源码包](react-ui-components.zip)内的 README 与 HOST-CONTRACT.md。代码编辑/文档预览/结构编辑/知识图/宫殿漫游等可由props独立驱动；便签、日历、Notebook、白板、媒体、OCR等使用明确注入的文件/资源/运行时适配器。缺失宿主能力必须显示错误，不能回退到完整App全局接口或伪造结果。
 
 这补充了下表中的UI抽取边界，不表示所有原生界面、浏览器内核、完整App壳或外部运行时均已变为独立软件。组件从原公开源码依赖闭包抽取，没有复制`App.tsx`、Electron主进程或preload。
 
@@ -37,23 +37,25 @@ JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 | ID | 功能组 | 使用者可见范围 | 来源相对路径 | 独立形式与剩余依赖 |
 | --- | --- | --- | --- | --- |
 | B01 | 文字与代码编辑 | 纯文字、Python/LaTeX/HTML等源文件编辑、保存、撤销、文件导出和原应用打开。 | `desktop/src/renderer/EditorPane.tsx`<br>`desktop/src/renderer/WorkspaceFileEditor.tsx`<br>`desktop/src/main/source-file-export.cjs` | JS 文件核心；编辑器组件已抽取；保存/运行宿主API需显式提供；UI `editor`受控代码/文字编辑 |
-| B02 | Markdown与富文本公式 | Markdown原文/预览、标题纲要、链接、富文本与行内公式呈现。 | `desktop/src/renderer/EditorPane.tsx`<br>`desktop/src/renderer/rich-text-math.ts`<br>`ios/InkSpace/UI/MarkdownDocumentView.swift`<br>`ios/InkSpace/Documents/BoardRichTextRenderer.swift` | JS 文档核心部分；Swift `InkSpaceTextHistory`/`InkSpaceOutline`；编辑和渲染UI需宿主；UI `documents`预览及`editor`文字组件 |
-| B03 | 标准文档创建与结构编辑 | 创建DOCX、PPTX、PDF等标准文档，编辑标题/段落/列表并保存；不等于完整Office套件。 | `desktop/src/renderer/NewDocumentDialog.tsx`<br>`desktop/src/renderer/StandaloneDocumentEditor.tsx`<br>`desktop/src/main/editable-office.cjs` | JS `office-documents`；结构编辑器界面需解耦；UI `documents`结构化编辑，保存由调用方实现 |
+| B02 | Markdown与富文本公式 | Markdown原文/预览、标题纲要、链接、富文本与行内公式、Markdown内嵌白板及打开跳转。 | `desktop/src/renderer/EditorPane.tsx`<br>`desktop/src/renderer/rich-text-math.ts`<br>`ios/InkSpace/UI/MarkdownDocumentView.swift`<br>`ios/InkSpace/Documents/BoardRichTextRenderer.swift`<br>`desktop/src/renderer/BoardEmbed.tsx` | JS 文档核心部分；Swift `InkSpaceTextHistory`/`InkSpaceOutline`；编辑和渲染UI需宿主；UI `documents`预览及`editor`文字组件 |
+| B03 | 标准文档创建与结构编辑 | 创建DOCX、PPTX及带可编辑源模型的PDF，编辑标题/段落/列表并保存；PDF渲染需注入，不等于完整Office套件。 | `desktop/src/renderer/NewDocumentDialog.tsx`<br>`desktop/src/renderer/StandaloneDocumentEditor.tsx`<br>`desktop/src/main/editable-office.cjs`<br>`desktop/src/main/document-pdf.cjs` | JS `office-documents`；结构编辑器界面需解耦；UI `documents`结构化编辑，保存由调用方实现 |
 | B04 | Office和图片阅读 | Word/PowerPoint/图片/Markdown阅读与关联阅读PDF，原文和批注版双入口、保留源文件。 | `desktop/src/renderer/DocumentPreview.tsx`<br>`desktop/src/main/docx-preview.cjs`<br>`ios/InkSpace/Documents/OfficeDocumentRenderer.swift`<br>`ios/InkSpace/UI/InlineImageReadingView.swift` | JS `office-documents`；原生转换/系统渲染与阅读UI仍需宿主；UI `documents`承载已转换内容，转换能力需服务适配 |
 | B05 | Excel阅读与嵌图 | 工作簿/工作表、保存的公式值、单元格阅读版及嵌入图片；不声称完全还原Excel排版/图表。 | `desktop/src/main/excel-reading.cjs`<br>`desktop/src/main/office-embedded-images.cjs`<br>`ios/InkSpace/Documents/ExcelDocumentRenderer.swift`<br>`ios/InkSpace/UI/ExcelPicturesReadingView.swift` | JS `office-documents`/`notebook-data`；Swift `InkSpaceExcelPictures`提取嵌图；完整工作表渲染界面需宿主 |
 | B06 | CSV/TSV/JSON数据预览 | 数据文件解析、表格预览与列/行浏览；与Notebook变量导入分开。 | `desktop/src/renderer/DataFilePreview.tsx`<br>`desktop/src/renderer/data-file-parsers.ts` | JS `notebook-data`解析域；预览组件需解耦；UI `documents` CSV/HTML预览 |
 | B07 | 本地Python脚本 | 显式运行、取消、输出/错误、超时与大小限制；需要使用者提供Python运行环境。 | `desktop/src/main/python-service.cjs`<br>`desktop/src/renderer/PythonConsole.tsx` | JS `notebook-runtime`；执行环境需注入，不含Python二进制或桌面界面 |
 | B08 | Jupyter Notebook编辑运行 | 代码/Markdown单元格、语法色、快捷键、纲要、逐格/连续运行、结果显示与保存。 | `desktop/src/renderer/NotebookEditor.tsx`<br>`desktop/src/renderer/NotebookCode.tsx`<br>`desktop/src/renderer/notebook-run-controller.ts`<br>`desktop/src/main/notebook-service.cjs` | JS `notebook-runtime`与格式核心；编辑与HTML输出组件已抽取；执行/数据接口需适配；UI `notebook`，运行/保存仍为显式回调及宿主接口 |
 | B09 | Notebook表格数据交换 | CSV/TSV/Excel多表导入、表头/变量选择、数据导出与运行中数据交换。 | `desktop/src/main/notebook-data.cjs`<br>`desktop/src/main/notebook-data-worker.cjs`<br>`desktop/src/renderer/NotebookCSVPicker.tsx`<br>`desktop/src/renderer/NotebookCSVExport.tsx` | JS `notebook-data`；部分操作依赖可选Python科学计算/Excel组件 |
-| B10 | LaTeX编译与公式排版 | 编辑TeX，主动调用Tectonic编译PDF，管理缓存、取消和诊断；完整离线TeX缓存需另备。 | `desktop/src/main/tex-service.cjs`<br>`desktop/scripts/packaging/prepare-latex.mjs`<br>`desktop/src/renderer/EditorPane.tsx` | JS `office-documents`内TeX服务域；需Tectonic及缓存，非附带编译器的独立安装包 |
-| B11 | 科学计算与数学工作台 | 表达式、函数采样/绘图、数值微分积分、梯度/Hessian、CSV统计、OLS、时间序列和财务数值函数；不是符号代数系统。 | `desktop/src/renderer/MathWorkbench.tsx`<br>`ios/InkSpace/Resources/MathLab/`<br>`ios/InkSpace/UI/MathWorkbenchView.swift`<br>`ios/InkSpace/UI/FloatingCalculatorOverlay.swift` | JS `math-lab`数值引擎；现有Web/浮动界面仍需运行壳，参见包说明；UI `tools`数学浮窗，静态资源URL显式传入 |
+| B10 | LaTeX编译与公式排版 | 编辑TeX，主动调用Tectonic编译PDF，管理缓存、取消和诊断；完整离线TeX缓存需另备。 | `desktop/src/main/tex-service.cjs`<br>`desktop/scripts/packaging/prepare-latex.mjs`<br>`desktop/src/renderer/EditorPane.tsx` | JS `office-documents.tex`提供独立TexService；调用方提供Tectonic、缓存、资料快照/发布接口，未附带TeX二进制。 |
+| B11 | 科学计算与数学工作台 | 表达式、函数采样/绘图、数值微分积分、梯度/Hessian、CSV统计、OLS、时间序列和财务数值函数、工作表导出请求校验；不是符号代数系统。 | `desktop/src/renderer/MathWorkbench.tsx`<br>`ios/InkSpace/Resources/MathLab/`<br>`ios/InkSpace/UI/MathWorkbenchView.swift`<br>`ios/InkSpace/UI/FloatingCalculatorOverlay.swift`<br>`desktop/src/main/math-export.cjs` | JS `math-lab`数值引擎；现有Web/浮动界面仍需运行壳，参见包说明；UI `tools`数学浮窗，静态资源URL显式传入 |
+| B12 | 旁注空白区 | 为原文创建关联Markdown旁注、插入图片、编辑/预览、右侧或下方布局及保存。 | `desktop/src/renderer/App.tsx`<br>`desktop/src/renderer/MarginPanel.tsx` | UI `MarginNotes`可由props独立驱动；Node `office-documents.noteExtraction`提供旁注文档/图片链接组装；文件创建/保存由调用方注入。 |
+| B13 | 提取为Markdown笔记 | 从PDF/Office/表格文字生成带原件链接的Markdown新笔记，保留截断提示，不覆盖原文件。 | `desktop/src/renderer/App.tsx`<br>`desktop/src/renderer/PDFViewer.tsx` | JS `office-documents.noteExtraction`提供Markdown生成及可注入读取/发布的提取流程；PDF/HTML提取器与文件发布由调用方提供。 |
 
 ## 3. 白板、手写与输出
 
 | ID | 功能组 | 使用者可见范围 | 来源相对路径 | 独立形式与剩余依赖 |
 | --- | --- | --- | --- | --- |
-| C01 | 白板文件与浏览导航 | 白板JSON校验、对象/连线/定位点、总览、缩放平移、目录定位与保存视口。 | `desktop/src/main/board-json.cjs`<br>`desktop/src/main/board-validation.cjs`<br>`desktop/src/renderer/BoardViewer.tsx`<br>`ios/InkSpace/Core/Models.swift` | JS `board-model`；Swift `InkSpaceGeometry`仅可复用几何部分；完整画布与存储协调需宿主；UI `board`，资源/操作需适配 |
-| C02 | 原生手写与工具预设 | PencilKit书写、橡皮、高亮、粗线、笔色/粗细/透明度预设及原生撤销重做。 | `ios/InkSpace/Canvas/NativeBoardCanvas.swift`<br>`ios/InkSpace/UI/BoardSheets.swift`<br>`desktop/src/native/InkSpaceInkHelper.swift` | JS `board-ink`仅笔迹数据/桥接相关核心；PencilKit画布与Mac helper需Apple宿主，仍需解耦 |
+| C01 | 白板文件与浏览导航 | 白板JSON校验、对象/连线/定位点、总览、缩放平移、目录定位、最后一笔定位与保存视口。 | `desktop/src/main/board-json.cjs`<br>`desktop/src/main/board-validation.cjs`<br>`desktop/src/renderer/BoardViewer.tsx`<br>`ios/InkSpace/Core/Models.swift`<br>`ios/InkSpace/Core/BoardInkLocator.swift` | JS `board-model`；Swift `InkSpaceGeometry`仅可复用几何部分；完整画布与存储协调需宿主；UI `board`，资源/操作需适配 |
+| C02 | 原生手写与工具预设 | PencilKit书写、橡皮、高亮、粗线、直尺、笔色/粗细/透明度预设及原生撤销重做。 | `ios/InkSpace/Canvas/NativeBoardCanvas.swift`<br>`ios/InkSpace/UI/BoardSheets.swift`<br>`desktop/src/native/InkSpaceInkHelper.swift` | JS `board-ink`仅笔迹数据/桥接相关核心；PencilKit画布与Mac helper需Apple宿主，仍需解耦 |
 | C03 | 圈选、变换与排版 | 混合笔迹/对象圈选、移动缩放、复制粘贴、成组/拆组、对齐排布及历史保护。 | `desktop/src/main/board-operations.cjs`<br>`desktop/src/renderer/BoardArrangeToolbar.tsx`<br>`ios/InkSpace/Canvas/BoardLassoSelection.swift`<br>`ios/InkSpace/Core/BoardLassoClipboard.swift` | JS `board-ink`/`board-model`核心；原生手势/撤销系统需宿主，压力稳定性问题仍保留；UI `board`原有选择/排布界面与操作回调 |
 | C04 | 文字、公式和思维导图节点 | 文字/公式节点、富文本输入、样式和连接箭头、可编辑图形框架。 | `desktop/src/renderer/GraphWorkspace.tsx`<br>`desktop/src/main/board-elements.cjs`<br>`ios/InkSpace/UI/BoardRichTextEditor.swift`<br>`ios/InkSpace/UI/BoardSheets.swift` | JS `board-model`；Swift `InkSpaceTextHistory`；节点/图形组件可挂载，写入与附件需适配；UI `knowledge`思维导图和`editor`富文本组件 |
 | C05 | 文档卡片与页面展开 | PDF/Office/图片加入白板、按纵向/横向/网格展开、缩放和收起；原文仍保留。 | `desktop/src/main/board-file-cards.cjs`<br>`desktop/src/main/board-operations.cjs`<br>`ios/InkSpace/UI/DocumentExpansionSheet.swift`<br>`ios/InkSpace/Documents/SourceDocumentRenderStore.swift` | JS `board-model`/`office-documents`核心；文档渲染和画布布局UI需宿主；UI `board`，文档转换与写入仍需宿主 |
@@ -61,7 +63,7 @@ JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 | C07 | 白板合并与明确撤回 | 来源预览、自选位置、平移缩放、合并记录和撤回；保持原板与既有笔迹。 | `desktop/src/main/board-merge.cjs`<br>`desktop/src/renderer/BoardMergeDialog.tsx`<br>`ios/InkSpace/Core/BoardMerge.swift`<br>`ios/InkSpace/UI/BoardMergeView.swift` | JS `board-merge`；合并放置界面和原生笔迹变换需宿主 |
 | C08 | 原文重关联与引用修复 | 源文件移动/变化时核对摘要并重关联PDF与批注引用，保留失败/冲突保护。 | `desktop/src/main/board-relink.cjs`<br>`desktop/src/main/board-relink-stream.cjs`<br>`desktop/src/renderer/BoardRelinkDialog.tsx`<br>`ios/InkSpace/Documents/VaultPathResolver.swift` | JS `board-model`/`pdf-tools`域；交互确认与原生协调需宿主；UI `board`内重关联操作，需宿主确认/存储接口 |
 | C09 | 辅助书写与演示 | 几何辅助、停留直线、高亮底层、激光轨迹、胶带复习遮挡和系统随手写转文字卡；胶带不是隐私涂黑。 | `ios/InkSpace/Core/BoardHeldLineStroke.swift`<br>`ios/InkSpace/Core/BoardWritingAid.swift`<br>`ios/InkSpace/UI/BoardWritingAidSettingsView.swift`<br>`ios/InkSpace/UI/BoardWritingAidScribbleView.swift` | 暂无完整独立辅助笔模块；Pencil/Scribble/胶带UI、形状识别与持久化仍需原生解耦 |
-| C10 | 历史版本、备份与恢复 | 自动/手动本机历史、容量设置、可编辑ZIP备份、导入恢复独立副本及附件检查。 | `desktop/src/main/board-history-service.cjs`<br>`ios/InkSpace/Core/LocalBoardBackupStore.swift`<br>`ios/InkSpace/Backup/`<br>`ios/InkSpace/UI/BoardBackupSettingsView.swift` | JS `file-storage`历史核心；完整备份/恢复界面及原生归档需解耦 |
+| C10 | 历史版本、备份与恢复 | 自动/手动本机历史、容量设置、可编辑ZIP备份、导入恢复独立副本及附件检查。 | `desktop/src/main/board-history-service.cjs`<br>`ios/InkSpace/Core/LocalBoardBackupStore.swift`<br>`ios/InkSpace/Backup/`<br>`ios/InkSpace/UI/BoardBackupSettingsView.swift` | JS `board-merge.history`历史核心；完整备份/恢复界面及原生归档尚未独立提取 |
 | C11 | 分页、打印与图片/PDF导出 | Letter纸框、页序、裁剪、分页PDF/PNG/JPEG与当前视图输出；平台导出能力不同。 | `desktop/src/renderer/board-export.tsx`<br>`desktop/src/renderer/ExportDialog.tsx`<br>`ios/InkSpace/Core/BoardPrintExporter.swift`<br>`ios/InkSpace/UI/BoardPrintPagesView.swift` | JS `pdf-tools`部分；Swift `InkSpaceGeometry`分页几何；实际页面渲染/系统打印需宿主，非同一导出接口 |
 | C12 | 现存笔迹回放 | 播放/暂停/倍速、背景、显示模式和镜头控制；只读回放仍存在的笔迹，缺失时间不补造历史。 | `desktop/src/renderer/ink-replay.ts`<br>`desktop/src/renderer/InkReplayDialog.tsx`<br>`ios/InkSpace/Core/InkReplay.swift`<br>`ios/InkSpace/UI/InkReplayView.swift` | JS `board-ink`回放核心；Web回放组件已抽取；PencilKit与系统独立窗仍需宿主；UI `board`笔迹回放，资源需适配 |
 
@@ -72,7 +74,7 @@ JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 | D01 | PDF独立阅读 | PDF页面、目录、文本选择、缩放/定位与高倍率可视区绘制。 | `desktop/src/renderer/PDFViewer.tsx`<br>`desktop/src/renderer/pdf-reader-zoom.ts`<br>`ios/InkSpace/PDFExtension/PDFOutlineView.swift`<br>`ios/InkSpace/PDFWorkspace/PhonePDFReader.swift` | JS `pdf-tools`；Swift `InkSpaceGeometry`部分；PDF.js阅读组件已抽取；PDFKit仍需原生宿主；UI `pdf`单页渲染/阅读器 |
 | D02 | 并排阅读与白板联动 | 同源/双PDF阅读窗格、白板与文档切换、阅读状态和选区联动。 | `desktop/src/renderer/PDFWorkspace.tsx`<br>`desktop/src/renderer/PDFBoardStudyLayout.tsx`<br>`ios/InkSpace/PDFWorkspace/PDFWorkspaceView.swift`<br>`ios/InkSpace/PDFWorkspace/BoardPDFWorkspaceView.swift` | PDF状态/几何核心；多窗格阅读工作台尚需解耦 |
 | D03 | PDF高亮与独立笔迹图层 | 文本高亮、手写/图层开关、标准注释写回和本白板注释去重/归属保护。 | `desktop/src/main/pdf-layer-service.cjs`<br>`desktop/src/main/pdf-native-ink.cjs`<br>`desktop/src/renderer/PDFLayers.tsx`<br>`ios/InkSpace/Documents/PDFAnnotationWritebackService.swift` | JS `pdf-annotations`；Swift `InkSpacePDFRecords`提供记录/归档部分；PencilKit投影/写回与图层UI需宿主 |
-| D04 | PDF增页与页外扩展笔记 | 在PDF旁增加阅读/手写空间、扩展块、页序、原文引用及合成输出。 | `desktop/src/main/pdf-extend-model.cjs`<br>`desktop/src/renderer/PDFExtend.tsx`<br>`ios/InkSpace/PDFExtension/PDFExtensionModel.swift`<br>`ios/InkSpace/PDFExtension/PDFExtensionExporter.swift` | JS `pdf-tools`；Swift `InkSpacePDFRecords`模型/几何；交互编辑和PDF渲染需宿主；UI `pdf`内扩展功能仍需控制器/记录适配 |
+| D04 | PDF增页与页外扩展笔记 | 在PDF旁增加阅读/手写空间、扩展块、页序、原文引用及合成输出。 | `desktop/src/main/pdf-extend-model.cjs`<br>`desktop/src/renderer/PDFExtend.tsx`<br>`ios/InkSpace/PDFExtension/PDFExtensionModel.swift`<br>`ios/InkSpace/PDFExtension/PDFExtensionExporter.swift` | JS `pdf-annotations.extensionModel`/`extensionStore`；Swift `InkSpacePDFRecords`模型/几何；交互编辑和PDF渲染需宿主；UI `pdf`内扩展功能仍需控制器/记录适配 |
 | D05 | 原文摘录、截图与回链定位 | 文本/区域截图摘录、保存原文位置、白板选区定位、原文/批注版返回跳转。 | `desktop/src/main/pdf-visual-excerpt.cjs`<br>`desktop/src/renderer/board-source-navigation.ts`<br>`ios/InkSpace/PDFWorkspace/PDFImageExcerpt.swift`<br>`ios/InkSpace/PDFExtension/PDFSourceReference.swift` | JS `pdf-tools`/`board-model`核心；截取/选区和文档路由需宿主 |
 | D06 | 本机OCR | PDF/图片/选区文字识别、文本框位置、结果检查和另存，不覆盖源文档。 | `desktop/src/main/local-ocr-service.cjs`<br>`desktop/src/native/ocr/LocalOCR.swift`<br>`ios/InkSpace/Core/LocalOCR.swift`<br>`ios/InkSpace/UI/LocalOCRView.swift` | Swift `InkSpaceOCR`系统识别核心；需Apple Vision及调用宿主，桌面CLI/界面需另封装，不是纯JS识别器；JS `ocr-tools`加UI `tools`；识别运行时必须另提供 |
 | D07 | 朗读与跟随高亮 | 白板文字/PDF/OCR内容朗读、暂停/速度和当前段高亮。 | `desktop/src/renderer/BoardSpeech.tsx`<br>`ios/InkSpace/Core/BoardReadAloudController.swift`<br>`ios/InkSpace/Core/BoardReadAloudPDF.swift`<br>`ios/InkSpace/PDFWorkspace/PDFReadAloudControls.swift` | Swift `InkSpaceSpeechText`提供文本预处理；浏览器Speech/AVSpeech、OCR及跟随高亮UI需宿主解耦 |
@@ -100,7 +102,7 @@ JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 | ID | 功能组 | 使用者可见范围 | 来源相对路径 | 独立形式与剩余依赖 |
 | --- | --- | --- | --- | --- |
 | F01 | 内置浏览器 | 多标签、地址搜索、前后退、查找、独立缩放、恢复会话和下载。 | `desktop/src/main/browser-service.cjs`<br>`desktop/src/browser/browser.js`<br>`desktop/src/main/browser-state.cjs`<br>`ios/InkSpace/Browser/EmbeddedBrowserPanel.swift` | JS `browser-utilities`仅URL/状态等核心；Electron/WebKit浏览器宿主尚需独立封装 |
-| F02 | 浏览器扩展管理 | 本地解包扩展安装/启停/移除与权限说明；iOS支持受限MV3内容脚本/样式/存储。 | `desktop/src/main/browser-extensions.cjs`<br>`desktop/src/main/browser-security.cjs`<br>`ios/InkSpace/Browser/BrowserExtensionHost.swift`<br>`ios/InkSpace/Browser/BrowserExtensionManagerView.swift` | JS `browser-utilities`验证部分；运行扩展需Electron/WKWebExtension宿主，不承诺全部Chrome扩展兼容 |
+| F02 | 浏览器扩展管理 | 本地解包扩展安装/启停/移除与权限说明；iOS支持受限MV3内容脚本/样式/存储。 | `desktop/src/main/browser-extensions.cjs`<br>`desktop/src/main/browser-security.cjs`<br>`ios/InkSpace/Browser/BrowserExtensionHost.swift`<br>`ios/InkSpace/Browser/BrowserExtensionManagerView.swift` | JS `browser-utilities.urls.extensionSummary`与`extensions.BrowserExtensions`提供权限摘要、快照安装、启停和移除；显式注入session/dialog，实际扩展运行需浏览器宿主，不承诺全部Chrome扩展兼容 |
 | F03 | 网页摘录、截图与PDF剪藏 | 用户主动选择文字/图片/网页PDF、剪藏到资料库/白板，导入版本化inkclip文件。 | `desktop/src/main/browser-clips.cjs`<br>`desktop/src/main/board-web-url.cjs`<br>`ios/InkSpace/Browser/BrowserWebClip.swift`<br>`ios/InkSpace/Core/BoardWebClipPath.swift` | JS `browser-utilities`；Swift `InkSpaceWebClips`剪藏格式/路径核心；取网页内容/写白板需宿主，Safari来源集成见H02 |
 | F04 | AI网页助手与附件衔接 | 隔离AI网页、提供方切换、用户登录、显式截图/图片粘贴、下载和网页健康状态。 | `desktop/src/main/ai-panel.cjs`<br>`desktop/src/main/ai-image-transfer.cjs`<br>`desktop/src/renderer/AIPanel.tsx`<br>`ios/InkSpace/AI/ChatGPTWebSession.swift` | JS `browser-utilities`部分纯校验；AI网页工作区需浏览器宿主与用户账号，发送仍由用户操作 |
 | F05 | 原生高级AI API会话 | 用户自己的API服务/模型/密钥、白板临时截图与高级提问界面。 | `ios/InkSpace/AI/AIClient.swift`<br>`ios/InkSpace/AI/AIWorkspaceView.swift`<br>`ios/InkSpace/AI/TemporaryBoardCapture.swift` | Swift `InkSpaceAI`客户端；截图、钥匙串、联网及会话UI需宿主，不提供服务端或共享密钥 |
@@ -119,9 +121,9 @@ JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 | --- | --- | --- | --- | --- |
 | H01 | Obsidian白板查看器 | 已有白板/PDF/文字/公式/连线/定位点查看、Markdown嵌入、搜索定位和原文件打开。 | `obsidian/inkspace-companion/`<br>`obsidian/tests/companion.test.cjs` | 独立集成 `integrations/obsidian/`：可安装到Obsidian；查看无需完整InkSpace；原生创建/书写需系统inkspace协议处理程序 |
 | H02 | Safari系统分享剪藏 | 显式分享标题/URL/选中文字，系统文件选择器保存版本化JSON供任意兼容导入器消费。 | `ios/OptionalShareExtension/` | 源码集成 `integrations/safari-share-clipper/`：不依赖完整App源码；仍需签名承载App及扩展target，尚未独立target构建/真机验收 |
-| H03 | 语言、外观与操作偏好 | 英文/简体中文、布局/侧栏、工具栏自定义、笔工具预设、字号/无障碍语义和播放等本机设置。 | `desktop/src/renderer/i18n.ts`<br>`desktop/src/renderer/PanelLayout.tsx`<br>`ios/InkSpace/UI/AppSettingsView.swift`<br>`ios/InkSpace/UI/BoardToolbarCustomizationView.swift` | 跨模块UI支持层，原平台设置/持久化需宿主；不是单独业务软件 |
-| H04 | 本机问题记录与诊断导出 | 受限问题记录、状态/错误码和手动导出，不把私人日志作为发布内容。 | `desktop/src/main/diagnostics.cjs`<br>`ios/InkSpace/Core/DiagnosticsCenter.swift`<br>`ios/InkSpace/UI/DiagnosticsCenterView.swift` | 诊断域待独立封装；系统导出/应用操作上下文需宿主 |
-| H05 | 完整应用壳与系统入口 | 统一首页/路由、资料选择、窗口生命周期、系统文件打开和inkspace协议，装配所有模块。 | `desktop/src/main/main.cjs`<br>`desktop/src/preload/preload.cjs`<br>`desktop/src/renderer/App.tsx`<br>`ios/InkSpace/InkSpaceApp.swift` | 完整软件继续保留；独立库不包含原完整应用壳，也不替代其设备/平台验收 |
+| H03 | 语言、外观与操作偏好 | 英文/简体中文、布局/侧栏、工具栏自定义、笔工具预设、Pencil双击/握压、字号/无障碍语义和播放等本机设置。 | `desktop/src/renderer/i18n.ts`<br>`desktop/src/renderer/PanelLayout.tsx`<br>`ios/InkSpace/UI/AppSettingsView.swift`<br>`ios/InkSpace/UI/BoardToolbarCustomizationView.swift`<br>`ios/InkSpace/Core/BoardPencilGestureSettings.swift` | 跨模块UI支持层，原平台设置/持久化需宿主；不是单独业务软件 |
+| H04 | 本机问题记录与诊断导出 | 受限问题记录、状态/错误码和手动导出，不把私人日志作为发布内容。 | `desktop/src/main/diagnostics.cjs`<br>`ios/InkSpace/Core/DiagnosticsCenter.swift`<br>`ios/InkSpace/UI/DiagnosticsCenterView.swift` | JS `file-storage.diagnostics`已提供独立诊断记录；系统导出界面和原生诊断中心尚未独立提取 |
+| H05 | 完整应用壳与系统入口 | 统一首页/路由、资料选择、窗口生命周期、系统文件打开和inkspace协议，装配所有模块。 | `desktop/src/main/main.cjs`<br>`desktop/src/preload/preload.cjs`<br>`desktop/src/renderer/App.tsx`<br>`ios/InkSpace/InkSpaceApp.swift` | 完整软件继续保留；独立库不包含原完整应用壳、快速切换器或系统入口，也不替代其设备/平台验收 |
 
 ## 独立集成的实际验证
 
@@ -134,3 +136,11 @@ JS按19个领域组织：`board-model`、`board-ink`、`board-merge`、`pdf-tool
 以桌面首页/命令入口、主界面与后端服务、原生首页/工具栏/设置、核心存储与各功能文件夹、Obsidian注册命令/文件菜单/Markdown嵌入为交叉依据复核。目录覆盖：文件管理与多窗口、文本/Office/代码、计算与Notebook、白板/笔迹/备份/打印、PDF与OCR/翻译/朗读、扫描、知识空间/学习/任务/日历、笔记交换、网页/AI、媒体/字幕/回放、系统集成和偏好诊断。
 
 未把开发测试器、设备安装/续签工具、私人样例、构建缓存或第三方依赖的每个内部函数计为使用者软件。对于仅存在算法、源码集成或受外部组件限制的能力，表中明确保留对应边界。新增功能或模块要同步更新本目录，并复核是否出现新的依赖耦合与隐私内容。
+
+## 本轮独立覆盖复核
+
+本轮按首页、命令/工具栏、文件/文档工作流和原生各功能目录重新核对，新增 B12「旁注空白区」、B13「提取为Markdown笔记」，并补明Markdown内嵌白板、最后一笔定位、直尺与系统快速切换入口。PDF增页、历史与诊断的模块映射已校正。
+
+[机器可核验的逐功能覆盖矩阵](coverage-audit.json)逐组记录实际Node导出、Swift产品、React组件、独立下载文件和仍在原App中的部分。矩阵不把“源码已公开”写成“所有功能均已有独立成品”。PencilKit画布/辅助笔、原生完整备份恢复、多窗格工作台、浏览器/AI网页宿主、原生渲染与系统入口仍有未提取部分；Safari仍是需自行集成的扩展源码。
+
+公开ZIP中的路径是解压后的源码定位，不是本仓库展开目录的网页链接。Node包、Swift产品和React组件的运行环境/依赖需按各下载包README准备。

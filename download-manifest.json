@@ -251,19 +251,24 @@
   ],
   "desktopApplications": {
     "ready": true,
-    "version": "0.1.1",
-    "releaseURL": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/tag/desktop-v0.1.1",
-    "sourceCommit": "cd7d24a10365e0ae67d78bc7714e82702e10fd26",
+    "version": "0.1.2",
+    "releaseURL": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/tag/desktop-v0.1.2",
+    "sourceCommit": "afc92965d946a6cd93f0e03b70a4cc0755b3086c",
     "notarized": false,
     "personalSigningIdentityUsed": false,
     "anonymousDownloadsVerified": true,
     "bothArchitecturesVerifiedInCI": true,
+    "brand": "Life's winner",
+    "workflowRun": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/actions/runs/40134800884",
+    "anonymousDownloadCheckPassed": true,
+    "nativeAcceptance": "passed",
+    "electronAcceptance": "passed",
     "artifacts": [
       {
         "file": "InkSpace-Writing-macos-universal.zip",
-        "bytes": 1536375,
-        "sha256": "4e13c46c2a183000628593e9b00f84d51a59d0ed6fb43b7bc6a9928994ad791e",
-        "app": "InkSpace Writing.app",
+        "bytes": 1536631,
+        "sha256": "e438da00c3b8d944e2d738b38e41dd87345206bb8a3b071e33402ed018a27b86",
+        "app": "Life's winner Writing.app",
         "architectures": [
           "arm64",
           "x86_64"
@@ -272,17 +277,17 @@
         "signature": "ad hoc; no personal identity",
         "notarized": false,
         "onlySystemRuntimeDependencies": true,
-        "executableSHA256": "30cb56ee9067f14759930c3b8c12df5c6b5ecfe76ae79ad895e6a47d17112613",
+        "executableSHA256": "c1efcdaa6b7000944c7df6211b1fbebc1d2cc2f53b3d71058e9979798ce0c898",
         "externalXcodeRequired": false,
         "externalNodeRequired": false,
         "archiveSignatureRoundTrip": "passed",
-        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/InkSpace-Writing-macos-universal.zip"
+        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/InkSpace-Writing-macos-universal.zip"
       },
       {
         "file": "InkSpace-Preferences-macos-universal.zip",
-        "bytes": 1557754,
-        "sha256": "8952293bce91d1aaa909f2bfc9a4dd0cc65cfb7bfa4bea9b98dd99f6c266ddbd",
-        "app": "InkSpace Preferences.app",
+        "bytes": 1558011,
+        "sha256": "49257dfae8888690cb1882246fe65413dac26b4bdc9ee5e29d41aef5ed67d5bf",
+        "app": "Life's winner Preferences.app",
         "architectures": [
           "arm64",
           "x86_64"
@@ -291,18 +296,18 @@
         "signature": "ad hoc; no personal identity",
         "notarized": false,
         "onlySystemRuntimeDependencies": true,
-        "executableSHA256": "c74d595de992846f31cda4855081916a29e4f564795ab2de71e61090aa55f750",
+        "executableSHA256": "edff78b8d241a3cbaf199e740405bc0cfc350896a77f5f8475d7e40145cde20d",
         "externalXcodeRequired": false,
         "externalNodeRequired": false,
         "archiveSignatureRoundTrip": "passed",
-        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/InkSpace-Preferences-macos-universal.zip"
+        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/InkSpace-Preferences-macos-universal.zip"
       },
       {
         "file": "document-workbench-macos-arm64.zip",
         "architecture": "arm64",
-        "version": "0.1.1",
-        "sha256": "fa479f082404307a87038b1ad30c67690f8130eec69476d421851b578796ffdb",
-        "bytes": 128478609,
+        "version": "0.1.2",
+        "sha256": "420f3e52da90eb61b9af872e56d5fcb6be18c42fb47467aaaab426032cdf4063",
+        "bytes": 128478779,
         "electron": "44.3.0",
         "officialRuntimeSHA256": "49b91ef265c603c8888500f807484b63816069c30f87ba2b403e7c87f0f45035",
         "runtimeSource": "https://github.com/electron/electron/releases/download/v44.3.0/electron-v44.3.0-darwin-arm64.zip",
@@ -315,14 +320,14 @@
         "archiveMetadata": "fixed 1980 timestamp; explicit 755/644/777 Unix modes; no extra/comment/UID/xattr",
         "externalNodeRequired": false,
         "externalXcodeRequired": false,
-        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/document-workbench-macos-arm64.zip"
+        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/document-workbench-macos-arm64.zip"
       },
       {
         "file": "document-workbench-macos-x64.zip",
         "architecture": "x64",
-        "version": "0.1.1",
-        "sha256": "325b77d0edb298e383568635452e4cc0d39328b40bbe304ebcdac2e8a4c23408",
-        "bytes": 135878103,
+        "version": "0.1.2",
+        "sha256": "48ef781934bed8313ef03ecc72d4b5803d72bf57599fe057813fafe0bbac6015",
+        "bytes": 135878268,
         "electron": "44.3.0",
         "officialRuntimeSHA256": "6e3278d96377085af532380e2b23a38cdcf4c58b4efb3f6ada2f251db95c9560",
         "runtimeSource": "https://github.com/electron/electron/releases/download/v44.3.0/electron-v44.3.0-darwin-x64.zip",
@@ -335,14 +340,41 @@
         "archiveMetadata": "fixed 1980 timestamp; explicit 755/644/777 Unix modes; no extra/comment/UID/xattr",
         "externalNodeRequired": false,
         "externalXcodeRequired": false,
-        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/document-workbench-macos-x64.zip"
+        "url": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/document-workbench-macos-x64.zip"
       }
+    ]
+  },
+  "mobileApplications": {
+    "ready": true,
+    "kind": "separate-home-screen-web-apps",
+    "version": "0.2.0",
+    "requiresDeveloperTools": false,
+    "usesPersonalAppleIdentity": false,
+    "apps": [
+      "writing",
+      "preferences",
+      "documents"
     ],
-    "brand": "life'winner",
-    "workflowRun": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/actions/runs/40130613502",
-    "anonymousDownloadCheckPassed": true,
-    "nativeAcceptance": "passed",
-    "electronAcceptance": "passed"
+    "brand": "Life's winner",
+    "baseURL": "https://kevinzzzzzzzz999.github.io/Lifes-winner-modules/",
+    "sourceCommit": "afc92965d946a6cd93f0e03b70a4cc0755b3086c",
+    "workflowRun": "https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/actions/runs/40134801232",
+    "publicDownloadsVerified": true,
+    "runtimeFiles": 33,
+    "standaloneAppCount": 3,
+    "localDraftsOnly": true,
+    "externalAnalytics": false,
+    "physicalDeviceVerification": false,
+    "webKitAndChromePhonePadChecks": 121,
+    "safeUpdateChecks": 21,
+    "codeUpdatesSchedule": "monthly on day24 at10 America/Toronto",
+    "supportsLanguages": [
+      "zh",
+      "en"
+    ],
+    "publicRuntimeManifestSHA256": "b53cc99610f6ccf63090bdd7450f87e15379499e425575a8a584e6fea24464e5",
+    "publicDownloadVerificationReceipt": "publisher/brand-language/final-public-runtime-download-v2.json",
+    "lastVerifiedUTC": "2026-10-24T21:35:37.792317+00:00"
   },
   "workspaceSource": {
     "file": "Lifes-winner-modules-source-2026-10-24-r6.zip",

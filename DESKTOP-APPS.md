@@ -1,4 +1,4 @@
-# 人生赢家 / Life's winner · Mac 应用 / Mac apps · 0.1.1
+# 人生赢家 / Life's winner · Mac 应用 / Mac apps · 0.1.2
 
 希望每一个使用我开源功能的人，都是各自的 Life's winner。
 
@@ -10,11 +10,11 @@ These three apps include their runtimes. No Xcode, Node.js, Python, account or f
 
 | 应用 / App | 功能 / Features | 下载 / Download |
 | --- | --- | --- |
-| 书写画板 · Life's winner Writing | 独立矢量绘图、形状辅助、文字卡与复习胶带；显式保存和打开自己的JSON绘图。<br>Vector drawing, shape aids, text cards and review tape; explicitly open/export your own JSON. | [通用版 / Universal](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/InkSpace-Writing-macos-universal.zip) |
-| 偏好方案编辑器 · Life's winner Preferences | 编辑、保存、导入和导出一份独立偏好方案。<br>Edit, save, import and export an isolated preferences plan. | [通用版 / Universal](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/InkSpace-Preferences-macos-universal.zip) |
-| 文档工作台 · Life's winner Document Workbench | 只读预览本地文本，使用标签和多窗口浏览。<br>Read-only local text previews with tabs and multiple windows. | [Apple Silicon](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/document-workbench-macos-arm64.zip) · [Intel](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/document-workbench-macos-x64.zip) |
+| 书写画板 · Life's winner Writing | 独立矢量绘图、形状辅助、文字卡与复习胶带；显式保存和打开自己的JSON绘图。<br>Vector drawing, shape aids, text cards and review tape; explicitly open/export your own JSON. | [通用版 / Universal](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/InkSpace-Writing-macos-universal.zip) |
+| 偏好方案编辑器 · Life's winner Preferences | 编辑、保存、导入和导出一份独立偏好方案。<br>Edit, save, import and export an isolated preferences plan. | [通用版 / Universal](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/InkSpace-Preferences-macos-universal.zip) |
+| 文档工作台 · Life's winner Document Workbench | 只读预览本地文本，使用标签和多窗口浏览。<br>Read-only local text previews with tabs and multiple windows. | [Apple Silicon](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/document-workbench-macos-arm64.zip) · [Intel](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/document-workbench-macos-x64.zip) |
 
-[全部下载文件和版本记录](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/tag/desktop-v0.1.1) · [完整使用指南](samples/packaging/macos/DOWNLOAD-HELP.md)
+[全部下载文件和版本记录](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/tag/desktop-v0.1.2) · [完整使用指南](samples/packaging/macos/DOWNLOAD-HELP.md)
 
 ## 安装
 
@@ -34,9 +34,9 @@ These three apps include their runtimes. No Xcode, Node.js, Python, account or f
 
 应用由公开源码和官方运行组件构建。Apple芯片和Intel的云端构建机均完成启动检查；文档工作台完成成品窗口和合成文本预览检查。完整交互范围、公开下载后的摘要和隐私验收见[验收说明](DOWNLOAD-CHECKS.md)。最低系统声明不表示已经在每个旧系统版本上实际运行。
 
-[文件摘要](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/SHA256SUMS.txt) · [构建清单](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/desktop-apps.json) · [两种芯片验证](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/desktop-validation.json) · [可复现构建配方](samples/packaging/macos/README.md)
+[文件摘要](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/SHA256SUMS.txt) · [构建清单](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/desktop-apps.json) · [两种芯片验证](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/desktop-validation.json) · [可复现构建配方](samples/packaging/macos/README.md)
 
-当前链接保留既有 Mac 0.1.1 发行文件，应用内可能仍显示历史名称；Life's winner 品牌会在后续新版本中统一。兼容下载文件名、技术标识与已有链接保持不变，历史发行不改写。
+当前链接为已实际匿名下载、通过摘要与隐私核验的 Mac 0.1.2。应用展示名统一为 Life's winner；书写与偏好应用解压后的文件夹也使用新名称。兼容下载文件名、技术标识与原有数据路径保留，历史发行继续可用。
 
 ## English: installation, privacy and updates
 
@@ -52,4 +52,4 @@ Apps exclude personal notes, credentials, device records, private build paths, s
 
 Public source and official runtime components produce these builds. Apple Silicon and Intel CI workers have completed launch checks; Document Workbench has also passed packaged-window and synthetic-text checks. Minimum OS support does not mean every older system release has been physically tested. See [download acceptance](DOWNLOAD-CHECKS.md) and the [reproducible build recipe](samples/packaging/macos/README.md).
 
-Completed changes are reviewed monthly and published after privacy and relevant checks. The links currently retain verified version **0.1.1**, which may show an earlier name. Version 0.1.2 will be linked only after its canonical branding and public downloads pass verification. Compatible filenames and historical releases remain available.
+Completed changes are reviewed monthly and published after privacy and relevant checks. These links provide verified **0.1.2**, downloaded anonymously with matching digests and accepted privacy/signature checks. Display names use Life's winner; extracted Writing and Preferences app folders use the new name too. Compatible download filenames, identifiers, data locations and historical releases remain available.

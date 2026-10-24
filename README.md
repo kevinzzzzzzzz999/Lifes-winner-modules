@@ -8,6 +8,23 @@ Standalone tools and reusable building blocks from the integrated Mac, iPad and 
 
 [Node 源码 / Node source](packages/) · [Swift 产品 / Swift products](Package.swift) · [React 组件 / React components](ui/README.md) · [完整软件 / Full application](https://github.com/kevinzzzzzzzz999/Lifes-winner) · [覆盖审计 / Coverage](coverage-audit.json)
 
+## iPhone / iPad：打开并安装 / Open and install
+
+三个工具分别打开、分别安装。只需 Safari，无需 Xcode、Node.js、开发者账号或完整版软件。
+Open each tool separately in Safari. No developer tools, account or full application are needed.
+
+| 工具 / Tool | 直接使用 / Open now |
+| --- | --- |
+| 书写画板 / Writing | [打开 / Open](https://kevinzzzzzzzz999.github.io/Lifes-winner-modules/writing/) |
+| 偏好方案 / Preferences | [打开 / Open](https://kevinzzzzzzzz999.github.io/Lifes-winner-modules/preferences/) |
+| 文档工作台 / Documents | [打开 / Open](https://kevinzzzzzzzz999.github.io/Lifes-winner-modules/documents/) |
+
+Safari → 分享 → 添加到主屏幕。首次联网打开，等“可离线使用”。右上角切换中文 / English，不会清空当前编辑。
+Safari → Share → Add to Home Screen. Open online once and wait for Ready for offline use. Switch 中文 / English at the top without clearing current edits.
+
+草稿只在当前设备/浏览器，重要内容请导出到“文件”。清理网站数据或系统回收可能删除草稿。这些是轻量独立工具，不等同于完整原生编辑器。
+Drafts stay on this device/browser and may be removed by site-data or system storage cleanup. Export important work to Files. These are lightweight standalone tools, with the limits in [安装与范围 / Installation and limits](MOBILE-APPS.md).
+
 ## Mac：下载即用 / Ready-to-open Mac apps
 
 下载 ZIP、解压，把 `.app` 拖入“应用程序”。无需 Xcode、Node.js、Python 或完整版。
@@ -15,17 +32,14 @@ Download the ZIP, extract it and move the `.app` to Applications. No developer t
 
 | 应用 / App | 下载 / Download |
 | --- | --- |
-| 书写画板 / Life's winner Writing | [通用版 / Universal](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/InkSpace-Writing-macos-universal.zip) |
-| 偏好方案 / Life's winner Preferences | [通用版 / Universal](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/InkSpace-Preferences-macos-universal.zip) |
-| 文档工作台 / Life's winner Document Workbench | [Apple Silicon](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/document-workbench-macos-arm64.zip) · [Intel](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.1/document-workbench-macos-x64.zip) |
+| 书写画板 / Life's winner Writing | [通用版 / Universal](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/InkSpace-Writing-macos-universal.zip) |
+| 偏好方案 / Life's winner Preferences | [通用版 / Universal](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/InkSpace-Preferences-macos-universal.zip) |
+| 文档工作台 / Life's winner Document Workbench | [Apple Silicon](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/document-workbench-macos-arm64.zip) · [Intel](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/download/desktop-v0.1.2/document-workbench-macos-x64.zip) |
 
-[发行下载 / Release](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/tag/desktop-v0.1.1) · [安装与范围 / Installation and limits](DESKTOP-APPS.md) · [下载验收 / Download checks](DOWNLOAD-CHECKS.md)
+[发行下载 / Release](https://github.com/kevinzzzzzzzz999/Lifes-winner-modules/releases/tag/desktop-v0.1.2) · [安装与范围 / Installation and limits](DESKTOP-APPS.md) · [下载验收 / Download checks](DOWNLOAD-CHECKS.md)
 
 需要 macOS 13+。当前应用为匿名 ad-hoc 签名、未经 Apple 公证；首次打开可能需要使用者按系统提示确认。
 Requires macOS 13+. Apps use ad-hoc signing without a personal identity and are not Apple-notarized. macOS may require a first-open approval; see the installation guide.
-
-当前链接仍是已验证的 0.1.1 历史发行，应用内可能显示旧名称；新品牌版本验证后再切换。
-These links retain the verified 0.1.1 release, which may show its previous name. New branded binaries will replace the links only after verification.
 
 ## 开发者：选择模块 / Choose a module
 

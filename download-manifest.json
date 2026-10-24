@@ -1,0 +1,233 @@
+{
+  "releaseDate": "2026-10-24",
+  "archives": [
+    {
+      "file": "node-board-ink.zip",
+      "bytes": 53867,
+      "sha256": "f55a5c6d7fe10c604b22e2aee86bc6ead8d351a5d3caa9a83cf2ef368dd9d877",
+      "members": 41
+    },
+    {
+      "file": "node-board-merge.zip",
+      "bytes": 119293,
+      "sha256": "69988ea3ab46771e8fdd1a28ebdbb1d64da2de1c3e18059a79e54eb20a57d1db",
+      "members": 52
+    },
+    {
+      "file": "node-board-model.zip",
+      "bytes": 143883,
+      "sha256": "14e6b6c9353dd8d79c0fae173fb700618669a198a8dd4773630fe21c72400801",
+      "members": 57
+    },
+    {
+      "file": "node-browser-utilities.zip",
+      "bytes": 62914,
+      "sha256": "4425db3184e0f6bcda8843e1f4ffcd3aaac82648ca3d058195993315b5d1abac",
+      "members": 35
+    },
+    {
+      "file": "node-document-workspace.zip",
+      "bytes": 79081,
+      "sha256": "fa23fed50dbee85d78b8b3eb8f2ead078479c42698e4488d75de18f17ed3f978",
+      "members": 59
+    },
+    {
+      "file": "node-file-storage.zip",
+      "bytes": 131156,
+      "sha256": "65e87946157ddcdfd48c07568882651529a5dfbe529a22966afdc73a33ac6cd8",
+      "members": 55
+    },
+    {
+      "file": "node-knowledge-search.zip",
+      "bytes": 69328,
+      "sha256": "aab3659c5d18dd3f6d7f6c14135794e434bc4e490d780b8e4676b5523752ef04",
+      "members": 35
+    },
+    {
+      "file": "node-math-lab.zip",
+      "bytes": 99623,
+      "sha256": "01277b1625779690f7340f92a6ce4f98397c99ee9eb86da5e1826de3ae68cd44",
+      "members": 17
+    },
+    {
+      "file": "node-media-tools.zip",
+      "bytes": 53603,
+      "sha256": "f60de28251026c867c6b11ebe0a6d059e1cc60ae8a476daa472e4efae3a90017",
+      "members": 31
+    },
+    {
+      "file": "node-note-exchange.zip",
+      "bytes": 100773,
+      "sha256": "8b6f7e29d81fd029bdb715ccf13798d7e17de40d5330f2ccdb9c97501aa24b5d",
+      "members": 41
+    },
+    {
+      "file": "node-notebook-data.zip",
+      "bytes": 760475,
+      "sha256": "ec1ca1551d15e8a8a90cfc04354dc7dea5e20eabdb1ce9764446d4b5ac1e91ce",
+      "members": 53
+    },
+    {
+      "file": "node-notebook-runtime.zip",
+      "bytes": 64051,
+      "sha256": "ce5a85f5b015a6c3f6506c1533651a7f595fca082c820982306d7ed61d980b22",
+      "members": 34
+    },
+    {
+      "file": "node-ocr-tools.zip",
+      "bytes": 26768,
+      "sha256": "ea43c7a5fe521e0c7af711ca679d2fe1e7a5a1e75735814247baba289d9eb7a2",
+      "members": 15
+    },
+    {
+      "file": "node-office-documents.zip",
+      "bytes": 40409,
+      "sha256": "45178792d9ed90cb3ab4288a1b7573047ba6e447c009b0f7f3cec32c3360a782",
+      "members": 19
+    },
+    {
+      "file": "node-pdf-annotations.zip",
+      "bytes": 35307,
+      "sha256": "5313f0afe34131cd83f1535567cec4a4706dc500ee8daa54a7bb634590cfae4a",
+      "members": 19
+    },
+    {
+      "file": "node-pdf-tools.zip",
+      "bytes": 95958,
+      "sha256": "b79d9881e29c15d9eecc907dcbdd3a3c2040f91d43a0add6022c5a17183761ce",
+      "members": 36
+    },
+    {
+      "file": "node-study-tools.zip",
+      "bytes": 82401,
+      "sha256": "998c625a44c6a4912295589a4df586974d88ab28c76fe6dbd07f9f9b44106572",
+      "members": 39
+    },
+    {
+      "file": "node-task-calendar.zip",
+      "bytes": 97020,
+      "sha256": "f5dc13630f0c92125d56709d8496e34ce508fc23eeacd0af86a44cd749e4f8ee",
+      "members": 44
+    },
+    {
+      "file": "node-translation-tools.zip",
+      "bytes": 22254,
+      "sha256": "a5ab3401c3324c7edebd02c1719786cf73c6ad68053e4d88ab914ccc5cb1b6ea",
+      "members": 9
+    },
+    {
+      "file": "obsidian-companion.zip",
+      "bytes": 46985,
+      "sha256": "e7ec689202b0d668fa25784d3e8a5527074a682ef8b84180b8136088859cad04",
+      "members": 7
+    },
+    {
+      "file": "react-ui-components.zip",
+      "bytes": 626053,
+      "sha256": "adaae8a78a1c745c057910b80270ec5d178b640eee6a0a8c37d17aad63526175",
+      "members": 216
+    },
+    {
+      "file": "safari-share-clipper.zip",
+      "bytes": 5786,
+      "sha256": "0773d3bf15d6766eb3809565af7ffee426b46a146638c3037ee986694b76087f",
+      "members": 4
+    },
+    {
+      "file": "swift-InkSpaceAI.zip",
+      "bytes": 10773,
+      "sha256": "e99e99fa7ed47787a3219fb2fbc22907aca672169bb3b8140ba7c80fb4b37dc2",
+      "members": 6
+    },
+    {
+      "file": "swift-InkSpaceChecklist.zip",
+      "bytes": 8011,
+      "sha256": "3b53d88ab9e7ac64eae418868c469861896b9679bc34ecf3d7f70a032982ba33",
+      "members": 5
+    },
+    {
+      "file": "swift-InkSpaceExcelPictures.zip",
+      "bytes": 9527,
+      "sha256": "4b922a210cb596b888ee9f6a7d2b75a95810ced6b5d29a9224c8c12b389adfe8",
+      "members": 4
+    },
+    {
+      "file": "swift-InkSpaceGeometry.zip",
+      "bytes": 10021,
+      "sha256": "ec1bcac9d83e11c36a890094e8c324c0914c2e066071d21ee72d00f7cc2d0902",
+      "members": 6
+    },
+    {
+      "file": "swift-InkSpaceMediaTimeline.zip",
+      "bytes": 8723,
+      "sha256": "8f66a5cbb3b74efe221ff67f295bd7e947e81c47401a028f46d4b6ff9f34b35d",
+      "members": 5
+    },
+    {
+      "file": "swift-InkSpaceOCR.zip",
+      "bytes": 9578,
+      "sha256": "7ca71e648ce07a7bd6b1b78512bf0ce8efe43bc605b4e679260c5e73478130d4",
+      "members": 4
+    },
+    {
+      "file": "swift-InkSpaceOutline.zip",
+      "bytes": 5092,
+      "sha256": "3d6e09bca5216bb82c31462165b842c25f958b655369c8a2d634e94305eb43ed",
+      "members": 4
+    },
+    {
+      "file": "swift-InkSpacePDFRecords.zip",
+      "bytes": 13540,
+      "sha256": "746aa80c70d7117d4262c9c5bc15680d9f56dd98f9e1999830b9303bfd2b35a4",
+      "members": 7
+    },
+    {
+      "file": "swift-InkSpacePaths.zip",
+      "bytes": 3790,
+      "sha256": "470e2ae121047317de9b9712890fe949311532dfcaba0f675df23cda10907917",
+      "members": 5
+    },
+    {
+      "file": "swift-InkSpaceScanPDF.zip",
+      "bytes": 9595,
+      "sha256": "9c7c13e57e62c8b5cbe4dabb1b3926f643b1f921edafc3b8c4c9907a4c502379",
+      "members": 8
+    },
+    {
+      "file": "swift-InkSpaceSpeechText.zip",
+      "bytes": 4212,
+      "sha256": "e0bb3c7dc84abb17b12b4ac77c1e3def215471a14777b5f8c8190f56a2e48def",
+      "members": 4
+    },
+    {
+      "file": "swift-InkSpaceStorage.zip",
+      "bytes": 8084,
+      "sha256": "2c52550b73a49dc01fb8cbb171ad10967fc91e2360790b5a9928958c277a967a",
+      "members": 7
+    },
+    {
+      "file": "swift-InkSpaceStudy.zip",
+      "bytes": 12816,
+      "sha256": "63057f53905c31edc623f8aae4a7fcfb9dce19def8faffa966f7605e3a63ca2e",
+      "members": 8
+    },
+    {
+      "file": "swift-InkSpaceSubtitles.zip",
+      "bytes": 5484,
+      "sha256": "12976daee30699ff204cc78017d6f2e944409fa495be1ca2fc602237995c38c8",
+      "members": 4
+    },
+    {
+      "file": "swift-InkSpaceTextHistory.zip",
+      "bytes": 3477,
+      "sha256": "7d3571e7c63424c77e3b1f830c53afd27c2d1b85d1036f9767c01a687559a026",
+      "members": 4
+    },
+    {
+      "file": "swift-InkSpaceWebClips.zip",
+      "bytes": 5588,
+      "sha256": "7f3a38633abd8bdb08105dda757fd7396053e8dc89b8e32660ff008e7fc88e16",
+      "members": 4
+    }
+  ]
+}

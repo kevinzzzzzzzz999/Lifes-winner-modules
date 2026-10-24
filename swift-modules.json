@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "package": "InkSpaceModules",
+  "manifest": "Package.swift",
+  "localManifest": "swift/Package.swift",
+  "productCount": 16,
+  "verifiedDate": "2026-10-24",
+  "products": [
+    {
+      "name": "InkSpaceTextHistory",
+      "purpose": "文本撤销与重做",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceTextHistory",
+      "documentation": "swift/Documentation/InkSpaceTextHistory/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "DraftTextHistory.init(initialText:)",
+        "track(_:)",
+        "undo()",
+        "redo()",
+        "current",
+        "canUndo",
+        "canRedo"
+      ],
+      "sourceFiles": [
+        "Core/DraftTextHistory.swift"
+      ],
+      "limitations": "不包含编辑器界面、文件写入或系统 UndoManager。最多保留20步、400万UTF-16历史字符。"
+    },
+    {
+      "name": "InkSpaceOutline",
+      "purpose": "Markdown 树形纲要转换",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceOutline",
+      "documentation": "swift/Documentation/InkSpaceOutline/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "NoteOutline.parse(_:)",
+        "encode(titles:edges:)",
+        "NoteOutlineNode"
+      ],
+      "sourceFiles": [
+        "Exchange/NoteOutline.swift"
+      ],
+      "limitations": "只支持标题和列表形成的树，不包含普通正文Markdown渲染、任意多父图或导图界面。保留1MiB、500节点和12层上限。"
+    },
+    {
+      "name": "InkSpaceSubtitles",
+      "purpose": "字幕解析和时间点查询",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceSubtitles",
+      "documentation": "swift/Documentation/InkSpaceSubtitles/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "BoardSubtitleParser.parse(data:fileExtension:)",
+        "BoardSubtitleDocument.text(at:)",
+        "BoardSubtitleCue"
+      ],
+      "sourceFiles": [
+        "Video/BoardVideoSubtitles.swift"
+      ],
+      "limitations": "不包含播放器、字幕关联持久化或导入界面。支持SRT/VTT/TXT和重叠cue查询，保留2MiB、一万段等限制。"
+    },
+    {
+      "name": "InkSpacePaths",
+      "purpose": "资料库路径校验",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpacePaths",
+      "documentation": "swift/Documentation/InkSpacePaths/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "VaultPath.isSafeRelative(_:)",
+        "VaultPathResolver.resolve(relativePath:within:)"
+      ],
+      "sourceFiles": [
+        "Documents/VaultPathResolver.swift",
+        "Core/Models.swift (VaultPath only)"
+      ],
+      "limitations": "resolve只返回已存在且解析符号链接后仍位于根目录内的URL。它不向用户索取系统文件夹权限，也不替代写入时的协调和并发检查。"
+    },
+    {
+      "name": "InkSpaceGeometry",
+      "purpose": "页面排版、打印分块与文字选择几何",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceGeometry",
+      "documentation": "swift/Documentation/InkSpaceGeometry/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "CoreGraphics"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "PageGrid.expansionLayout",
+        "PrintPageGeometry.frames/validate",
+        "BoardTextSelectionSnapshotKey",
+        "BoardTextSelectionGeneration"
+      ],
+      "sourceFiles": [
+        "Core/PageGrid.swift",
+        "Core/PrintPageGeometry.swift",
+        "Core/BoardTextSelectionGeometry.swift"
+      ],
+      "limitations": "纯几何和分析结果代际判断；不渲染PDF、手写或VisionKit界面。保留画布边界、2000页等限制。PageGrid旧App格式错误被独立PageGridError替代。"
+    },
+    {
+      "name": "InkSpaceStudy",
+      "purpose": "学习卡片、事件排程与CSV/TSV",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceStudy",
+      "documentation": "swift/Documentation/InkSpaceStudy/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "CoreFoundation",
+        "CryptoKit"
+      ],
+      "dependencies": [
+        "InkSpacePaths"
+      ],
+      "publicAPI": [
+        "StudyCSV.parse/export/stableID",
+        "StudyEvent.decode/data/normalized",
+        "StudyProjection.cards",
+        "StudyCloze",
+        "StudyContentBlock"
+      ],
+      "sourceFiles": [
+        "Study/StudyModel.swift",
+        "Study/StudyRichContent.swift",
+        "Study/StudyCSV.swift"
+      ],
+      "limitations": "不包含卡片界面、App白板节点转换或StudyRepository文件库。新建原始事件后须normalized()或经decode/data校验，再读取派生日期/做投影；CSV导出没有表头，回读header应为false。"
+    },
+    {
+      "name": "InkSpaceChecklist",
+      "purpose": "课程清单格式和状态变换",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceChecklist",
+      "documentation": "swift/Documentation/InkSpaceChecklist/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "CoreFoundation",
+        "CryptoKit"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "CourseChecklistDocument.create/decode/applying",
+        "CoursePoem.bundled",
+        "CourseChecklistTask"
+      ],
+      "sourceFiles": [
+        "CourseChecklist/CourseChecklistModel.swift"
+      ],
+      "limitations": "清单模型、验证和纯状态变换，不包含文件冲突存储或清单界面。诗词为包内通用资源，通过Bundle.module读取，最多1000任务/1MiB。"
+    },
+    {
+      "name": "InkSpacePDFRecords",
+      "purpose": "PDF图层、批注和增页记录",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpacePDFRecords",
+      "documentation": "swift/Documentation/InkSpacePDFRecords/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "CoreGraphics"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "PDFWorkspaceEvent.make/decodeValidated/encoded",
+        "PDFWorkspaceProjection.project",
+        "PDFExtensionEvent.decodeValidated",
+        "PDFExtensionGeometry.slices"
+      ],
+      "sourceFiles": [
+        "PDFWorkspace/PDFWorkspaceEvent.swift",
+        "PDFExtension/PDFNativeInkArchive.swift",
+        "PDFExtension/PDFExtensionModel.swift",
+        "PDFExtension/PDFExtensionGeometry.swift"
+      ],
+      "limitations": "这是JSON记录、冲突投影和留白布局模块，不是PDF文件导出器。原生笔迹载荷仅作为有界opaque Data保存，不解析PencilKit。输入应经decodeValidated；事件投影前使用make/decodeValidated取得有效时间。"
+    },
+    {
+      "name": "InkSpaceMediaTimeline",
+      "purpose": "音视频工程模型与时间线计算",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceMediaTimeline",
+      "documentation": "swift/Documentation/InkSpaceMediaTimeline/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "MediaProject.validate/duration/clipStarts/audioHeadroom",
+        "MediaSource",
+        "MediaClip",
+        "MediaCaptionImporter.parse"
+      ],
+      "sourceFiles": [
+        "MediaEditor/MediaProject.swift",
+        "MediaEditor/MediaCaptionImporter.swift"
+      ],
+      "limitations": "模型、范围验证、转场/混音数值及字幕解析可独立复用；不包含AVFoundation渲染、媒体素材读取或剪辑界面。先validate再使用派生播放/混音计算。"
+    },
+    {
+      "name": "InkSpaceAI",
+      "purpose": "导图AI请求、图片翻译与凭据存储",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceAI",
+      "documentation": "swift/Documentation/InkSpaceAI/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "Security"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "AIClient.outline",
+        "AIOutline.validatedCount",
+        "PDFTranslationClient.translate",
+        "PDFTranslationTransport",
+        "PDFTranslationInput",
+        "APIKeyStore",
+        "PDFTranslationKeyStore"
+      ],
+      "sourceFiles": [
+        "AI/AIClient.swift",
+        "AI/PDFTranslationClient.swift",
+        "AI/PDFTranslationProvider.swift"
+      ],
+      "limitations": "调用者提供模型和自己的服务密钥。默认模型名称仅继承源码，服务是否开放/收费不由本库保证。翻译transport可注入；测试只用假transport，未请求真实服务或操作Keychain。包内默认Keychain服务名使用InkSpace.Modules命名，独立于完整App。"
+    },
+    {
+      "name": "InkSpaceWebClips",
+      "purpose": "网页剪藏与链接处理",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceWebClips",
+      "documentation": "swift/Documentation/InkSpaceWebClips/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation (NSDataDetector on Apple platforms)"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "BrowserWebClip.read(from:)",
+        "BoardWebCardContent.safeURL/escape/frameHTML",
+        "BoardTextWebLinks.links/richHTML"
+      ],
+      "sourceFiles": [
+        "Browser/BrowserWebClip.swift"
+      ],
+      "limitations": "不包含WebView、登录会话、下载管理或浏览器扩展执行器。移除了创建App BoardItem的接口，以便独立使用；剪藏读取保留512KB限制和HTTP(S)校验。"
+    },
+    {
+      "name": "InkSpaceSpeechText",
+      "purpose": "中英文朗读分段与高亮坐标",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceSpeechText",
+      "documentation": "swift/Documentation/InkSpaceSpeechText/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "CoreGraphics"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "BoardReadAloudText.languageRuns/vocabulary/topLeftRect",
+        "BoardReadAloudLine.highlight"
+      ],
+      "sourceFiles": [
+        "Core/BoardReadAloudText.swift"
+      ],
+      "limitations": "不包含AVSpeechSynthesizer播放控制、语音选择、OCR分析或App会话状态。范围按UTF-16计量，保留中文/拉丁字符分段规则。"
+    },
+    {
+      "name": "InkSpaceStorage",
+      "purpose": "协调文件读写与冲突保护",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceStorage",
+      "documentation": "swift/Documentation/InkSpaceStorage/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "CryptoKit"
+      ],
+      "dependencies": [
+        "InkSpacePaths"
+      ],
+      "publicAPI": [
+        "VaultFileIO.read/write/fingerprint/ensureObsidianNote",
+        "BoardStorageLocations.directory/scan"
+      ],
+      "sourceFiles": [
+        "Core/VaultFileIO.swift",
+        "Core/BoardStorageLocations.swift"
+      ],
+      "limitations": "默认每个actor串行本地写入；跨actor/进程/云端不是分布式事务。调用方负责取得根目录访问授权。写入必须提供读取时fingerprint；新建时传nil，目标已存在会拒绝覆盖。"
+    },
+    {
+      "name": "InkSpaceOCR",
+      "purpose": "本机PDF/图片文字识别",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceOCR",
+      "documentation": "swift/Documentation/InkSpaceOCR/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "Vision",
+        "CoreGraphics",
+        "ImageIO",
+        "PDFKit"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "LocalOCR.recognize(url:pages:customWords:progress:)",
+        "imageForSelection(url:)",
+        "selectedPages(range:pageCount:)"
+      ],
+      "sourceFiles": [
+        "Core/LocalOCR.swift"
+      ],
+      "limitations": "支持原生PDF文本提取和本机Vision识别；仍受系统识别语言、图片质量和内存限制。本次编译与页码边界测试通过，未把模型/硬件准确率作为已验收。输入文件保持只读，带取消和容量限制。"
+    },
+    {
+      "name": "InkSpaceExcelPictures",
+      "purpose": "XLSX内嵌图片读取",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceExcelPictures",
+      "documentation": "swift/Documentation/InkSpaceExcelPictures/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "ImageIO",
+        "CryptoKit",
+        "zlib",
+        "Darwin"
+      ],
+      "dependencies": [],
+      "publicAPI": [
+        "ExcelEmbeddedPictures.read(data:)",
+        "read(url:)",
+        "decode(_:maximumDimension:)",
+        "ExcelPictureBook"
+      ],
+      "sourceFiles": [
+        "Documents/ExcelEmbeddedPictures.swift"
+      ],
+      "limitations": "只读XLSX绘图关系及图片，绝不执行宏或抓取外部资源；不写工作簿、不渲染图表/组合形状，不支持旧XLS图片。保留ZIP、XML和像素容量限制。"
+    },
+    {
+      "name": "InkSpaceScanPDF",
+      "purpose": "多页PDF汇编和安全导出",
+      "kind": "swift-library",
+      "path": "swift/Sources/InkSpaceScanPDF",
+      "documentation": "swift/Documentation/InkSpaceScanPDF/README.md",
+      "platforms": {
+        "macOS": "13.0",
+        "iOS": "18.0"
+      },
+      "frameworks": [
+        "Foundation",
+        "PDFKit; depends on InkSpaceStorage"
+      ],
+      "dependencies": [
+        "InkSpaceStorage"
+      ],
+      "publicAPI": [
+        "ScannedPDFExport.save(pages:root:relativeDirectory:title:)"
+      ],
+      "sourceFiles": [
+        "Documents/ScannedPDFExport.swift"
+      ],
+      "limitations": "接收调用方提供的PDFPage，按顺序汇编并另存，自动避开重名文件；不包含摄像头扫描UI、裁边或旋转编辑器。已用合成PDF测试保存/重名保护。"
+    }
+  ],
+  "validation": {
+    "macOS": {
+      "result": "passed",
+      "products": 16,
+      "behaviorTests": 20,
+      "failures": 0,
+      "toolchain": "Xcode 27.1 / Swift toolchain",
+      "entrypoints": [
+        "root Package.swift",
+        "swift/Package.swift"
+      ],
+      "imports": "ordinary import, no @testable"
+    },
+    "manifestConsistency": "root and child products, targets, dependencies and resources match",
+    "iOSSimulator": {
+      "result": "BUILD SUCCEEDED",
+      "architecture": "arm64",
+      "scheme": "InkSpaceModules-Package",
+      "codeSigning": "disabled",
+      "installedOrLaunched": false
+    },
+    "minimumOSRuntime": "not separately tested on minimum supported OS versions",
+    "realDevices": "not tested",
+    "liveAIProviders": "not tested",
+    "keychainRuntime": "not tested",
+    "ocrRecognitionAccuracy": "not tested; page range boundaries checked",
+    "excelPictures": "malformed package rejection checked; no full XLSX corpus run"
+  }
+}

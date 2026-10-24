@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/translation-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "请求选区归一化、供应商配置、响应解析、取消/超时及注入式凭据加密存储。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

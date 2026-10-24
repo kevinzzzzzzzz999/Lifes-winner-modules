@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/file-storage",
+  "version": "0.1.0",
+  "private": true,
+  "description": "相对路径校验、UTF-8解码、排他持久写入、文件身份检查、受限流复制、最近目录及诊断存储。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

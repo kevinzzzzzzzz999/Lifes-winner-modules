@@ -1,0 +1,20 @@
+{
+  "name": "inkspace-modules-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "workspaces": [
+    "packages/*",
+    "ui"
+  ],
+  "scripts": {
+    "test": "node scripts/test-packages.cjs",
+    "test:swift": "swift test",
+    "build:ui": "npm run build --workspace @inkspace/ui",
+    "test:ui": "npm run test --workspace @inkspace/ui"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  }
+}

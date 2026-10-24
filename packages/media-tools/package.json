@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/media-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "剪辑项目验证、混音/速度/FFmpeg参数、字幕格式与侧车记录、视频流访问和播放状态逻辑。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

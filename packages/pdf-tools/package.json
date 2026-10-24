@@ -1,0 +1,32 @@
+{
+  "name": "@inkspace-modules/pdf-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "原有OneNote连续画布重排、几何校验、批注隐藏预览、阅读缩放与选区计算；另提供显式PDF合并和页提取封装。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "pdf-lib": "1.17.1"
+  }
+}

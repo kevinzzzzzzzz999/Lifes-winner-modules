@@ -1,0 +1,32 @@
+{
+  "name": "@inkspace-modules/board-model",
+  "version": "0.1.0",
+  "private": true,
+  "description": "白板 JSON 解析、格式校验、节点与连线操作、笔迹位置及子白板链接。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "pdf-lib": "1.17.1"
+  }
+}

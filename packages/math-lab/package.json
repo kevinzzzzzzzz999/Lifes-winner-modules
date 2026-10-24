@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/math-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "表达式解析、采样、微积分近似、回归/时间序列、现金流/贷款/债券/期权等教育数值函数。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

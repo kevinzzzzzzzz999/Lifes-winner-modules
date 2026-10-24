@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/task-calendar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "任务清单、快速笔记、日历模型、ICS导入导出、日历文件及提醒调度。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

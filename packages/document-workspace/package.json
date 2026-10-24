@@ -1,0 +1,33 @@
+{
+  "name": "@inkspace-modules/document-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "内部文档链接、文件树/标签状态、自动保存接受规则、文档缩放、快捷键、富文本和公式片段。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "katex": "0.18.7",
+    "marked": "18.0.13"
+  }
+}

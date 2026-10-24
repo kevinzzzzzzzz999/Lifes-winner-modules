@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/board-ink",
+  "version": "0.1.0",
+  "private": true,
+  "description": "合并位置、笔迹裁切路径、绘制计划、回放时间线与高清PDF裁块计划。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

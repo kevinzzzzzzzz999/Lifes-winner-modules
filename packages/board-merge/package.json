@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/board-merge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "来源检查、笔迹平移、合并结果、事务撤回、历史快照与编辑器快照接受规则。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

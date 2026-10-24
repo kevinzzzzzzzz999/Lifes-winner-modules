@@ -1,0 +1,34 @@
+{
+  "name": "@inkspace-modules/notebook-data",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CSV/TSV解析、Excel工作簿Worker、Notebook格式/容量/输出校验、目录与运行事件归并。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@xmldom/xmldom": "0.8.15",
+    "jszip": "3.10.2",
+    "marked": "18.0.13"
+  }
+}

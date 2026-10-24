@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/ocr-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "有界OCR进程协议、图像输入检查、选区像素与页坐标转换。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@inkspace-modules/knowledge-search",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Markdown链接/标签/模糊链接消歧、资料库扫描搜索、知识宫殿和漫游场景数学。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ]
+}

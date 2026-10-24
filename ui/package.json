@@ -1,0 +1,116 @@
+{
+  "name": "@inkspace/ui",
+  "version": "0.1.1",
+  "type": "module",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "description": "Reusable React components for notes, document margins, PDF, knowledge spaces, notebooks and planning, with explicit host adapters",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "HOST-CONTRACT.md",
+    "source-manifest.json",
+    "src",
+    "math-lab"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/types/entries/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/entries/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./editor": {
+      "types": "./dist/types/entries/editor.d.ts",
+      "import": "./dist/editor.js"
+    },
+    "./knowledge": {
+      "types": "./dist/types/entries/knowledge.d.ts",
+      "import": "./dist/knowledge.js"
+    },
+    "./documents": {
+      "types": "./dist/types/entries/documents.d.ts",
+      "import": "./dist/documents.js"
+    },
+    "./notebook": {
+      "types": "./dist/types/entries/notebook.d.ts",
+      "import": "./dist/notebook.js"
+    },
+    "./planning": {
+      "types": "./dist/types/entries/planning.d.ts",
+      "import": "./dist/planning.js"
+    },
+    "./pdf": {
+      "types": "./dist/types/entries/pdf.d.ts",
+      "import": "./dist/pdf.js"
+    },
+    "./board": {
+      "types": "./dist/types/entries/board.d.ts",
+      "import": "./dist/board.js"
+    },
+    "./media": {
+      "types": "./dist/types/entries/media.d.ts",
+      "import": "./dist/media.js"
+    },
+    "./study": {
+      "types": "./dist/types/entries/study.d.ts",
+      "import": "./dist/study.js"
+    },
+    "./tools": {
+      "types": "./dist/types/entries/tools.d.ts",
+      "import": "./dist/tools.js"
+    },
+    "./host": {
+      "types": "./dist/types/entries/host.d.ts",
+      "import": "./dist/host.js"
+    },
+    "./style.css": {
+      "types": "./dist/style.css.d.ts",
+      "default": "./dist/style.css"
+    },
+    "./math-lab/*": "./dist/math-lab/*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@codemirror/autocomplete": "6.20.3",
+    "@codemirror/commands": "6.11.1",
+    "@codemirror/lang-javascript": "6.2.5",
+    "@codemirror/lang-json": "6.0.2",
+    "@codemirror/lang-markdown": "6.5.2",
+    "@codemirror/lang-python": "6.2.1",
+    "@codemirror/language": "6.12.4",
+    "@codemirror/legacy-modes": "6.5.4",
+    "@codemirror/state": "6.7.6",
+    "@codemirror/view": "6.43.13",
+    "@lezer/highlight": "1.2.5",
+    "@uiw/react-codemirror": "4.25.11",
+    "dompurify": "3.4.15",
+    "katex": "0.18.7",
+    "lucide-react": "1.45.0",
+    "marked": "18.0.13",
+    "pdfjs-dist": "6.3.289"
+  },
+  "devDependencies": {
+    "vite": "8.3.0",
+    "typescript": "7.0.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "playwright": "1.62.1",
+    "pdf-lib": "1.17.1",
+    "postcss": "^8.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/smoke-test.mjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  }
+}

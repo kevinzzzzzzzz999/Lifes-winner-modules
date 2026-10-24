@@ -1,0 +1,32 @@
+{
+  "name": "@inkspace-modules/note-exchange",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Markdown/缩进纲要与白板转换、BoardNotes归档解析、对象解码、受限导入导出流程。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "pdf-lib": "1.17.1"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "InkSpaceTextHistory": [
+    "Core/DraftTextHistory.swift"
+  ],
+  "InkSpaceOutline": [
+    "Exchange/NoteOutline.swift"
+  ],
+  "InkSpaceSubtitles": [
+    "Video/BoardVideoSubtitles.swift"
+  ],
+  "InkSpacePaths": [
+    "Documents/VaultPathResolver.swift",
+    "Core/Models.swift (VaultPath only)"
+  ],
+  "InkSpaceGeometry": [
+    "Core/PageGrid.swift",
+    "Core/PrintPageGeometry.swift",
+    "Core/BoardTextSelectionGeometry.swift"
+  ],
+  "InkSpaceStudy": [
+    "Study/StudyModel.swift",
+    "Study/StudyRichContent.swift",
+    "Study/StudyCSV.swift"
+  ],
+  "InkSpaceChecklist": [
+    "CourseChecklist/CourseChecklistModel.swift"
+  ],
+  "InkSpacePDFRecords": [
+    "PDFWorkspace/PDFWorkspaceEvent.swift",
+    "PDFExtension/PDFNativeInkArchive.swift",
+    "PDFExtension/PDFExtensionModel.swift",
+    "PDFExtension/PDFExtensionGeometry.swift"
+  ],
+  "InkSpaceMediaTimeline": [
+    "MediaEditor/MediaProject.swift",
+    "MediaEditor/MediaCaptionImporter.swift"
+  ],
+  "InkSpaceAI": [
+    "AI/AIClient.swift",
+    "AI/PDFTranslationClient.swift",
+    "AI/PDFTranslationProvider.swift"
+  ],
+  "InkSpaceWebClips": [
+    "Browser/BrowserWebClip.swift"
+  ],
+  "InkSpaceSpeechText": [
+    "Core/BoardReadAloudText.swift"
+  ],
+  "InkSpaceStorage": [
+    "Core/VaultFileIO.swift",
+    "Core/BoardStorageLocations.swift"
+  ],
+  "InkSpaceOCR": [
+    "Core/LocalOCR.swift"
+  ],
+  "InkSpaceExcelPictures": [
+    "Documents/ExcelEmbeddedPictures.swift"
+  ],
+  "InkSpaceScanPDF": [
+    "Documents/ScannedPDFExport.swift"
+  ]
+}

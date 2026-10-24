@@ -1,0 +1,10 @@
+import '../foundation.css';
+import {KnowledgeGraph as Graph,MindMapEditor as Mind} from '../renderer/GraphWorkspace';
+import Palace from '../renderer/KnowledgePalace';import Walk from '../renderer/KnowledgeWalkthrough';import Space from '../renderer/KnowledgeSpace';
+import {surface} from '../surface';
+export const KnowledgeGraph=surface(Graph,'knowledge-graph');
+export const MindMapEditor=surface(Mind,'mind-map');
+export const MemoryPalace=surface(Palace,'memory-palace');
+export const KnowledgeWalkthrough=surface(Walk,'knowledge-walkthrough');
+export const KnowledgeSpace=surface(Space,'knowledge-space',['listDirectory','getFolderOrder','setFolderOrder'],true);
+export type {GraphNode,GraphEdge} from '../renderer/GraphWorkspace';

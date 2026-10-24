@@ -1,0 +1,35 @@
+{
+  "name": "@inkspace-modules/office-documents",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DOCX/PPTX与可编辑PDF创建读取、预览和嵌图、LaTeX编译服务，以及文档提取为Markdown和旁注笔记组装。",
+  "license": "MIT",
+  "author": "InkSpace contributors",
+  "type": "commonjs",
+  "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.cjs"
+  },
+  "files": [
+    "index.cjs",
+    "lib",
+    "sources",
+    "resources",
+    "web",
+    "test",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@xmldom/xmldom": "0.8.15",
+    "jszip": "3.10.2",
+    "mammoth": "1.12.3",
+    "pdf-lib": "1.17.1"
+  }
+}

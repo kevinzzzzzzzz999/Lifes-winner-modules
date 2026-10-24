@@ -1,0 +1,5 @@
+'use strict';
+const {test}=require('node:test');const assert=require('node:assert/strict');const crypto=require('node:crypto');const fs=require('node:fs');const fsp=require('node:fs/promises');const path=require('node:path');const os=require('node:os');const tools=require('..');
+test('standalone API preserves useful behavior',async()=>{
+const {PDFDocument}=require('pdf-lib');const first=await PDFDocument.create();first.addPage([100,200]);const a=Buffer.from(await first.save());const second=await PDFDocument.create();second.addPage([300,400]);second.addPage([500,600]);const b=Buffer.from(await second.save());const merged=await tools.mergePDFs([a,b]);assert.equal((await PDFDocument.load(merged)).getPageCount(),3);const selected=await tools.extractPDFPages(merged,[2,0]);const pages=(await PDFDocument.load(selected)).getPages();assert.equal(pages.length,2);assert.equal(pages[0].getWidth(),500);assert.equal(pages[1].getWidth(),100);const split=await tools.splitPDF(merged,[[0],[1,2]]);assert.deepEqual(await Promise.all(split.map(async value=>(await PDFDocument.load(value)).getPageCount())),[1,2]);await assert.rejects(tools.extractPDFPages(a,[9]));
+});

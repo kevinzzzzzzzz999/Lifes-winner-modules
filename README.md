@@ -54,7 +54,7 @@ console.log(square({ x: 3 })); // 9
 
 两个原生示例需要macOS与Xcode/Swift工具链；应用壳示例需要Node.js及说明中的依赖。它们不需要安装完整InkSpace，也不携带原软件用户数据。
 
-[下载全部模块的完整源码工作区](InkSpace-modules-source-2026-10-24-r3.zip?raw=1)，或直接浏览仓库中的 packages / swift / ui / integrations。
+[下载全部模块的完整源码工作区](InkSpace-modules-source-2026-10-24-r4.zip?raw=1)，或直接浏览仓库中的 packages / swift / ui / integrations。
 
 这里可以按功能单独下载：**20 个 Node / JavaScript 包、18 个 SwiftPM 产品、30 个 React 界面表面（10 个分域入口）**，以及 Obsidian 和 Safari 分享集成。
 

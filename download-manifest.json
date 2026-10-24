@@ -1,6 +1,6 @@
 {
   "releaseDate": "2026-10-24",
-  "revision": "2026-10-24-r3",
+  "revision": "2026-10-24-r4",
   "archives": [
     {
       "file": "node-application-shell.zip",
@@ -250,8 +250,8 @@
     }
   ],
   "workspaceSource": {
-    "file": "InkSpace-modules-source-2026-10-24-r3.zip",
-    "sha256": "c4577d01e31868e036e6f82364ba164bd8c28db12799a55104bda717df158dc4",
-    "members": 1063
+    "file": "InkSpace-modules-source-2026-10-24-r4.zip",
+    "sha256": "7ddaa1c6ebb948f5a09b67b6c849a045c2b3a4824d4db98df200074d8d621d97",
+    "members": 1084
   }
 }

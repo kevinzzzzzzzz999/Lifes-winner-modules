@@ -1,8 +1,8 @@
-# Document Workbench macOS packaging / 文档工作台 Mac 打包
+# life'winner Document Workbench macOS packaging / 文档工作台 Mac 打包
 
 This recipe creates ordinary `.app` downloads with Electron 44.3.0 built in. End users do not install Node.js, npm, Python or Xcode. / 本配方生成自带 Electron 的 Mac 应用，使用者无需安装开发工具。
 
-Only the source/overlay/official runtimes become the application. Tests, Playwright, npm, source snapshots, logs, user configuration and original InkSpace data are excluded. The source package stays unchanged. `application-shell-source-sha256.json` verifies the 25 reviewed source files; only product/title, static onboarding HTML/CSS and icon are overlaid. The renderer's binary-file message and footer use ordinary user language. The core, renderer business logic and preload remain identical to the accepted module.
+Only the source/overlay/official runtimes become the application. Tests, Playwright, npm, source snapshots, logs, user configuration and original life'winner data are excluded. The source package stays unchanged. `application-shell-source-sha256.json` verifies the 25 reviewed source files; only product/title, static onboarding HTML/CSS and icon are overlaid. The renderer's binary-file message and footer use ordinary user language. The core, renderer business logic and preload remain identical to the accepted module.
 
 ## CI / developer build
 
@@ -54,6 +54,6 @@ This starts the packaged executable with a clean system-only PATH and temporary 
 
 Ad hoc signatures contain no person's certificate, Developer ID, TeamIdentifier, Apple account or notarization ticket. Structural signature validation is separate from Gatekeeper trust. **This is not a notarized zero-warning release:** Internet downloads may be blocked or need macOS Privacy & Security approval. No quarantine is removed and Gatekeeper is never disabled. Do not claim otherwise.
 
-The app is a read-only local document/workspace shell, not the complete InkSpace editor collection. UTF-8 previews are limited to 512 KiB; other file types should be opened with suitable software. Each window has separate grants; a chosen file grants only itself. Nothing is uploaded, no account is required, and workspace history is not persisted. MIT/Electron/Chromium/icon notices are retained in the bundle. See the included bilingual onboarding text.
+The app is a read-only local document/workspace shell, not the complete life'winner editor collection. UTF-8 previews are limited to 512 KiB; other file types should be opened with suitable software. Each window has separate grants; a chosen file grants only itself. Nothing is uploaded, no account is required, and workspace history is not persisted. MIT/Electron/Chromium/icon notices are retained in the bundle. See the included bilingual onboarding text.
 
 Official references: [Electron manual packaging](https://www.electronjs.org/docs/latest/tutorial/application-distribution), [Electron signing](https://www.electronjs.org/docs/latest/tutorial/code-signing), [Electron release 44.3.0](https://github.com/electron/electron/releases/tag/v44.3.0).

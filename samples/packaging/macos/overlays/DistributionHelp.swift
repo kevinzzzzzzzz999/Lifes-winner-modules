@@ -8,7 +8,7 @@ import Foundation
         if let window { window.makeKeyAndOrderFront(nil); NSApp.activate(ignoringOtherApps: true); return }
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 760, height: 680),
                               styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
-        window.title = "使用帮助 / Help"
+        window.title = "life'winner · 使用帮助 / Help"
         window.isReleasedWhenClosed = false
         let scroll = NSScrollView(frame: NSRect(x: 0, y: 0, width: 760, height: 680))
         scroll.hasVerticalScroller = true

@@ -47,8 +47,10 @@
   "sourceMappings": [
     {
       "path": "desktop/src/renderer/i18n.ts",
-      "sha256": "82cfaadd0e5dca2149af5af48de26e6feab4fcef517487e0ad617413311774e1",
-      "extractedBehavior": "Explicit language resolution and complete 92-entry bilingual catalog"
+      "sha256": "998bb463e0702ff9ea0c73a95ead6c269e18d33bb2eaac6a217c940b52d9edf9",
+      "extractedBehavior": "Explicit language resolution and complete 92-entry bilingual catalog",
+      "extractionSnapshotSha256": "82cfaadd0e5dca2149af5af48de26e6feab4fcef517487e0ad617413311774e1",
+      "publicSourceNote": "Display-brand update to life'winner; extracted behavior is unchanged."
     },
     {
       "path": "desktop/src/renderer/PanelLayout.tsx",

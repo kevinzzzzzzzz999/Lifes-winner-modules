@@ -1,8 +1,10 @@
-# InkSpace Modules · 散装功能库
+# life'winner Modules · 散装功能库
 
-Reusable parts of InkSpace, separated from the integrated notes application.
+希望每一个使用我开源功能的人，都是各自的 life'winner。
 
-这里保存从 InkSpace（人生赢家）拆出的独立功能库。完整软件另保留在同一 GitHub 账号的 `inkspace` 仓库中。你可以只取需要的包，也可以组合使用。
+Reusable parts of life'winner, separated from the integrated notes application.
+
+这里保存从 life'winner（人生赢家）拆出的独立功能库。完整软件另保留在同一 GitHub 账号的 `inkspace` 仓库中。你可以只取需要的包，也可以组合使用。
 
 ## 普通用户：直接使用 Mac 应用
 
@@ -27,7 +29,7 @@ Reusable parts of InkSpace, separated from the integrated notes application.
 | 语言、布局、工具栏与操作偏好 | [InkSpacePreferences](swift/Documentation/InkSpacePreferences/README.md) | [InkSpacePreferencesDemo](samples/preferences/README.md) |
 | 首页、文档路由和多窗口应用壳 | [application-shell](packages/application-shell/README.md) | 包内 Electron 示例，按该包说明启动 |
 
-它们不需要完整 InkSpace。Swift 示例需要 macOS 和 Xcode/Swift 工具链；应用壳示例需要 Node.js 和声明的 Electron 依赖。发布的独立 Swift ZIP 自带 `Example/`，可以直接按随包说明启动；克隆完整仓库时使用上表 `samples/` 入口。示例采用合成内容与独立存储，不读取原 App 的笔记、账号和偏好。Apple Pencil、系统随手写和系统协议登记等能力按包内平台说明接入。
+它们不需要完整 life'winner。Swift 示例需要 macOS 和 Xcode/Swift 工具链；应用壳示例需要 Node.js 和声明的 Electron 依赖。发布的独立 Swift ZIP 自带 `Example/`，可以直接按随包说明启动；克隆完整仓库时使用上表 `samples/` 入口。示例采用合成内容与独立存储，不读取原 App 的笔记、账号和偏好。Apple Pencil、系统随手写和系统协议登记等能力按包内平台说明接入。
 
 ## JavaScript 使用
 
@@ -38,7 +40,7 @@ npm install
 npm test
 ```
 
-每个 `packages/` 子目录都是自己的 npm 包，可以通过本地目录安装到其他项目；它们不需要完整 InkSpace 应用的 Electron 入口。PDF、Office、Python、翻译和媒体等功能仍有各自的软件、账号或宿主接口要求，请先阅读包说明。
+每个 `packages/` 子目录都是自己的 npm 包，可以通过本地目录安装到其他项目；它们不需要完整 life'winner 应用的 Electron 入口。PDF、Office、Python、翻译和媒体等功能仍有各自的软件、账号或宿主接口要求，请先阅读包说明。
 
 ## Swift 使用
 

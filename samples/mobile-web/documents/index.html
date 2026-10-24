@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN" data-app="documents">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
+  <title>文档工作台 · life'winner</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-main"><a class="back-link" href="../" aria-label="返回全部应用">‹</a><span class="document-icon" aria-hidden="true">▤</span><div><h1 class="app-title">文档工作台</h1><p class="subtitle">文本预览与副本编辑</p></div></div>
+    <button class="button install-button" type="button" data-install>添加到主屏幕</button>
+  </header>
+  <main class="app-content">
+    <section class="toolbar main-toolbar" aria-label="文档操作">
+      <button class="button primary" id="open-files" type="button">打开文本文件</button>
+      <button class="button" id="new-document" type="button">＋ 新建文本</button>
+      <span class="privacy-note">仅处理你选择的文件</span>
+      <input id="file-input" type="file" multiple hidden aria-label="选择文本文件" accept=".txt,.md,.markdown,.json,.csv,.tsv,.log,.html,.htm,.xml,.yaml,.yml,.css,.js,.mjs,.cjs,.ts,.tsx,.jsx,.py,.swift,.tex,.ipynb,.sql,.toml,.ini,.cfg">
+    </section>
+    <p class="status" id="status" role="status" aria-live="polite">原文件只读打开，编辑始终发生在副本中。</p>
+    <div class="workbench-layout">
+      <details class="panel local-library" id="saved-library">
+        <summary>本机草稿 <span class="count" id="draft-count">0</span></summary>
+        <p class="library-note">只有点击“保存到本机”后，副本才会保留。</p>
+        <ul id="saved-list" class="saved-list" aria-label="已保存的本机草稿"></ul>
+        <p id="no-drafts" class="empty-library">还没有保存的草稿</p>
+      </details>
+      <div class="document-column">
+        <section class="panel welcome" id="welcome">
+          <div class="welcome-icon" aria-hidden="true">▤</div><h2>打开一份文档，安心阅读。</h2>
+          <p>从“文件”选择文本、Markdown、代码或 Notebook 源文件。需要修改时，编辑一份副本，原件不会被覆盖。</p>
+          <p class="supported-note">UTF-8 文本 · 单文件最多 512 KiB · 最多 12 个标签</p>
+          <button class="button primary" id="welcome-open" type="button">选择文本文件</button>
+        </section>
+        <section class="panel workspace" id="workspace" hidden aria-label="当前文档">
+          <div class="tab-strip" id="tabs" role="tablist" aria-label="已打开的文档"></div>
+          <div id="document-panel" role="tabpanel"><div class="document-heading"><div><h2 id="document-name"></h2><p id="document-meta" class="document-meta"></p></div><button class="button" id="edit-copy" type="button">编辑副本</button></div>
+          <label class="field name-field" id="name-field" hidden>副本名称<input id="document-filename" type="text" maxlength="160" autocomplete="off" spellcheck="false"></label>
+          <div class="text-area"><pre id="preview-text" class="text-preview" tabindex="0" aria-label="只读文本预览"></pre><textarea id="editor-text" hidden aria-label="编辑文本副本" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea></div>
+          <div class="toolbar document-actions"><button class="button primary" id="save-draft" type="button">保存到本机</button><button class="button" id="export-file" type="button">导出 .txt</button><button class="button" id="share-file" type="button">分享 / 存到文件</button></div>
+          <p class="export-note">导出与分享均生成 UTF-8 .txt 副本，不会覆盖打开的原文件。</p>
+        </div></section>
+      </div>
+    </div>
+    <p class="offline-state" data-offline-status role="status">正在准备离线…</p>
+    <details class="help panel"><summary>使用帮助与保存说明</summary><div class="help-content"><h2>从选择文件开始</h2><p>“打开文本文件”使用系统的文件选择器。只读取你明确选择的文件；不扫描文件夹、不上传内容。PDF、Office、图片和未知类型不在当前支持范围内，请用适合的软件打开。</p><h2>预览、编辑、保存</h2><p>打开后默认只读。点击“编辑副本”可修改文字或名称。点击“保存到本机”才会保留草稿；未保存的编辑只在当前页面，离开或关闭后可能丢失。切换标签不会丢失当前副本。</p><p>草稿仅保存在此设备当前浏览器或主屏幕应用中，不会自动同步或备份。清理浏览器数据、系统回收存储或删除应用，可能删除本机草稿。重要内容请导出到“文件”。无痕浏览可能不支持保存。</p><h2>导出到“文件”</h2><p>“导出 .txt”生成下载文件。“分享 / 存到文件”会优先打开系统分享菜单，你可以选择“存储到文件”；不支持文件分享的浏览器会改为下载。保存位置由你选择，若选择 iCloud 等位置，同步由系统或所选服务处理。</p><h2>添加到主屏幕</h2><p>iPhone、iPad 可在 Safari 分享菜单中选择“添加到主屏幕”。首次打开需加载应用；之后离线是否可用以页面显示的离线准备状态为准。本应用不需要 Node.js 或 Xcode。</p><p>HTML、Markdown 和代码只显示为文字，不执行脚本。这是轻量文本工作台，不是 PDF、Office 或高级代码编辑器。</p></div></details>
+  </main>
+</body>
+</html>

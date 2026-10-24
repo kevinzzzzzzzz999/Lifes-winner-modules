@@ -1,14 +1,16 @@
-# Mac 版下载、安装与使用
+# life'winner · Mac 版下载、安装与使用
 
-这三个小软件可以分别下载、直接使用。下载好的应用已经包含运行需要的组件，无需安装 Node.js、Xcode、Python 或完整版 InkSpace，也不需要注册账号。
+希望每一个使用我开源功能的人，都是各自的 life'winner。
+
+这三个小软件可以分别下载、直接使用。下载好的应用已经包含运行需要的组件，无需安装 Node.js、Xcode、Python 或完整版 life'winner，也不需要注册账号。
 
 ## 先选一个下载
 
 | 软件 | 适合做什么 | 下载文件 |
 | --- | --- | --- |
-| 书写画板 · InkSpace Writing | 画线、整理形状、放文字卡，用胶带遮挡复习，保存自己的绘图 | `InkSpace-Writing-macos-universal.zip` |
-| 偏好方案编辑器 · InkSpace Preferences | 编辑、保存和分享独立的语言、布局、笔栏及操作偏好方案 | `InkSpace-Preferences-macos-universal.zip` |
-| 文档工作台 · Document Workbench | 打开本地文件夹、只读查看文本，在多个标签和窗口间切换 | M 系列 Mac 选 `document-workbench-macos-arm64.zip`；Intel Mac 选 `document-workbench-macos-x64.zip` |
+| 书写画板 · life'winner Writing | 画线、整理形状、放文字卡，用胶带遮挡复习，保存自己的绘图 | `InkSpace-Writing-macos-universal.zip` |
+| 偏好方案编辑器 · life'winner Preferences | 编辑、保存和分享独立的语言、布局、笔栏及操作偏好方案 | `InkSpace-Preferences-macos-universal.zip` |
+| 文档工作台 · life'winner Document Workbench | 打开本地文件夹、只读查看文本，在多个标签和窗口间切换 | M 系列 Mac 选 `document-workbench-macos-arm64.zip`；Intel Mac 选 `document-workbench-macos-x64.zip` |
 
 这些应用的最低系统要求为 macOS 13。前两份是 Universal 包，Apple Silicon 与 Intel Mac 使用同一份下载；文档工作台需要按芯片选择。
 
@@ -33,7 +35,7 @@
 
 ## 书写画板：怎样画、怎样保存
 
-打开 InkSpace Writing 后，可以用鼠标或触控板画线。它是独立矢量画板，适合临时画图、演示和复习。
+打开 life'winner Writing 后，可以用鼠标或触控板画线。它是独立矢量画板，适合临时画图、演示和复习。
 
 - **Hold line / Hold shape**：画出直线或所选形状的轮廓，停住片刻；出现预览后松开。
 - **Wave / Fill**：生成波浪线，或将闭合轮廓填色。
@@ -44,13 +46,13 @@
 
 退出前点 **Export JSON**，选择位置保存。以后用 **Open JSON** 打开本工具的绘图文件。画板不会自动替你保存；激光、未提交的文字草稿和撤销历史不在导出文件中。
 
-这种 JSON 是本工具自己的文件，不是完整 InkSpace 白板格式；它不会自动打开或修改原来的笔记资料库。
+这种 JSON 是本工具自己的文件，不是完整 life'winner 白板格式；它不会自动打开或修改原来的笔记资料库。
 
 ## 偏好方案：保存的是一份独立方案
 
-InkSpace Preferences 提供语言与布局、工具栏与笔栏、Pencil 操作选项、播放与字幕外观四页设置。你可以试着调整参数，保存方案，或导出给其他组件使用。
+life'winner Preferences 提供语言与布局、工具栏与笔栏、Pencil 操作选项、播放与字幕外观四页设置。你可以试着调整参数，保存方案，或导出给其他组件使用。
 
-这些选择只影响本工具的方案和演示。它不会修改 Mac 系统或原 InkSpace 的偏好，也不会执行翻译、AI、播放或 Apple Pencil 硬件动作。
+这些选择只影响本工具的方案和演示。它不会修改 Mac 系统或原 life'winner 的偏好，也不会执行翻译、AI、播放或 Apple Pencil 硬件动作。
 
 - **Save / 保存**：把当前方案保存在本机，下次打开本工具时恢复。
 - **Reload / 重新读取**：回到上次保存的方案，放弃当前未保存修改。
@@ -68,7 +70,7 @@ InkSpace Preferences 提供语言与布局、工具栏与笔栏、Pencil 操作�
 
 工作台不会编辑或覆盖这些文件。每个窗口的文件访问各自独立；选择单个文件不会自动允许读取相邻文件。退出后不保存工作区历史，下次需要重新选择。
 
-这是一款本地文档工作台，不包含完整 InkSpace 的所有编辑器、手写画布或云同步。
+这是一款本地文档工作台，不包含完整 life'winner 的所有编辑器、手写画布或云同步。
 
 ## 文件与隐私
 

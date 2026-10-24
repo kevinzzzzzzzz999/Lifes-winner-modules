@@ -18,7 +18,8 @@ import subprocess
 
 ELECTRON_VERSION = '44.3.0'
 APP_VERSION = '0.1.0'
-PRODUCT_NAME = '文档工作台'
+BUNDLE_NAME = '文档工作台'  # Keep existing bundle/download filenames compatible.
+PRODUCT_NAME = "life'winner 文档工作台"
 EXECUTABLE_NAME = 'DocumentWorkbench'
 BUNDLE_ID = 'org.inkspace.modules.documentworkbench'
 ROOT = Path(__file__).resolve().parent
@@ -110,7 +111,7 @@ def build(args):
         if file.is_symlink() or sha256(file) != checksum:
             raise ValueError('Source differs from the reviewed release: ' + relative)
     destination.mkdir(parents=True)
-    bundle = destination / (PRODUCT_NAME + '.app')
+    bundle = destination / (BUNDLE_NAME + '.app')
     run('/usr/bin/ditto', '--norsrc', '--noextattr', original, bundle)
     contents = bundle / 'Contents'
     resources = contents / 'Resources'
@@ -133,9 +134,10 @@ def build(args):
     (app_source / 'package.json').write_text(json.dumps({'name': 'inkspace-document-workbench', 'productName': PRODUCT_NAME, 'version': args.version, 'private': True, 'license': 'MIT', 'author': 'InkSpace contributors', 'main': 'examples/electron/main.cjs'}, ensure_ascii=False, indent=2) + '\n')
     # Presentation-only overlay. File and IPC business logic are unchanged.
     main = app_source / 'examples/electron/main.cjs'
-    main.write_text(main.read_text().replace("app.setName('Application Shell Demo')", "app.setName('文档工作台')").replace("title:'Application Shell Demo'", "title:'文档工作台'"))
+    js_title = json.dumps(PRODUCT_NAME, ensure_ascii=False)
+    main.write_text(main.read_text().replace("app.setName('Application Shell Demo')", 'app.setName(' + js_title + ')').replace("title:'Application Shell Demo'", 'title:' + js_title))
     html = app_source / 'examples/electron/ui/index.html'
-    text = html.read_text().replace('<title>Application Shell Demo</title>', '<title>文档工作台</title>').replace('<strong>Application Shell</strong>', '<strong>文档工作台</strong>')
+    text = html.read_text().replace('<title>Application Shell Demo</title>', '<title>' + PRODUCT_NAME + '</title>').replace('<strong>Application Shell</strong>', '<strong>' + PRODUCT_NAME + '</strong>')
     text = text.replace('Read-only shell demo · UTF-8 previews up to 512 KiB · Editors can be connected through the exported host API.', '只读文本预览 · UTF-8 文件上限 512 KiB · Read-only text preview.')
     text = text.replace('<p id="status"', (ROOT / 'overlay/help-fragment.html').read_text() + '<p id="status"')
     html.write_text(text)

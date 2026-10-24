@@ -73,14 +73,14 @@ let package = Package(name: "InkSpaceModules", platforms: [.macOS(.v13)], produc
         app_target = "WritingAidsDemo" if sample == "writing-aids" else "InkSpacePreferencesDemo"
         shutil.copy2(HERE / "overlays/DistributionHelp.swift", target / "Sources" / app_target / "DistributionHelp.swift")
     writing = work / "Writing/Sources/WritingAidsDemo/App/WritingAidsApp.swift"
-    replace(writing, 'WindowGroup("Writing Aids Playground")', 'WindowGroup("书写画板 · InkSpace Writing")')
+    replace(writing, 'WindowGroup("Writing Aids Playground")', 'WindowGroup("life\'winner · 书写画板")')
     replace(writing, '.commands { CommandGroup(replacing: .newItem) {} }', HELP_COMMAND)
     preferences = work / "Preferences/Sources/InkSpacePreferencesDemo"
     app = preferences / "App/PreferencesDemoApp.swift"
     replace(app, 'import SwiftUI', 'import SwiftUI\nimport AppKit')
     replace(app, 'file = FileManager.default.temporaryDirectory.appendingPathComponent("InkSpacePreferencesDemo/settings.json")',
             'file = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent("InkSpace Preferences/settings.json")')
-    replace(app, 'WindowGroup("Preferences Demo")', 'WindowGroup("偏好方案编辑器 · InkSpace Preferences")')
+    replace(app, 'WindowGroup("Preferences Demo")', 'WindowGroup("life\'winner · 偏好方案编辑器")')
     replace(app, '.frame(minWidth: 640, minHeight: 640) }', '.frame(minWidth: 900, minHeight: 680) }\n        ' + HELP_COMMAND)
     replace(app, '.frame(width: 720, height: 680)', '.frame(width: 900, height: 680)')
     replace(app, 'struct PreferencesDemoApp: App {', '''final class PreferencesDistributionDelegate: NSObject, NSApplicationDelegate {
@@ -92,9 +92,9 @@ struct PreferencesDemoApp: App {
     @NSApplicationDelegateAdaptor(PreferencesDistributionDelegate.self) private var delegate''')
     replace(preferences / "Stores/PreferencesModel.swift", '"com.example.inkspace.preferencesdemo"', '"org.inkspace.tools.preferences"')
     view = preferences / "Views/PreferencesSettingsView.swift"
-    replace(view, 'Text(l("独立偏好设置", "Independent preferences"))', 'Text(l("偏好方案编辑器", "Preference plan editor"))')
+    replace(view, 'Text(l("独立偏好设置", "Independent preferences"))', 'Text(l("life\'winner · 偏好方案编辑器", "life\'winner preference plans"))')
     replace(view, '"示例数据保存在独立文件中。修改后点保存，再重新读取验证。", "Synthetic data in a separate file. Save changes, then reload to verify."',
-            '"只管理本工具的独立方案，不修改系统或原 InkSpace。修改后点保存。", "Edits this tool’s own plan, not macOS or the original InkSpace settings. Save to keep changes."')
+            '"只管理本工具的独立方案，不修改系统或原 life\'winner。修改后点保存。", "Edits this tool’s own plan, not macOS or the original life\'winner settings. Save to keep changes."')
     replace(view, 'Text(PreferencesLocalizer.text("emptyTitle", language: language))',
             'Text(l("可保存与分享的独立方案", "A plan you can save and share"))')
     replace(view, 'Text(PreferencesLocalizer.text("emptyBody", language: language))',
@@ -155,14 +155,14 @@ def bundle(repo, work, output, config, binaries, version):
     (resources / "HELP.txt").write_text(re.sub(r"\n{3,}", "\n\n", "".join(help_text.parts)).strip() + "\n")
     shutil.copy2(repo / "LICENSE", resources / "LICENSE.txt")
     info = {"CFBundleExecutable": config["executable"], "CFBundleIdentifier": config["id"],
-            "CFBundleName": config["name"], "CFBundleDisplayName": config["display"],
+            "CFBundleName": config["menuName"], "CFBundleDisplayName": config["display"],
             "CFBundlePackageType": "APPL", "CFBundleShortVersionString": version, "CFBundleVersion": "1",
             "CFBundleIconFile": "ToolIcon", "CFBundleDevelopmentRegion": "en", "CFBundleLocalizations": ["en", "zh-Hans"],
             "LSMinimumSystemVersion": "13.0", "NSPrincipalClass": "NSApplication", "NSHighResolutionCapable": True,
             "NSHumanReadableCopyright": "Copyright © 2026 InkSpace contributors. MIT license."}
     with (app / "Contents/Info.plist").open("wb") as file:
         plistlib.dump(info, file)
-    for locale, name in [("en", config["name"]), ("zh-Hans", config["display"])]:
+    for locale, name in [("en", config["menuName"]), ("zh-Hans", config["display"])]:
         folder = resources / (locale + ".lproj"); folder.mkdir()
         (folder / "InfoPlist.strings").write_text(f'"CFBundleName" = "{name}";\n"CFBundleDisplayName" = "{name}";\n')
     run(["/usr/bin/codesign", "--force", "--sign", "-", "--timestamp=none", app], work / (config["kind"] + "-sign.log"))
@@ -187,9 +187,9 @@ def main():
     work.mkdir(parents=True, exist_ok=True); output.mkdir(parents=True, exist_ok=True)
     prepare(repo, work)
     configs = [{"package": "Writing", "product": "WritingAidsDemo", "executable": "InkSpaceWriting", "kind": "writing",
-                "name": "InkSpace Writing", "display": "书写画板 · InkSpace Writing", "id": "org.inkspace.tools.writing"},
+                "name": "InkSpace Writing", "menuName": "life'winner Writing", "display": "life'winner · 书写画板", "id": "org.inkspace.tools.writing"},
                {"package": "Preferences", "product": "InkSpacePreferencesDemo", "executable": "InkSpacePreferences", "kind": "preferences",
-                "name": "InkSpace Preferences", "display": "偏好方案编辑器 · InkSpace Preferences", "id": "org.inkspace.tools.preferences"}]
+                "name": "InkSpace Preferences", "menuName": "life'winner Preferences", "display": "life'winner · 偏好方案编辑器", "id": "org.inkspace.tools.preferences"}]
     receipt = {"recipeVersion": 1, "version": args.version, "configuration": "release", "pathMapping": True,
                "debugInfo": "none; stripped", "SDK": run(["xcrun", "--sdk", "macosx", "--show-sdk-version"]),
                "toolchain": run(["swift", "--version"]).splitlines()[0], "apps": []}

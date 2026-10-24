@@ -1,4 +1,6 @@
-# Build the standalone Mac apps
+# Build life'winner standalone Mac apps
+
+希望每一个使用我开源功能的人，都是各自的 life'winner。
 
 这是构建者使用的发行配方。普通用户下载构建好的 `.app` 即可，不需要 Xcode、Swift、Python 或 Node；互联网下载后的首次打开仍由 macOS 安全策略决定。
 
@@ -13,7 +15,7 @@ python3 build-native-apps.py --output /tmp/inkspace-native-output
 配方从两个原始开发示例复制一份到私有构建目录，保持原示例和旧 Swift 下载包不变。发行覆盖层：
 
 - 书写画板和偏好方案编辑器的中英文名称、Help 菜单与本地帮助。
-- 偏好方案默认保存到当前用户的 `~/Library/Application Support/InkSpace Preferences/settings.json`，使用独立 domain `org.inkspace.tools.preferences`，不读取系统或原 InkSpace 偏好。
+- 偏好方案默认保存到当前用户的 `~/Library/Application Support/InkSpace Preferences/settings.json`，使用独立 domain `org.inkspace.tools.preferences`，不读取系统或原 life'winner 偏好。
 - 偏好方案的导入/导出使用系统文件对话框；导入复用 `PreferencesStore` 的大小、版本、domain 和内容校验，失败不改变当前方案。导入后仍需点保存。
 - 程序绘制的独立图标、Info.plist 和 MIT 许可证。
 - 两种架构分别优化编译，Swift/Clang 路径映射、无调试信息、符号裁剪、Universal 合并、移除开发工具的绝对运行时搜索路径，最后只做本地 ad-hoc 签名。

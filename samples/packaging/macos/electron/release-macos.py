@@ -153,7 +153,7 @@ def release(args):
             if (payload / 'node_modules').exists():
                 raise ValueError('Development dependencies in delivered ZIP')
         artifacts.append({'file': zip_name, 'architecture': arch, 'version': args.version, 'sha256': digest(zip_file), 'bytes': zip_file.stat().st_size, 'electron': VERSION, 'officialRuntimeSHA256': checksums[name], 'runtimeSource': BASE + name, 'app': app.name, 'minimumMacOS': '13.0', 'signature': 'ad hoc, no personal identity', 'notarized': False, 'gatekeeper': 'not expected to be trusted without user approval; no quarantine/system protection changes', 'archiveSignatureRoundTrip': 'passed', 'archiveMetadata': 'fixed 1980 timestamp; explicit 755/644/777 Unix modes; no extra/comment/UID/xattr', 'externalNodeRequired': False, 'externalXcodeRequired': False})
-    manifest = {'schemaVersion': 1, 'product': '文档工作台 / Document Workbench', 'version': args.version, 'sourceRecipe': 'build-macos.py + application-shell-source-sha256.json + overlay/', 'checksumSource': BASE + 'SHASUMS256.txt', 'artifacts': artifacts}
+    manifest = {'schemaVersion': 1, 'product': "life'winner 文档工作台 / life'winner Document Workbench", 'version': args.version, 'sourceRecipe': 'build-macos.py + application-shell-source-sha256.json + overlay/', 'checksumSource': BASE + 'SHASUMS256.txt', 'artifacts': artifacts}
     (output / 'document-workbench-release.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     (output / 'SHA256SUMS.txt').write_text(''.join(item['sha256'] + '  ' + item['file'] + '\n' for item in artifacts))
     print(json.dumps(manifest, ensure_ascii=False, indent=2))

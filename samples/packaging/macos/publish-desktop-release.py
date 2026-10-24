@@ -111,7 +111,7 @@ if not verify_tag(allow_missing=True):
     verify_tag(allow_missing=False)
 if release is None:
     release = request(api + '/releases', 'POST', {'tag_name': tag, 'target_commitish': revision,
-                      'name': 'InkSpace Mac 工具 ' + args.version, 'body': notes, 'draft': True,
+                      'name': "life'winner Mac 工具 " + args.version, 'body': notes, 'draft': True,
                       'prerelease': False, 'generate_release_notes': False})
 verify_tag(allow_missing=False)
 assets = {item['name']: item for item in request(api + '/releases/' + str(release['id']) + '/assets?per_page=100')}

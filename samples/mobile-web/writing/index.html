@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN" data-app="writing">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2563eb">
+  <title>书写画板 · life'winner Writing</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="writing-app">
+  <header class="app-header"><h1 class="app-title">书写画板</h1><button class="primary" data-install>安装</button></header>
+  <main>
+    <div class="tool-scroll" role="toolbar" aria-label="书写工具">
+      <button data-tool="pen" aria-pressed="true">✎ 画笔</button><button data-tool="shape" aria-pressed="false">□ 形状</button>
+      <button data-tool="select" aria-pressed="false">↖ 选择</button><button id="text-button">T 文字</button>
+      <button data-tool="line" aria-pressed="false">╱ 停留直线</button><button data-tool="highlight" aria-pressed="false">▰ 高亮</button>
+      <button data-tool="wave" aria-pressed="false">∿ 波浪</button><button data-tool="fill" aria-pressed="false">▨ 填色</button>
+      <button data-tool="tape" aria-pressed="false">▬ 胶带</button><button data-tool="reveal" aria-pressed="false">◉ 揭开</button>
+      <button data-tool="laser" aria-pressed="false">• 激光</button>
+    </div>
+    <div class="action-strip">
+      <button id="undo-button" disabled>↶ 撤销</button><button id="open-button">▱ 打开</button><button id="export-button">↥ 导出</button>
+      <details class="more-menu"><summary class="button" aria-label="更多文件操作">•••</summary><div class="more-panel">
+        <button id="share-button">分享 JSON</button><button id="save-button">保存到本机</button><button id="example-button">载入示例</button><button id="new-button">新画板</button>
+      </div></details>
+    </div>
+    <div class="option-strip">
+      <label>颜色 <input id="ink-color" type="color" value="#2563eb" aria-label="笔迹颜色"></label>
+      <label>粗细 <select id="ink-width" aria-label="笔迹粗细"><option value="2">细</option><option value="3" selected>中</option><option value="6">粗</option><option value="10">特粗</option></select></label>
+      <label id="shape-option" hidden>形状 <select id="shape-kind"><option value="rectangle">矩形</option><option value="circle">圆</option><option value="ellipse">椭圆</option><option value="triangle">三角形</option><option value="arrow">箭头</option><option value="axes">坐标轴</option></select></label>
+      <label id="highlight-option" hidden><input id="highlight-below" type="checkbox" checked> 新高亮置底</label>
+    </div>
+    <div id="selection-actions" class="selection-actions" hidden>
+      <span id="selection-count">框选内容，或点选后拖动</span><button id="copy-button" disabled>复制副本</button><button id="paste-button" disabled>粘贴</button><button id="delete-button" disabled>删除</button>
+    </div>
+    <div id="canvas-wrap" class="canvas-wrap"><canvas id="drawing-canvas" tabindex="0" aria-label="书写画板：使用画笔绘画，使用选择工具框选和拖动内容"></canvas></div>
+    <p id="drawing-status" class="status drawing-status" role="status" aria-live="polite">用手指或 Apple Pencil 书写；重要内容请导出备份。</p>
+  </main>
+  <footer><div><span id="save-status">只保存在本机</span><span class="offline" data-offline-status>正在准备离线…</span></div><button id="help-button">ⓘ 帮助</button></footer>
+</div>
+<input id="open-file" type="file" accept="application/json,.json" hidden>
+<div id="paste-menu" class="paste-menu" hidden><button id="paste-here-button">在这里粘贴副本</button></div>
+<dialog id="text-dialog" aria-labelledby="text-title"><form method="dialog"><h2 id="text-title">添加文字卡</h2><p class="help">在这里打字；支持的 iPad 可使用系统随手写。应用不上传文字，也不提供自己的手写识别。</p><label class="field">文字<textarea id="card-text" rows="5" maxlength="20000" placeholder="写下你的想法…"></textarea></label><div class="dialog-actions"><button value="cancel">取消</button><button id="add-text-button" class="primary" value="default">添加到画板</button></div><p id="text-error" class="is-error" role="status"></p></form></dialog>
+<dialog id="help-dialog" aria-labelledby="help-title"><h2 id="help-title">书写画板使用帮助</h2><p>愿每个使用这些开源工具的人，都成为各自的 life'winner。</p>
+  <p>工具行可左右滑动。手指与 Apple Pencil 都能绘画；颜色和粗细可调。</p>
+  <ul><li><strong>直线／形状：</strong>画出大致轮廓，停住约 0.65 秒；出现绿色预览后松开。形状需明确选择，圆、椭圆、矩形、三角形需闭合。不符合时保留原笔迹。</li><li><strong>高亮／波浪／填色：</strong>高亮可置于已有普通笔迹下；填色在松开时闭合轮廓。靠近边缘的波浪若无法生成，会保留原笔迹。</li><li><strong>胶带／揭开：</strong>画遮挡条，再用揭开工具点它；底下的原内容不会被删除。激光松开后消失，不写入文件。</li><li><strong>选择／复制／移动：</strong>点选或拖出矩形框。拖动蓝色框可移动，移动中的副本一直可见。点“复制副本”立即生成并选中副本；继续拖动蓝框即可。选择模式长按画布可粘贴内部剪贴板。</li><li><strong>文字：</strong>使用顶部文字按钮，文字卡可在选择模式移动或删除。</li></ul>
+  <h3>保存与文件</h3><p>每次编辑后尝试保存当前设备的草稿。用“导出”保存 JSON 文件；“打开”可恢复此工具导出的画板。“更多 → 分享 JSON”可通过系统分享。打开或新建前可先导出；撤销最多保留最近 20 步，受内存上限约束。</p>
+  <p>本机草稿不是永久备份。清除网站数据、卸载、隐私模式或系统回收存储可能清除它；请定期导出。Safari 页面与主屏幕 App 的存储可能分开，安装前先导出，安装后再打开。数据不会自动跨设备同步。</p>
+  <h3>范围与隐私</h3><p>这是独立矢量画板，无账号、统计或内容上传，不读取原笔记应用数据。单条输入最多 4,096 点，总笔迹／胶带点数最多 200,000；文件最多 8 MiB。没有原生 PencilKit 压力纹理、橡皮擦、无限缩放或完整套索。内部剪贴板只在此窗口，页面关闭后清空。</p>
+  <p>首次联网打开并显示“可离线使用”后，可添加到主屏幕。查看更新前先保存或导出。</p><div class="dialog-actions"><button data-check-updates>检查更新</button><button id="close-help-button" class="primary">知道了</button></div>
+</dialog>
+<script type="module" src="./app.js"></script>
+</body></html>

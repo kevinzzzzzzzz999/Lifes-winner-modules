@@ -1,0 +1,8 @@
+{
+  "name": "inkspace-mobile-web-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Separate local-only web apps. End users need only Safari; Node is used solely for developer tests."
+}

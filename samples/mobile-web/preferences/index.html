@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN" data-app="preferences">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>偏好方案 · life'winner</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div><a class="back-link" href="../">life'winner 工具</a><h1 class="app-title" id="app-title">偏好方案</h1></div>
+    <button class="primary" data-install>安装</button>
+  </header>
+  <div class="preferences-shell">
+    <nav class="tabs" role="tablist" aria-label="设置类别">
+      <button id="tab-appearance" role="tab" aria-selected="true" aria-controls="group-appearance" data-tab="appearance">外观</button>
+      <button id="tab-tools" role="tab" aria-selected="false" aria-controls="group-tools" data-tab="tools" tabindex="-1">工具栏</button>
+      <button id="tab-gestures" role="tab" aria-selected="false" aria-controls="group-gestures" data-tab="gestures" tabindex="-1">手势</button>
+      <button id="tab-playback" role="tab" aria-selected="false" aria-controls="group-playback" data-tab="playback" tabindex="-1">播放</button>
+    </nav>
+    <main>
+      <p class="scope-note" id="scope-note">只调整当前工具与导出方案，不改变系统或原完整版软件设置。</p>
+      <section id="group-appearance" role="tabpanel" aria-labelledby="tab-appearance" class="panel settings-panel"></section>
+      <section id="group-tools" role="tabpanel" aria-labelledby="tab-tools" class="panel settings-panel" hidden></section>
+      <section id="group-gestures" role="tabpanel" aria-labelledby="tab-gestures" class="panel settings-panel" hidden></section>
+      <section id="group-playback" role="tabpanel" aria-labelledby="tab-playback" class="panel settings-panel" hidden></section>
+      <section class="panel preview-panel" aria-labelledby="preview-title">
+        <div class="section-heading"><h2 id="preview-title">实时预览</h2><button id="clear-preview" class="compact">清空试写</button></div>
+        <p class="help" id="preview-help">可在小画板试写，试用撤销、笔色与辅助线。试写内容不保存到方案。</p>
+        <div id="preview-layout" class="preview-layout" data-edge="bottom">
+          <div id="preview-toolbar" class="preview-toolbar" aria-label="本应用预览工具栏"></div>
+          <div class="preview-paper"><canvas id="preview-canvas" aria-label="偏好方案试写区，可用手指或笔试写"></canvas></div>
+        </div>
+        <p class="help preview-note" id="preview-pen-name"></p>
+        <div id="subtitle-preview" class="subtitle-preview" hidden><span id="subtitle-sample">字幕预览：文字清楚，画面保持可见。</span></div>
+      </section>
+      <section class="panel help-panel">
+        <div class="toolbar"><button id="reload-plan">重新读取</button><button id="reset-plan">恢复默认</button></div>
+        <details><summary id="help-summary">怎样保存和使用</summary><div class="help" id="help-content"></div></details>
+      </section>
+      <noscript><p class="panel">请允许此页面运行 JavaScript，才能编辑并保存本地方案。</p></noscript>
+    </main>
+    <footer class="save-bar">
+      <p class="status" id="plan-status" role="status" aria-live="polite">正在读取本机方案…</p>
+      <div class="file-actions"><button class="primary" id="save-plan">保存本机</button><button id="import-plan">导入</button><button id="export-plan">导出</button><button id="share-plan">分享</button></div>
+      <p class="help offline-line"><span data-offline-status>正在准备离线…</span><button class="link-button" data-check-updates>检查更新</button></p>
+      <input type="file" id="plan-file" accept=".json,application/json" class="visually-hidden" aria-label="导入JSON方案">
+    </footer>
+  </div>
+</body>
+</html>
